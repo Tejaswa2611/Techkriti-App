@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "396396508040",
+    "project_id": "techkriti-2ccb1",
+    "storage_bucket": "techkriti-2ccb1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:396396508040:android:8e5b2b6b86dd3fea9a003d",
+        "android_client_info": {
+          "package_name": "com.techkriti.org.techkriti"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "396396508040-l6dugb68g5koquhg3qc9ku6gp7r28go3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDXpFAhJtG6Z8T81iJmT7y_Vy2GvT-NRFc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "396396508040-l6dugb68g5koquhg3qc9ku6gp7r28go3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
