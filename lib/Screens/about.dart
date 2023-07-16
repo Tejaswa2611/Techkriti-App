@@ -13,7 +13,7 @@ class About extends StatefulWidget {
 class _AboutState extends State<About> {
   @override
   Widget build(BuildContext context) {
-    final screenHeight = MediaQuery.of(context).size.height;
+    // final screenHeight = MediaQuery.of(context).size.height;
     return Scaffold(
       backgroundColor: backgroundcolor,
       body: SingleChildScrollView(

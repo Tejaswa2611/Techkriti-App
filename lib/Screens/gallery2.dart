@@ -5,6 +5,7 @@ class GalleryPage extends StatefulWidget {
   const GalleryPage({Key? key}) : super(key: key);
 
   @override
+  // ignore: library_private_types_in_public_api
   _GalleryPageState createState() => _GalleryPageState();
 }
 
@@ -57,46 +58,53 @@ class _GalleryPageState extends State<GalleryPage>
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: backgroundcolor,
-      body: Stack(
-        children: [
-          GridView.builder(
-            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 2,
-            ),
-            itemCount: 10,
-            itemBuilder: (context, index) => GestureDetector(
-              onTap: () {
-                _openPhotoPopup(index);
-              },
-              child: Padding(
-                padding: const EdgeInsets.all(4.0),
-                child: Image.asset(
-                  'assets/images/${index + 103}.jpg',
-                  fit: BoxFit.cover,
-                ),
+      body: Padding(
+        padding: const EdgeInsets.all(3.0),
+        child: Stack(
+          children: [
+            GridView.builder(
+              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 2,
               ),
-            ),
-          ),
-          if (selectedPhotoIndex != null)
-            GestureDetector(
-              onTap: _closePhotoPopup,
-              child: Container(
-                color: Colors.black54,
-                child: Center(
-                  child: ScaleTransition(
-                    scale: _scaleAnimation,
-                    child: FadeTransition(
-                      opacity: _fadeAnimation,
-                      child: Image.asset(
-                        'assets/images/${selectedPhotoIndex! + 103}.jpg',
-                        fit: BoxFit.contain,
-                      ),
+              itemCount: 10,
+              itemBuilder: (context, index) => GestureDetector(
+                onTap: () {
+                  _openPhotoPopup(index);
+                },
+                child: Padding(
+                  padding: const EdgeInsets.all(4.0),
+                  child: Container(
+                    color : Colors.black12,
+                    padding: const EdgeInsets.all(6),
+                    child: Image.asset(
+                      'assets/images/${index + 103}.jpg',
+                      fit: BoxFit.cover,
                     ),
                   ),
                 ),
               ),
             ),
-        ],
+            if (selectedPhotoIndex != null)
+              GestureDetector(
+                onTap: _closePhotoPopup,
+                child: Container(
+                  color: Colors.black54,
+                  child: Center(
+                    child: ScaleTransition(
+                      scale: _scaleAnimation,
+                      child: FadeTransition(
+                        opacity: _fadeAnimation,
+                        child: Image.asset(
+                          'assets/images/${selectedPhotoIndex! + 103}.jpg',
+                          fit: BoxFit.contain,
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+          ],
+        ),
       ),
     );
   }
