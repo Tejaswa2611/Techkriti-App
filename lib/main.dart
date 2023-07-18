@@ -3,9 +3,8 @@ import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:techkriti/hidden_drawer.dart';
 
-
 @pragma('vm:entry-point')
-Future<void> _firebaseMessagingBackgroundHandler(RemoteMessage message)async {
+Future<void> _firebaseMessagingBackgroundHandler(RemoteMessage message) async {
   await Firebase.initializeApp();
 }
 
@@ -26,8 +25,8 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'TOSC',
       theme: ThemeData(
-        appBarTheme:  AppBarTheme(
-          color: Colors.deepPurple[900], 
+        appBarTheme: AppBarTheme(
+          color: Colors.deepPurple[900],
           iconTheme: const IconThemeData(color: Colors.white),
         ),
         pageTransitionsTheme: const PageTransitionsTheme(
@@ -51,3 +50,5 @@ class MyApp extends StatelessWidget {
 // Analyse what to store in firebase
 // Notification store
 // Backend start NodeJs
+
+// durgesh tempo
