@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hidden_drawer_menu/hidden_drawer_menu.dart';
+import 'package:provider/provider.dart';
+import 'package:techkriti/Screens/admin_page.dart';
 import 'package:techkriti/Screens/conduction.dart';
 import 'package:techkriti/Screens/contactus.dart';
 import 'package:techkriti/Screens/faq_tosc.dart';
@@ -7,12 +9,14 @@ import 'package:techkriti/Screens/landing.dart';
 import 'package:techkriti/Screens/prizes.dart';
 import 'package:techkriti/Screens/testimonial.dart';
 import 'package:techkriti/Services/notification_services.dart';
+import 'package:techkriti/providers/user_provider.dart';
 import 'Screens/about.dart';
 import 'Screens/gallery2.dart';
 import 'Screens/login_page.dart';
 import 'Screens/register_page.dart';
 import 'Screens/sponsors.dart';
 import 'Widgets/colors_and_fonts.dart';
+import 'Services/auth_services.dart';
 
 class HiddenDrawer extends StatefulWidget {
   const HiddenDrawer({super.key});
@@ -136,7 +140,7 @@ class _HiddenDrawerState extends State<HiddenDrawer> {
           selectedStyle: myTextStyle,
           colorLineSelected: Colors.deepPurple.shade900,
         ),
-        const LoginPage(),
+        const LoginPage()
       ),
       ScreenHiddenDrawer(
         ItemHiddenMenu(

@@ -46,7 +46,7 @@ class _AboutState extends State<About> {
                   buildHeading("What is TOSC?"),
                   const SizedBox(height: 10),
                   buildDescription(
-                      "TOSC (Technical and Online Support Cell) is a dedicated team of tech enthusiasts at IIT Kanpur who provide technical assistance and online support for various events, workshops, and initiatives conducted by Techkriti."),
+                      "TOSC (Techkriti Open School Championship) is a dedicated team of tech enthusiasts at IIT Kanpur who provide technical assistance and online support for various events, workshops, and initiatives conducted by Techkriti."),
                   const SizedBox(height: 40),
                   buildHeading("Why TOSC?"),
                   const SizedBox(height: 10),

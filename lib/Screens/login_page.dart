@@ -5,7 +5,7 @@ import 'package:techkriti/Widgets/colors_and_fonts.dart';
 // import 'package:techkriti/hidden_drawer.dart';
 import '../Widgets/login_square_tile.dart';
 import '../Widgets/login_text_field.dart';
-
+import 'package:techkriti/Services/auth_services.dart';
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
 
@@ -17,9 +17,16 @@ class _LoginPageState extends State<LoginPage> {
   // text editing controllers
   final usernameController = TextEditingController();
   final passwordController = TextEditingController();
+  final AuthService authService = AuthService();
 
   // sign user in method
-  void signUserIn() {}
+  void signInUser() {
+    authService.signInUser(
+      context: context,
+      email: usernameController.text,
+      password: passwordController.text,
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -97,7 +104,9 @@ class _LoginPageState extends State<LoginPage> {
                 padding: const EdgeInsets.symmetric(horizontal: 12.0),
                 child: Button(
                   text: 'SIGN IN',
-                  onTap: () {}, //Null,
+                  onTap: () {
+                    signInUser();
+                  }, //Null,
                 ),
               ),
 
@@ -137,9 +146,9 @@ class _LoginPageState extends State<LoginPage> {
               SizedBox(height: screenHeight * 0.025),
 
               // google + apple sign in buttons
-              Row(
+              const Row(
                 mainAxisAlignment: MainAxisAlignment.center,
-                children: const [
+                children: [
                   // google button
                   SquareTile(imagePath: 'assets/images/google.png'),
 

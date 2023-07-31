@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:techkriti/Screens/admin_page.dart';
+import 'package:techkriti/Screens/login_page.dart';
+import 'package:techkriti/Services/auth_services.dart';
 import 'package:techkriti/Widgets/button.dart';
 import 'package:techkriti/Widgets/colors_and_fonts.dart';
+import 'package:techkriti/providers/user_provider.dart';
 import '../Widgets/login_text_field.dart';
 
 class RegistrationPage extends StatefulWidget {
@@ -15,12 +20,19 @@ class _RegistrationPageState extends State<RegistrationPage> {
   final nameController = TextEditingController();
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
-  final confirmPasswordController = TextEditingController();
+  // final confirmPasswordController = TextEditingController();
+  final AuthService authService = AuthService();
 
   // register user method
-  void registerUser() {
-    // Implement your registration logic here
+  void signUpUser() {
+    authService.signUpUser(
+      context: context,
+      email: emailController.text,
+      password: passwordController.text,
+      name: nameController.text,
+    );
   }
+
 
   @override
   Widget build(BuildContext context) {
@@ -89,16 +101,16 @@ class _RegistrationPageState extends State<RegistrationPage> {
               const SizedBox(height: 10),
 
               // confirm password textfield
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 10.0),
-                child: MyTextField(
-                  controller: confirmPasswordController,
-                  hintText: 'Confirm Password',
-                  obscureText: true,
-                ),
-              ),
+              // Padding(
+              //   padding: const EdgeInsets.symmetric(horizontal: 10.0),
+              //   child: MyTextField(
+              //     controller: confirmPasswordController,
+              //     hintText: 'Confirm Password',
+              //     obscureText: true,
+              //   ),
+              // ),
 
-              SizedBox(height: screenHeight * 0.03),
+              // SizedBox(height: screenHeight * 0.03),
 
               Row(
                 mainAxisAlignment: MainAxisAlignment.end,
@@ -115,7 +127,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
                 padding: const EdgeInsets.symmetric(horizontal: 12.0),
                 child: Button(
                   text: 'REGISTER',
-                  onTap: registerUser,
+                  onTap: signUpUser,
                 ),
               ),
 
@@ -135,8 +147,9 @@ class _RegistrationPageState extends State<RegistrationPage> {
                   const SizedBox(width: 4),
                   GestureDetector(
                     onTap: () {
-                      Navigator.pop(
+                       Navigator.push(
                         context,
+                        MaterialPageRoute(builder: (context) => Provider.of<UserProvider>(context).user.token.isNotEmpty ? const AdminPage(): const LoginPage()),
                       );
                     },
                     child: const Text(
