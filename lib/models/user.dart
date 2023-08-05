@@ -6,17 +6,34 @@ import 'dart:convert';
 class User
 {
   final String id;
-  final String name;
+   String name;
   final String password; 
   final String email;
   final String token;
+  String parentName;
+  String schoolName;
+  String schoolAddress;
+  String phone;
+  String grade;
+  String pool;
+  String gender;
+  DateTime? dob;
 
   User({
+    
     required this.id,
     required this.name,
     required this.password,
     required this.email,
     required this.token,
+    this.parentName = '',
+    this.schoolName = '',
+    this.schoolAddress = '',
+    this.phone = '',
+    this.grade= '',
+    this.pool = '',
+    this.gender = '',
+    this.dob,
   });
 
   Map<String, dynamic> toMap() {
@@ -26,7 +43,14 @@ class User
       'password': password,
       'email': email,
       'token': token,
-      
+      'parentName': parentName,
+      'schoolName': schoolName,
+      'phone': phone,
+      'grade': grade,
+      'pool':pool,
+      'gender': gender,
+      'dob': dob?.toIso8601String(),
+            
     };
   }
 
@@ -36,7 +60,14 @@ class User
       name: map['name'] ?? '',
       password: map['password'] ?? '',
       email: map['email'] ?? '',
+      parentName: map['parentName'] ?? '',
+      schoolName: map['schoolName'] ?? '',
+      phone: map['phone'] ?? '',
+      grade: map['grade'] ?? '',
       token: map['token'] ?? '',
+      pool: map['pool'] ?? '',
+      gender: map['gender'] ?? '',
+      dob: map['dob'] != null ? DateTime.tryParse(map['dob']) : null,
     );
   }
 

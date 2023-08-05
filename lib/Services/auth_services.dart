@@ -3,9 +3,10 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:techkriti/Screens/admin_page.dart';
+// import 'package:techkriti/Screens/admin_page.dart';
 import 'package:techkriti/constants/error_handling.dart';
 import 'package:techkriti/constants/utils.dart';
+import 'package:techkriti/details/details_page.dart';
 import 'package:techkriti/models/user.dart';
 // import 'package:techkriti/models/user.dart';
 import 'package:http/http.dart' as http;
@@ -85,7 +86,7 @@ class AuthService {
           // ignore: use_build_context_synchronously
           Navigator.push(
             context,
-            MaterialPageRoute(builder: (context) => const AdminPage()),
+            MaterialPageRoute(builder: (context) => const UserDetailsPage()),
           );
         },
       );
@@ -123,15 +124,32 @@ class AuthService {
           },
         );
 
-       if (userRes.body.isNotEmpty) { // Check if the response body is not empty
-        // ignore: use_build_context_synchronously
-        var userProvider = Provider.of<UserProvider>(context, listen: false);
-        userProvider.setUser(userRes.body);
+        if (userRes.body.isNotEmpty) {
+          // Check if the response body is not empty
+          // ignore: use_build_context_synchronously
+          var userProvider = Provider.of<UserProvider>(context, listen: false);
+          userProvider.setUser(userRes.body);
+        }
       }
-      }
-
     } catch (e) {
       showSnackBar(context, e.toString());
     }
   }
+
+    // UPDATE USER DETAILS
+    Future<http.Response> updateUserDetails(User user, String authToken) async {
+      try {
+        http.Response res = await http.post(
+          Uri.parse('$uri/api/update-details'),
+          body: user.toJson(),
+          headers: <String, String>{
+            'Content-Type': 'application/json; charset=UTF-8',
+            'x-auth-token': authToken,
+          },
+        );
+        return res;
+      } catch (e) {
+        rethrow; // Rethrow the exception to handle it in the UserDetailsPage
+      }
+    }
 }

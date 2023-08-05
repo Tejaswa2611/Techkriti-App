@@ -9,12 +9,12 @@ import 'package:techkriti/Screens/prizes.dart';
 import 'package:techkriti/Screens/testimonial.dart';
 import 'package:techkriti/Services/notification_services.dart';
 
-import 'Screens/about.dart';
-import 'Screens/gallery2.dart';
-import 'Screens/login_page.dart';
-import 'Screens/register_page.dart';
-import 'Screens/sponsors.dart';
-import 'Widgets/colors_and_fonts.dart';
+import '../Screens/about.dart';
+import '../Screens/gallery2.dart';
+import '../Screens/login_page.dart';
+import '../Screens/register_page.dart';
+import '../Screens/sponsors.dart';
+import '../Widgets/colors_and_fonts.dart';
 
 
 class HiddenDrawer extends StatefulWidget {

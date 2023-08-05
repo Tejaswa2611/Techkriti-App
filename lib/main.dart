@@ -2,8 +2,8 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:techkriti/Screens/homescreen.dart';
 import 'package:techkriti/Services/auth_services.dart';
-import 'package:techkriti/hidden_drawer.dart';
 import 'package:techkriti/providers/user_provider.dart';
 
 @pragma('vm:entry-point')
@@ -54,7 +54,7 @@ class _MyAppState extends State<MyApp> {
           },
         ),
       ),
-      home: const HiddenDrawer(),
+      home: const HomeScreen(),
     );
   }
 }
