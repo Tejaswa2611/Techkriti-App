@@ -1,12 +1,16 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:techkriti/Screens/conduction.dart';
-import 'package:techkriti/Screens/prizes.dart';
-import 'package:techkriti/Screens/testimonial.dart';
 import 'package:techkriti/hiddendrawers/hidden_dr_conduction.dart';
-import 'package:techkriti/hiddendrawers/hidden_drawer.dart';
+import 'package:techkriti/hiddendrawers/hidden_dr_contact.dart';
+import 'package:techkriti/hiddendrawers/hidden_dr_prizes.dart';
+import 'package:techkriti/hiddendrawers/hidden_dr_sponsors.dart';
+import 'package:techkriti/hiddendrawers/hidden_dr_testimonial.dart';
+import 'package:techkriti/hiddendrawers/hidden_drawer_about.dart';
+import 'package:url_launcher/url_launcher.dart';
 import '../Screens/rectangleboxes.dart';
 import '../Widgets/CarouselCard.dart';
+import '../hiddendrawers/hidden_dr_faq.dart';
+import '../hiddendrawers/hidden_dr_gallery.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -52,7 +56,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   onTap: () => Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => TestimonialsPage(),
+                      builder: (context) => const HiddenDrawerTestimonial(),
                     ),
                   ),
                   text: 'Testimonials',
@@ -62,14 +66,14 @@ class _HomeScreenState extends State<HomeScreen> {
                   onTap: () => Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => const PrizesPage(),
+                      builder: (context) => const HiddenDrawerPrizes(),
                     ),
                   ),
                   text: 'Prizes',
                 ),
               ],
               options: CarouselOptions(
-                height: screenHeight * 0.28,
+                height: 196,
                 aspectRatio: screenWidth / screenHeight,
                 viewportFraction: 0.8,
                 initialPage: 0,
@@ -110,86 +114,67 @@ class _HomeScreenState extends State<HomeScreen> {
                       elevation: 8,
                       borderRadius: BorderRadius.circular(2),
                       clipBehavior: Clip.antiAliasWithSaveLayer,
-                      child: InkWell(
-                        onTap: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => const HiddenDrawer(),
-                            ),
-                          );
-                        },
-                        child: Row(
-                          mainAxisSize: MainAxisSize.min,
-                          children: [
-                            Ink.image(
-                              image:
-                                  const AssetImage('assets/images/black.jpg'),
-                              height: screenHeight * 0.2,
-                              width: screenWidth * 0.50,
-                              fit: BoxFit.fill,
-                              child: const Align(
-                                alignment: Alignment.bottomCenter,
-                                child: Padding(
-                                  padding: EdgeInsets.all(8.0),
-                                  child: Text(
-                                    'Past talk 1',
-                                    style: TextStyle(
-                                        fontFamily: 'heading',
-                                        fontWeight: FontWeight.bold,
-                                        color: Colors.white,
-                                        fontSize: 22),
-                                  ),
+                      child: Row(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Ink.image(
+                            image:
+                                const AssetImage('assets/images/black.jpg'),
+                            height: 154,
+                            width: 180,
+                            fit: BoxFit.fill,
+                            child: const Align(
+                              alignment: Alignment.bottomCenter,
+                              child: Padding(
+                                padding: EdgeInsets.all(8.0),
+                                child: Text(
+                                  'Past talk 1',
+                                  style: TextStyle(
+                                      fontFamily: 'heading',
+                                      fontWeight: FontWeight.bold,
+                                      color: Colors.white,
+                                      fontSize: 22),
                                 ),
                               ),
                             ),
-                          ],
-                        ),
+                          ),
+                        ],
                       ),
                     ),
                     const SizedBox(
                       width: 10,
                     ),
+                    
                     Material(
                       color: Colors.black,
                       elevation: 8,
                       borderRadius: BorderRadius.circular(2),
                       clipBehavior: Clip.antiAliasWithSaveLayer,
-                      child: InkWell(
-                        onTap: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => const Conduction(),
-                            ),
-                          );
-                        },
-                        child: Row(
-                          mainAxisSize: MainAxisSize.min,
-                          children: [
-                            Ink.image(
-                              image:
-                                  const AssetImage('assets/images/black.jpg'),
-                              height: screenHeight * 0.2,
-                              width: screenWidth * 0.50,
-                              fit: BoxFit.fill,
-                              child: const Align(
-                                alignment: Alignment.bottomCenter,
-                                child: Padding(
-                                  padding: EdgeInsets.all(8.0),
-                                  child: Text(
-                                    'Past talk 2',
-                                    style: TextStyle(
-                                        fontFamily: 'heading',
-                                        fontWeight: FontWeight.bold,
-                                        color: Colors.white,
-                                        fontSize: 22),
-                                  ),
+                      child: Row(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Ink.image(
+                            image:
+                                const AssetImage('assets/images/black.jpg'),
+                            height: 154,
+                            width: 180,
+                            fit: BoxFit.fill,
+                            child: const Align(
+                              alignment: Alignment.bottomCenter,
+                              child: Padding(
+                                padding: EdgeInsets.all(8.0),
+                                child: Text(
+                                  'Past talk 2',
+                                  style: TextStyle(
+                                      fontFamily: 'heading',
+                                      fontWeight: FontWeight.bold,
+                                      color: Colors.white,
+                                      fontSize: 22),
                                 ),
                               ),
                             ),
-                          ],
-                        ),
+                          ),
+                        ],
                       ),
                     ),
                   ],
@@ -199,12 +184,12 @@ class _HomeScreenState extends State<HomeScreen> {
             const SizedBox(
               height: 15,
             ),
-            const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 8.0),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 8.0),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text(
+                  const Text(
                     "Gallery",
                     style: TextStyle(
                       fontFamily: 'heading',
@@ -212,12 +197,22 @@ class _HomeScreenState extends State<HomeScreen> {
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  Text(
-                    "See all ➡",
-                    style: TextStyle(
-                      fontFamily: 'heading',
-                      fontSize: 15,
-                      fontWeight: FontWeight.bold,
+                  InkWell(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const HiddenDrawerGallery(),
+                        ),
+                      );
+                    },
+                    child: const Text(
+                      "See all ➡ ",
+                      style: TextStyle(
+                        fontFamily: 'heading',
+                        fontSize: 15,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
                   )
                 ],
@@ -233,26 +228,16 @@ class _HomeScreenState extends State<HomeScreen> {
                   elevation: 20,
                   borderRadius: BorderRadius.circular(0),
                   clipBehavior: Clip.antiAliasWithSaveLayer,
-                  child: InkWell(
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => const Conduction(),
-                        ),
-                      );
-                    },
-                    child: Ink.image(
-                      image: const AssetImage('assets/images/black.jpg'),
-                      height: screenHeight * 0.22,
-                      // width: screenWidth * 0.80,
-                      fit: BoxFit.fill,
-                    ),
+                  child: Ink.image(
+                    image: const AssetImage('assets/images/black.jpg'),
+                    height: screenHeight * 0.22,
+                    // width: screenWidth * 0.80,
+                    fit: BoxFit.fill,
                   ),
                 ),
               ],
               options: CarouselOptions(
-                height: screenHeight * 0.25,
+                height: 196,
                 aspectRatio: screenWidth / screenHeight,
                 viewportFraction: 0.84,
                 initialPage: 0,
@@ -274,18 +259,38 @@ class _HomeScreenState extends State<HomeScreen> {
             const SizedBox(
               height: 30,
             ),
-            const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 2.0),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 2.0),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  ElevatedContainer(
-                    assetPath: 'assets/images/sponsors.png',
-                    text: 'Sponsors',
+                  InkWell(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const HiddenDrawerSponsers(),
+                        ),
+                      );
+                    },
+                    child: const ElevatedContainer(
+                      assetPath: 'assets/images/sponsors.png',
+                      text: 'Sponsors',
+                    ),
                   ),
-                  ElevatedContainer(
-                    assetPath: 'assets/images/faq.png',
-                    text: 'FAQ',
+                  InkWell(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const HiddenDrawerFaq(),
+                        ),
+                      );
+                    },
+                    child: const ElevatedContainer(
+                      assetPath: 'assets/images/faq.png',
+                      text: 'FAQ',
+                    ),
                   ),
                 ],
               ),
@@ -293,18 +298,43 @@ class _HomeScreenState extends State<HomeScreen> {
             const SizedBox(
               height: 20,
             ),
-            const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 2.0),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 2.0),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  ElevatedContainer(
-                    assetPath: 'assets/images/contact.png',
-                    text: 'Contact Us',
+                  InkWell(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const HiddenDrawerContact(),
+                        ),
+                      );
+                    },
+                    child: const ElevatedContainer(
+                      assetPath: 'assets/images/contact.png',
+                      text: 'Contact Us',
+                    ),
                   ),
-                  ElevatedContainer(
-                    assetPath: 'assets/images/website.png',
-                    text: 'Website',
+                  InkWell(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const HiddenDrawerContact(),
+                        ),
+                      );
+                    },
+                    child: InkWell(
+                      onTap: () {
+                        _launchWebsite();
+                      },
+                      child: const ElevatedContainer(
+                        assetPath: 'assets/images/website.png',
+                        text: 'Website',
+                      ),
+                    ),
                   ),
                 ],
               ),
@@ -316,5 +346,16 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
       ),
     );
+  }
+}
+
+_launchWebsite() async {
+  const url = 'https://tosc.techkriti.org/';
+  debugPrint("Launching Website");
+  final uri = Uri.parse(url);
+  if (await canLaunchUrl(uri)) {
+    await launchUrl(uri);
+  } else {
+    throw 'Could not launch $url';
   }
 }

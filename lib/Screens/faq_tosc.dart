@@ -12,7 +12,7 @@ class FAQPage extends StatelessWidget {
     // final screenWidth = MediaQuery.of(context).size.width;
     return Scaffold(
       backgroundColor: backgroundcolor,
-      body: SingleChildScrollView(
+      body: const SingleChildScrollView(
         child: Padding(
           padding: EdgeInsets.all(16.0),
           child: Column(

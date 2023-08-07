@@ -12,17 +12,16 @@ import '../Screens/sponsors.dart';
 import '../Widgets/colors_and_fonts.dart';
 
 
-class HiddenDrawerConduction extends StatefulWidget {
-  const HiddenDrawerConduction({super.key});
+class HiddenDrawer extends StatefulWidget {
+  const HiddenDrawer({super.key});
 
-  static final GlobalKey<ScaffoldState> scaffoldKey =
-      GlobalKey<ScaffoldState>();
+  static final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
-  State<HiddenDrawerConduction> createState() => _HiddenDrawerConductionState();
+  State<HiddenDrawer> createState() => _HiddenDrawerState();
 }
 
-class _HiddenDrawerConductionState extends State<HiddenDrawerConduction> {
+class _HiddenDrawerState extends State<HiddenDrawer> {
   List<ScreenHiddenDrawer> _pages = [];
   final myTextStyle = const TextStyle(
     fontWeight: FontWeight.bold,
@@ -31,6 +30,7 @@ class _HiddenDrawerConductionState extends State<HiddenDrawerConduction> {
     fontFamily: headingFont,
   );
   NotificationServices notificationServices = NotificationServices();
+
   @override
   void initState() {
     super.initState();
@@ -47,21 +47,21 @@ class _HiddenDrawerConductionState extends State<HiddenDrawerConduction> {
     _pages = [
       ScreenHiddenDrawer(
         ItemHiddenMenu(
-          name: 'Conduction',
-          baseStyle: myTextStyle,
-          selectedStyle: myTextStyle,
-          colorLineSelected: Colors.deepPurple.shade900,
-        ),
-        const Conduction(),
-      ),
-      ScreenHiddenDrawer(
-        ItemHiddenMenu(
           name: 'About',
           baseStyle: myTextStyle,
           selectedStyle: myTextStyle,
           colorLineSelected: Colors.deepPurple.shade900,
         ),
         const About(),
+      ),
+      ScreenHiddenDrawer(
+        ItemHiddenMenu(
+          name: 'Conduction',
+          baseStyle: myTextStyle,
+          selectedStyle: myTextStyle,
+          colorLineSelected: Colors.deepPurple.shade900,
+        ),
+        const Conduction(),
       ),
       ScreenHiddenDrawer(
         ItemHiddenMenu(
@@ -81,7 +81,7 @@ class _HiddenDrawerConductionState extends State<HiddenDrawerConduction> {
         ),
         const GalleryPage(),
       ),
-      ScreenHiddenDrawer(
+      ScreenHiddenDrawer(      
         ItemHiddenMenu(
           name: 'Testimonials',
           baseStyle: myTextStyle,
@@ -123,7 +123,7 @@ class _HiddenDrawerConductionState extends State<HiddenDrawerConduction> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      key: HiddenDrawerConduction.scaffoldKey,
+      key: HiddenDrawer.scaffoldKey,
       body: HiddenDrawerMenu(
         backgroundColorMenu: drawerBackground,
         screens: _pages,

@@ -10,7 +10,7 @@ class ElevatedContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
-    double screenHeight = MediaQuery.of(context).size.height;
+    // double screenHeight = MediaQuery.of(context).size.height;
     return Container(
       width: screenWidth * 0.45, // Adjust the width as needed
       height: 90, // Adjust the height as needed

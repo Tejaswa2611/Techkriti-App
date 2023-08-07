@@ -22,7 +22,7 @@ class _MessageScreenState extends State<MessageScreen> {
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text("Here is title     ${widget.id}"),
+            Text("Here is title ${widget.id}"),
           ],
         ),
       )

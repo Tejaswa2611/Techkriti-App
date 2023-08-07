@@ -35,7 +35,7 @@ class CustomCard extends StatelessWidget {
               child: Align(
                 alignment: Alignment.bottomCenter,
                 child: Padding(
-                  padding: const EdgeInsets.all(0.0),
+                  padding: const EdgeInsets.all(14.0),
                   child: Text(
                     text,
                     style: const TextStyle(

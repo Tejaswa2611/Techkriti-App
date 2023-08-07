@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:techkriti/Widgets/colors_and_fonts.dart';
 
-class GallaryStaggerd extends StatefulWidget {
-  const GallaryStaggerd({super.key});
+class GalleryStaggerd extends StatefulWidget {
+  const GalleryStaggerd({super.key});
 
   @override
-  State<GallaryStaggerd> createState() => _GallaryStaggerdState();
+  State<GalleryStaggerd> createState() => _GalleryStaggerdState();
 }
 
-class _GallaryStaggerdState extends State<GallaryStaggerd> {
+class _GalleryStaggerdState extends State<GalleryStaggerd> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

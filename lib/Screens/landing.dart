@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:techkriti/Screens/homescreen.dart';
+import 'package:techkriti/Screens/login_page.dart';
+import 'package:techkriti/Screens/register_page.dart';
 import '../Widgets/button.dart';
 import '../widgets/hex_to_color.dart';
 import '../widgets/vertical_write.dart';
@@ -32,13 +35,11 @@ class _LandingPageState extends State<LandingPage> {
             crossAxisAlignment: CrossAxisAlignment.start,
             // mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              SizedBox(height: screenHeight*0.13),
+              SizedBox(height: screenHeight * 0.13),
               SizedBox(
-                height: screenHeight*0.1,
-                child: Image.asset(
-                  'assets/images/TOSC logo.png',
-                  fit: BoxFit.fill
-                ),
+                height: screenHeight * 0.1,
+                child: Image.asset('assets/images/TOSC logo.png',
+                    fit: BoxFit.fill),
               ),
               SizedBox(height: screenHeight * 0.1),
               Padding(
@@ -57,16 +58,58 @@ class _LandingPageState extends State<LandingPage> {
                   ],
                 ),
               ),
-              SizedBox(height: screenHeight * 0.1),
+              const SizedBox(height: 40),
               Padding(
-                padding: EdgeInsets.symmetric(horizontal: screenWidth*0.08),
+                padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.08),
                 child: Center(
                   child: Button(
                     text: 'EXPLORE',
-                    onTap: () {},
+                    onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const HomeScreen(),
+                            ),
+                          );
+                        },
                   ),
                 ),
               ),
+              const SizedBox(height: 10),
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.08),
+                child: Center(
+                  child: Button(
+                    text: 'SIGN UP',
+                     onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const RegistrationPage(),
+                            ),
+                          );
+                        },
+                  ),
+                ),
+              ),
+              const SizedBox(height: 10),
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.08),
+                child: Center(
+                  child: Button(
+                    text: 'SIGN IN',
+                     onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const LoginPage(),
+                            ),
+                          );
+                        },
+                  ),
+                ),
+              ),
+              const SizedBox(height: 10),
             ],
           ),
         ),
