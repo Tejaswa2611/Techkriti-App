@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+// import 'package:techkriti/Widgets/button.dart';
 import 'package:techkriti/providers/user_provider.dart';
 import 'package:techkriti/models/user.dart';
 import 'package:techkriti/Services/auth_services.dart';
-import 'package:techkriti/constants/utils.dart';
+
+import '../Widgets/button.dart';
+// import 'package:techkriti/constants/utils.dart';
 
 class UserDetailsPage extends StatefulWidget {
   const UserDetailsPage({Key? key}) : super(key: key);
@@ -20,13 +23,13 @@ class _UserDetailsPageState extends State<UserDetailsPage> {
   TextEditingController nameController = TextEditingController();
   TextEditingController parentNameController = TextEditingController();
   TextEditingController schoolNameController = TextEditingController();
- 
 
   @override
   void initState() {
     super.initState();
     // Fetch user data from the provider
-    UserProvider userProvider = Provider.of<UserProvider>(context, listen: false);
+    UserProvider userProvider =
+        Provider.of<UserProvider>(context, listen: false);
     user = userProvider.user;
     // Set initial values to the form fields
     nameController.text = user.name;
@@ -59,9 +62,10 @@ class _UserDetailsPageState extends State<UserDetailsPage> {
           _editMode = false;
         });
 
-        showSnackBar(context, 'User details updated successfully.');
+        // showSnackBar(context, 'User details updated successfully.');
       } catch (e) {
-        showSnackBar(context, 'Failed to update user details. Please try again later.');
+        // showSnackBar(
+            // context, 'Failed to update user details. Please try again later.');
       }
     } else {
       // Handle the case where the token is not available
@@ -71,6 +75,12 @@ class _UserDetailsPageState extends State<UserDetailsPage> {
 
   @override
   Widget build(BuildContext context) {
+    final AuthService authService = AuthService();
+
+    void logout() {
+      authService.logout(context);
+    }
+
     return Scaffold(
       appBar: AppBar(
         title: const Text('User Details'),
@@ -118,6 +128,8 @@ class _UserDetailsPageState extends State<UserDetailsPage> {
             ),
             // Add other form fields for user details if needed
             // ...
+          const SizedBox(height: 30,),
+            Button(text: 'Log Out', onTap: logout)
           ],
         ),
       ),

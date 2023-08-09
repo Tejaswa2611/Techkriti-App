@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:techkriti/Screens/admin_page.dart';
+// import 'package:techkriti/Screens/admin_page.dart';
 import 'package:techkriti/Screens/login_page.dart';
 import 'package:techkriti/Services/auth_services.dart';
 import 'package:techkriti/Widgets/button.dart';
 import 'package:techkriti/Widgets/colors_and_fonts.dart';
+import 'package:techkriti/details/details_page.dart';
 import 'package:techkriti/providers/user_provider.dart';
 import '../Widgets/login_text_field.dart';
 
@@ -149,7 +150,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
                     onTap: () {
                        Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => Provider.of<UserProvider>(context).user.token.isNotEmpty ? const AdminPage(): const LoginPage()),
+                        MaterialPageRoute(builder: (context) => Provider.of<UserProvider>(context).user.token.isNotEmpty ? const UserDetailsPage(): const LoginPage()),
                       );
                     },
                     child: const Text(

@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:techkriti/Screens/homescreen.dart';
 import 'package:techkriti/Screens/login_page.dart';
 import 'package:techkriti/Screens/register_page.dart';
 import '../Widgets/button.dart';
+import '../details/details_page.dart';
+import '../providers/user_provider.dart';
 import '../widgets/hex_to_color.dart';
 import '../widgets/vertical_write.dart';
 
@@ -98,14 +101,12 @@ class _LandingPageState extends State<LandingPage> {
                 child: Center(
                   child: Button(
                     text: 'SIGN IN',
-                     onTap: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => const LoginPage(),
-                            ),
-                          );
-                        },
+                    onTap: () {
+                       Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => Provider.of<UserProvider>(context).user.token.isNotEmpty ? const UserDetailsPage(): const LoginPage()),
+                      );
+                    },
                   ),
                 ),
               ),

@@ -2,11 +2,9 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:techkriti/Screens/homescreen.dart';
-// import 'package:techkriti/Screens/landing.dart';
+import 'package:techkriti/Screens/landing.dart';
 import 'package:techkriti/Services/auth_services.dart';
 import 'package:techkriti/providers/user_provider.dart';
-// import 'package:techkriti/testing_firestore.dart';
 
 @pragma('vm:entry-point')
 Future<void> _firebaseMessagingBackgroundHandler(RemoteMessage message) async {
@@ -34,11 +32,12 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   final AuthService authService = AuthService();
 
- @override
+  @override
   void initState() {
     super.initState();
     authService.getUserData(context: context);
   }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -56,7 +55,7 @@ class _MyAppState extends State<MyApp> {
           },
         ),
       ),
-      home: const HomeScreen(),
+      home: const LandingPage(),
     );
   }
 }
@@ -70,5 +69,3 @@ class _MyAppState extends State<MyApp> {
 // Analyse what to store in firebase
 // Notification store
 // Backend start NodeJs
-
-// durgesh tempo
