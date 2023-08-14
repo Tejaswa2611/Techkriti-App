@@ -10,8 +10,10 @@ import '../Screens/about.dart';
 import '../Screens/gallery2.dart';
 import '../Screens/sponsors.dart';
 import '../Widgets/colors_and_fonts.dart';
+import '../Widgets/hex_to_color.dart';
 
 class HiddenDrawerFaq extends StatefulWidget {
+  static const String routeName  = '/faq';
   const HiddenDrawerFaq({super.key});
 
   static final GlobalKey<ScaffoldState> scaffoldKey =
@@ -26,7 +28,7 @@ class _HiddenDrawerFaqState extends State<HiddenDrawerFaq> {
   final myTextStyle = const TextStyle(
     fontWeight: FontWeight.bold,
     fontSize: 16,
-    color: Colors.white,
+    color: Colors.black,
     fontFamily: headingFont,
   );
   NotificationServices notificationServices = NotificationServices();
@@ -50,7 +52,7 @@ class _HiddenDrawerFaqState extends State<HiddenDrawerFaq> {
           name: 'FAQ',
           baseStyle: myTextStyle,
           selectedStyle: myTextStyle,
-          colorLineSelected: Colors.deepPurple.shade900,
+          colorLineSelected: Colors.blue.shade900,
         ),
         const FAQPage(),
       ),
@@ -59,7 +61,7 @@ class _HiddenDrawerFaqState extends State<HiddenDrawerFaq> {
           name: 'About',
           baseStyle: myTextStyle,
           selectedStyle: myTextStyle,
-          colorLineSelected: Colors.deepPurple.shade900,
+          colorLineSelected: Colors.blue.shade900,
         ),
         const About(),
       ),
@@ -68,7 +70,7 @@ class _HiddenDrawerFaqState extends State<HiddenDrawerFaq> {
           name: 'Conduction',
           baseStyle: myTextStyle,
           selectedStyle: myTextStyle,
-          colorLineSelected: Colors.deepPurple.shade900,
+          colorLineSelected: Colors.blue.shade900,
         ),
         const Conduction(),
       ),
@@ -77,7 +79,7 @@ class _HiddenDrawerFaqState extends State<HiddenDrawerFaq> {
           name: 'Prizes',
           baseStyle: myTextStyle,
           selectedStyle: myTextStyle,
-          colorLineSelected: Colors.deepPurple.shade900,
+          colorLineSelected: Colors.blue.shade900,
         ),
         const PrizesPage(),
       ),
@@ -86,7 +88,7 @@ class _HiddenDrawerFaqState extends State<HiddenDrawerFaq> {
           name: 'Gallery',
           baseStyle: myTextStyle,
           selectedStyle: myTextStyle,
-          colorLineSelected: Colors.deepPurple.shade900,
+          colorLineSelected: Colors.blue.shade900,
         ),
         const GalleryPage(),
       ),
@@ -95,7 +97,7 @@ class _HiddenDrawerFaqState extends State<HiddenDrawerFaq> {
           name: 'Testimonials',
           baseStyle: myTextStyle,
           selectedStyle: myTextStyle,
-          colorLineSelected: Colors.deepPurple.shade900,
+          colorLineSelected: Colors.blue.shade900,
         ),
         TestimonialsPage(),
       ),
@@ -104,7 +106,7 @@ class _HiddenDrawerFaqState extends State<HiddenDrawerFaq> {
           name: 'Sponsors',
           baseStyle: myTextStyle,
           selectedStyle: myTextStyle,
-          colorLineSelected: Colors.deepPurple.shade900,
+          colorLineSelected: Colors.blue.shade900,
         ),
         const SponsorsPage(),
       ),
@@ -113,7 +115,7 @@ class _HiddenDrawerFaqState extends State<HiddenDrawerFaq> {
           name: 'Contact Us',
           baseStyle: myTextStyle,
           selectedStyle: myTextStyle,
-          colorLineSelected: Colors.deepPurple.shade900,
+          colorLineSelected: Colors.blue.shade900,
         ),
         const ContactUs(),
       ),
@@ -125,26 +127,26 @@ class _HiddenDrawerFaqState extends State<HiddenDrawerFaq> {
     return Scaffold(
       key: HiddenDrawerFaq.scaffoldKey,
       body: HiddenDrawerMenu(
-        backgroundColorMenu: drawerBackground,
+        backgroundColorMenu: hexToColor('#FAF9F6'),
         screens: _pages,
         initPositionSelected: 0,
         slidePercent: 60,
         styleAutoTittleName:
             const TextStyle(fontSize: 20, fontFamily: headingFont),
-        actionsAppBar: [
-          IconButton(
-            icon: const Icon(Icons.search),
-            onPressed: () {
-              // Add your search functionality here
-            },
-          ),
-          IconButton(
-            icon: const Icon(Icons.notifications),
-            onPressed: () {
-              // Add your notification functionality here
-            },
-          ),
-        ],
+        // actionsAppBar: [
+        //   IconButton(
+        //     icon: const Icon(Icons.search),
+        //     onPressed: () {
+        //       // Add your search functionality here
+        //     },
+        //   ),
+        //   IconButton(
+        //     icon: const Icon(Icons.notifications),
+        //     onPressed: () {
+        //       // Add your notification functionality here
+        //     },
+        //   ),
+        // ],
       ),
     );
   }

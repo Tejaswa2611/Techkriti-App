@@ -108,6 +108,9 @@ flutter:
     - family: heading
       fonts:
         - asset: assets/Fonts/heading/VarelaRound-Regular.ttf
+    - family: sans
+      fonts:
+        - asset: assets/Fonts/Open_Sans/OpenSans-VariableFont_wdth,wght.ttf
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:techkriti/Widgets/colors_and_fonts.dart';
-import '../widgets/basiccard.dart';
+
+import '../Widgets/basiccard.dart';
+// import 'package:techkriti/Widgets/colors_and_fonts.dart';
 
 class ContactUs extends StatefulWidget {
   const ContactUs({super.key});
@@ -15,7 +16,7 @@ class _ContactUsState extends State<ContactUs> {
     final screenHeight = MediaQuery.of(context).size.height;
     // final screenWidth = MediaQuery.of(context).size.width;
     return Scaffold(
-      backgroundColor: backgroundcolor,
+        backgroundColor: Colors.white,
         body: SingleChildScrollView(
           child: Padding(
             padding: const EdgeInsets.all(16.0),
@@ -24,20 +25,26 @@ class _ContactUsState extends State<ContactUs> {
               children: [
                 // SizedBox(height: MediaQuery.of(context).padding.top + 20),
                 const Text(
-                      "Contact Us",
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 30,
-                        fontFamily: 'heading',
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                SizedBox(height: screenHeight*0.03,),
-                const CardTest(),
-                SizedBox(height: screenHeight*0.05,),
-                const CardTest(),
-                SizedBox(height: screenHeight*0.05,),
-                const CardTest(),
+                  "Contact Us",
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 30,
+                    fontFamily: 'heading',
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                SizedBox(
+                  height: screenHeight * 0.03,
+                ),
+                const CardTest(
+                  name: 'John Doe',
+                  post: 'Software Engineer',
+                  phoneNumber: '9761580000',
+                  imagePath: 'assets/images/Simpsons.jpg',
+                ),
+                SizedBox(
+                  height: screenHeight * 0.05,
+                ),
               ],
             ),
           ),

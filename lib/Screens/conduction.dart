@@ -1,3 +1,5 @@
+// ignore_for_file: library_private_types_in_public_api
+
 import 'package:flutter/material.dart';
 import 'package:techkriti/Widgets/colors_and_fonts.dart';
 
@@ -24,7 +26,8 @@ class _ConductionState extends State<Conduction> {
     // final screenHeight = MediaQuery.of(context).size.height;
     // final screenWidth = MediaQuery.of(context).size.width;
     return Scaffold(
-      backgroundColor: const Color.fromRGBO(35, 35, 47, 1.0),
+      // backgroundColor: const Color.fromRGBO(35, 35, 47, 1.0),
+      backgroundColor: Colors.white,//hexToColor('#FAF9F6'),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
@@ -54,7 +57,7 @@ class _ConductionState extends State<Conduction> {
                     border: Border(
                       bottom: BorderSide(
                         color: _selectedTabIndex == index
-                            ? Colors.deepPurple[400]!
+                            ? Colors.blue.shade900
                             : Colors.transparent,
                         width: 1.0,
                       ),
@@ -64,9 +67,8 @@ class _ConductionState extends State<Conduction> {
                     phases[index],
                     style: TextStyle(
                       color: _selectedTabIndex == index
-                          ? Colors.deepPurple[
-                              400] // Change the color for selected tab
-                          : Colors.white,
+                          ? Colors.blue.shade900 // Change the color for selected tab
+                          : Colors.black,
                       fontWeight: FontWeight.bold,
                       fontSize: 16,
                       fontFamily: headingFont,
@@ -88,19 +90,19 @@ class _ConductionState extends State<Conduction> {
                 buildPhaseContent(
                   'PHASE 1',
                   'Phase 1 will be conducted on 18th December. This round consists of an online exam which will consist of objective type questions on aptitude, reasoning and general awareness. Participants will participate individually in this phase. The duration of the exam will be of 60 mins. Top 100 students from each pool B and C will be invited to get an opportunity for Phase II.',
-                  'assets/images/paper.png',
+                  'assets/images/phase 1.jpg',
                 ),
                 // const SizedBox(height: 20),
                 buildPhaseContent(
                   'PHASE 1 RESULTS',
                   'Phase 1 results will be announced in December. The results will be made available on the website. The e-Certificates of participation will be available on the TOSC website after the result declaration.',
-                  'assets/images/result.png',
+                  'assets/images/phase 1 results.png',
                 ),
                 // const SizedBox(height: 20),
                 buildPhaseContent(
                   'PHASE 2',
                   'This phase will be conducted offline at IIT Kanpur. It will comprise variety of puzzles and competitive activities which will not only decide the winner but also help the participants explore and enhance their cognitive and analytical skills. Also, there will be exhibitions, technical workshops and talks (by some renowned personalities) as a part of Phase 2.',
-                  'assets/images/laptop.png',
+                  'assets/images/phase 2.jpg',
                 ),
                 // const SizedBox(height: 20),
                 buildPhaseContent(
@@ -109,7 +111,7 @@ class _ConductionState extends State<Conduction> {
                       '2- Clicking the Register here button on the right would lead you to a form filling which would enable you to create an account.\n'
                       '3- Signing in to that account and paying the registration fees would complete the process.\n'
                       '4- Click here for the detailed instructions\n',
-                  'assets/images/registration.jpeg',
+                  'assets/images/Registration2.jpg',
                 ),
                 // const SizedBox(height: 20),
                 buildPhaseContent(
@@ -120,7 +122,7 @@ class _ConductionState extends State<Conduction> {
                       'Pool C: Class 11th -12th\n'
                       '1- Top 100 participants from each Pool B and C, selected on the basis of their performance in phase 1 will be given the opportunity to compete for phase 2.\n'
                       '2- Champions for Pool A will be declared on the basis of phase 1 only.\n',
-                  'assets/images/selection.png',
+                  'assets/images/Selection process.jpg',
                 ),
                 // const SizedBox(height: 20),
               ],
@@ -139,8 +141,8 @@ class _ConductionState extends State<Conduction> {
       padding: const EdgeInsets.symmetric(horizontal: 20),
       child: Container(
         alignment: Alignment.center,
-        height: screenHeight - 115,
-        color: const Color.fromRGBO(35, 35, 47, 1.0),
+        height: screenHeight - 95,
+        color:  Colors.white,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -148,10 +150,10 @@ class _ConductionState extends State<Conduction> {
               width: screenWidth,
               child: Text(
                 phaseTitle,
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: screenHeight * 0.03,
-                  fontFamily: 'heading',
+                style: const TextStyle(
+                  color: Colors.black,
+                  fontSize: 18,
+                  fontFamily: 'sans',
                   fontWeight: FontWeight.bold,
                 ),
                 textAlign: TextAlign.center,
@@ -167,10 +169,10 @@ class _ConductionState extends State<Conduction> {
             const SizedBox(height: 16),
             Text(
               content,
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: screenHeight * 0.025,
-                fontFamily: textFont,
+              style: const TextStyle(
+                color: Colors.black,
+                fontSize: 15,
+                fontFamily: 'sans',
               ),
               textAlign: TextAlign.center,
             ),
@@ -181,7 +183,7 @@ class _ConductionState extends State<Conduction> {
   }
 
   void scrollToPhase(int phaseIndex) {
-    final double screenHeight = MediaQuery.of(context).size.height - 115;
+    final double screenHeight = MediaQuery.of(context).size.height - 95;
     final double scrollPosition = screenHeight * phaseIndex;
     _scrollController.animateTo(
       scrollPosition,

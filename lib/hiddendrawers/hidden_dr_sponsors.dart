@@ -12,6 +12,7 @@ import '../Screens/sponsors.dart';
 import '../Widgets/colors_and_fonts.dart';
 
 class HiddenDrawerSponsers extends StatefulWidget {
+  static const String routeName  = '/sponsors';
   const HiddenDrawerSponsers({super.key});
 
   static final GlobalKey<ScaffoldState> scaffoldKey =
@@ -26,7 +27,7 @@ class _HiddenDrawerSponsersState extends State<HiddenDrawerSponsers> {
   final myTextStyle = const TextStyle(
     fontWeight: FontWeight.bold,
     fontSize: 16,
-    color: Colors.white,
+    color: Colors.black,
     fontFamily: headingFont,
   );
   NotificationServices notificationServices = NotificationServices();
@@ -50,7 +51,7 @@ class _HiddenDrawerSponsersState extends State<HiddenDrawerSponsers> {
           name: 'Sponsors',
           baseStyle: myTextStyle,
           selectedStyle: myTextStyle,
-          colorLineSelected: Colors.deepPurple.shade900,
+          colorLineSelected: Colors.blue.shade900,
         ),
         const SponsorsPage(),
       ),
@@ -59,7 +60,7 @@ class _HiddenDrawerSponsersState extends State<HiddenDrawerSponsers> {
           name: 'About',
           baseStyle: myTextStyle,
           selectedStyle: myTextStyle,
-          colorLineSelected: Colors.deepPurple.shade900,
+          colorLineSelected: Colors.blue.shade900,
         ),
         const About(),
       ),
@@ -68,7 +69,7 @@ class _HiddenDrawerSponsersState extends State<HiddenDrawerSponsers> {
           name: 'Conduction',
           baseStyle: myTextStyle,
           selectedStyle: myTextStyle,
-          colorLineSelected: Colors.deepPurple.shade900,
+          colorLineSelected: Colors.blue.shade900,
         ),
         const Conduction(),
       ),
@@ -77,7 +78,7 @@ class _HiddenDrawerSponsersState extends State<HiddenDrawerSponsers> {
           name: 'Prizes',
           baseStyle: myTextStyle,
           selectedStyle: myTextStyle,
-          colorLineSelected: Colors.deepPurple.shade900,
+          colorLineSelected: Colors.blue.shade900,
         ),
         const PrizesPage(),
       ),
@@ -86,7 +87,7 @@ class _HiddenDrawerSponsersState extends State<HiddenDrawerSponsers> {
           name: 'Gallery',
           baseStyle: myTextStyle,
           selectedStyle: myTextStyle,
-          colorLineSelected: Colors.deepPurple.shade900,
+          colorLineSelected: Colors.blue.shade900,
         ),
         const GalleryPage(),
       ),
@@ -95,7 +96,7 @@ class _HiddenDrawerSponsersState extends State<HiddenDrawerSponsers> {
           name: 'Testimonials',
           baseStyle: myTextStyle,
           selectedStyle: myTextStyle,
-          colorLineSelected: Colors.deepPurple.shade900,
+          colorLineSelected: Colors.blue.shade900,
         ),
         TestimonialsPage(),
       ),
@@ -104,7 +105,7 @@ class _HiddenDrawerSponsersState extends State<HiddenDrawerSponsers> {
           name: 'FAQ',
           baseStyle: myTextStyle,
           selectedStyle: myTextStyle,
-          colorLineSelected: Colors.deepPurple.shade900,
+          colorLineSelected: Colors.blue.shade900,
         ),
         const FAQPage(),
       ),
@@ -113,7 +114,7 @@ class _HiddenDrawerSponsersState extends State<HiddenDrawerSponsers> {
           name: 'Contact Us',
           baseStyle: myTextStyle,
           selectedStyle: myTextStyle,
-          colorLineSelected: Colors.deepPurple.shade900,
+          colorLineSelected: Colors.blue.shade900,
         ),
         const ContactUs(),
       ),
@@ -131,20 +132,20 @@ class _HiddenDrawerSponsersState extends State<HiddenDrawerSponsers> {
         slidePercent: 60,
         styleAutoTittleName:
             const TextStyle(fontSize: 20, fontFamily: headingFont),
-        actionsAppBar: [
-          IconButton(
-            icon: const Icon(Icons.search),
-            onPressed: () {
-              // Add your search functionality here
-            },
-          ),
-          IconButton(
-            icon: const Icon(Icons.notifications),
-            onPressed: () {
-              // Add your notification functionality here
-            },
-          ),
-        ],
+        // actionsAppBar: [
+        //   IconButton(
+        //     icon: const Icon(Icons.search),
+        //     onPressed: () {
+        //       // Add your search functionality here
+        //     },
+        //   ),
+        //   IconButton(
+        //     icon: const Icon(Icons.notifications),
+        //     onPressed: () {
+        //       // Add your notification functionality here
+        //     },
+        //   ),
+        // ],
       ),
     );
   }

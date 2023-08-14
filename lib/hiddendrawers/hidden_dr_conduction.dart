@@ -10,9 +10,10 @@ import '../Screens/about.dart';
 import '../Screens/gallery2.dart';
 import '../Screens/sponsors.dart';
 import '../Widgets/colors_and_fonts.dart';
-
+import '../Widgets/hex_to_color.dart';
 
 class HiddenDrawerConduction extends StatefulWidget {
+  static const String routeName = '/conduction';
   const HiddenDrawerConduction({super.key});
 
   static final GlobalKey<ScaffoldState> scaffoldKey =
@@ -27,7 +28,7 @@ class _HiddenDrawerConductionState extends State<HiddenDrawerConduction> {
   final myTextStyle = const TextStyle(
     fontWeight: FontWeight.bold,
     fontSize: 16,
-    color: Colors.white,
+    color: Colors.black,
     fontFamily: headingFont,
   );
   NotificationServices notificationServices = NotificationServices();
@@ -50,7 +51,7 @@ class _HiddenDrawerConductionState extends State<HiddenDrawerConduction> {
           name: 'Conduction',
           baseStyle: myTextStyle,
           selectedStyle: myTextStyle,
-          colorLineSelected: Colors.deepPurple.shade900,
+          colorLineSelected: Colors.blue.shade900,
         ),
         const Conduction(),
       ),
@@ -59,7 +60,7 @@ class _HiddenDrawerConductionState extends State<HiddenDrawerConduction> {
           name: 'About',
           baseStyle: myTextStyle,
           selectedStyle: myTextStyle,
-          colorLineSelected: Colors.deepPurple.shade900,
+          colorLineSelected: Colors.blue.shade900,
         ),
         const About(),
       ),
@@ -68,7 +69,7 @@ class _HiddenDrawerConductionState extends State<HiddenDrawerConduction> {
           name: 'Prizes',
           baseStyle: myTextStyle,
           selectedStyle: myTextStyle,
-          colorLineSelected: Colors.deepPurple.shade900,
+          colorLineSelected: Colors.blue.shade900,
         ),
         const PrizesPage(),
       ),
@@ -77,7 +78,7 @@ class _HiddenDrawerConductionState extends State<HiddenDrawerConduction> {
           name: 'Gallery',
           baseStyle: myTextStyle,
           selectedStyle: myTextStyle,
-          colorLineSelected: Colors.deepPurple.shade900,
+          colorLineSelected: Colors.blue.shade900,
         ),
         const GalleryPage(),
       ),
@@ -86,7 +87,7 @@ class _HiddenDrawerConductionState extends State<HiddenDrawerConduction> {
           name: 'Testimonials',
           baseStyle: myTextStyle,
           selectedStyle: myTextStyle,
-          colorLineSelected: Colors.deepPurple.shade900,
+          colorLineSelected: Colors.blue.shade900,
         ),
         TestimonialsPage(),
       ),
@@ -95,7 +96,7 @@ class _HiddenDrawerConductionState extends State<HiddenDrawerConduction> {
           name: 'Sponsors',
           baseStyle: myTextStyle,
           selectedStyle: myTextStyle,
-          colorLineSelected: Colors.deepPurple.shade900,
+          colorLineSelected: Colors.blue.shade900,
         ),
         const SponsorsPage(),
       ),
@@ -104,7 +105,7 @@ class _HiddenDrawerConductionState extends State<HiddenDrawerConduction> {
           name: 'FAQ',
           baseStyle: myTextStyle,
           selectedStyle: myTextStyle,
-          colorLineSelected: Colors.deepPurple.shade900,
+          colorLineSelected: Colors.blue.shade900,
         ),
         const FAQPage(),
       ),
@@ -113,37 +114,46 @@ class _HiddenDrawerConductionState extends State<HiddenDrawerConduction> {
           name: 'Contact Us',
           baseStyle: myTextStyle,
           selectedStyle: myTextStyle,
-          colorLineSelected: Colors.deepPurple.shade900,
+          colorLineSelected: Colors.blue.shade900,
         ),
         const ContactUs(),
       ),
     ];
   }
-
+// lll
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       key: HiddenDrawerConduction.scaffoldKey,
       body: HiddenDrawerMenu(
-        backgroundColorMenu: drawerBackground,
+        backgroundColorMenu: hexToColor('#FAF9F6'),
         screens: _pages,
         initPositionSelected: 0,
         slidePercent: 60,
+        withAutoTittleName: true,
+        // isTitleCentered: true,
+        // tittleAppBar: Align(
+        //   alignment: Alignment.topLeft,
+        //   child: Image.asset(
+        //     'assets/images/TOSC_white.png',
+        //     height: 50,
+        //   ),
+        // ),
         styleAutoTittleName:
             const TextStyle(fontSize: 20, fontFamily: headingFont),
-        actionsAppBar: [
-          IconButton(
-            icon: const Icon(Icons.search),
-            onPressed: () {
-              // Add your search functionality here
-            },
-          ),
-          IconButton(
-            icon: const Icon(Icons.notifications),
-            onPressed: () {
-              // Add your notification functionality here
-            },
-          ),
+        actionsAppBar: const [  
+          // IconButton(
+          //   icon: const Icon(Icons.search),
+          //   onPressed: () {
+          //     // Add your search functionality here
+          //   },
+          // ),
+          // IconButton(
+          //   icon: const Icon(Icons.notifications),
+          //   onPressed: () {
+          //     // Add your notification functionality here
+          //   },
+          // ),
         ],
       ),
     );

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:techkriti/Widgets/colors_and_fonts.dart';
-
+// import 'package:techkriti/Widgets/colors_and_fonts.dart';
 import '../Widgets/FaqItem.dart';
 
 class FAQPage extends StatelessWidget {
@@ -10,9 +9,9 @@ class FAQPage extends StatelessWidget {
   Widget build(BuildContext context) {
     // final screenHeight = MediaQuery.of(context).size.height;
     // final screenWidth = MediaQuery.of(context).size.width;
-    return Scaffold(
-      backgroundColor: backgroundcolor,
-      body: const SingleChildScrollView(
+    return  const Scaffold(
+      backgroundColor: Colors.white,
+      body: SingleChildScrollView(
         child: Padding(
           padding: EdgeInsets.all(16.0),
           child: Column(
@@ -22,7 +21,7 @@ class FAQPage extends StatelessWidget {
                 child: Text(
                   "FAQ",
                   style: TextStyle(
-                    color: Colors.white,
+                    color: Colors.black,
                     fontSize: 30,
                     fontFamily: 'heading',
                     fontWeight: FontWeight.bold,

@@ -15,7 +15,8 @@ class _AboutState extends State<About> {
   Widget build(BuildContext context) {
     // final screenHeight = MediaQuery.of(context).size.height;
     return Scaffold(
-      backgroundColor: backgroundcolor,
+      backgroundColor:  Colors.white,//hexToColor('#E0FFFF'),
+      // backgroundColor: hexToColor('#E0FFFF'),
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -23,7 +24,7 @@ class _AboutState extends State<About> {
             Padding(
               padding: const EdgeInsets.all(16.0),
               child: Image.asset(
-                'assets/images/Techkriti_logo_transparent.webp',
+                'assets/images/blacktechkriti.png',
                 height: 170,
               ),
             ),
@@ -37,21 +38,23 @@ class _AboutState extends State<About> {
                   const SizedBox(height: 10),
                   buildDescription(
                       "Techkriti is an annual international technical and entrepreneurial festival organized by the students of IIT Kanpur. The festival is held over four days every March, attracting participants from every corner of the country as well as from abroad, comprising a total footfall of over 60,000 from all over India and abroad."),
-                  const SizedBox(height: 20),
-                  Image.asset(
-                    'assets/images/TOSC logo.png',
-                    height: 150,
+                  // const SizedBox(height: 20),
+                  Center(
+                    child: Image.asset(                              
+                      'assets/images/TOSC_black.png',
+                      height: 120,
+                    ),
                   ),
                   const SizedBox(height: 20),
                   buildHeading("What is TOSC?"),
                   const SizedBox(height: 10),
                   buildDescription(
-                      "TOSC (Techkriti Open School Championship) is a dedicated team of tech enthusiasts at IIT Kanpur who provide technical assistance and online support for various events, workshops, and initiatives conducted by Techkriti."),
+                      "Techkriti, IIT Kanpur organises an annual competition for 6th to 12th grade students. Students compete individually in two phases of the competition. Phase 1 is a 60-minute online test that students can take from home. The test covers Mental Ability, Aptitude, and Puzzles. TOSC has three pools: Pool A (6th, 7th, 8th), Pool B (9th and 10th), and Pool C (11th and 12th). Pool A champions will be decided after phase 1. The top 100 competitors from each Pool B and C will go to the final round, where they will be assessed on extra tasks to determine the winners. Phase 2 will include talks,  exhibitions, and technical workshops. No previous knowledge is required to participate, the only prerequisite is enthusiasm and confidence."),
                   const SizedBox(height: 40),
                   buildHeading("Why TOSC?"),
                   const SizedBox(height: 10),
                   buildDescription(
-                      "TOSC plays a crucial role in ensuring smooth functioning of Techkriti by providing technical expertise, managing online platforms, and assisting participants and organizers throughout the festival."),
+                      "Our mission is to strengthen and cultivate the talent of our nation at the grassroots level, which serves our sole motive. Through a series of events involving mental aptitude, logic, and scrutiny, it seeks to provide school students a platform to gain fundamental experience and knowledge, to exercise coordination skills, and to think out of the box while providing solutions never thought before."),
                   const SizedBox(height: 40),
                 ],
               ),
@@ -64,20 +67,20 @@ class _AboutState extends State<About> {
 
   Widget buildHeading(String text) {
     var redStyle = TextStyle(
-      color: hexToColor("#BFACE0"),
+      color: hexToColor("#4169E1"),
       fontFamily: headingFont,
       fontSize: 24,
       fontWeight: FontWeight.bold,
     );
 
     const defaultStyle = TextStyle(
-      color: Colors.white,
+      color: Colors.black,
       fontFamily: headingFont,
       fontSize: 24,
       fontWeight: FontWeight.bold,
     );
 
-    const separator = 'TOSC';
+    const separator = 'TOSC?';
     final separatorIndex = text.indexOf(separator);
 
     if (separatorIndex != -1) {
@@ -106,14 +109,14 @@ class _AboutState extends State<About> {
   }
   Widget buildTech(String text) {
     var redStyle = TextStyle(
-      color: hexToColor("#BFACE0"),
+      color: hexToColor("#4169E1"),
       fontFamily: headingFont,
       fontSize: 24,
       fontWeight: FontWeight.bold,
     );
 
     const defaultStyle = TextStyle(
-      color: Colors.white,
+      color: Colors.black,
       fontFamily: headingFont,
       fontSize: 24,
       fontWeight: FontWeight.bold,
@@ -152,7 +155,7 @@ class _AboutState extends State<About> {
     return Text(
       text,
       style: const TextStyle(
-        color: Colors.white,
+        color: Colors.black,
         fontSize: 18,
         fontFamily: textFont,
       ),

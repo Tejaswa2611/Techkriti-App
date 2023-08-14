@@ -1,15 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
-import 'package:techkriti/Screens/homescreen.dart';
 import 'package:techkriti/Screens/login_page.dart';
 import 'package:techkriti/Screens/register_page.dart';
+import 'package:techkriti/hiddendrawers/hidden_dr_homescreen.dart';
+import '../Services/notification_services.dart';
 import '../Widgets/button.dart';
-import '../details/details_page.dart';
-import '../providers/user_provider.dart';
 import '../widgets/hex_to_color.dart';
 import '../widgets/vertical_write.dart';
 
 class LandingPage extends StatefulWidget {
+  static const String routename = 'landing-page';
   const LandingPage({Key? key}) : super(key: key);
 
   @override
@@ -17,6 +16,24 @@ class LandingPage extends StatefulWidget {
 }
 
 class _LandingPageState extends State<LandingPage> {
+  NotificationServices notificationServices = NotificationServices();
+  @override
+  void initState() {
+    super.initState();
+    super.initState();
+    super.initState();
+    notificationServices.requestNotificationPermission();
+    notificationServices.firebaseInit(context);
+    // notificationServices.isTokenRefresh();
+    notificationServices.setupInteractMessage(context);
+    notificationServices.getDeviceToken().then(
+      (value) {
+        debugPrint('device token');
+        debugPrint(value);
+      },
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     final screenHeight = MediaQuery.of(context).size.height;
@@ -38,26 +55,28 @@ class _LandingPageState extends State<LandingPage> {
             crossAxisAlignment: CrossAxisAlignment.start,
             // mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              SizedBox(height: screenHeight * 0.13),
+              const SizedBox(height: 77),
               SizedBox(
-                height: screenHeight * 0.1,
-                child: Image.asset('assets/images/TOSC logo.png',
-                    fit: BoxFit.fill),
+                height: 77,
+                child: Image.asset(
+                  'assets/images/TOSC_white.png',
+                  // fit: BoxFit.fill,
+                ),
               ),
-              SizedBox(height: screenHeight * 0.1),
+              const SizedBox(height: 60),
               Padding(
                 padding: const EdgeInsets.only(left: 15.0),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     CustomText(text: 'TECHKRITI', textColor: textColor),
-                    SizedBox(height: screenHeight * 0.015),
+                    const SizedBox(height: 9),
                     CustomText(text: 'OPEN', textColor: textColor),
-                    SizedBox(height: screenHeight * 0.015),
+                    const SizedBox(height: 9),
                     CustomText(text: 'SCHOOL', textColor: textColor),
-                    SizedBox(height: screenHeight * 0.015),
+                    const SizedBox(height: 9),
                     CustomText(text: 'CHAMPIONSHIP', textColor: textColor),
-                    SizedBox(height: screenHeight * 0.015),
+                    const SizedBox(height: 9),
                   ],
                 ),
               ),
@@ -67,14 +86,8 @@ class _LandingPageState extends State<LandingPage> {
                 child: Center(
                   child: Button(
                     text: 'EXPLORE',
-                    onTap: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => const HomeScreen(),
-                            ),
-                          );
-                        },
+                    onTap: () => Navigator.pushNamed(
+                        context, HiddenDrawerHomeScreen.routeName),
                   ),
                 ),
               ),
@@ -84,14 +97,8 @@ class _LandingPageState extends State<LandingPage> {
                 child: Center(
                   child: Button(
                     text: 'SIGN UP',
-                     onTap: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => const RegistrationPage(),
-                            ),
-                          );
-                        },
+                    onTap: () => Navigator.pushNamed(
+                        context, RegistrationPage.routeName),
                   ),
                 ),
               ),
@@ -101,12 +108,8 @@ class _LandingPageState extends State<LandingPage> {
                 child: Center(
                   child: Button(
                     text: 'SIGN IN',
-                    onTap: () {
-                       Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => Provider.of<UserProvider>(context).user.token.isNotEmpty ? const UserDetailsPage(): const LoginPage()),
-                      );
-                    },
+                    onTap: () =>
+                        Navigator.pushNamed(context, LoginPage.routeName),
                   ),
                 ),
               ),

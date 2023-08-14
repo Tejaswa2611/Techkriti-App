@@ -10,6 +10,7 @@ import 'package:techkriti/providers/user_provider.dart';
 import '../Widgets/login_text_field.dart';
 
 class RegistrationPage extends StatefulWidget {
+  static const String routeName  = '/register';
   const RegistrationPage({Key? key}) : super(key: key);
 
   @override
@@ -37,9 +38,9 @@ class _RegistrationPageState extends State<RegistrationPage> {
 
   @override
   Widget build(BuildContext context) {
-    final screenHeight = MediaQuery.of(context).size.height;
+    // final screenHeight = MediaQuery.of(context).size.height;
     return Scaffold(
-      backgroundColor: backgroundcolor,
+      backgroundColor: Colors.white,
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(14.0),
@@ -47,15 +48,15 @@ class _RegistrationPageState extends State<RegistrationPage> {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              SizedBox(height: screenHeight * 0.04),
+              const SizedBox(height: 24),
               // logo
-              Image.asset('assets/images/TOSC logo.png'),
+              Image.asset('assets/images/TOSC_black.png',height: 125,),
 
-              SizedBox(height: screenHeight * 0.06),
+              const SizedBox(height: 24),
 
               // welcome, register now!
               Text(
-                'Welcome! Register now!',
+                'Welcome! Register now!}',
                 style: TextStyle(
                   color: Colors.grey[600],
                   fontSize: 16,
@@ -63,7 +64,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
                 ),
               ),
 
-              SizedBox(height: screenHeight * 0.02),
+              const SizedBox(height: 12),
 
               // name textfield
               Padding(
@@ -122,7 +123,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
                   ),
                 ],
               ),
-              SizedBox(height: screenHeight * 0.025),
+              const SizedBox(height: 15),
               // register button
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 12.0),
@@ -132,7 +133,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
                 ),
               ),
 
-              SizedBox(height: screenHeight * 0.03),
+              const SizedBox(height: 18),
 
               // already a member? sign in instead
               Row(

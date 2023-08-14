@@ -66,7 +66,7 @@ class _PrizesPageState extends State<PrizesPage> {
     // final screenHeight = MediaQuery.of(context).size.height;
     // final screenWidth = MediaQuery.of(context).size.width;
     return Scaffold(
-      backgroundColor: backgroundcolor,
+      backgroundColor: Colors.white,
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -77,7 +77,7 @@ class _PrizesPageState extends State<PrizesPage> {
             const Text(
               "Prizes",
               style: TextStyle(
-                color: Colors.white,
+                color: Colors.black,
                 fontSize: 30,
                 fontFamily: headingFont,
                 fontWeight: FontWeight.bold,
@@ -103,23 +103,14 @@ class _PrizesPageState extends State<PrizesPage> {
                 '• The school $details with maximum participants will be presented the Best School Award.',
                 style: const TextStyle(
                   fontSize: 16.0,
-                  color: Colors.white,
+                  color: Colors.black,
                   fontFamily: textFont,
                   fontWeight: FontWeight.bold,
                   letterSpacing: 1.1,
                 ),
               ),
             ),
-            // details != null
-            //     ? Text(
-            //         'Conduction: $details',
-            //         style:  TextStyle(
-            //           fontWeight: FontWeight.bold,
-            //           fontSize: fontsize!= null ? fontsize!.toDouble() : 16,
-            //           color: Colors.white,
-            //         ),
-            //       )
-            //     : const CircularProgressIndicator(),
+            
           ],
         ),
       ),

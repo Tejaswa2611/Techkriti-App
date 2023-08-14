@@ -6,7 +6,9 @@ import 'package:techkriti/Widgets/colors_and_fonts.dart';
 import '../Widgets/login_square_tile.dart';
 import '../Widgets/login_text_field.dart';
 import 'package:techkriti/Services/auth_services.dart';
+
 class LoginPage extends StatefulWidget {
+  static const String routeName  = '/login';
   const LoginPage({super.key});
 
   @override
@@ -30,10 +32,10 @@ class _LoginPageState extends State<LoginPage> {
 
   @override
   Widget build(BuildContext context) {
-    final screenHeight = MediaQuery.of(context).size.height;
+    // final screenHeight = MediaQuery.of(context).size.height;
     // final screenWidth = MediaQuery.of(context).size.width;
     return Scaffold(
-      backgroundColor: backgroundcolor,
+      backgroundColor: Colors.white,
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(14.0),
@@ -41,11 +43,14 @@ class _LoginPageState extends State<LoginPage> {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              SizedBox(height: screenHeight * 0.04),
+              const SizedBox(height: 24),
               // logo
-              Image.asset('assets/images/TOSC logo.png'),
+              Image.asset(
+                'assets/images/TOSC_black.png',
+                height: 125,
+              ),
 
-              SizedBox(height: screenHeight * 0.07),
+              const SizedBox(height: 42),
 
               // welcome back, you've been missed!
               Text(
@@ -57,7 +62,7 @@ class _LoginPageState extends State<LoginPage> {
                 ),
               ),
 
-              SizedBox(height: screenHeight * 0.02),
+              const SizedBox(height: 12),
 
               // username textfield
               Padding(
@@ -97,7 +102,7 @@ class _LoginPageState extends State<LoginPage> {
                 ],
               ),
 
-              SizedBox(height: screenHeight * 0.03),
+              const SizedBox(height: 18),
 
               // sign in button
               Padding(
@@ -110,7 +115,7 @@ class _LoginPageState extends State<LoginPage> {
                 ),
               ),
 
-              SizedBox(height: screenHeight * 0.03),
+              const SizedBox(height: 18),
 
               // or continue with
               Padding(
@@ -143,7 +148,7 @@ class _LoginPageState extends State<LoginPage> {
                 ),
               ),
 
-              SizedBox(height: screenHeight * 0.025),
+              const SizedBox(height: 15),
 
               // google + apple sign in buttons
               const Row(
@@ -159,7 +164,7 @@ class _LoginPageState extends State<LoginPage> {
                 ],
               ),
 
-              SizedBox(height: screenHeight * 0.04),
+              const SizedBox(height: 15),
 
               // not a member? register now
               Row(
@@ -177,7 +182,8 @@ class _LoginPageState extends State<LoginPage> {
                     onTap: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => const RegistrationPage()),
+                        MaterialPageRoute(
+                            builder: (context) => const RegistrationPage()),
                       );
                     },
                     child: const Text(

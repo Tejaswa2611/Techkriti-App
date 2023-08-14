@@ -1,5 +1,3 @@
-
-
 import 'package:flutter/material.dart';
 
 class SponsorsPage extends StatefulWidget {
@@ -12,6 +10,17 @@ class SponsorsPage extends StatefulWidget {
 class _SponsorsPageState extends State<SponsorsPage> {
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return const Scaffold(
+      body: Center(
+        child: Text(
+          "Coming Soon",
+          style: TextStyle(
+            fontFamily: 'heading',
+            fontSize: 25,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+      ),
+    );
   }
 }

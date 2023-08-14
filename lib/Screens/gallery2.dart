@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:techkriti/Widgets/colors_and_fonts.dart';
+// import 'package:techkriti/Widgets/colors_and_fonts.dart';
+import 'package:techkriti/Widgets/hex_to_color.dart';
 
 class GalleryPage extends StatefulWidget {
   const GalleryPage({Key? key}) : super(key: key);
@@ -57,7 +58,7 @@ class _GalleryPageState extends State<GalleryPage>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: backgroundcolor,
+      backgroundColor: hexToColor('#FFFFF0'),
       body: Padding(
         padding: const EdgeInsets.all(3.0),
         child: Stack(
@@ -74,7 +75,7 @@ class _GalleryPageState extends State<GalleryPage>
                 child: Padding(
                   padding: const EdgeInsets.all(4.0),
                   child: Container(
-                    color : Colors.black12,
+                    color : hexToColor('#DCDCDC'),
                     padding: const EdgeInsets.all(6),
                     child: Image.asset(
                       'assets/images/${index + 103}.jpg',
@@ -88,7 +89,7 @@ class _GalleryPageState extends State<GalleryPage>
               GestureDetector(
                 onTap: _closePhotoPopup,
                 child: Container(
-                  color: Colors.black54,
+                  color: Colors.transparent,
                   child: Center(
                     child: ScaleTransition(
                       scale: _scaleAnimation,

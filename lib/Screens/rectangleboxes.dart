@@ -34,7 +34,7 @@ class ElevatedContainer extends StatelessWidget {
             Image.asset(
               assetPath,
               width: screenWidth * 0.2, // Adjust the image size as needed
-              height: 90, // Adjust the image size as needed
+              height: 60, // Adjust the image size as needed
             ),
             const SizedBox(height: 10),
             Expanded(

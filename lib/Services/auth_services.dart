@@ -1,15 +1,15 @@
-import 'dart:convert';
+// ignore_for_file: use_build_context_synchronously
 
+import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:techkriti/Screens/homescreen.dart';
-// import 'package:techkriti/Screens/admin_page.dart';
+import 'package:techkriti/Screens/landing.dart';
+import 'package:techkriti/Screens/login_page.dart';
 import 'package:techkriti/constants/error_handling.dart';
 import 'package:techkriti/constants/utils.dart';
 import 'package:techkriti/details/details_page.dart';
 import 'package:techkriti/models/user.dart';
-// import 'package:techkriti/models/user.dart';
 import 'package:http/http.dart' as http;
 import 'package:techkriti/providers/user_provider.dart';
 import '../constants/global_variables.dart';
@@ -42,7 +42,6 @@ class AuthService {
           'Content-Type': 'application/json; charset=UTF-8',
         },
       );
-      // ignore: use_build_context_synchronously
       httpErrorHandle(
         response: res,
         context: context,
@@ -51,11 +50,7 @@ class AuthService {
             context,
             'Account created! Login with the same credentials',
           );
-          // _messangerKey.currentState?.showSnackBar(
-          //   const SnackBar(
-          //     content: Text('Account created! Login with the same credentials'),
-          //   ),
-          // );
+        Navigator.popAndPushNamed(context, LoginPage.routeName);
         },
       );
     } catch (e) {
@@ -87,20 +82,14 @@ class AuthService {
       );
 
       debugPrint(res.body);
-      // ignore: use_build_context_synchronously
       httpErrorHandle(
         response: res,
         context: context,
         onSucess: () async {
           SharedPreferences prefs = await SharedPreferences.getInstance();
-          // ignore: use_build_context_synchronously
           Provider.of<UserProvider>(context, listen: false).setUser(res.body);
           await prefs.setString('x-auth-token', jsonDecode(res.body)['token']);
-          // ignore: use_build_context_synchronously
-          Navigator.push(
-            context,
-            MaterialPageRoute(builder: (context) => const UserDetailsPage()),
-          );
+          Navigator.pushNamed(context, UserDetailsPage.routeName);
         },
       );
     } catch (e) {
@@ -144,7 +133,6 @@ class AuthService {
 
         if (userRes.body.isNotEmpty) {
           // Check if the response body is not empty
-          // ignore: use_build_context_synchronously
           var userProvider = Provider.of<UserProvider>(context, listen: false);
           userProvider.setUser(userRes.body);
         }
@@ -182,11 +170,8 @@ class AuthService {
       SharedPreferences sharedPreferences =
           await SharedPreferences.getInstance();
       await sharedPreferences.setString('x-auth-token', '');
-      // ignore: use_build_context_synchronously
-      Navigator.push(
-        context,
-        MaterialPageRoute(builder: (context) => const HomeScreen()),
-      );
+      Navigator.pushNamedAndRemoveUntil(context, LandingPage.routename, (route) => false);
+      showSnackBar(context, "Successfully Logged out");
     } catch (e) {
       // _messangerKey.currentState?.showSnackBar(
       //   SnackBar(

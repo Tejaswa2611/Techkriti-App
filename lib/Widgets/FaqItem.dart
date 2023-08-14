@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:techkriti/Widgets/colors_and_fonts.dart';
 
 class FAQItem extends StatefulWidget {
   final String question;
@@ -18,7 +19,7 @@ class _FAQItemState extends State<FAQItem> {
   Widget build(BuildContext context) {
     return Card(
       elevation: 2.0,
-      color: Colors.transparent,
+      color: backgroundcolor,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(8.0),
       ),

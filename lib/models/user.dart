@@ -3,6 +3,7 @@ import 'dart:convert';
 // import 'dart:convert';
 
 // ignore_for_file: public_member_api_docs, sort_constructors_first
+  
 class User
 {
   final String id;
@@ -50,13 +51,14 @@ class User
       'pool':pool,
       'gender': gender,
       'dob': dob?.toIso8601String(),
+      // 'dob': formatDate(dob!)
             
     };
   }
 
   factory User.fromMap(Map<String, dynamic> map) {
     return User(
-      id: map['_ id'] ?? '',
+      id: map['_id'] ?? '',
       name: map['name'] ?? '',
       password: map['password'] ?? '',
       email: map['email'] ?? '',

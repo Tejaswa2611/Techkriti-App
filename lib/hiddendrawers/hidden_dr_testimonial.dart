@@ -12,6 +12,7 @@ import '../Screens/sponsors.dart';
 import '../Widgets/colors_and_fonts.dart';
 
 class HiddenDrawerTestimonial extends StatefulWidget {
+  static const String routeName  = '/testimonial';
   const HiddenDrawerTestimonial({super.key});
 
   static final GlobalKey<ScaffoldState> scaffoldKey =
@@ -27,7 +28,7 @@ class _HiddenDrawerTestimonialState extends State<HiddenDrawerTestimonial> {
   final myTextStyle = const TextStyle(
     fontWeight: FontWeight.bold,
     fontSize: 16,
-    color: Colors.white,
+    color: Colors.black,
     fontFamily: headingFont,
   );
   NotificationServices notificationServices = NotificationServices();
@@ -51,7 +52,7 @@ class _HiddenDrawerTestimonialState extends State<HiddenDrawerTestimonial> {
           name: 'Testimonials',
           baseStyle: myTextStyle,
           selectedStyle: myTextStyle,
-          colorLineSelected: Colors.deepPurple.shade900,
+          colorLineSelected: Colors.blue.shade900,
         ),
         TestimonialsPage(),
       ),
@@ -60,7 +61,7 @@ class _HiddenDrawerTestimonialState extends State<HiddenDrawerTestimonial> {
           name: 'About',
           baseStyle: myTextStyle,
           selectedStyle: myTextStyle,
-          colorLineSelected: Colors.deepPurple.shade900,
+          colorLineSelected: Colors.blue.shade900,
         ),
         const About(),
       ),
@@ -69,7 +70,7 @@ class _HiddenDrawerTestimonialState extends State<HiddenDrawerTestimonial> {
           name: 'Conduction',
           baseStyle: myTextStyle,
           selectedStyle: myTextStyle,
-          colorLineSelected: Colors.deepPurple.shade900,
+          colorLineSelected: Colors.blue.shade900,
         ),
         const Conduction(),
       ),
@@ -78,7 +79,7 @@ class _HiddenDrawerTestimonialState extends State<HiddenDrawerTestimonial> {
           name: 'Prizes',
           baseStyle: myTextStyle,
           selectedStyle: myTextStyle,
-          colorLineSelected: Colors.deepPurple.shade900,
+          colorLineSelected: Colors.blue.shade900,
         ),
         const PrizesPage(),
       ),
@@ -87,7 +88,7 @@ class _HiddenDrawerTestimonialState extends State<HiddenDrawerTestimonial> {
           name: 'Gallery',
           baseStyle: myTextStyle,
           selectedStyle: myTextStyle,
-          colorLineSelected: Colors.deepPurple.shade900,
+          colorLineSelected: Colors.blue.shade900,
         ),
         const GalleryPage(),
       ),
@@ -96,7 +97,7 @@ class _HiddenDrawerTestimonialState extends State<HiddenDrawerTestimonial> {
           name: 'Sponsors',
           baseStyle: myTextStyle,
           selectedStyle: myTextStyle,
-          colorLineSelected: Colors.deepPurple.shade900,
+          colorLineSelected: Colors.blue.shade900,
         ),
         const SponsorsPage(),
       ),
@@ -105,7 +106,7 @@ class _HiddenDrawerTestimonialState extends State<HiddenDrawerTestimonial> {
           name: 'FAQ',
           baseStyle: myTextStyle,
           selectedStyle: myTextStyle,
-          colorLineSelected: Colors.deepPurple.shade900,
+          colorLineSelected: Colors.blue.shade900,
         ),
         const FAQPage(),
       ),
@@ -114,7 +115,7 @@ class _HiddenDrawerTestimonialState extends State<HiddenDrawerTestimonial> {
           name: 'Contact Us',
           baseStyle: myTextStyle,
           selectedStyle: myTextStyle,
-          colorLineSelected: Colors.deepPurple.shade900,
+          colorLineSelected: Colors.blue.shade900,
         ),
         const ContactUs(),
       ),
@@ -132,20 +133,20 @@ class _HiddenDrawerTestimonialState extends State<HiddenDrawerTestimonial> {
         slidePercent: 60,
         styleAutoTittleName:
             const TextStyle(fontSize: 20, fontFamily: headingFont),
-        actionsAppBar: [
-          IconButton(
-            icon: const Icon(Icons.search),
-            onPressed: () {
-              // Add your search functionality here
-            },
-          ),
-          IconButton(
-            icon: const Icon(Icons.notifications),
-            onPressed: () {
-              // Add your notification functionality here
-            },
-          ),
-        ],
+        // actionsAppBar: [
+        //   IconButton(
+        //     icon: const Icon(Icons.search),
+        //     onPressed: () {
+        //       // Add your search functionality here
+        //     },
+        //   ),
+        //   IconButton(
+        //     icon: const Icon(Icons.notifications),
+        //     onPressed: () {
+        //       // Add your notification functionality here
+        //     },
+        //   ),
+        // ],
       ),
     );
   }

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:techkriti/Widgets/colors_and_fonts.dart';
+// import 'package:techkriti/Widgets/colors_and_fonts.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 
 class TestimonialsPage extends StatelessWidget {
@@ -16,7 +16,7 @@ class TestimonialsPage extends StatelessWidget {
     // final screenHeight = MediaQuery.of(context).size.height;
     // final screenWidth = MediaQuery.of(context).size.width;
     return Scaffold(
-      backgroundColor: backgroundcolor,
+      backgroundColor: Colors.white,
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(16.0),
@@ -26,7 +26,7 @@ class TestimonialsPage extends StatelessWidget {
               const Text(
                 "Testimonials",
                 style: TextStyle(
-                  color: Colors.white,
+                  color: Colors.black,
                   fontSize: 30,
                   fontFamily: 'heading',
                   fontWeight: FontWeight.bold,
@@ -43,7 +43,7 @@ class TestimonialsPage extends StatelessWidget {
                       Text(
                         'Video ${index + 1} Testimonial',
                         style: const TextStyle(
-                          color: Colors.white,
+                          color: Colors.black,
                           fontSize: 18,
                           fontWeight: FontWeight.bold,
                         ),
