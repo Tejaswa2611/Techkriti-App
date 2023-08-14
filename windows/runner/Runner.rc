@@ -90,12 +90,12 @@ BEGIN
         BLOCK "040904e4"
         BEGIN
             VALUE "CompanyName", "com.techkriti.org" "\0"
-            VALUE "FileDescription", "techkriti" "\0"
+            VALUE "FileDescription", "TOSC" "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
-            VALUE "InternalName", "techkriti" "\0"
+            VALUE "InternalName", "TOSC" "\0"
             VALUE "LegalCopyright", "Copyright (C) 2023 com.techkriti.org. All rights reserved." "\0"
             VALUE "OriginalFilename", "techkriti.exe" "\0"
-            VALUE "ProductName", "techkriti" "\0"
+            VALUE "ProductName", "TOSC" "\0"
             VALUE "ProductVersion", VERSION_AS_STRING "\0"
         END
     END

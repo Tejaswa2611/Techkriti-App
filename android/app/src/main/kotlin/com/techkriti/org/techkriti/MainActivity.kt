@@ -1,4 +1,4 @@
-package com.techkriti.org.techkriti
+package com.Techkriti.app
 
 import io.flutter.embedding.android.FlutterActivity
 

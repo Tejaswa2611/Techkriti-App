@@ -1,33 +1,33 @@
 {
   "project_info": {
-    "project_number": "396396508040",
-    "project_id": "techkriti-2ccb1",
-    "storage_bucket": "techkriti-2ccb1.appspot.com"
+    "project_number": "168411117784",
+    "project_id": "tosc-52a2f",
+    "storage_bucket": "tosc-52a2f.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:396396508040:android:8e5b2b6b86dd3fea9a003d",
+        "mobilesdk_app_id": "1:168411117784:android:60616b2ffcdc7a8822bfad",
         "android_client_info": {
-          "package_name": "com.techkriti.org.techkriti"
+          "package_name": "com.Techkriti.app"
         }
       },
       "oauth_client": [
         {
-          "client_id": "396396508040-l6dugb68g5koquhg3qc9ku6gp7r28go3.apps.googleusercontent.com",
+          "client_id": "168411117784-fbat8r64uiee8lkjtmc4qnh0j8jbs32v.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDXpFAhJtG6Z8T81iJmT7y_Vy2GvT-NRFc"
+          "current_key": "AIzaSyCq6QV0NAsgrv0_z33ler5TN_fMF5COD-c"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "396396508040-l6dugb68g5koquhg3qc9ku6gp7r28go3.apps.googleusercontent.com",
+              "client_id": "168411117784-fbat8r64uiee8lkjtmc4qnh0j8jbs32v.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
