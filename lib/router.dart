@@ -3,6 +3,7 @@ import 'package:techkriti/Screens/homescreen.dart';
 import 'package:techkriti/Screens/landing.dart';
 import 'package:techkriti/Screens/login_page.dart';
 import 'package:techkriti/Screens/register_page.dart';
+import 'package:techkriti/Screens/forgotpassword.dart';
 import 'package:techkriti/details/details_page.dart';
 import 'package:techkriti/hiddendrawers/hidden_dr_conduction.dart';
 import 'package:techkriti/hiddendrawers/hidden_dr_contact.dart';
@@ -87,6 +88,16 @@ Route<dynamic> generateRoute(RouteSettings routeSettings) {
         settings: routeSettings,
         builder: (_) => const HiddenDrawerHomeScreen(),
       );
+    case ForgotPasswordScreen.routeName:
+      return MaterialPageRoute(
+        settings: routeSettings,
+        builder: (_) => ForgotPasswordScreen(),
+      );
+    // case ResetPasswordScreen.routeName:
+    //   return MaterialPageRoute(
+    //     settings: routeSettings,
+    //     builder: (_) => const ResetPasswordScreen(),
+    //   );
     default:
       return MaterialPageRoute(
         settings: routeSettings,

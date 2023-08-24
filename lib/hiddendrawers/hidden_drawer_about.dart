@@ -10,6 +10,7 @@ import 'package:techkriti/Screens/testimonial.dart';
 import 'package:techkriti/Services/notification_services.dart';
 import '../Screens/about.dart';
 import '../Screens/gallery2.dart';
+import '../Screens/homescreen.dart';
 import '../Screens/sponsors.dart';
 import '../Widgets/colors_and_fonts.dart';
 import '../Widgets/hex_to_color.dart';
@@ -57,6 +58,15 @@ class _HiddenDrawerState extends State<HiddenDrawer> {
           colorLineSelected: Colors.blue.shade900,
         ),
         const About(),
+      ),
+      ScreenHiddenDrawer(
+        ItemHiddenMenu(
+          name: 'Home',
+          baseStyle: myTextStyle,
+          selectedStyle: myTextStyle,
+          colorLineSelected: Colors.blue.shade900,
+        ),
+        const HomeScreen(),
       ),
       ScreenHiddenDrawer(
         ItemHiddenMenu(

@@ -15,6 +15,8 @@ import '../Services/notification_services.dart';
 import '../Widgets/carouselcard.dart';
 import '../hiddendrawers/hidden_dr_faq.dart';
 
+String? selectedImageUrl;
+
 class HomeScreen extends StatefulWidget {
   static const String routeName = '/homescreen';
   const HomeScreen({super.key});
@@ -29,6 +31,7 @@ class _HomeScreenState extends State<HomeScreen> {
   late String imageUrl3;
   late String imageUrl4;
   late String imageUrl5;
+
   NotificationServices notificationServices = NotificationServices();
   final storage = FirebaseStorage.instance;
 
@@ -171,36 +174,66 @@ class _HomeScreenState extends State<HomeScreen> {
                 //     fit: BoxFit.fill,
                 //   ),
                 // ),
-                Material(
-                  borderRadius: BorderRadius.circular(10),
-                  child: CachedNetworkImage(
-                    imageUrl: imageUrl1,
-                    fit: BoxFit.fill,
-                    placeholder: (context, url) =>
-                        const CircularProgressIndicator(),
-                    errorWidget: (context, url, error) => CustomCard2(
-                      image: const AssetImage('assets/images/black.jpg'),
-                      onTap: () {},
-                      text: '',
+                // Material(
+                //   borderRadius: BorderRadius.circular(10),
+                //   child: CachedNetworkImage(
+                //     imageUrl: imageUrl1,
+                //     fit: BoxFit.fill,
+                //     placeholder: (context, url) =>
+                //         const CircularProgressIndicator(),
+                //     errorWidget: (context, url, error) => CustomCard2(
+                //       image: const AssetImage('assets/images/black.jpg'),
+                //       onTap: () {},
+                //       text: '',
+                //     ),
+                //     // height: 300,
+                //   ),
+                // ),
+                GestureDetector(
+                  onTap: () {
+                    setState(() {
+                      selectedImageUrl = imageUrl1;
+                    });
+                    _showImagePopup(context);
+                  },
+                  child: Material(
+                    borderRadius: BorderRadius.circular(10),
+                    child: CachedNetworkImage(
+                      imageUrl: imageUrl1,
+                      fit: BoxFit.fill,
+                      placeholder: (context, url) =>
+                          const CircularProgressIndicator(),
+                      errorWidget: (context, url, error) => CustomCard2(
+                        image: const AssetImage('assets/images/black.jpg'),
+                        onTap: () {},
+                        text: '',
+                      ),
                     ),
-                    // height: 300,
                   ),
                 ),
-                Material(
-                  borderRadius: BorderRadius.circular(10),
-                  child: CachedNetworkImage(
-                    imageUrl: imageUrl2,
-                    fit: BoxFit.fill,
-                    placeholder: (context, url) =>
-                        const CircularProgressIndicator(),
-                    errorWidget: (context, url, error) => CustomCard2(
-                      image: const AssetImage('assets/images/black.jpg'),
-                      onTap: () {},
-                      text: '',
+                GestureDetector(
+                  onTap: () {
+                    setState(() {
+                      selectedImageUrl = imageUrl2;
+                    });
+                    _showImagePopup(context);
+                  },
+                  child: Material(
+                    borderRadius: BorderRadius.circular(10),
+                    child: CachedNetworkImage(
+                      imageUrl: imageUrl2,
+                      fit: BoxFit.fill,
+                      placeholder: (context, url) =>
+                          const CircularProgressIndicator(),
+                      errorWidget: (context, url, error) => CustomCard2(
+                        image: const AssetImage('assets/images/black.jpg'),
+                        onTap: () {},
+                        text: '',
+                      ),
                     ),
-                    // height: 300,
                   ),
                 ),
+                
                 Material(
                   borderRadius: BorderRadius.circular(10),
                   child: CachedNetworkImage(
@@ -409,4 +442,23 @@ _launchWebsite() async {
   } else {
     throw 'Could not launch $url';
   }
+}
+
+void _showImagePopup(BuildContext context) {
+  showDialog(
+    context: context,
+    builder: (BuildContext context) {
+      return Dialog(
+        child: GestureDetector(
+          onTap: () {
+            Navigator.pop(context); // Close the dialog when tapped
+          },
+          child: SizedBox(
+            width: MediaQuery.of(context).size.width,
+            child: Image.network(selectedImageUrl!),
+          ),
+        ),
+      );
+    },
+  );
 }

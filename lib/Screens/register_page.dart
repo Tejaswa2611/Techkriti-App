@@ -5,12 +5,15 @@ import 'package:techkriti/Screens/login_page.dart';
 import 'package:techkriti/Services/auth_services.dart';
 import 'package:techkriti/Widgets/button.dart';
 import 'package:techkriti/Widgets/colors_and_fonts.dart';
+import 'package:techkriti/constants/utils.dart';
 import 'package:techkriti/details/details_page.dart';
 import 'package:techkriti/providers/user_provider.dart';
 import '../Widgets/login_text_field.dart';
 
+bool _isLoading = false;
+
 class RegistrationPage extends StatefulWidget {
-  static const String routeName  = '/register';
+  static const String routeName = '/register';
   const RegistrationPage({Key? key}) : super(key: key);
 
   @override
@@ -22,19 +25,25 @@ class _RegistrationPageState extends State<RegistrationPage> {
   final nameController = TextEditingController();
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
+  final phoneController = TextEditingController();
   // final confirmPasswordController = TextEditingController();
   final AuthService authService = AuthService();
 
   // register user method
-  void signUpUser() {
+  void signUpUser() async {
     authService.signUpUser(
       context: context,
       email: emailController.text,
       password: passwordController.text,
       name: nameController.text,
+      phone: phoneController.text,
+      setLoading: (isLoading) {
+        setState(() {
+          _isLoading = isLoading;
+        });
+      },
     );
   }
-
 
   @override
   Widget build(BuildContext context) {
@@ -50,13 +59,16 @@ class _RegistrationPageState extends State<RegistrationPage> {
             children: [
               const SizedBox(height: 24),
               // logo
-              Image.asset('assets/images/TOSC_black.png',height: 125,),
+              Image.asset(
+                'assets/images/TOSC_black.png',
+                height: 125,
+              ),
 
               const SizedBox(height: 24),
 
               // welcome, register now!
               Text(
-                'Welcome! Register now!}',
+                'Welcome! Register now!',
                 style: TextStyle(
                   color: Colors.grey[600],
                   fontSize: 16,
@@ -87,6 +99,15 @@ class _RegistrationPageState extends State<RegistrationPage> {
                   obscureText: false,
                 ),
               ),
+              const SizedBox(height: 10),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                child: MyTextField(
+                  controller: phoneController,
+                  hintText: 'Phone No.',
+                  obscureText: false,
+                ),
+              ),
 
               const SizedBox(height: 10),
 
@@ -114,27 +135,40 @@ class _RegistrationPageState extends State<RegistrationPage> {
 
               // SizedBox(height: screenHeight * 0.03),
 
-              Row(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                  Text(
-                    'Forgot Password?',
-                    style: TextStyle(color: Colors.grey[600]),
-                  ),
-                ],
-              ),
+              // Row(
+              //   mainAxisAlignment: MainAxisAlignment.end,
+              //   children: [
+              //     Text(
+              //       'Forgot Password?',
+              //       style: TextStyle(color: Colors.grey[600]),
+              //     ),
+              //   ],
+              // ),
               const SizedBox(height: 15),
               // register button
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 12.0),
-                child: Button(
-                  text: 'REGISTER',
-                  onTap: signUpUser,
-                ),
+                child: _isLoading
+                    ? () {
+                        debugPrint('isLoading');
+                        return const CircularProgressIndicator(
+                            color: Colors.black);
+                      }() // Show loading indicator
+                    : Button(
+                        text: 'REGISTER',
+                        onTap: signUpUser,
+                      ),
               ),
 
-              const SizedBox(height: 18),
+              // Padding(
+              //   padding: const EdgeInsets.symmetric(horizontal: 12.0),
+              //   child: Button(
+              //     text: 'REGISTER',
+              //     onTap: signUpUser,
+              //   ),
+              // ),
 
+              const SizedBox(height: 18),
               // already a member? sign in instead
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -149,10 +183,19 @@ class _RegistrationPageState extends State<RegistrationPage> {
                   const SizedBox(width: 4),
                   GestureDetector(
                     onTap: () {
-                       Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => Provider.of<UserProvider>(context).user.token.isNotEmpty ? const UserDetailsPage(): const LoginPage()),
-                      );
+                      try {
+                        Navigator.pushReplacementNamed(
+                          context,
+                          Provider.of<UserProvider>(context, listen: false)
+                                  .user
+                                  .token
+                                  .isNotEmpty
+                              ? UserDetailsPage.routeName
+                              : LoginPage.routeName,
+                        );
+                      } catch (e) {
+                        showSnackBar(context, e.toString());
+                      }
                     },
                     child: const Text(
                       'Sign in',

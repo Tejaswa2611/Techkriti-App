@@ -6,7 +6,9 @@ import 'package:techkriti/Screens/landing.dart';
 import 'package:techkriti/Services/auth_services.dart';
 import 'package:techkriti/providers/user_provider.dart';
 import 'package:techkriti/router.dart';
+import 'package:upgrader/upgrader.dart';
 
+import 'Widgets/hex_to_color.dart';
 import 'details/details_page.dart';
 
 @pragma('vm:entry-point')
@@ -55,8 +57,9 @@ class _MyAppState extends State<MyApp> {
           titleTextStyle: const TextStyle(color: Colors.white),
           // color: hexToColor('#F9CB12'),// tosc yello
           // color: hexToColor('#00FFFF'), // Cyan
-          color: Colors.blue.shade900, // DarkBlue
+          // color: Colors.blue.shade900, // DarkBlue
           // color: hexToColor('#87CEEB'), // LightBlue
+          color: hexToColor('#0B1D21'), // DarkGreen
           iconTheme: const IconThemeData(color: Colors.white),
         ),
         pageTransitionsTheme: const PageTransitionsTheme(
@@ -67,9 +70,19 @@ class _MyAppState extends State<MyApp> {
         ),
       ),
       onGenerateRoute: (settings) => generateRoute(settings),
-      home: Provider.of<UserProvider>(context).user.token.isNotEmpty
-          ? const UserDetailsPage()
-          : const LandingPage(),
+      home: UpgradeAlert(
+        upgrader: Upgrader(
+          durationUntilAlertAgain: const Duration(hours: 2),
+          dialogStyle: UpgradeDialogStyle.cupertino,
+          canDismissDialog: false,
+          shouldPopScope: () => false,
+          showIgnore: false,
+          showLater: false,
+        ),
+        child: Provider.of<UserProvider>(context).user.token.isNotEmpty
+            ? const UserDetailsPage()
+            : const LandingPage(),
+      ),
     );
   }
 }

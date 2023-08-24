@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:techkriti/Screens/register_page.dart';
+import 'package:techkriti/Screens/forgotpassword.dart';
 import 'package:techkriti/Widgets/button.dart';
 import 'package:techkriti/Widgets/colors_and_fonts.dart';
 // import 'package:techkriti/hidden_drawer.dart';
@@ -7,8 +8,10 @@ import '../Widgets/login_square_tile.dart';
 import '../Widgets/login_text_field.dart';
 import 'package:techkriti/Services/auth_services.dart';
 
+bool _isLoading = false;
+
 class LoginPage extends StatefulWidget {
-  static const String routeName  = '/login';
+  static const String routeName = '/login';
   const LoginPage({super.key});
 
   @override
@@ -27,6 +30,11 @@ class _LoginPageState extends State<LoginPage> {
       context: context,
       email: usernameController.text,
       password: passwordController.text,
+      setLoading: (isLoading) {
+        setState(() {
+          _isLoading = isLoading;
+        });
+      },
     );
   }
 
@@ -92,11 +100,16 @@ class _LoginPageState extends State<LoginPage> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
-                  Text(
-                    'Forgot Password?',
-                    style: TextStyle(
-                      color: Colors.grey[600],
-                      fontFamily: headingFont,
+                  InkWell(
+                    onTap:(){
+                      Navigator.pushNamed(context, ForgotPasswordScreen.routeName);
+                    },
+                    child: Text(
+                      'Forgot Password?',
+                      style: TextStyle(
+                        color: Colors.grey[600],
+                        fontFamily: headingFont,
+                      ),
                     ),
                   ),
                 ],
@@ -107,62 +120,64 @@ class _LoginPageState extends State<LoginPage> {
               // sign in button
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 12.0),
-                child: Button(
-                  text: 'SIGN IN',
-                  onTap: () {
-                    signInUser();
-                  }, //Null,
-                ),
+                child: _isLoading
+                    ? const CircularProgressIndicator(color: Colors.black,)
+                    : Button(
+                        text: 'SIGN IN',
+                        onTap: () {
+                          signInUser();
+                        }, //Null,
+                      ),
               ),
 
               const SizedBox(height: 18),
 
               // or continue with
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 25.0),
-                child: Row(
-                  children: [
-                    Expanded(
-                      child: Divider(
-                        thickness: 0.5,
-                        color: Colors.grey[400],
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 10.0),
-                      child: Text(
-                        'Or continue with',
-                        style: TextStyle(
-                          color: Colors.grey[700],
-                          fontFamily: headingFont,
-                        ),
-                      ),
-                    ),
-                    Expanded(
-                      child: Divider(
-                        thickness: 0.5,
-                        color: Colors.grey[400],
-                      ),
-                    ),
-                  ],
-                ),
-              ),
+              // Padding(
+              //   padding: const EdgeInsets.symmetric(horizontal: 25.0),
+              //   child: Row(
+              //     children: [
+              //       Expanded(
+              //         child: Divider(
+              //           thickness: 0.5,
+              //           color: Colors.grey[400],
+              //         ),
+              //       ),
+              //       Padding(
+              //         padding: const EdgeInsets.symmetric(horizontal: 10.0),
+              //         child: Text(
+              //           'Or continue with',
+              //           style: TextStyle(
+              //             color: Colors.grey[700],
+              //             fontFamily: headingFont,
+              //           ),
+              //         ),
+              //       ),
+              //       Expanded(
+              //         child: Divider(
+              //           thickness: 0.5,
+              //           color: Colors.grey[400],
+              //         ),
+              //       ),
+              //     ],
+              //   ),
+              // ),
 
               const SizedBox(height: 15),
 
               // google + apple sign in buttons
-              const Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  // google button
-                  SquareTile(imagePath: 'assets/images/google.png'),
+              // const Row(
+              //   mainAxisAlignment: MainAxisAlignment.center,
+              //   children: [
+              //     // google button
+              //     SquareTile(imagePath: 'assets/images/google.png'),
 
-                  SizedBox(width: 25),
+              //     SizedBox(width: 25),
 
-                  // apple button
-                  SquareTile(imagePath: 'assets/images/apple.png')
-                ],
-              ),
+              //     // apple button
+              //     SquareTile(imagePath: 'assets/images/apple.png')
+              //   ],
+              // ),
 
               const SizedBox(height: 15),
 
@@ -180,11 +195,7 @@ class _LoginPageState extends State<LoginPage> {
                   const SizedBox(width: 4),
                   InkWell(
                     onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => const RegistrationPage()),
-                      );
+                      Navigator.pushReplacementNamed(context, RegistrationPage.routeName);
                     },
                     child: const Text(
                       'Register now',

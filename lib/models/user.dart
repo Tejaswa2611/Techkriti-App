@@ -30,7 +30,7 @@ class User
     this.parentName = '',
     this.schoolName = '',
     this.schoolAddress = '',
-    this.phone = '',
+    required this.phone,
     this.grade= '',
     this.pool = '',
     this.gender = '',

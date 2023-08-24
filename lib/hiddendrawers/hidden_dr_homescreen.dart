@@ -174,6 +174,21 @@ class _HiddenDrawerHomeScreenState extends State<HiddenDrawerHomeScreen> {
                   : Navigator.pushNamed(context, LoginPage.routeName);
             },
           ),
+
+          // Consumer<UserProvider>(
+          //   builder: (context, userProvider, _) {
+          //     return IconButton(
+          //       icon: const Icon(Icons.account_circle_sharp),
+          //       onPressed: () {
+          //         if (userProvider.user.token.isNotEmpty) {
+          //           Navigator.pushNamed(context, UserDetailsPage.routeName);
+          //         } else {
+          //           Navigator.pushNamed(context, LoginPage.routeName);
+          //         }
+          //       },
+          //     );
+          //   },
+          // ),
         ],
       ),
     );

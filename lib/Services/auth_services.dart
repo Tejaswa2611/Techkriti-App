@@ -1,5 +1,4 @@
 // ignore_for_file: use_build_context_synchronously
-
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -14,8 +13,6 @@ import 'package:http/http.dart' as http;
 import 'package:techkriti/providers/user_provider.dart';
 import '../constants/global_variables.dart';
 
-// final _messangerKey = GlobalKey<ScaffoldMessengerState>();
-
 class AuthService {
   // SIGN UP USER
 
@@ -24,13 +21,17 @@ class AuthService {
     required String email,
     required String password,
     required String name,
+    required String phone,
+    required Function(bool) setLoading,
   }) async {
     try {
+      setLoading(true);
       User user = User(
         id: '',
         name: name,
         email: email,
         password: password,
+        phone: phone,
         token: '',
         // parentName:
       );
@@ -50,16 +51,13 @@ class AuthService {
             context,
             'Account created! Login with the same credentials',
           );
-        Navigator.popAndPushNamed(context, LoginPage.routeName);
+          Navigator.popAndPushNamed(context, LoginPage.routeName);
         },
       );
     } catch (e) {
       showSnackBar(context, e.toString());
-      // _messangerKey.currentState?.showSnackBar(
-      //   SnackBar(
-      //     content: Text(e.toString()),
-      //   ),
-      // );
+    } finally {
+      setLoading(false);
     }
   }
 
@@ -68,8 +66,10 @@ class AuthService {
     required BuildContext context,
     required String email,
     required String password,
+    required Function(bool) setLoading,
   }) async {
     try {
+      setLoading(true);
       http.Response res = await http.post(
         Uri.parse('$uri/api/signin'),
         body: jsonEncode({
@@ -94,12 +94,9 @@ class AuthService {
       );
     } catch (e) {
       debugPrint(e.toString());
-      // _messangerKey.currentState?.showSnackBar(
-      //   SnackBar(
-      //     content: Text(e.toString()),
-      //   ),
-      // );
       showSnackBar(context, e.toString());
+    } finally {
+      setLoading(false);
     }
   }
 
@@ -138,11 +135,6 @@ class AuthService {
         }
       }
     } catch (e) {
-      // _messangerKey.currentState?.showSnackBar(
-      //   SnackBar(
-      //     content: Text(e.toString()),
-      //   ),
-      // );
       showSnackBar(context, e.toString());
     }
   }
@@ -170,15 +162,36 @@ class AuthService {
       SharedPreferences sharedPreferences =
           await SharedPreferences.getInstance();
       await sharedPreferences.setString('x-auth-token', '');
-      Navigator.pushNamedAndRemoveUntil(context, LandingPage.routename, (route) => false);
+      Navigator.pushNamedAndRemoveUntil(
+          context, LandingPage.routename, (route) => false);
       showSnackBar(context, "Successfully Logged out");
     } catch (e) {
-      // _messangerKey.currentState?.showSnackBar(
-      //   SnackBar(
-      //     content: Text(e.toString()),
-      //   ),
-      // );
       showSnackBar(context, e.toString());
     }
   }
+
+  // FORGOT PASSWORD
+  Future<bool> forgotPassword(String email) async {
+    try {
+      http.Response res = await http.post(
+        Uri.parse('$uri/api/forgot-password'),
+        body: jsonEncode({'email': email}),
+        headers: <String, String>{
+          'Content-Type': 'application/json; charset=UTF-8',
+        },
+      );
+
+      var response = jsonDecode(res.body);
+      if (response.containsKey('success')) {
+        return response['success'] as bool;
+      } else {
+        debugPrint('Response does not contain "success" key');
+        return false;
+      }
+    } catch (e) {
+      debugPrint('Error: $e');
+      return false;
+    }
+  }
+
 }

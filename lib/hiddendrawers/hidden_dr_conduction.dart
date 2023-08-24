@@ -8,6 +8,7 @@ import 'package:techkriti/Screens/testimonial.dart';
 import 'package:techkriti/Services/notification_services.dart';
 import '../Screens/about.dart';
 import '../Screens/gallery2.dart';
+import '../Screens/homescreen.dart';
 import '../Screens/sponsors.dart';
 import '../Widgets/colors_and_fonts.dart';
 import '../Widgets/hex_to_color.dart';
@@ -54,6 +55,15 @@ class _HiddenDrawerConductionState extends State<HiddenDrawerConduction> {
           colorLineSelected: Colors.blue.shade900,
         ),
         const Conduction(),
+      ), 
+      ScreenHiddenDrawer(
+        ItemHiddenMenu(
+          name: 'Home',
+          baseStyle: myTextStyle,
+          selectedStyle: myTextStyle,
+          colorLineSelected: Colors.blue.shade900,
+        ),
+        const HomeScreen(),
       ),
       ScreenHiddenDrawer(
         ItemHiddenMenu(
@@ -120,7 +130,7 @@ class _HiddenDrawerConductionState extends State<HiddenDrawerConduction> {
       ),
     ];
   }
-// lll
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
