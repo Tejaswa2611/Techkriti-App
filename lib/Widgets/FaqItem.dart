@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:techkriti/Widgets/colors_and_fonts.dart';
+import 'package:techkriti/constants/colors_and_fonts.dart';
 
 class FAQItem extends StatefulWidget {
   final String question;

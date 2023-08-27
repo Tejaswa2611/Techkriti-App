@@ -271,7 +271,7 @@ import 'package:techkriti/providers/user_provider.dart';
 import 'package:techkriti/models/user.dart';
 import 'package:techkriti/Services/auth_services.dart';
 import '../Widgets/button.dart';
-import '../Widgets/colors_and_fonts.dart';
+import '../constants/colors_and_fonts.dart';
 import '../constants/utils.dart';
 
 class UserDetailsPage extends StatefulWidget {
@@ -472,7 +472,43 @@ class _UserDetailsPageState extends State<UserDetailsPage> {
                       )
                     : null,
               ),
-              const SizedBox(height: 30),
+              if (!_editMode)
+                Button(
+                  text: "Edit your Details",
+                  onTap: () {
+                    setState(
+                      () {
+                        _editMode = true;
+                      },
+                    );
+                  },
+                ),
+              if (_editMode)
+                Button(
+                  text: "Save your details",
+                  onTap: () {
+                    _saveDetails();
+                    _editMode = false;
+                  },
+                ),
+//  if (_editMode)
+//             IconButton(
+//               icon: const Icon(Icons.save),
+//               onPressed: _saveDetails,
+//             ),
+//           IconButton(
+//             icon: Icon(_editMode ? Icons.cancel : Icons.edit),
+//             onPressed: () {
+//               setState(
+//                 () {
+//                   _editMode = !_editMode;
+//                 },
+//               );
+//             },
+//           ),
+//         ],
+//       ),
+              const SizedBox(height: 15),
               Button(text: 'Explore TOSC', onTap: navigateToHomescreen),
               const SizedBox(height: 15),
               ButtonRed(text: 'Log Out', onTap: logout),

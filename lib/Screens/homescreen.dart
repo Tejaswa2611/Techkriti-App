@@ -1,7 +1,10 @@
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
+import 'package:photo_view/photo_view.dart';
+import 'package:techkriti/Screens/pastpapers.dart';
+import 'package:techkriti/Widgets/timelinecards.dart';
+import 'package:techkriti/constants/colors_and_fonts.dart';
 import 'package:techkriti/hiddendrawers/hidden_dr_conduction.dart';
 import 'package:techkriti/hiddendrawers/hidden_dr_contact.dart';
 import 'package:techkriti/hiddendrawers/hidden_dr_gallery.dart';
@@ -13,6 +16,7 @@ import 'package:url_launcher/url_launcher.dart';
 import '../Screens/rectangleboxes.dart';
 import '../Services/notification_services.dart';
 import '../Widgets/carouselcard.dart';
+import '../constants/utils.dart';
 import '../hiddendrawers/hidden_dr_faq.dart';
 
 String? selectedImageUrl;
@@ -101,7 +105,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   text: 'Conduction',
                 ),
                 CustomCard3(
-                  imagePath: 'assets/images/AboutUs.jpg',
+                  imagePath: 'assets/images/AboutUs2.jpg',
                   onTap: () =>
                       Navigator.pushNamed(context, HiddenDrawer.routeName),
                   text: 'About Us',
@@ -113,7 +117,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   text: 'Testimonials',
                 ),
                 CustomCard3(
-                  imagePath: 'assets/images/Prizes.jpg',
+                  imagePath: 'assets/images/Prizes2.jpg',
                   onTap: () => Navigator.pushNamed(
                       context, HiddenDrawerPrizes.routeName),
                   text: 'Prizes',
@@ -124,6 +128,12 @@ class _HomeScreenState extends State<HomeScreen> {
                       context, HiddenDrawerGallery.routeName),
                   text: 'Gallery',
                 ),
+                CustomCard3(
+                  imagePath: 'assets/images/pastpapers.jpg',
+                  onTap: () =>
+                      Navigator.pushNamed(context, PastPapersPage.routeName),
+                  text: 'Past Papers',
+                ),
               ],
               options: CarouselOptions(
                 height: 196,
@@ -132,7 +142,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 initialPage: 0,
                 enableInfiniteScroll: true,
                 reverse: false,
-                autoPlay: true,
+                autoPlay: false,
                 autoPlayInterval: const Duration(seconds: 3),
                 autoPlayAnimationDuration: const Duration(milliseconds: 800),
                 autoPlayCurve: Curves.fastOutSlowIn,
@@ -162,122 +172,60 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
             CarouselSlider(
               items: [
-                // Material(
-                //   color: Colors.black,
-                //   elevation: 20,
-                //   borderRadius: BorderRadius.circular(0),
-                //   clipBehavior: Clip.antiAliasWithSaveLayer,
-                //   child: Ink.image(
-                //     image: const AssetImage('assets/images/black.jpg'),
-                //     // height: screenHeight * 0.22,
-                //     // width: screenWidth * 0.80,
-                //     fit: BoxFit.fill,
-                //   ),
-                // ),
-                // Material(
-                //   borderRadius: BorderRadius.circular(10),
-                //   child: CachedNetworkImage(
-                //     imageUrl: imageUrl1,
-                //     fit: BoxFit.fill,
-                //     placeholder: (context, url) =>
-                //         const CircularProgressIndicator(),
-                //     errorWidget: (context, url, error) => CustomCard2(
-                //       image: const AssetImage('assets/images/black.jpg'),
-                //       onTap: () {},
-                //       text: '',
-                //     ),
-                //     // height: 300,
-                //   ),
-                // ),
-                GestureDetector(
+                TimelineCard(
+                  imageUrl: imageUrl1,
                   onTap: () {
-                    setState(() {
-                      selectedImageUrl = imageUrl1;
-                    });
-                    _showImagePopup(context);
+                    setState(
+                      () {
+                        selectedImageUrl = imageUrl1;
+                      },
+                    );
+                    _showImagePopup(context, imageUrl1);
                   },
-                  child: Material(
-                    borderRadius: BorderRadius.circular(10),
-                    child: CachedNetworkImage(
-                      imageUrl: imageUrl1,
-                      fit: BoxFit.fill,
-                      placeholder: (context, url) =>
-                          const CircularProgressIndicator(),
-                      errorWidget: (context, url, error) => CustomCard2(
-                        image: const AssetImage('assets/images/black.jpg'),
-                        onTap: () {},
-                        text: '',
-                      ),
-                    ),
-                  ),
                 ),
-                GestureDetector(
+                TimelineCard(
+                  imageUrl: imageUrl2,
                   onTap: () {
-                    setState(() {
-                      selectedImageUrl = imageUrl2;
-                    });
-                    _showImagePopup(context);
+                    setState(
+                      () {
+                        selectedImageUrl = imageUrl2;
+                      },
+                    );
+                    _showImagePopup(context, imageUrl2);
                   },
-                  child: Material(
-                    borderRadius: BorderRadius.circular(10),
-                    child: CachedNetworkImage(
-                      imageUrl: imageUrl2,
-                      fit: BoxFit.fill,
-                      placeholder: (context, url) =>
-                          const CircularProgressIndicator(),
-                      errorWidget: (context, url, error) => CustomCard2(
-                        image: const AssetImage('assets/images/black.jpg'),
-                        onTap: () {},
-                        text: '',
-                      ),
-                    ),
-                  ),
                 ),
-                
-                Material(
-                  borderRadius: BorderRadius.circular(10),
-                  child: CachedNetworkImage(
-                    imageUrl: imageUrl3,
-                    fit: BoxFit.fill,
-                    placeholder: (context, url) =>
-                        const CircularProgressIndicator(),
-                    errorWidget: (context, url, error) => CustomCard2(
-                      image: const AssetImage('assets/images/black.jpg'),
-                      onTap: () {},
-                      text: '',
-                    ),
-                    // height: 300,
-                  ),
+                TimelineCard(
+                  imageUrl: imageUrl3,
+                  onTap: () {
+                    setState(
+                      () {
+                        selectedImageUrl = imageUrl3;
+                      },
+                    );
+                    _showImagePopup(context, imageUrl3);
+                  },
                 ),
-                Material(
-                  borderRadius: BorderRadius.circular(10),
-                  child: CachedNetworkImage(
-                    imageUrl: imageUrl4,
-                    fit: BoxFit.fill,
-                    placeholder: (context, url) =>
-                        const CircularProgressIndicator(),
-                    errorWidget: (context, url, error) => CustomCard2(
-                      image: const AssetImage('assets/images/black.jpg'),
-                      onTap: () {},
-                      text: '',
-                    ),
-                    // height: 300,
-                  ),
+                TimelineCard(
+                  imageUrl: imageUrl4,
+                  onTap: () {
+                    setState(
+                      () {
+                        selectedImageUrl = imageUrl4;
+                      },
+                    );
+                    _showImagePopup(context, imageUrl4);
+                  },
                 ),
-                Material(
-                  borderRadius: BorderRadius.circular(10),
-                  child: CachedNetworkImage(
-                    imageUrl: imageUrl5,
-                    fit: BoxFit.fill,
-                    placeholder: (context, url) =>
-                        const CircularProgressIndicator(),
-                    errorWidget: (context, url, error) => CustomCard2(
-                      image: const AssetImage('assets/images/black.jpg'),
-                      onTap: () {},
-                      text: '',
-                    ),
-                    // height: 300,
-                  ),
+                TimelineCard(
+                  imageUrl: imageUrl5,
+                  onTap: () {
+                    setState(
+                      () {
+                        selectedImageUrl = imageUrl5;
+                      },
+                    );
+                    _showImagePopup(context, imageUrl5);
+                  },
                 ),
               ],
               options: CarouselOptions(
@@ -287,7 +235,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 initialPage: 0,
                 enableInfiniteScroll: true,
                 reverse: false,
-                autoPlay: true,
+                autoPlay: false,
                 autoPlayInterval: const Duration(seconds: 3),
                 autoPlayAnimationDuration: const Duration(milliseconds: 800),
                 autoPlayCurve: Curves.linear,
@@ -317,27 +265,62 @@ class _HomeScreenState extends State<HomeScreen> {
               items: [
                 CustomCard3(
                   imagePath: 'assets/images/HC Verma 2.jpg',
-                  onTap: () {},
+                  onTap: () {
+                    _showPersonalityDetailsPopup(
+                      context,
+                      title: 'HC Verma',
+                      description:
+                          "H.C. Verma, a distinguished physicist and educator, is renowned for his seminal work 'Concepts of Physics.' Through his book, he has simplified intricate physics principles, enabling students to grasp fundamental concepts with clarity and ease. His dedication to simplifying complex topics has had a profound impact on physics education.",
+                    );
+                  },
                   text: 'HC Verma',
                 ),
                 CustomCard3(
                   imagePath: 'assets/images/GilbertStrang2.jpg',
-                  onTap: () {},
+                  onTap: () {
+                    _showPersonalityDetailsPopup(
+                      context,
+                      title: 'William Gilbert Strang',
+                      description:
+                          "Gilbert Strang, a renowned mathematician and educator, has made significant contributions to linear algebra and numerical analysis. His innovative teaching at MIT and insightful textbooks have simplified complex concepts, leaving a lasting impact on mathematics education.",
+                    );
+                  },
                   text: 'William Gilbert Strang',
                 ),
                 CustomCard3(
-                  imagePath: 'assets/images/AmanDhattarwal2.jpg',
-                  onTap: () {},
+                  imagePath: 'assets/images/AmanDhattarwal.jpg',
+                  onTap: () {
+                    _showPersonalityDetailsPopup(
+                      context,
+                      title: 'Aman Dhattarwal',
+                      description:
+                          " Aman Dhattarwal, an influential educator and YouTuber, has revolutionized education through his engaging online tutorials. By offering pragmatic insights and effective study techniques, he empowers students to conquer academic hurdles with enhanced understanding and self-assurance.",
+                    );
+                  },
                   text: 'Aman Dhattarwal',
                 ),
                 CustomCard3(
                   imagePath: 'assets/images/DCPandey.jpg',
-                  onTap: () {},
+                  onTap: () {
+                    _showPersonalityDetailsPopup(
+                      context,
+                      title: 'DC Pandey',
+                      description:
+                          "D.C. Pandey's reputation as an esteemed physics educator and author is grounded in his exceptional contributions to the realm of science education. His meticulously crafted study materials have not only equipped students with a profound grasp of physics concepts but also fostered their aptitude for critical thinking and problem-solving, enabling them to excel in competitive examinations and beyond.",
+                    );
+                  },
                   text: 'DC Pandey',
                 ),
                 CustomCard3(
                   imagePath: 'assets/images/DineshKumar.jpg',
-                  onTap: () {},
+                  onTap: () {
+                    _showPersonalityDetailsPopup(
+                      context,
+                      title: 'Prof Dinesh Kumar Saklani',
+                      description:
+                          "Prof. Dinesh Kumar Saklani is a prominent figure in the field of mathematics education, widely recognized for his significant contributions. Holding the esteemed position of Director at the National Council of Educational Research and Training (NCERT), his influence extends to shaping educational policies and strategies on a national level.",
+                    );
+                  },
                   text: 'Prof Dinesh Kumar Saklani',
                 ),
               ],
@@ -444,18 +427,90 @@ _launchWebsite() async {
   }
 }
 
-void _showImagePopup(BuildContext context) {
+void _showImagePopup(BuildContext context, String imageUrl) {
   showDialog(
     context: context,
     builder: (BuildContext context) {
-      return Dialog(
-        child: GestureDetector(
-          onTap: () {
-            Navigator.pop(context); // Close the dialog when tapped
-          },
-          child: SizedBox(
-            width: MediaQuery.of(context).size.width,
-            child: Image.network(selectedImageUrl!),
+      return GestureDetector(
+        onTap: () {
+          Navigator.pop(context);
+        },
+        child: Dialog(
+          backgroundColor: Colors.transparent,
+          child: Center(
+            child: SizedBox(
+              height: 196,
+              child: PhotoView(
+                imageProvider: NetworkImage(imageUrl),
+                backgroundDecoration: const BoxDecoration(
+                  color: Colors.transparent,
+                ),
+                scaleStateController: PhotoViewScaleStateController(),
+                initialScale: PhotoViewComputedScale.covered,
+                minScale: PhotoViewComputedScale.contained,
+                maxScale: PhotoViewComputedScale.covered * 2,
+                loadingBuilder: (BuildContext context, ImageChunkEvent? event) {
+                  if (event == null) {
+                    return Container();
+                  } else {
+                    return spinkit;
+                  }
+                },
+              ),
+            ),
+          ),
+        ),
+      );
+    },
+  );
+}
+
+void _showPersonalityDetailsPopup(BuildContext context,
+    {required String title, required String description}) {
+  showDialog(
+    context: context,
+    builder: (BuildContext context) {
+      return GestureDetector(
+        onTap: () {
+          Navigator.pop(context); // Dismiss the dialog on tap outside
+        },
+        child: SingleChildScrollView(
+          child: Dialog(
+            backgroundColor: Colors.transparent,
+            child: Container(
+              decoration: BoxDecoration(
+                color: Colors.black.withOpacity(0.5),
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: Padding(
+                padding: const EdgeInsets.all(20.0),
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Text(
+                      title,
+                      style: const TextStyle(
+                        fontSize: 24,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white,
+                        fontFamily: headingFont,
+                      ),
+                      textAlign: TextAlign.center,
+                    ),
+                    const SizedBox(height: 10),
+                    Text(
+                      description,
+                      style: const TextStyle(
+                        fontSize: 16,
+                        color: Colors.white,
+                        fontFamily: textFont,
+                      ),
+                      textAlign: TextAlign.center,
+                    ),
+                  ],
+                ),
+              ),
+            ),
           ),
         ),
       );

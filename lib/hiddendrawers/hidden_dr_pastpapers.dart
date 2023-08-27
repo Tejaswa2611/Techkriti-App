@@ -13,19 +13,18 @@ import '../Screens/pastpapers.dart';
 import '../Screens/sponsors.dart';
 import '../constants/colors_and_fonts.dart';
 
-class HiddenDrawerTestimonial extends StatefulWidget {
-  static const String routeName  = '/testimonial';
-  const HiddenDrawerTestimonial({super.key});
+class HiddenDrawerPrizes extends StatefulWidget {
+  static const String routeName = '/prizes';
+  const HiddenDrawerPrizes({super.key});
 
   static final GlobalKey<ScaffoldState> scaffoldKey =
       GlobalKey<ScaffoldState>();
 
   @override
-  State<HiddenDrawerTestimonial> createState() =>
-      _HiddenDrawerTestimonialState();
+  State<HiddenDrawerPrizes> createState() => _HiddenDrawerPrizesState();
 }
 
-class _HiddenDrawerTestimonialState extends State<HiddenDrawerTestimonial> {
+class _HiddenDrawerPrizesState extends State<HiddenDrawerPrizes> {
   List<ScreenHiddenDrawer> _pages = [];
   final myTextStyle = const TextStyle(
     fontWeight: FontWeight.bold,
@@ -51,12 +50,21 @@ class _HiddenDrawerTestimonialState extends State<HiddenDrawerTestimonial> {
     _pages = [
       ScreenHiddenDrawer(
         ItemHiddenMenu(
-          name: 'Testimonials',
+          name: 'Past Papers',
           baseStyle: myTextStyle,
           selectedStyle: myTextStyle,
           colorLineSelected: Colors.blue.shade900,
         ),
-        TestimonialsPage(),
+        const PastPapersPage(),
+      ),
+      ScreenHiddenDrawer(
+        ItemHiddenMenu(
+          name: 'Prizes',
+          baseStyle: myTextStyle,
+          selectedStyle: myTextStyle,
+          colorLineSelected: Colors.blue.shade900,
+        ),
+        const PrizesPage(),
       ),
       ScreenHiddenDrawer(
         ItemHiddenMenu(
@@ -87,21 +95,21 @@ class _HiddenDrawerTestimonialState extends State<HiddenDrawerTestimonial> {
       ),
       ScreenHiddenDrawer(
         ItemHiddenMenu(
-          name: 'Prizes',
-          baseStyle: myTextStyle,
-          selectedStyle: myTextStyle,
-          colorLineSelected: Colors.blue.shade900,
-        ),
-        const PrizesPage(),
-      ),
-      ScreenHiddenDrawer(
-        ItemHiddenMenu(
           name: 'Gallery',
           baseStyle: myTextStyle,
           selectedStyle: myTextStyle,
           colorLineSelected: Colors.blue.shade900,
         ),
         const GalleryPage(),
+      ),
+      ScreenHiddenDrawer(
+        ItemHiddenMenu(
+          name: 'Testimonials',
+          baseStyle: myTextStyle,
+          selectedStyle: myTextStyle,
+          colorLineSelected: Colors.blue.shade900,
+        ),
+        TestimonialsPage(),
       ),
       ScreenHiddenDrawer(
         ItemHiddenMenu(
@@ -123,15 +131,6 @@ class _HiddenDrawerTestimonialState extends State<HiddenDrawerTestimonial> {
       ),
       ScreenHiddenDrawer(
         ItemHiddenMenu(
-          name: 'Past Papers',
-          baseStyle: myTextStyle,
-          selectedStyle: myTextStyle,
-          colorLineSelected: Colors.blue.shade900,
-        ),
-        const PastPapersPage(),
-      ),
-      ScreenHiddenDrawer(
-        ItemHiddenMenu(
           name: 'Contact Us',
           baseStyle: myTextStyle,
           selectedStyle: myTextStyle,
@@ -145,7 +144,7 @@ class _HiddenDrawerTestimonialState extends State<HiddenDrawerTestimonial> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      key: HiddenDrawerTestimonial.scaffoldKey,
+      key: HiddenDrawerPrizes.scaffoldKey,
       body: HiddenDrawerMenu(
         backgroundColorMenu: drawerBackground,
         screens: _pages,

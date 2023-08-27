@@ -2,7 +2,8 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
-import '../Widgets/colors_and_fonts.dart';
+import '../constants/colors_and_fonts.dart';
+import '../constants/utils.dart';
 
 class PrizesPage extends StatefulWidget {
   const PrizesPage({super.key});
@@ -85,8 +86,8 @@ class _PrizesPageState extends State<PrizesPage> {
             ),
             CachedNetworkImage(
               imageUrl: imageUrl,
-              placeholder: (context, url) =>
-                  const CircularProgressIndicator(), // Optional placeholder while loading
+              placeholder: (context, url) => const Center(
+                  child: spinkit), // Optional placeholder while loading
               errorWidget: (context, url, error) =>
                   const Icon(Icons.error_outline_sharp),
               height: 300, // Optional error placeholder
@@ -110,7 +111,6 @@ class _PrizesPageState extends State<PrizesPage> {
                 ),
               ),
             ),
-            
           ],
         ),
       ),

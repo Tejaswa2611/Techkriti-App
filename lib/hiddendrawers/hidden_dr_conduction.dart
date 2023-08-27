@@ -3,6 +3,7 @@ import 'package:hidden_drawer_menu/hidden_drawer_menu.dart';
 import 'package:techkriti/Screens/conduction.dart';
 import 'package:techkriti/Screens/contactus.dart';
 import 'package:techkriti/Screens/faq_tosc.dart';
+import 'package:techkriti/Screens/pastpapers.dart';
 import 'package:techkriti/Screens/prizes.dart';
 import 'package:techkriti/Screens/testimonial.dart';
 import 'package:techkriti/Services/notification_services.dart';
@@ -10,7 +11,7 @@ import '../Screens/about.dart';
 import '../Screens/gallery2.dart';
 import '../Screens/homescreen.dart';
 import '../Screens/sponsors.dart';
-import '../Widgets/colors_and_fonts.dart';
+import '../constants/colors_and_fonts.dart';
 import '../Widgets/hex_to_color.dart';
 
 class HiddenDrawerConduction extends StatefulWidget {
@@ -118,6 +119,15 @@ class _HiddenDrawerConductionState extends State<HiddenDrawerConduction> {
           colorLineSelected: Colors.blue.shade900,
         ),
         const FAQPage(),
+      ),
+      ScreenHiddenDrawer(
+        ItemHiddenMenu(
+          name: 'Past Papers',
+          baseStyle: myTextStyle,
+          selectedStyle: myTextStyle,
+          colorLineSelected: Colors.blue.shade900,
+        ),
+        const PastPapersPage(),
       ),
       ScreenHiddenDrawer(
         ItemHiddenMenu(

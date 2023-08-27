@@ -59,8 +59,10 @@ class _MyAppState extends State<MyApp> {
           // color: hexToColor('#00FFFF'), // Cyan
           // color: Colors.blue.shade900, // DarkBlue
           // color: hexToColor('#87CEEB'), // LightBlue
-          color: hexToColor('#0B1D21'), // DarkGreen
-          iconTheme: const IconThemeData(color: Colors.white),
+          // color: hexToColor('#0B1D21'), // DarkGreen
+          color: hexToColor('#56A5EC'), // Light Blue
+          // color: hexToColor('#D9D9D9'), grey
+          iconTheme: const IconThemeData(color: Colors.black),
         ),
         pageTransitionsTheme: const PageTransitionsTheme(
           builders: {

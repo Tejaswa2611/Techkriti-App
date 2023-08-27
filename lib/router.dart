@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:techkriti/Screens/homescreen.dart';
 import 'package:techkriti/Screens/landing.dart';
 import 'package:techkriti/Screens/login_page.dart';
+import 'package:techkriti/Screens/pastpapers.dart';
 import 'package:techkriti/Screens/register_page.dart';
 import 'package:techkriti/Screens/forgotpassword.dart';
 import 'package:techkriti/details/details_page.dart';
@@ -10,10 +11,11 @@ import 'package:techkriti/hiddendrawers/hidden_dr_contact.dart';
 import 'package:techkriti/hiddendrawers/hidden_dr_faq.dart';
 import 'package:techkriti/hiddendrawers/hidden_dr_gallery.dart';
 import 'package:techkriti/hiddendrawers/hidden_dr_homescreen.dart';
+import 'package:techkriti/hiddendrawers/hidden_dr_homescreen2.dart';
 import 'package:techkriti/hiddendrawers/hidden_dr_prizes.dart';
 import 'package:techkriti/hiddendrawers/hidden_dr_sponsors.dart';
 import 'package:techkriti/hiddendrawers/hidden_dr_testimonial.dart';
-import 'Widgets/colors_and_fonts.dart';
+import 'constants/colors_and_fonts.dart';
 import 'hiddendrawers/hidden_drawer_about.dart';
 
 Route<dynamic> generateRoute(RouteSettings routeSettings) {
@@ -22,6 +24,11 @@ Route<dynamic> generateRoute(RouteSettings routeSettings) {
       return MaterialPageRoute(
         settings: routeSettings,
         builder: (_) => const HiddenDrawerConduction(),
+      );
+    case HiddenDrawerHomeScreen2.routeName:
+      return MaterialPageRoute(
+        settings: routeSettings,
+        builder: (_) => const HiddenDrawerHomeScreen2(),
       );
     case HiddenDrawerContact.routeName:
       return MaterialPageRoute(
@@ -91,7 +98,12 @@ Route<dynamic> generateRoute(RouteSettings routeSettings) {
     case ForgotPasswordScreen.routeName:
       return MaterialPageRoute(
         settings: routeSettings,
-        builder: (_) => ForgotPasswordScreen(),
+        builder: (_) =>const ForgotPasswordScreen(),
+      );
+    case PastPapersPage.routeName:
+      return MaterialPageRoute(
+        settings: routeSettings,
+        builder: (_) =>const PastPapersPage(),
       );
     // case ResetPasswordScreen.routeName:
     //   return MaterialPageRoute(

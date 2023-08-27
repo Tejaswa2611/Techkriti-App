@@ -4,10 +4,11 @@ import 'package:provider/provider.dart';
 import 'package:techkriti/Screens/login_page.dart';
 import 'package:techkriti/Services/auth_services.dart';
 import 'package:techkriti/Widgets/button.dart';
-import 'package:techkriti/Widgets/colors_and_fonts.dart';
+import 'package:techkriti/constants/colors_and_fonts.dart';
 import 'package:techkriti/constants/utils.dart';
 import 'package:techkriti/details/details_page.dart';
 import 'package:techkriti/providers/user_provider.dart';
+import 'package:url_launcher/url_launcher.dart';
 import '../Widgets/login_text_field.dart';
 
 bool _isLoading = false;
@@ -207,11 +208,53 @@ class _RegistrationPageState extends State<RegistrationPage> {
                     ),
                   ),
                 ],
+              ),
+              const SizedBox(
+                height: 40,
+              ),
+              ElevatedButton(
+                onPressed: _launchGoogleForm,
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.blue,
+                  padding: const EdgeInsets.all(8),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(
+                        8), // You can adjust the border radius
+                  ),
+                ),
+                child: const Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Flexible(
+                      // This will ensure the text wraps properly
+                      child: Text(
+                        'If you are facing any problems in registrations, kindly fill this form',
+                        style: TextStyle(
+                          fontFamily: textFont,
+                            fontSize: 14,
+                            color: Colors.white), // Adjust text style
+                        textAlign: TextAlign.center, // Center align the text
+                      ),
+                    ),
+                  ],
+                ),
               )
             ],
           ),
         ),
       ),
     );
+  }
+}
+
+_launchGoogleForm() async {
+  const url =
+      'https://docs.google.com/forms/d/e/1FAIpQLSfZxnNfmTYEpPZf6qFI5wAfPG5wsWE9thTzuQcIStWKHJ6-BQ/viewform?usp=sf_link';
+  debugPrint("Launching Google Form");
+  final uri = Uri.parse(url);
+  if (await canLaunchUrl(uri)) {
+    await launchUrl(uri);
+  } else {
+    throw 'Could not launch $url';
   }
 }

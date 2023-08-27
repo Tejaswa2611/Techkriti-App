@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
-import 'package:techkriti/Widgets/colors_and_fonts.dart';
+import 'package:techkriti/constants/colors_and_fonts.dart';
 
 class GalleryStaggerd extends StatefulWidget {
   const GalleryStaggerd({super.key});

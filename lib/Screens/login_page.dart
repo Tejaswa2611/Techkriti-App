@@ -2,9 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:techkriti/Screens/register_page.dart';
 import 'package:techkriti/Screens/forgotpassword.dart';
 import 'package:techkriti/Widgets/button.dart';
-import 'package:techkriti/Widgets/colors_and_fonts.dart';
+import 'package:techkriti/constants/colors_and_fonts.dart';
 // import 'package:techkriti/hidden_drawer.dart';
-import '../Widgets/login_square_tile.dart';
 import '../Widgets/login_text_field.dart';
 import 'package:techkriti/Services/auth_services.dart';
 

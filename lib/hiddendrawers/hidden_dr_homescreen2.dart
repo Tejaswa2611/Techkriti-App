@@ -17,20 +17,21 @@ import '../Screens/gallery2.dart';
 import '../Screens/pastpapers.dart';
 import '../Screens/sponsors.dart';
 import '../constants/colors_and_fonts.dart';
-import 'hidden_dr_homescreen2.dart';
+import 'hidden_dr_homescreen.dart';
 
-class HiddenDrawerHomeScreen extends StatefulWidget {
-  static const String routeName = '/homescreen_drawer';
-  const HiddenDrawerHomeScreen({super.key});
+class HiddenDrawerHomeScreen2 extends StatefulWidget {
+  static const String routeName = '/homescreen_drawer2';
+  const HiddenDrawerHomeScreen2({super.key});
 
   static final GlobalKey<ScaffoldState> scaffoldKey =
       GlobalKey<ScaffoldState>();
 
   @override
-  State<HiddenDrawerHomeScreen> createState() => _HiddenDrawerHomeScreenState();
+  State<HiddenDrawerHomeScreen2> createState() =>
+      _HiddenDrawerHomeScreen2State();
 }
 
-class _HiddenDrawerHomeScreenState extends State<HiddenDrawerHomeScreen> {
+class _HiddenDrawerHomeScreen2State extends State<HiddenDrawerHomeScreen2> {
   int pos = 1;
   final AuthService authService = AuthService();
   List<ScreenHiddenDrawer> _pages = [];
@@ -148,15 +149,13 @@ class _HiddenDrawerHomeScreenState extends State<HiddenDrawerHomeScreen> {
       ),
       ScreenHiddenDrawer(
         ItemHiddenMenu(
-          name: 'Past Papers',
-          baseStyle: myTextStyle,
-          selectedStyle: myTextStyle,
-          colorLineSelected: Colors.blue.shade900,
-           onTap: () {
+            name: 'Past Papers',
+            baseStyle: myTextStyle,
+            selectedStyle: myTextStyle,
+            colorLineSelected: Colors.blue.shade900,
+            onTap: () {
               pos = 9;
-            }
-        ),
-        
+            }),
         const PastPapersPage(),
       ),
       ScreenHiddenDrawer(
@@ -176,14 +175,14 @@ class _HiddenDrawerHomeScreenState extends State<HiddenDrawerHomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      key: HiddenDrawerHomeScreen.scaffoldKey,
+      key: HiddenDrawerHomeScreen2.scaffoldKey,
       body: WillPopScope(
         onWillPop: () async {
           if (pos != 1) {
-            pos =1;
+            pos = 1;
             debugPrint("Not one definaetly");
             Navigator.pushReplacementNamed(
-                context, HiddenDrawerHomeScreen2.routeName);
+                context, HiddenDrawerHomeScreen.routeName);
             return true; // Prevent default back behavior
           }
           debugPrint("It is already 1");
@@ -206,7 +205,7 @@ class _HiddenDrawerHomeScreenState extends State<HiddenDrawerHomeScreen> {
             ),
           ),
           // styleAutoTittleName:
-          // //    const TextStyle(fontSize: 20, fontFamily: headingFont),
+          //     const TextStyle(fontSize: 20, fontFamily: headingFont),
           actionsAppBar: [
             IconButton(
               icon: const Icon(Icons.account_circle_sharp),
@@ -214,7 +213,8 @@ class _HiddenDrawerHomeScreenState extends State<HiddenDrawerHomeScreen> {
                 debugPrint("pressd");
                 Provider.of<UserProvider>(context, listen: false)
                         .user
-                        .token.isNotEmpty
+                        .token
+                        .isNotEmpty
                     ? Navigator.pushNamed(context, UserDetailsPage.routeName)
                     : Navigator.pushNamed(context, LoginPage.routeName);
               },

@@ -9,8 +9,9 @@ import 'package:techkriti/Services/notification_services.dart';
 import '../Screens/about.dart';
 import '../Screens/gallery2.dart';
 import '../Screens/homescreen.dart';
+import '../Screens/pastpapers.dart';
 import '../Screens/sponsors.dart';
-import '../Widgets/colors_and_fonts.dart';
+import '../constants/colors_and_fonts.dart';
 
 class HiddenDrawerGallery extends StatefulWidget {
   static const String routeName  = '/gallery';
@@ -118,6 +119,15 @@ class _HiddenDrawerGalleryState extends State<HiddenDrawerGallery> {
           colorLineSelected:  Colors.blue.shade900,
         ),
         const SponsorsPage(),
+      ),
+      ScreenHiddenDrawer(
+        ItemHiddenMenu(
+          name: 'Past Papers',
+          baseStyle: myTextStyle,
+          selectedStyle: myTextStyle,
+          colorLineSelected: Colors.blue.shade900,
+        ),
+        const PastPapersPage(),
       ),
       ScreenHiddenDrawer(
         ItemHiddenMenu(
