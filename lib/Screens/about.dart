@@ -37,7 +37,7 @@ class _AboutState extends State<About> {
                   buildTech("What is Techkriti?"),
                   const SizedBox(height: 10),
                   buildDescription(
-                      "Techkriti is an annual international technical and entrepreneurial festival organized by the students of IIT Kanpur. The festival is held over four days every March, attracting participants from every corner of the country as well as from abroad, comprising a total footfall of over 60,000 from all over India and abroad."),
+                      "TIndian Institute of Technology, Kanpur, celebrated internationally as the center of academic excellence and knowledge exchange, announces the 30th edition of Asia's largest technical and entrepreneurial fest,Techkriti 24. Attracting participants from every corner of the country as well as from abroad, comprising a total footfall of over 1.2 M from all over India and abroad."),
                   // const SizedBox(height: 20),
                   Center(
                     child: Image.asset(                              
@@ -49,7 +49,7 @@ class _AboutState extends State<About> {
                   buildHeading("What is TOSC?"),
                   const SizedBox(height: 10),
                   buildDescription(
-                      "Techkriti, IIT Kanpur organises an annual competition for 6th to 12th grade students. Students compete individually in two phases of the competition. Phase 1 is a 60-minute online test that students can take from home. The test covers Mental Ability, Aptitude, and Puzzles. TOSC has three pools: Pool A (6th, 7th, 8th), Pool B (9th and 10th), and Pool C (11th and 12th). Pool A champions will be decided after phase 1. The top 100 competitors from each Pool B and C will go to the final round, where they will be assessed on extra tasks to determine the winners. Phase 2 will include talks,  exhibitions, and technical workshops. No previous knowledge is required to participate, the only prerequisite is enthusiasm and confidence."),
+                      "Techkriti Open School Championship (TOSC), an annual aptitude exam crafted to inspire and challenge students from grades 6th to 12th. TOSC is a part of Techkriti, the renowned international technical and entrepreneurial festival organized by the students of IIT Kanpur. Students compete individually in two phases of the competition. The test covers Mental Ability, Aptitude,General knowledge and Puzzles . No previous knowledge is required to participate, the only prerequisite is enthusiasm and confidence."),
                   const SizedBox(height: 40),
                   buildHeading("Why TOSC?"),
                   const SizedBox(height: 10),

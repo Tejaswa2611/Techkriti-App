@@ -6,6 +6,7 @@ import 'package:techkriti/Screens/contactus.dart';
 import 'package:techkriti/Screens/faq_tosc.dart';
 import 'package:techkriti/Screens/homescreen.dart';
 import 'package:techkriti/Screens/login_page.dart';
+import 'package:techkriti/Screens/notification_screen.dart';
 import 'package:techkriti/Screens/prizes.dart';
 import 'package:techkriti/Screens/testimonial.dart';
 import 'package:techkriti/Services/auth_services.dart';
@@ -219,6 +220,12 @@ class _HiddenDrawerHomeScreenState extends State<HiddenDrawerHomeScreen> {
                     : Navigator.pushNamed(context, LoginPage.routeName);
               },
             ),
+            // IconButton(
+            //   icon: const Icon(Icons.notifications),
+            //   onPressed: () {
+            //     Navigator.pushNamed(context, MessagesPage.routeName);
+            //   }
+            // ),
 
             // Consumer<UserProvider>(
             //   builder: (context, userProvider, _) {

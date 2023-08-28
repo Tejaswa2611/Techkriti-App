@@ -86,6 +86,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
                   controller: nameController,
                   hintText: 'Name',
                   obscureText: false,
+                  icon: Icons.person,
                 ),
               ),
 
@@ -98,6 +99,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
                   controller: emailController,
                   hintText: 'Email',
                   obscureText: false,
+                  icon: Icons.email_outlined,
                 ),
               ),
               const SizedBox(height: 10),
@@ -107,6 +109,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
                   controller: phoneController,
                   hintText: 'Phone No.',
                   obscureText: false,
+                  icon: Icons.phone_android,
                 ),
               ),
 
@@ -119,6 +122,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
                   controller: passwordController,
                   hintText: 'Password',
                   obscureText: true,
+                  icon: Icons.lock,
                 ),
               ),
 

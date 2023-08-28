@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:techkriti/Screens/register_page.dart';
-import 'package:techkriti/Screens/forgotpassword.dart';
+// import 'package:techkriti/Screens/forgotpassword.dart';
+import 'package:techkriti/Screens/resetpassword.dart';
 import 'package:techkriti/Widgets/button.dart';
 import 'package:techkriti/constants/colors_and_fonts.dart';
 // import 'package:techkriti/hidden_drawer.dart';
@@ -76,8 +77,8 @@ class _LoginPageState extends State<LoginPage> {
                 padding: const EdgeInsets.symmetric(horizontal: 10.0),
                 child: MyTextField(
                   controller: usernameController,
-                  hintText: 'Username',
-                  obscureText: false,
+                  hintText: 'Email',
+                  obscureText: false, icon: Icons.email,
                 ),
               ),
 
@@ -90,6 +91,7 @@ class _LoginPageState extends State<LoginPage> {
                   controller: passwordController,
                   hintText: 'Password',
                   obscureText: true,
+                  icon: Icons.lock,
                 ),
               ),
 
@@ -101,7 +103,7 @@ class _LoginPageState extends State<LoginPage> {
                 children: [
                   InkWell(
                     onTap:(){
-                      Navigator.pushNamed(context, ForgotPasswordScreen.routeName);
+                      Navigator.pushNamed(context, PasswordResetPage.routeName);
                     },
                     child: Text(
                       'Forgot Password?',

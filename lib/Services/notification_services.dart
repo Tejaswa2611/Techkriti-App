@@ -1,11 +1,33 @@
+// ignore_for_file: use_build_context_synchronously
+
 import 'dart:math';
 
 import 'package:app_settings/app_settings.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
+// import 'package:provider/provider.dart';
+import 'package:techkriti/hiddendrawers/hidden_dr_homescreen.dart';
 
-import '../Screens/message_screen.dart';
+// import '../Screens/notification_screen.dart';
+
+class Message {
+  final String title;
+  final String body;
+
+  Message({required this.title, required this.body});
+}
+
+class MessageProvider extends ChangeNotifier {
+  List<Message> _messages = [];
+
+  List<Message> get messages => _messages;
+
+  void addMessage(Message message) {
+    _messages.add(message);
+    notifyListeners();
+  }
+}
 
 class NotificationServices {
   FirebaseMessaging messaging = FirebaseMessaging.instance;
@@ -52,8 +74,8 @@ class NotificationServices {
   void firebaseInit(BuildContext context) {
     FirebaseMessaging.onMessage.listen(
       (message) {
-        debugPrint(message.notification!.title.toString());
-        debugPrint(message.notification!.body.toString());
+        // debugPrint(message.notification!.title.toString());
+        // debugPrint(message.notification!.body.toString());
 
         initLocalNotifications(context, message);
         showNotification(message);
@@ -112,28 +134,26 @@ class NotificationServices {
     RemoteMessage? initialMessage =
         await FirebaseMessaging.instance.getInitialMessage();
     if (initialMessage != null) {
-      // ignore: use_build_context_synchronously
       handleMessage(context, initialMessage);
     }
 
     // When App is in background
     FirebaseMessaging.onMessageOpenedApp.listen(
       (event) {
+        debugPrint("jaa na lawde");
         handleMessage(context, event);
       },
     );
   }
 
   void handleMessage(BuildContext context, RemoteMessage message) {
-    if (message.data['type'] == 'msg') {
-      Navigator.push(
-        context,
-        MaterialPageRoute(
-          builder: (context) => MessageScreen(
-            id: message.data['id'],
-          ),
-        ),
-      );
-    }
+    // final messageProvider = Provider.of<MessageProvider>(context, listen: false);
+    // final messageObj = Message(
+    //   // id: message.data['id'],
+    //   title: message.notification!.title.toString(),
+    //   body: message.notification!.body.toString(),
+    // );
+    // messageProvider.addMessage(messageObj);
+   Navigator.pushReplacementNamed(context, HiddenDrawerHomeScreen.routeName);
   }
 }

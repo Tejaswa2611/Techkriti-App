@@ -3,11 +3,12 @@ import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:techkriti/Screens/landing.dart';
+// import 'package:techkriti/Screens/notification_screen.dart';
 import 'package:techkriti/Services/auth_services.dart';
 import 'package:techkriti/providers/user_provider.dart';
 import 'package:techkriti/router.dart';
 import 'package:upgrader/upgrader.dart';
-
+import 'Services/notification_services.dart';
 import 'Widgets/hex_to_color.dart';
 import 'details/details_page.dart';
 
@@ -24,6 +25,9 @@ void main() async {
     MultiProvider(providers: [
       ChangeNotifierProvider(
         create: (context) => UserProvider(),
+      ),
+      ChangeNotifierProvider(
+        create: (context) => MessageProvider(),
       ),
     ], child: const MyApp()),
   );
@@ -81,6 +85,7 @@ class _MyAppState extends State<MyApp> {
           showIgnore: false,
           showLater: false,
         ),
+        // child: const MessagesPage(),
         child: Provider.of<UserProvider>(context).user.token.isNotEmpty
             ? const UserDetailsPage()
             : const LandingPage(),

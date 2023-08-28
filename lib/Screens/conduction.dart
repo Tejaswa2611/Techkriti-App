@@ -295,19 +295,19 @@ class _ConductionState extends State<Conduction> {
               children: [
                 buildPhaseContent(
                   'PHASE 1',
-                  'Phase 1 will be conducted on 18th December. This round consists of an online exam which will consist of objective type questions on aptitude, reasoning and general awareness. Participants will participate individually in this phase. The duration of the exam will be of 60 mins. Top 100 students from each pool B and C will be invited to get an opportunity for Phase II.',
+                  'Phase 1 will be conducted on 5th November.This round consists of an online exam which will consist of objective type questions on aptitude, reasoning and general awareness. Participants will participate individually in this phase. The duration of the exam will be 60 mins. Top 100 students from each pool B and C will be invited to Phase II here in IIT Kanpur.',
                   'assets/images/phase 1.jpg',
                 ),
                 const SizedBox(height: 20),
                 buildPhaseContent(
                   'PHASE 1 RESULTS',
-                  'Phase 1 results will be announced in December. The results will be made available on the website. The e-Certificates of participation will be available on the TOSC website after the result declaration.',
+                  'Phase 1 results will be announced in November. The results will be made available on the website. The e-Certificates of participation will be available on the TOSC Website and App after the result declaration.',
                   'assets/images/phase 1 results.png',
                 ),
                 const SizedBox(height: 20),
                 buildPhaseContent(
                   'PHASE 2',
-                  'This phase will be conducted offline at IIT Kanpur. It will comprise variety of puzzles and competitive activities which will not only decide the winner but also help the participants explore and enhance their cognitive and analytical skills. Also, there will be exhibitions, technical workshops and talks (by some renowned personalities) as a part of Phase 2.',
+                  'This phase will be conducted offline at IIT Kanpur. It will comprise a variety of puzzles and competitive activities which will not only decide the winner but also help the participants explore and enhance their cognitive and analytical skills. Also, there will be exhibitions, technical workshops and talks (Such as H.C.Verma ,William Gilbert Strang and many renowned personalities ) as a part of Phase 2. On december',
                   'assets/images/phase 2.jpg',
                 ),
                 const SizedBox(height: 20),

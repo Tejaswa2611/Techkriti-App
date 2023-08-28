@@ -170,7 +170,7 @@ class AuthService {
     }
   }
 
-  // FORGOT PASSWORD
+  // FORGOT PASSWORD NOT WORKING
   Future<bool> forgotPassword(String email) async {
     try {
       http.Response res = await http.post(
@@ -194,4 +194,88 @@ class AuthService {
     }
   }
 
+  // FORGOT PASSWORD WORKING
+
+  // Future<void> changePassword({
+  //   required BuildContext context,
+  //   required String email,
+  //   required String password,
+  // }) async {
+  //   try {
+  //     SharedPreferences prefs = await SharedPreferences.getInstance();
+  //     String? token = prefs.getString('x-auth-token');
+
+  //     http.Response res = await http.post(
+  //       Uri.parse('$uri/api/changepass'),
+  //       body: jsonEncode({'email': email, 'password': password}),
+  //       headers: <String, String>{
+  //         'Content-Type': 'application/json; charset=UTF-8',
+  //         'x-auth-token': token!,
+  //       },
+  //     );
+
+  //     httpErrorHandle(
+  //       response: res,
+  //       context: context,
+  //       onSucess: () {
+  //         showSnackBar(
+  //           context,
+  //           'Password changed successfully!',
+  //         );
+  //         Navigator.pop(context); // Return to previous page
+  //       },
+  //     );
+  //   } catch (e) {
+  //     showSnackBar(context, e.toString());
+  //   }
+  // }
+
+  // Future<bool> checkUserByEmail(String email) async {
+  //   try {
+  //     http.Response res = await http.post(
+  //       Uri.parse('$uri/api/getuserbyemail'),
+  //       body: jsonEncode({'email': email}),
+  //       headers: <String, String>{
+  //         'Content-Type': 'application/json; charset=UTF-8',
+  //       },
+  //     );
+
+  //     var response = jsonDecode(res.body);
+  //     if (response.containsKey('success')) {
+  //       return response['success'] as bool;
+  //     } else {
+  //       debugPrint('Response does not contain "success" key');
+  //       return false;
+  //     }
+  //   } catch (e) {
+  //     debugPrint('Error: $e');
+  //     return false;
+  //   }
+  // }
+
+  // Future<Map<String, dynamic>> generateOTPForRecovery(String email) async {
+  //   try {
+  //     http.Response res = await http.post(
+  //       Uri.parse('$uri/api/generateotpforrecovery'),
+  //       body: jsonEncode({'email': email}),
+  //       headers: <String, String>{
+  //         'Content-Type': 'application/json; charset=UTF-8',
+  //       },
+  //     );
+
+  //     var response = jsonDecode(res.body);
+  //     if (response.containsKey('success') && response.containsKey('otp')) {
+  //       return {
+  //         'success': response['success'] as bool,
+  //         'otp': response['otp'] as int,
+  //       };
+  //     } else {
+  //       debugPrint('Response does not contain required keys');
+  //       return {'success': false, 'otp': 0};
+  //     }
+  //   } catch (e) {
+  //     debugPrint('Error: $e');
+  //     return {'success': false, 'otp': 0};
+  //   }
+  // }
 }
