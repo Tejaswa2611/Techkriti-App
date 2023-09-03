@@ -3,33 +3,33 @@ import 'package:hidden_drawer_menu/hidden_drawer_menu.dart';
 import 'package:techkriti/Screens/conduction.dart';
 import 'package:techkriti/Screens/contactus.dart';
 import 'package:techkriti/Screens/faq_tosc.dart';
-// import 'package:techkriti/Screens/login_page.dart';
+import 'package:techkriti/Screens/pastpapers.dart';
 import 'package:techkriti/Screens/prizes.dart';
-// import 'package:techkriti/Screens/register_page.dart';
 import 'package:techkriti/Screens/testimonial.dart';
 import 'package:techkriti/Services/notification_services.dart';
 import '../Screens/about.dart';
 import '../Screens/gallery2.dart';
 import '../Screens/homescreen.dart';
-import '../Screens/pastpapers.dart';
 import '../Screens/sponsors.dart';
 import '../constants/colors_and_fonts.dart';
 import '../Widgets/hex_to_color.dart';
 import '../Screens/school_rep.dart';
 import '../constants/global_variables.dart';
 
+class HiddenDrawerSchoolRepresentative extends StatefulWidget {
+  static const String routeName = '/SchoolRepresentative';
+  const HiddenDrawerSchoolRepresentative({super.key});
 
-class HiddenDrawer extends StatefulWidget {
-  static const String routeName  = '/about';
-  const HiddenDrawer({super.key});
-
-  static final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
+  static final GlobalKey<ScaffoldState> scaffoldKey =
+      GlobalKey<ScaffoldState>();
 
   @override
-  State<HiddenDrawer> createState() => _HiddenDrawerState();
+  State<HiddenDrawerSchoolRepresentative> createState() =>
+      _HiddenDrawerSchoolRepresentativeState();
 }
 
-class _HiddenDrawerState extends State<HiddenDrawer> {
+class _HiddenDrawerSchoolRepresentativeState
+    extends State<HiddenDrawerSchoolRepresentative> {
   List<ScreenHiddenDrawer> _pages = [];
   final myTextStyle = const TextStyle(
     fontWeight: FontWeight.bold,
@@ -38,7 +38,6 @@ class _HiddenDrawerState extends State<HiddenDrawer> {
     fontFamily: headingFont,
   );
   NotificationServices notificationServices = NotificationServices();
-
   @override
   void initState() {
     super.initState();
@@ -55,21 +54,21 @@ class _HiddenDrawerState extends State<HiddenDrawer> {
     _pages = [
       ScreenHiddenDrawer(
         ItemHiddenMenu(
-          name: 'About',
-          baseStyle: myTextStyle,
-          selectedStyle: myTextStyle,
-          colorLineSelected: selectedLines,
-        ),
-        const About(),
-      ),
-      ScreenHiddenDrawer(
-        ItemHiddenMenu(
           name: schoolrep,
           baseStyle: myTextStyle,
           selectedStyle: myTextStyle,
           colorLineSelected: selectedLines,
         ),
         const SchoolRepresentative(),
+      ),
+      ScreenHiddenDrawer(
+        ItemHiddenMenu(
+          name: 'Conduction',
+          baseStyle: myTextStyle,
+          selectedStyle: myTextStyle,
+          colorLineSelected: selectedLines,
+        ),
+        const Conduction(),
       ),
       ScreenHiddenDrawer(
         ItemHiddenMenu(
@@ -82,12 +81,12 @@ class _HiddenDrawerState extends State<HiddenDrawer> {
       ),
       ScreenHiddenDrawer(
         ItemHiddenMenu(
-          name: 'Conduction',
+          name: 'About',
           baseStyle: myTextStyle,
           selectedStyle: myTextStyle,
           colorLineSelected: selectedLines,
         ),
-        const Conduction(),
+        const About(),
       ),
       ScreenHiddenDrawer(
         ItemHiddenMenu(
@@ -107,12 +106,12 @@ class _HiddenDrawerState extends State<HiddenDrawer> {
         ),
         const GalleryPage(),
       ),
-      ScreenHiddenDrawer(      
+      ScreenHiddenDrawer(
         ItemHiddenMenu(
           name: 'Testimonials',
           baseStyle: myTextStyle,
           selectedStyle: myTextStyle,
-          colorLineSelected:selectedLines,
+          colorLineSelected: selectedLines,
         ),
         TestimonialsPage(),
       ),
@@ -158,28 +157,37 @@ class _HiddenDrawerState extends State<HiddenDrawer> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      key: HiddenDrawer.scaffoldKey,
+      key: HiddenDrawerSchoolRepresentative.scaffoldKey,
       body: HiddenDrawerMenu(
         backgroundColorMenu: hexToColor('#FAF9F6'),
         screens: _pages,
         initPositionSelected: 0,
         slidePercent: 60,
+        withAutoTittleName: true,
+        // isTitleCentered: true,
+        // tittleAppBar: Align(
+        //   alignment: Alignment.topLeft,
+        //   child: Image.asset(
+        //     'assets/images/TOSC_white.png',
+        //     height: 50,
+        //   ),
+        // ),
         styleAutoTittleName:
             const TextStyle(fontSize: 20, fontFamily: headingFont),
-        // actionsAppBar: [
-        //   IconButton(
-        //     icon: const Icon(Icons.login_outlined),
-        //     onPressed: () {
-        //       // Add your search functionality here
-        //     },
-        //   ),
-        //   IconButton(
-        //     icon: const Icon(Icons.notifications),
-        //     onPressed: () {
-        //       // Add your notification functionality here
-        //     },
-        //   ),
-        // ],
+        actionsAppBar: const [
+          // IconButton(
+          //   icon: const Icon(Icons.search),
+          //   onPressed: () {
+          //     // Add your search functionality here
+          //   },
+          // ),
+          // IconButton(
+          //   icon: const Icon(Icons.notifications),
+          //   onPressed: () {
+          //     // Add your notification functionality here
+          //   },
+          // ),
+        ],
       ),
     );
   }

@@ -5,6 +5,7 @@ import 'package:photo_view/photo_view.dart';
 import 'package:techkriti/Screens/pastpapers.dart';
 import 'package:techkriti/Widgets/timelinecards.dart';
 import 'package:techkriti/constants/colors_and_fonts.dart';
+import 'package:techkriti/hiddendrawers/hidden_dr_SR.dart';
 import 'package:techkriti/hiddendrawers/hidden_dr_conduction.dart';
 import 'package:techkriti/hiddendrawers/hidden_dr_contact.dart';
 import 'package:techkriti/hiddendrawers/hidden_dr_gallery.dart';
@@ -105,19 +106,25 @@ class _HomeScreenState extends State<HomeScreen> {
                   text: 'Conduction',
                 ),
                 CustomCard3(
-                  imagePath: 'assets/images/AboutUs2.jpg',
+                  imagePath: 'assets/images/AboutUs3.jpg',
                   onTap: () =>
                       Navigator.pushNamed(context, HiddenDrawer.routeName),
                   text: 'About Us',
                 ),
                 CustomCard3(
-                  imagePath: 'assets/images/Testimonial.jpg',
+                  imagePath: 'assets/images/SR.jpg',
+                  onTap: () =>
+                      Navigator.pushNamed(context, HiddenDrawerSchoolRepresentative.routeName),
+                  text: 'School Representative',
+                ),
+                CustomCard3(
+                  imagePath: 'assets/images/Testimonial2.jpg',
                   onTap: () => Navigator.pushNamed(
                       context, HiddenDrawerTestimonial.routeName),
                   text: 'Testimonials',
                 ),
                 CustomCard3(
-                  imagePath: 'assets/images/Prizes2.jpg',
+                  imagePath: 'assets/images/Prize_vector.jpg',
                   onTap: () => Navigator.pushNamed(
                       context, HiddenDrawerPrizes.routeName),
                   text: 'Prizes',
@@ -142,7 +149,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 initialPage: 0,
                 enableInfiniteScroll: true,
                 reverse: false,
-                autoPlay: false,
+                autoPlay: true,
                 autoPlayInterval: const Duration(seconds: 3),
                 autoPlayAnimationDuration: const Duration(milliseconds: 800),
                 autoPlayCurve: Curves.fastOutSlowIn,

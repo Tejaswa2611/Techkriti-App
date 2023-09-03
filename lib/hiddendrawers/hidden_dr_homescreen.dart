@@ -6,7 +6,6 @@ import 'package:techkriti/Screens/contactus.dart';
 import 'package:techkriti/Screens/faq_tosc.dart';
 import 'package:techkriti/Screens/homescreen.dart';
 import 'package:techkriti/Screens/login_page.dart';
-import 'package:techkriti/Screens/notification_screen.dart';
 import 'package:techkriti/Screens/prizes.dart';
 import 'package:techkriti/Screens/testimonial.dart';
 import 'package:techkriti/Services/auth_services.dart';
@@ -19,6 +18,8 @@ import '../Screens/pastpapers.dart';
 import '../Screens/sponsors.dart';
 import '../constants/colors_and_fonts.dart';
 import 'hidden_dr_homescreen2.dart';
+import '../Screens/school_rep.dart';
+import '../constants/global_variables.dart';
 
 class HiddenDrawerHomeScreen extends StatefulWidget {
   static const String routeName = '/homescreen_drawer';
@@ -64,7 +65,7 @@ class _HiddenDrawerHomeScreenState extends State<HiddenDrawerHomeScreen> {
             name: 'Home',
             baseStyle: myTextStyle,
             selectedStyle: myTextStyle,
-            colorLineSelected: Colors.blue.shade900,
+            colorLineSelected: selectedLines,
             onTap: () {
               pos = 1;
             }),
@@ -75,7 +76,7 @@ class _HiddenDrawerHomeScreenState extends State<HiddenDrawerHomeScreen> {
             name: 'Conduction',
             baseStyle: myTextStyle,
             selectedStyle: myTextStyle,
-            colorLineSelected: Colors.blue.shade900,
+            colorLineSelected: const Color.fromARGB(255, 47, 51, 58),
             onTap: () {
               pos = 2;
             }),
@@ -86,7 +87,7 @@ class _HiddenDrawerHomeScreenState extends State<HiddenDrawerHomeScreen> {
             name: 'About',
             baseStyle: myTextStyle,
             selectedStyle: myTextStyle,
-            colorLineSelected: Colors.blue.shade900,
+            colorLineSelected: selectedLines,
             onTap: () {
               pos = 3;
             }),
@@ -94,10 +95,21 @@ class _HiddenDrawerHomeScreenState extends State<HiddenDrawerHomeScreen> {
       ),
       ScreenHiddenDrawer(
         ItemHiddenMenu(
+            name: schoolrep,
+            baseStyle: myTextStyle,
+            selectedStyle: myTextStyle,
+            colorLineSelected: selectedLines,
+            onTap: () {
+              pos = 11;
+            }),
+        const SchoolRepresentative(),
+      ),
+      ScreenHiddenDrawer(
+        ItemHiddenMenu(
             name: 'Prizes',
             baseStyle: myTextStyle,
             selectedStyle: myTextStyle,
-            colorLineSelected: Colors.blue.shade900,
+            colorLineSelected: selectedLines,
             onTap: () {
               pos = 4;
             }),
@@ -108,7 +120,7 @@ class _HiddenDrawerHomeScreenState extends State<HiddenDrawerHomeScreen> {
             name: 'Gallery',
             baseStyle: myTextStyle,
             selectedStyle: myTextStyle,
-            colorLineSelected: Colors.blue.shade900,
+            colorLineSelected: selectedLines,
             onTap: () {
               pos = 5;
             }),
@@ -119,7 +131,7 @@ class _HiddenDrawerHomeScreenState extends State<HiddenDrawerHomeScreen> {
             name: 'Testimonials',
             baseStyle: myTextStyle,
             selectedStyle: myTextStyle,
-            colorLineSelected: Colors.blue.shade900,
+            colorLineSelected: selectedLines,
             onTap: () {
               pos = 6;
             }),
@@ -130,7 +142,7 @@ class _HiddenDrawerHomeScreenState extends State<HiddenDrawerHomeScreen> {
             name: 'Sponsors',
             baseStyle: myTextStyle,
             selectedStyle: myTextStyle,
-            colorLineSelected: Colors.blue.shade900,
+            colorLineSelected: selectedLines,
             onTap: () {
               pos = 7;
             }),
@@ -141,7 +153,7 @@ class _HiddenDrawerHomeScreenState extends State<HiddenDrawerHomeScreen> {
             name: 'FAQ',
             baseStyle: myTextStyle,
             selectedStyle: myTextStyle,
-            colorLineSelected: Colors.blue.shade900,
+            colorLineSelected: selectedLines,
             onTap: () {
               pos = 8;
             }),
@@ -149,15 +161,13 @@ class _HiddenDrawerHomeScreenState extends State<HiddenDrawerHomeScreen> {
       ),
       ScreenHiddenDrawer(
         ItemHiddenMenu(
-          name: 'Past Papers',
-          baseStyle: myTextStyle,
-          selectedStyle: myTextStyle,
-          colorLineSelected: Colors.blue.shade900,
-           onTap: () {
+            name: 'Past Papers',
+            baseStyle: myTextStyle,
+            selectedStyle: myTextStyle,
+            colorLineSelected: selectedLines,
+            onTap: () {
               pos = 9;
-            }
-        ),
-        
+            }),
         const PastPapersPage(),
       ),
       ScreenHiddenDrawer(
@@ -165,7 +175,7 @@ class _HiddenDrawerHomeScreenState extends State<HiddenDrawerHomeScreen> {
             name: 'Contact Us',
             baseStyle: myTextStyle,
             selectedStyle: myTextStyle,
-            colorLineSelected: Colors.blue.shade900,
+            colorLineSelected: selectedLines,
             onTap: () {
               pos = 10;
             }),
@@ -181,7 +191,7 @@ class _HiddenDrawerHomeScreenState extends State<HiddenDrawerHomeScreen> {
       body: WillPopScope(
         onWillPop: () async {
           if (pos != 1) {
-            pos =1;
+            pos = 1;
             debugPrint("Not one definaetly");
             Navigator.pushReplacementNamed(
                 context, HiddenDrawerHomeScreen2.routeName);
@@ -191,7 +201,7 @@ class _HiddenDrawerHomeScreenState extends State<HiddenDrawerHomeScreen> {
           return true; // Allow default back behavior if on the first tab
         },
         child: HiddenDrawerMenu(
-          elevationAppBar: 0,
+          elevationAppBar: 14,
           backgroundColorMenu: Colors.white,
           screens: _pages,
           initPositionSelected: 0,
@@ -201,9 +211,10 @@ class _HiddenDrawerHomeScreenState extends State<HiddenDrawerHomeScreen> {
           tittleAppBar: Align(
             alignment: Alignment.topLeft,
             child: Image.asset(
-              'assets/images/TOSC_white.png',
+              'assets/images/TOSC_white_cropped.png',
               // width: 200,
               height: 45,
+              alignment: Alignment.topLeft,
             ),
           ),
           // styleAutoTittleName:
@@ -215,7 +226,8 @@ class _HiddenDrawerHomeScreenState extends State<HiddenDrawerHomeScreen> {
                 debugPrint("pressd");
                 Provider.of<UserProvider>(context, listen: false)
                         .user
-                        .token.isNotEmpty
+                        .token
+                        .isNotEmpty
                     ? Navigator.pushNamed(context, UserDetailsPage.routeName)
                     : Navigator.pushNamed(context, LoginPage.routeName);
               },

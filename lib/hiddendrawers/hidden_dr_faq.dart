@@ -10,9 +10,11 @@ import '../Screens/about.dart';
 import '../Screens/gallery2.dart';
 import '../Screens/homescreen.dart';
 import '../Screens/pastpapers.dart';
+import '../Screens/school_rep.dart';
 import '../Screens/sponsors.dart';
 import '../constants/colors_and_fonts.dart';
 import '../Widgets/hex_to_color.dart';
+import '../constants/global_variables.dart';
 
 class HiddenDrawerFaq extends StatefulWidget {
   static const String routeName = '/faq';
@@ -54,7 +56,7 @@ class _HiddenDrawerFaqState extends State<HiddenDrawerFaq> {
           name: 'FAQ',
           baseStyle: myTextStyle,
           selectedStyle: myTextStyle,
-          colorLineSelected: Colors.blue.shade900,
+          colorLineSelected: selectedLines,
         ),
         const FAQPage(),
       ),
@@ -63,16 +65,25 @@ class _HiddenDrawerFaqState extends State<HiddenDrawerFaq> {
           name: 'About',
           baseStyle: myTextStyle,
           selectedStyle: myTextStyle,
-          colorLineSelected: Colors.blue.shade900,
+          colorLineSelected: selectedLines,
         ),
         const About(),
+      ),
+      ScreenHiddenDrawer(
+        ItemHiddenMenu(
+          name: schoolrep,
+          baseStyle: myTextStyle,
+          selectedStyle: myTextStyle,
+          colorLineSelected: selectedLines,
+        ),
+        const SchoolRepresentative(),
       ),
       ScreenHiddenDrawer(
         ItemHiddenMenu(
           name: 'Home',
           baseStyle: myTextStyle,
           selectedStyle: myTextStyle,
-          colorLineSelected: Colors.blue.shade900,
+          colorLineSelected: selectedLines,
         ),
         const HomeScreen(),
       ),
@@ -81,7 +92,7 @@ class _HiddenDrawerFaqState extends State<HiddenDrawerFaq> {
           name: 'Conduction',
           baseStyle: myTextStyle,
           selectedStyle: myTextStyle,
-          colorLineSelected: Colors.blue.shade900,
+          colorLineSelected: selectedLines,
         ),
         const Conduction(),
       ),
@@ -90,7 +101,7 @@ class _HiddenDrawerFaqState extends State<HiddenDrawerFaq> {
           name: 'Prizes',
           baseStyle: myTextStyle,
           selectedStyle: myTextStyle,
-          colorLineSelected: Colors.blue.shade900,
+          colorLineSelected: selectedLines,
         ),
         const PrizesPage(),
       ),
@@ -99,7 +110,7 @@ class _HiddenDrawerFaqState extends State<HiddenDrawerFaq> {
           name: 'Gallery',
           baseStyle: myTextStyle,
           selectedStyle: myTextStyle,
-          colorLineSelected: Colors.blue.shade900,
+          colorLineSelected: selectedLines,
         ),
         const GalleryPage(),
       ),
@@ -108,7 +119,7 @@ class _HiddenDrawerFaqState extends State<HiddenDrawerFaq> {
           name: 'Testimonials',
           baseStyle: myTextStyle,
           selectedStyle: myTextStyle,
-          colorLineSelected: Colors.blue.shade900,
+          colorLineSelected: selectedLines,
         ),
         TestimonialsPage(),
       ),
@@ -117,7 +128,7 @@ class _HiddenDrawerFaqState extends State<HiddenDrawerFaq> {
           name: 'Sponsors',
           baseStyle: myTextStyle,
           selectedStyle: myTextStyle,
-          colorLineSelected: Colors.blue.shade900,
+          colorLineSelected: selectedLines,
         ),
         const SponsorsPage(),
       ),
@@ -126,7 +137,7 @@ class _HiddenDrawerFaqState extends State<HiddenDrawerFaq> {
           name: 'Past Papers',
           baseStyle: myTextStyle,
           selectedStyle: myTextStyle,
-          colorLineSelected: Colors.blue.shade900,
+          colorLineSelected: selectedLines,
         ),
         const PastPapersPage(),
       ),
@@ -135,7 +146,7 @@ class _HiddenDrawerFaqState extends State<HiddenDrawerFaq> {
           name: 'Contact Us',
           baseStyle: myTextStyle,
           selectedStyle: myTextStyle,
-          colorLineSelected: Colors.blue.shade900,
+          colorLineSelected: selectedLines,
         ),
         const ContactUs(),
       ),

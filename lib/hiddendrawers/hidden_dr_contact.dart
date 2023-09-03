@@ -10,9 +10,11 @@ import '../Screens/about.dart';
 import '../Screens/gallery2.dart';
 import '../Screens/homescreen.dart';
 import '../Screens/pastpapers.dart';
+import '../Screens/school_rep.dart';
 import '../Screens/sponsors.dart';
 import '../constants/colors_and_fonts.dart';
 import '../Widgets/hex_to_color.dart';
+import '../constants/global_variables.dart';
 
 class HiddenDrawerContact extends StatefulWidget {
   static const String routeName  = '/contact-us';
@@ -54,7 +56,7 @@ class _HiddenDrawerContactState extends State<HiddenDrawerContact> {
           name: 'Contact Us',
           baseStyle: myTextStyle,
           selectedStyle: myTextStyle,
-          colorLineSelected: Colors.blue.shade900,
+          colorLineSelected: selectedLines,
         ),
         const ContactUs(),
       ),
@@ -63,7 +65,7 @@ class _HiddenDrawerContactState extends State<HiddenDrawerContact> {
           name: 'Home',
           baseStyle: myTextStyle,
           selectedStyle: myTextStyle,
-          colorLineSelected: Colors.blue.shade900,
+          colorLineSelected: selectedLines,
         ),
         const HomeScreen(),
       ),
@@ -72,16 +74,25 @@ class _HiddenDrawerContactState extends State<HiddenDrawerContact> {
           name: 'About',
           baseStyle: myTextStyle,
           selectedStyle: myTextStyle,
-          colorLineSelected: Colors.blue.shade900,
+          colorLineSelected: selectedLines,
         ),
         const About(),
+      ),
+      ScreenHiddenDrawer(
+        ItemHiddenMenu(
+          name: schoolrep,
+          baseStyle: myTextStyle,
+          selectedStyle: myTextStyle,
+          colorLineSelected: selectedLines,
+        ),
+        const SchoolRepresentative(),
       ),
       ScreenHiddenDrawer(
         ItemHiddenMenu(
           name: 'Conduction',
           baseStyle: myTextStyle,
           selectedStyle: myTextStyle,
-          colorLineSelected: Colors.blue.shade900,
+          colorLineSelected: selectedLines,
         ),
         const Conduction(),
       ),
@@ -90,7 +101,7 @@ class _HiddenDrawerContactState extends State<HiddenDrawerContact> {
           name: 'Prizes',
           baseStyle: myTextStyle,
           selectedStyle: myTextStyle,
-          colorLineSelected: Colors.blue.shade900,
+          colorLineSelected: selectedLines,
         ),
         const PrizesPage(),
       ),
@@ -99,7 +110,7 @@ class _HiddenDrawerContactState extends State<HiddenDrawerContact> {
           name: 'Gallery',
           baseStyle: myTextStyle,
           selectedStyle: myTextStyle,
-          colorLineSelected: Colors.blue.shade900,
+          colorLineSelected: selectedLines,
         ),
         const GalleryPage(),
       ),
@@ -108,7 +119,7 @@ class _HiddenDrawerContactState extends State<HiddenDrawerContact> {
           name: 'Testimonials',
           baseStyle: myTextStyle,
           selectedStyle: myTextStyle,
-          colorLineSelected: Colors.blue.shade900,
+          colorLineSelected: selectedLines,
         ),
         TestimonialsPage(),
       ),
@@ -117,7 +128,7 @@ class _HiddenDrawerContactState extends State<HiddenDrawerContact> {
           name: 'Sponsors',
           baseStyle: myTextStyle,
           selectedStyle: myTextStyle,
-          colorLineSelected: Colors.blue.shade900,
+          colorLineSelected: selectedLines,
         ),
         const SponsorsPage(),
       ),
@@ -126,7 +137,7 @@ class _HiddenDrawerContactState extends State<HiddenDrawerContact> {
           name: 'FAQ',
           baseStyle: myTextStyle,
           selectedStyle: myTextStyle,
-          colorLineSelected: Colors.blue.shade900,
+          colorLineSelected: selectedLines,
         ),
         const FAQPage(),
       ),
@@ -135,7 +146,7 @@ class _HiddenDrawerContactState extends State<HiddenDrawerContact> {
           name: 'Past Papers',
           baseStyle: myTextStyle,
           selectedStyle: myTextStyle,
-          colorLineSelected: Colors.blue.shade900,
+          colorLineSelected: selectedLines,
         ),
         const PastPapersPage(),
       ),

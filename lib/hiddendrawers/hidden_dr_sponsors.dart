@@ -12,6 +12,9 @@ import '../Screens/homescreen.dart';
 import '../Screens/pastpapers.dart';
 import '../Screens/sponsors.dart';
 import '../constants/colors_and_fonts.dart';
+import '../Screens/school_rep.dart';
+import '../constants/global_variables.dart';
+
 
 class HiddenDrawerSponsers extends StatefulWidget {
   static const String routeName  = '/sponsors';
@@ -53,7 +56,7 @@ class _HiddenDrawerSponsersState extends State<HiddenDrawerSponsers> {
           name: 'Sponsors',
           baseStyle: myTextStyle,
           selectedStyle: myTextStyle,
-          colorLineSelected: Colors.blue.shade900,
+          colorLineSelected: selectedLines,
         ),
         const SponsorsPage(),
       ),
@@ -62,7 +65,7 @@ class _HiddenDrawerSponsersState extends State<HiddenDrawerSponsers> {
           name: 'Home',
           baseStyle: myTextStyle,
           selectedStyle: myTextStyle,
-          colorLineSelected: Colors.blue.shade900,
+          colorLineSelected: selectedLines,
         ),
         const HomeScreen(),
       ),
@@ -71,16 +74,25 @@ class _HiddenDrawerSponsersState extends State<HiddenDrawerSponsers> {
           name: 'About',
           baseStyle: myTextStyle,
           selectedStyle: myTextStyle,
-          colorLineSelected: Colors.blue.shade900,
+          colorLineSelected: selectedLines,
         ),
         const About(),
+      ),
+      ScreenHiddenDrawer(
+        ItemHiddenMenu(
+          name: schoolrep,
+          baseStyle: myTextStyle,
+          selectedStyle: myTextStyle,
+          colorLineSelected: selectedLines,
+        ),
+        const SchoolRepresentative(),
       ),
       ScreenHiddenDrawer(
         ItemHiddenMenu(
           name: 'Conduction',
           baseStyle: myTextStyle,
           selectedStyle: myTextStyle,
-          colorLineSelected: Colors.blue.shade900,
+          colorLineSelected: selectedLines,
         ),
         const Conduction(),
       ),
@@ -89,7 +101,7 @@ class _HiddenDrawerSponsersState extends State<HiddenDrawerSponsers> {
           name: 'Prizes',
           baseStyle: myTextStyle,
           selectedStyle: myTextStyle,
-          colorLineSelected: Colors.blue.shade900,
+          colorLineSelected: selectedLines,
         ),
         const PrizesPage(),
       ),
@@ -98,7 +110,7 @@ class _HiddenDrawerSponsersState extends State<HiddenDrawerSponsers> {
           name: 'Gallery',
           baseStyle: myTextStyle,
           selectedStyle: myTextStyle,
-          colorLineSelected: Colors.blue.shade900,
+          colorLineSelected: selectedLines,
         ),
         const GalleryPage(),
       ),
@@ -107,7 +119,7 @@ class _HiddenDrawerSponsersState extends State<HiddenDrawerSponsers> {
           name: 'Testimonials',
           baseStyle: myTextStyle,
           selectedStyle: myTextStyle,
-          colorLineSelected: Colors.blue.shade900,
+          colorLineSelected: selectedLines,
         ),
         TestimonialsPage(),
       ),
@@ -116,7 +128,7 @@ class _HiddenDrawerSponsersState extends State<HiddenDrawerSponsers> {
           name: 'FAQ',
           baseStyle: myTextStyle,
           selectedStyle: myTextStyle,
-          colorLineSelected: Colors.blue.shade900,
+          colorLineSelected: selectedLines,
         ),
         const FAQPage(),
       ),
@@ -125,7 +137,7 @@ class _HiddenDrawerSponsersState extends State<HiddenDrawerSponsers> {
           name: 'Past Papers',
           baseStyle: myTextStyle,
           selectedStyle: myTextStyle,
-          colorLineSelected: Colors.blue.shade900,
+          colorLineSelected: selectedLines,
         ),
         const PastPapersPage(),
       ),
@@ -134,7 +146,7 @@ class _HiddenDrawerSponsersState extends State<HiddenDrawerSponsers> {
           name: 'Contact Us',
           baseStyle: myTextStyle,
           selectedStyle: myTextStyle,
-          colorLineSelected: Colors.blue.shade900,
+          colorLineSelected: selectedLines,
         ),
         const ContactUs(),
       ),

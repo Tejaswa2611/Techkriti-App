@@ -5,8 +5,10 @@ import 'package:techkriti/Screens/contactus.dart';
 import 'package:techkriti/Screens/faq_tosc.dart';
 import 'package:techkriti/Screens/pastpapers.dart';
 import 'package:techkriti/Screens/prizes.dart';
+import 'package:techkriti/Screens/school_rep.dart';
 import 'package:techkriti/Screens/testimonial.dart';
 import 'package:techkriti/Services/notification_services.dart';
+import 'package:techkriti/constants/global_variables.dart';
 import '../Screens/about.dart';
 import '../Screens/gallery2.dart';
 import '../Screens/homescreen.dart';
@@ -53,7 +55,7 @@ class _HiddenDrawerConductionState extends State<HiddenDrawerConduction> {
           name: 'Conduction',
           baseStyle: myTextStyle,
           selectedStyle: myTextStyle,
-          colorLineSelected: Colors.blue.shade900,
+          colorLineSelected: selectedLines,
         ),
         const Conduction(),
       ), 
@@ -62,7 +64,7 @@ class _HiddenDrawerConductionState extends State<HiddenDrawerConduction> {
           name: 'Home',
           baseStyle: myTextStyle,
           selectedStyle: myTextStyle,
-          colorLineSelected: Colors.blue.shade900,
+          colorLineSelected: selectedLines,
         ),
         const HomeScreen(),
       ),
@@ -71,16 +73,25 @@ class _HiddenDrawerConductionState extends State<HiddenDrawerConduction> {
           name: 'About',
           baseStyle: myTextStyle,
           selectedStyle: myTextStyle,
-          colorLineSelected: Colors.blue.shade900,
+          colorLineSelected: selectedLines,
         ),
         const About(),
+      ),
+      ScreenHiddenDrawer(
+        ItemHiddenMenu(
+          name: schoolrep,
+          baseStyle: myTextStyle,
+          selectedStyle: myTextStyle,
+          colorLineSelected: selectedLines,
+        ),
+        const SchoolRepresentative(),
       ),
       ScreenHiddenDrawer(
         ItemHiddenMenu(
           name: 'Prizes',
           baseStyle: myTextStyle,
           selectedStyle: myTextStyle,
-          colorLineSelected: Colors.blue.shade900,
+          colorLineSelected: selectedLines,
         ),
         const PrizesPage(),
       ),
@@ -89,7 +100,7 @@ class _HiddenDrawerConductionState extends State<HiddenDrawerConduction> {
           name: 'Gallery',
           baseStyle: myTextStyle,
           selectedStyle: myTextStyle,
-          colorLineSelected: Colors.blue.shade900,
+          colorLineSelected: selectedLines,
         ),
         const GalleryPage(),
       ),
@@ -98,7 +109,7 @@ class _HiddenDrawerConductionState extends State<HiddenDrawerConduction> {
           name: 'Testimonials',
           baseStyle: myTextStyle,
           selectedStyle: myTextStyle,
-          colorLineSelected: Colors.blue.shade900,
+          colorLineSelected: selectedLines,
         ),
         TestimonialsPage(),
       ),
@@ -107,7 +118,7 @@ class _HiddenDrawerConductionState extends State<HiddenDrawerConduction> {
           name: 'Sponsors',
           baseStyle: myTextStyle,
           selectedStyle: myTextStyle,
-          colorLineSelected: Colors.blue.shade900,
+          colorLineSelected: selectedLines,
         ),
         const SponsorsPage(),
       ),
@@ -116,7 +127,7 @@ class _HiddenDrawerConductionState extends State<HiddenDrawerConduction> {
           name: 'FAQ',
           baseStyle: myTextStyle,
           selectedStyle: myTextStyle,
-          colorLineSelected: Colors.blue.shade900,
+          colorLineSelected: selectedLines,
         ),
         const FAQPage(),
       ),
@@ -125,7 +136,7 @@ class _HiddenDrawerConductionState extends State<HiddenDrawerConduction> {
           name: 'Past Papers',
           baseStyle: myTextStyle,
           selectedStyle: myTextStyle,
-          colorLineSelected: Colors.blue.shade900,
+          colorLineSelected: selectedLines,
         ),
         const PastPapersPage(),
       ),
@@ -134,7 +145,7 @@ class _HiddenDrawerConductionState extends State<HiddenDrawerConduction> {
           name: 'Contact Us',
           baseStyle: myTextStyle,
           selectedStyle: myTextStyle,
-          colorLineSelected: Colors.blue.shade900,
+          colorLineSelected: selectedLines,
         ),
         const ContactUs(),
       ),

@@ -7,3 +7,6 @@ Color drawerBackground = hexToColor('#FAF9F6');
 
 const String headingFont =  'heading';
 const String textFont =  'sans';
+
+Color selectedLines =  Colors.black;
+

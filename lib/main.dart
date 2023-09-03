@@ -9,7 +9,6 @@ import 'package:techkriti/providers/user_provider.dart';
 import 'package:techkriti/router.dart';
 import 'package:upgrader/upgrader.dart';
 import 'Services/notification_services.dart';
-import 'Widgets/hex_to_color.dart';
 import 'details/details_page.dart';
 
 @pragma('vm:entry-point')
@@ -55,18 +54,19 @@ class _MyAppState extends State<MyApp> {
       debugShowCheckedModeBanner: false,
       title: 'TOSC',
       theme: ThemeData(
-        appBarTheme: AppBarTheme(
+        appBarTheme: const AppBarTheme(
           // color: hexToColor('#4169E1'),
           // color: Colors.blue.shade900,
-          titleTextStyle: const TextStyle(color: Colors.white),
+          titleTextStyle:  TextStyle(color: Colors.white),
           // color: hexToColor('#F9CB12'),// tosc yello
           // color: hexToColor('#00FFFF'), // Cyan
           // color: Colors.blue.shade900, // DarkBlue
           // color: hexToColor('#87CEEB'), // LightBlue
           // color: hexToColor('#0B1D21'), // DarkGreen
-          color: hexToColor('#56A5EC'), // Light Blue
+          // color: hexToColor('#56A5EC'), // Light Blue
+          color:  Colors.black87,//hexToColor('#404040'), //Testing
           // color: hexToColor('#D9D9D9'), grey
-          iconTheme: const IconThemeData(color: Colors.black),
+          iconTheme:  IconThemeData(color: Colors.white),
         ),
         pageTransitionsTheme: const PageTransitionsTheme(
           builders: {

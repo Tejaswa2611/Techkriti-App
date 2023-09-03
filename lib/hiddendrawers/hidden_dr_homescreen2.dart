@@ -18,6 +18,9 @@ import '../Screens/pastpapers.dart';
 import '../Screens/sponsors.dart';
 import '../constants/colors_and_fonts.dart';
 import 'hidden_dr_homescreen.dart';
+import '../Screens/school_rep.dart';
+import '../constants/global_variables.dart';
+
 
 class HiddenDrawerHomeScreen2 extends StatefulWidget {
   static const String routeName = '/homescreen_drawer2';
@@ -64,7 +67,7 @@ class _HiddenDrawerHomeScreen2State extends State<HiddenDrawerHomeScreen2> {
             name: 'Home',
             baseStyle: myTextStyle,
             selectedStyle: myTextStyle,
-            colorLineSelected: Colors.blue.shade900,
+            colorLineSelected: selectedLines,
             onTap: () {
               pos = 1;
             }),
@@ -75,7 +78,7 @@ class _HiddenDrawerHomeScreen2State extends State<HiddenDrawerHomeScreen2> {
             name: 'Conduction',
             baseStyle: myTextStyle,
             selectedStyle: myTextStyle,
-            colorLineSelected: Colors.blue.shade900,
+            colorLineSelected: selectedLines,
             onTap: () {
               pos = 2;
             }),
@@ -86,7 +89,7 @@ class _HiddenDrawerHomeScreen2State extends State<HiddenDrawerHomeScreen2> {
             name: 'About',
             baseStyle: myTextStyle,
             selectedStyle: myTextStyle,
-            colorLineSelected: Colors.blue.shade900,
+            colorLineSelected: selectedLines,
             onTap: () {
               pos = 3;
             }),
@@ -94,10 +97,22 @@ class _HiddenDrawerHomeScreen2State extends State<HiddenDrawerHomeScreen2> {
       ),
       ScreenHiddenDrawer(
         ItemHiddenMenu(
+          name: schoolrep,
+          baseStyle: myTextStyle,
+          selectedStyle: myTextStyle,
+          colorLineSelected: selectedLines,
+            onTap: () {
+              pos = 11;
+            }
+        ),
+        const SchoolRepresentative(),
+      ),
+      ScreenHiddenDrawer(
+        ItemHiddenMenu(
             name: 'Prizes',
             baseStyle: myTextStyle,
             selectedStyle: myTextStyle,
-            colorLineSelected: Colors.blue.shade900,
+            colorLineSelected: selectedLines,
             onTap: () {
               pos = 4;
             }),
@@ -108,7 +123,7 @@ class _HiddenDrawerHomeScreen2State extends State<HiddenDrawerHomeScreen2> {
             name: 'Gallery',
             baseStyle: myTextStyle,
             selectedStyle: myTextStyle,
-            colorLineSelected: Colors.blue.shade900,
+            colorLineSelected: selectedLines,
             onTap: () {
               pos = 5;
             }),
@@ -119,7 +134,7 @@ class _HiddenDrawerHomeScreen2State extends State<HiddenDrawerHomeScreen2> {
             name: 'Testimonials',
             baseStyle: myTextStyle,
             selectedStyle: myTextStyle,
-            colorLineSelected: Colors.blue.shade900,
+            colorLineSelected: selectedLines,
             onTap: () {
               pos = 6;
             }),
@@ -130,7 +145,7 @@ class _HiddenDrawerHomeScreen2State extends State<HiddenDrawerHomeScreen2> {
             name: 'Sponsors',
             baseStyle: myTextStyle,
             selectedStyle: myTextStyle,
-            colorLineSelected: Colors.blue.shade900,
+            colorLineSelected: selectedLines,
             onTap: () {
               pos = 7;
             }),
@@ -141,7 +156,7 @@ class _HiddenDrawerHomeScreen2State extends State<HiddenDrawerHomeScreen2> {
             name: 'FAQ',
             baseStyle: myTextStyle,
             selectedStyle: myTextStyle,
-            colorLineSelected: Colors.blue.shade900,
+            colorLineSelected: selectedLines,
             onTap: () {
               pos = 8;
             }),
@@ -152,7 +167,7 @@ class _HiddenDrawerHomeScreen2State extends State<HiddenDrawerHomeScreen2> {
             name: 'Past Papers',
             baseStyle: myTextStyle,
             selectedStyle: myTextStyle,
-            colorLineSelected: Colors.blue.shade900,
+            colorLineSelected: selectedLines,
             onTap: () {
               pos = 9;
             }),
@@ -163,7 +178,7 @@ class _HiddenDrawerHomeScreen2State extends State<HiddenDrawerHomeScreen2> {
             name: 'Contact Us',
             baseStyle: myTextStyle,
             selectedStyle: myTextStyle,
-            colorLineSelected: Colors.blue.shade900,
+            colorLineSelected: selectedLines,
             onTap: () {
               pos = 10;
             }),

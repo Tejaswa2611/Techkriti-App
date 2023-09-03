@@ -4,6 +4,7 @@ import 'package:techkriti/Screens/landing.dart';
 import 'package:techkriti/Screens/login_page.dart';
 import 'package:techkriti/Screens/pastpapers.dart';
 import 'package:techkriti/Screens/register_page.dart';
+import 'package:techkriti/Screens/school_rep.dart';
 import 'package:techkriti/details/details_page.dart';
 import 'package:techkriti/hiddendrawers/hidden_dr_conduction.dart';
 import 'package:techkriti/hiddendrawers/hidden_dr_contact.dart';
@@ -16,6 +17,7 @@ import 'package:techkriti/hiddendrawers/hidden_dr_sponsors.dart';
 import 'package:techkriti/hiddendrawers/hidden_dr_testimonial.dart';
 import 'Screens/resetpassword.dart';
 import 'constants/colors_and_fonts.dart';
+import 'hiddendrawers/hidden_dr_SR.dart';
 import 'hiddendrawers/hidden_drawer_about.dart';
 
 Route<dynamic> generateRoute(RouteSettings routeSettings) {
@@ -63,7 +65,7 @@ Route<dynamic> generateRoute(RouteSettings routeSettings) {
     case HiddenDrawer.routeName:
       return MaterialPageRoute(
         settings: routeSettings,
-        builder: (_) => const HiddenDrawer(),
+        builder: (_) => const HiddenDrawer(), // ABOUT US
       );
     case LoginPage.routeName:
       return MaterialPageRoute(
@@ -75,11 +77,11 @@ Route<dynamic> generateRoute(RouteSettings routeSettings) {
         settings: routeSettings,
         builder: (_) => const RegistrationPage(),
       );
-    case HomeScreen.routeName:
-      return MaterialPageRoute(
-        settings: routeSettings,
-        builder: (_) => const HomeScreen(),
-      );
+    // case HomeScreen.routeName:
+    //   return MaterialPageRoute(
+    //     settings: routeSettings,
+    //     builder: (_) => const HomeScreen(),
+    //   );
     case UserDetailsPage.routeName:
       return MaterialPageRoute(
         settings: routeSettings,
@@ -108,7 +110,12 @@ Route<dynamic> generateRoute(RouteSettings routeSettings) {
     case PasswordResetPage.routeName:
       return MaterialPageRoute(
         settings: routeSettings,
-        builder: (_) => PasswordResetPage(),
+        builder: (_) => const PasswordResetPage(),
+      );
+    case HiddenDrawerSchoolRepresentative.routeName:
+      return MaterialPageRoute(
+        settings: routeSettings,
+        builder: (_) => const HiddenDrawerSchoolRepresentative(),
       );
 
     default:
