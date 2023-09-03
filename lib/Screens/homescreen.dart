@@ -124,7 +124,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   text: 'Testimonials',
                 ),
                 CustomCard3(
-                  imagePath: 'assets/images/Prize_vector.jpg',
+                  imagePath: 'assets/images/Prize_Vector.jpg',
                   onTap: () => Navigator.pushNamed(
                       context, HiddenDrawerPrizes.routeName),
                   text: 'Prizes',

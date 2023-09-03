@@ -1,5 +1,6 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
+import 'package:techkriti/constants/colors_and_fonts.dart';
 
 class SchoolRepresentative extends StatefulWidget {
   static const String routeName = '/school-rep';
@@ -21,12 +22,11 @@ class _SchoolRepresentativeState extends State<SchoolRepresentative> {
           children: [
             Padding(
               padding: const EdgeInsets.all(16.0),
-              child: Center(
-                child: FadeInDown(
-                  child: Image.asset(
-                    'assets/images/blacktechkriti.png',
-                    height: 170,
-                  ),
+              child: FadeInDown(
+                child: Image.asset(
+                  'assets/images/SR2.jpg',
+                  // height: 170,
+                  // alignment: Alignment.topCenter,
                 ),
               ),
             ),
@@ -156,6 +156,7 @@ class _SchoolRepresentativeState extends State<SchoolRepresentative> {
         color: Colors.black,
         fontSize: 24,
         fontWeight: FontWeight.bold,
+        fontFamily: headingFont
       ),
     );
   }
@@ -168,6 +169,7 @@ class _SchoolRepresentativeState extends State<SchoolRepresentative> {
         style: const TextStyle(
           color: Colors.black,
           fontSize: 18,
+          fontFamily: textFont
         ),
       ),
     );
@@ -188,6 +190,7 @@ class _SchoolRepresentativeState extends State<SchoolRepresentative> {
             style: const TextStyle(
               color: Colors.black,
               fontSize: 18,
+              fontFamily: textFont
             ),
           ),
         ),

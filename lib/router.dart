@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:techkriti/Screens/homescreen.dart';
+// import 'package:techkriti/Screens/homescreen.dart';
 import 'package:techkriti/Screens/landing.dart';
 import 'package:techkriti/Screens/login_page.dart';
 import 'package:techkriti/Screens/pastpapers.dart';
 import 'package:techkriti/Screens/register_page.dart';
-import 'package:techkriti/Screens/school_rep.dart';
+// import 'package:techkriti/Screens/school_rep.dart';
 import 'package:techkriti/details/details_page.dart';
 import 'package:techkriti/hiddendrawers/hidden_dr_conduction.dart';
 import 'package:techkriti/hiddendrawers/hidden_dr_contact.dart';

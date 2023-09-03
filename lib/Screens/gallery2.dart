@@ -193,7 +193,7 @@ class _GalleryPageState extends State<GalleryPage> {
                 gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 2,
                 ),
-                itemCount: 10,
+                itemCount: 16,
                 itemBuilder: (context, index) => GestureDetector(
                   onTap: () {
                     _openPhotoPopup(index);
@@ -204,7 +204,7 @@ class _GalleryPageState extends State<GalleryPage> {
                       color: Colors.grey[300],
                       padding: const EdgeInsets.all(6),
                       child: Image.asset(
-                        'assets/images/${index + 103}.jpg',
+                        'assets/images/${index + 101}.jpg',
                         fit: BoxFit.cover,
                       ),
                     ),
@@ -220,7 +220,7 @@ class _GalleryPageState extends State<GalleryPage> {
                       children: [
                         PageView.builder(
                           controller: _pageController,
-                          itemCount: 10,
+                          itemCount: 16,
                           itemBuilder: (context, index) {
                             return GestureDetector(
                               onScaleUpdate: (details) {
@@ -233,7 +233,7 @@ class _GalleryPageState extends State<GalleryPage> {
                                 child: Transform.scale(
                                   scale: photoScale,
                                   child: Image.asset(
-                                    'assets/images/${index + 103}.jpg',
+                                    'assets/images/${index + 101}.jpg',
                                     fit: BoxFit.contain,
                                   ),
                                 ),
