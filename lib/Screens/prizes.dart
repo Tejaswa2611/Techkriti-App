@@ -98,17 +98,16 @@ class _PrizesPageState extends State<PrizesPage> {
               ),
             ),
             FadeInRight(
-              child: Padding(
-                padding: const EdgeInsets.all(15.0),
+              child: const Padding(
+                padding: EdgeInsets.all(15.0),
                 child: Text(
-                  'TOSC’21 brought together a huge number of participants from all over the nation in the hopes of learning something new.\n'
+                  'TOSC’23 brought together a huge number of participants from all over the nation in the hopes of learning something new.\n'
                   'A plethora of prizes and accolades were presented to the winning participants and teams.\n'
-                  'Prizes upto 5 Lac, including Tablets, Speakers, Smart Watches, and many more goodies.\n'
-                  '• Top 10 from each pool will get online subscriptions, gift vouchers and exciting goodies.\n'
-                  '• Merit certificates for city wise toppers and all top 100 from each pool.\n'
-                  '• Participation certificates for all participants.\n'
-                  '• The school $details with maximum participants will be presented the Best School Award.',
-                  style: const TextStyle(
+                  '• Opportunity to visit ISRO and ARIES\n'
+                  '• Participation certificates for all participants\n'
+                  '• Winner from each pools will get Gold and Silver certificates\n'
+                  '• Top 50 from each pool will get online subscriptions, gift vouchers and exciting goodies.',
+                  style: TextStyle(
                     fontSize: 16.0,
                     color: Colors.black,
                     fontFamily: textFont,

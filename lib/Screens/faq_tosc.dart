@@ -59,7 +59,7 @@ class FAQPage extends StatelessWidget {
                 FAQItem(
                   question: 'How can I register for the exam?',
                   answer:
-                      'Please check out this link for a complete process on registration.',
+                      'Open app and fiil the form after opening sign up section or you can register from the Techkriti website also',
                 ),
                 SizedBox(height: 16.0),
                 FAQItem(

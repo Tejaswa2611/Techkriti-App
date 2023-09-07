@@ -54,7 +54,7 @@ class _LandingPageState extends State<LandingPage> {
             crossAxisAlignment: CrossAxisAlignment.start,
             // mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              const SizedBox(height: 77),
+              SizedBox(height: screenHeight * 0.15),
               SizedBox(
                 height: 77,
                 child: Image.asset(
@@ -62,7 +62,7 @@ class _LandingPageState extends State<LandingPage> {
                   // fit: BoxFit.fill,
                 ),
               ),
-              const SizedBox(height: 60),
+              SizedBox(height: screenHeight * 0.1),
               Padding(
                 padding: const EdgeInsets.only(left: 15.0),
                 child: Column(
@@ -79,7 +79,7 @@ class _LandingPageState extends State<LandingPage> {
                   ],
                 ),
               ),
-              const SizedBox(height: 40),
+               SizedBox(height: screenHeight*0.1),
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.08),
                 child: Center(
@@ -95,9 +95,7 @@ class _LandingPageState extends State<LandingPage> {
                 padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.08),
                 child: Center(
                   child: Button(
-                    text: 'SIGN UP',
-                    onTap: () => _launchRegistrationForm()
-                  ),
+                      text: 'SIGN UP', onTap: () => _launchRegistrationForm()),
                 ),
               ),
               // const SizedBox(height: 10),
