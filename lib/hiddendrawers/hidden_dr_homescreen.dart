@@ -219,19 +219,19 @@ class _HiddenDrawerHomeScreenState extends State<HiddenDrawerHomeScreen> {
           ),
           // styleAutoTittleName:
           // //    const TextStyle(fontSize: 20, fontFamily: headingFont),
-          actionsAppBar: [
-            IconButton(
-              icon: const Icon(Icons.account_circle_sharp),
-              onPressed: () {
-                debugPrint("pressd");
-                Provider.of<UserProvider>(context, listen: false)
-                        .user
-                        .token
-                        .isNotEmpty
-                    ? Navigator.pushNamed(context, UserDetailsPage.routeName)
-                    : Navigator.pushNamed(context, LoginPage.routeName);
-              },
-            ),
+          // actionsAppBar: [
+          //   IconButton(
+          //     icon: const Icon(Icons.account_circle_sharp),
+          //     onPressed: () {
+          //       debugPrint("pressd");
+          //       Provider.of<UserProvider>(context, listen: false)
+          //               .user
+          //               .token
+          //               .isNotEmpty
+          //           ? Navigator.pushNamed(context, UserDetailsPage.routeName)
+          //           : Navigator.pushNamed(context, LoginPage.routeName);
+          //     },
+          //   ),
             // IconButton(
             //   icon: const Icon(Icons.notifications),
             //   onPressed: () {
@@ -253,7 +253,7 @@ class _HiddenDrawerHomeScreenState extends State<HiddenDrawerHomeScreen> {
             //     );
             //   },
             // ),
-          ],
+          // ],
         ),
       ),
     );

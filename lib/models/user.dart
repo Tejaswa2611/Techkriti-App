@@ -14,6 +14,7 @@ class User
   String parentName;
   String schoolName;
   String schoolAddress;
+  String schoolCity; 
   String phone;
   String grade;
   String pool;
@@ -30,6 +31,7 @@ class User
     this.parentName = '',
     this.schoolName = '',
     this.schoolAddress = '',
+    this.schoolCity = '',
     required this.phone,
     this.grade= '',
     this.pool = '',
@@ -46,6 +48,8 @@ class User
       'token': token,
       'parentName': parentName,
       'schoolName': schoolName,
+      'schoolAddress': schoolAddress,
+      'schoolCity': schoolCity,
       'phone': phone,
       'grade': grade,
       'pool':pool,
@@ -64,6 +68,8 @@ class User
       email: map['email'] ?? '',
       parentName: map['parentName'] ?? '',
       schoolName: map['schoolName'] ?? '',
+      schoolAddress: map['schoolAddress'] ?? '',
+      schoolCity: map['schoolCity'] ?? '',
       phone: map['phone'] ?? '',
       grade: map['grade'] ?? '',
       token: map['token'] ?? '',

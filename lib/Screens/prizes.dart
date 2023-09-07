@@ -103,7 +103,7 @@ class _PrizesPageState extends State<PrizesPage> {
                 child: Text(
                   'TOSC’21 brought together a huge number of participants from all over the nation in the hopes of learning something new.\n'
                   'A plethora of prizes and accolades were presented to the winning participants and teams.\n'
-                  'Prizes upto 2 Lac, including Tablets, Speakers, Smart Watches, and many more goodies.\n'
+                  'Prizes upto 5 Lac, including Tablets, Speakers, Smart Watches, and many more goodies.\n'
                   '• Top 10 from each pool will get online subscriptions, gift vouchers and exciting goodies.\n'
                   '• Merit certificates for city wise toppers and all top 100 from each pool.\n'
                   '• Participation certificates for all participants.\n'

@@ -179,28 +179,28 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
             CarouselSlider(
               items: [
-                TimelineCard(
-                  imageUrl: imageUrl1,
-                  onTap: () {
-                    setState(
-                      () {
-                        selectedImageUrl = imageUrl1;
-                      },
-                    );
-                    _showImagePopup(context, imageUrl1);
-                  },
-                ),
-                TimelineCard(
-                  imageUrl: imageUrl2,
-                  onTap: () {
-                    setState(
-                      () {
-                        selectedImageUrl = imageUrl2;
-                      },
-                    );
-                    _showImagePopup(context, imageUrl2);
-                  },
-                ),
+                // TimelineCard(
+                //   imageUrl: imageUrl1,
+                //   onTap: () {
+                //     setState(
+                //       () {
+                //         selectedImageUrl = imageUrl1;
+                //       },
+                //     );
+                //     _showImagePopup(context, imageUrl1);
+                //   },
+                // ),
+                // TimelineCard(
+                //   imageUrl: imageUrl2,
+                //   onTap: () {
+                //     setState(
+                //       () {
+                //         selectedImageUrl = imageUrl2;
+                //       },
+                //     );
+                //     _showImagePopup(context, imageUrl2);
+                //   },
+                // ),
                 TimelineCard(
                   imageUrl: imageUrl3,
                   onTap: () {

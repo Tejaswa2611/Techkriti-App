@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:techkriti/Screens/login_page.dart';
-import 'package:techkriti/Screens/register_page.dart';
 import 'package:techkriti/hiddendrawers/hidden_dr_homescreen.dart';
+import 'package:url_launcher/url_launcher.dart';
 import '../Services/notification_services.dart';
 import '../Widgets/button.dart';
 import '../widgets/hex_to_color.dart';
@@ -91,33 +90,44 @@ class _LandingPageState extends State<LandingPage> {
                   ),
                 ),
               ),
-              const SizedBox(height: 10),
+              const SizedBox(height: 15),
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.08),
                 child: Center(
                   child: Button(
                     text: 'SIGN UP',
-                    onTap: () => Navigator.pushNamed(
-                        context, RegistrationPage.routeName),
+                    onTap: () => _launchRegistrationForm()
                   ),
                 ),
               ),
-              const SizedBox(height: 10),
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.08),
-                child: Center(
-                  child: Button(
-                    text: 'SIGN IN',
-                    onTap: () =>
-                        Navigator.pushNamed(context, LoginPage.routeName),
-                  ),
-                ),
-              ),
+              // const SizedBox(height: 10),
+              // Padding(
+              //   padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.08),
+              //   child: Center(
+              //     child: Button(
+              //       text: 'SIGN IN',
+              //       onTap: () =>
+              //           Navigator.pushNamed(context, LoginPage.routeName),
+              //     ),
+              //   ),
+              // ),
               const SizedBox(height: 10),
             ],
           ),
         ),
       ),
     );
+  }
+}
+
+_launchRegistrationForm() async {
+  const url =
+      'https://docs.google.com/forms/d/e/1FAIpQLSc04AXXMDhQNC7b-6AyoUeZ3sMMZlS66-tovCCRksGfy-R1Bw/viewform?usp=sf_link';
+  debugPrint("Launching Google Form");
+  final uri = Uri.parse(url);
+  if (await canLaunchUrl(uri)) {
+    await launchUrl(uri);
+  } else {
+    throw 'Could not launch $url';
   }
 }

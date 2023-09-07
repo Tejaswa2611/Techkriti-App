@@ -291,6 +291,7 @@ class _UserDetailsPageState extends State<UserDetailsPage> {
   TextEditingController parentNameController = TextEditingController();
   TextEditingController schoolNameController = TextEditingController();
   TextEditingController schoolAdressController = TextEditingController();
+  TextEditingController schoolCityController = TextEditingController();
   TextEditingController phoneController = TextEditingController();
   TextEditingController gradeController = TextEditingController();
   TextEditingController poolController = TextEditingController();
@@ -329,6 +330,8 @@ class _UserDetailsPageState extends State<UserDetailsPage> {
         user.name = nameController.text;
         user.parentName = parentNameController.text;
         user.schoolName = schoolNameController.text;
+        user.schoolAddress = schoolAdressController.text;
+        user.schoolCity = schoolCityController.text;
         user.phone = phoneController.text;
         user.grade = gradeController.text;
         user.pool = poolController.text;
@@ -424,6 +427,11 @@ class _UserDetailsPageState extends State<UserDetailsPage> {
               CustomTextField(
                 controller: schoolAdressController,
                 hintText: 'School Address',
+                enabled: _editMode,
+              ),
+              CustomTextField(
+                controller: schoolCityController,
+                hintText: 'School City',
                 enabled: _editMode,
               ),
               CustomTextField(

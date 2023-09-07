@@ -37,10 +37,33 @@ class _ContactUsState extends State<ContactUs> {
                   height: screenHeight * 0.03,
                 ),
                 const CardTest(
-                  name: 'John Doe',
-                  post: 'Software Engineer',
-                  phoneNumber: '9761580000',
-                  imagePath: 'assets/images/Simpsons.jpg',
+                  name: 'Overall Coordinator, TOSC',
+                  phoneNumber: '+91-95190 10160',
+                  imagePath: 'assets/images/anurag2.jpg',
+                ),
+                SizedBox(
+                  height: screenHeight * 0.05,
+                ),
+                const CardTest(
+                  name: 'Overall Coordinator, TOSC',
+                  phoneNumber: '+91-63865 22048',
+                  imagePath: 'assets/images/garvit2.jpg',
+                ),
+                SizedBox(
+                  height: screenHeight * 0.05,
+                ),
+                const CardTest(
+                  name: 'Head,Web and App',
+                  phoneNumber: '+91 97615 80119',
+                  imagePath: 'assets/images/tejaswa2.jpg',
+                ),
+                SizedBox(
+                  height: screenHeight * 0.05,
+                ),
+                const CardTest(
+                  name: 'Head,Web and App',
+                  phoneNumber: '+91 73108 26277',
+                  imagePath: 'assets/images/chitwan.jpeg',
                 ),
                 SizedBox(
                   height: screenHeight * 0.05,
@@ -48,6 +71,6 @@ class _ContactUsState extends State<ContactUs> {
               ],
             ),
           ),
-        ));
+        ),);
   }
 }

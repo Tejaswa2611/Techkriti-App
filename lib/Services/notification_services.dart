@@ -140,7 +140,7 @@ class NotificationServices {
     // When App is in background
     FirebaseMessaging.onMessageOpenedApp.listen(
       (event) {
-        debugPrint("jaa na lawde");
+        debugPrint("jaa na");
         handleMessage(context, event);
       },
     );

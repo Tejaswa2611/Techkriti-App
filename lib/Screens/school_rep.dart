@@ -1,6 +1,7 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:techkriti/constants/colors_and_fonts.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class SchoolRepresentative extends StatefulWidget {
   static const String routeName = '/school-rep';
@@ -143,6 +144,37 @@ class _SchoolRepresentativeState extends State<SchoolRepresentative> {
                 child: buildBulletPoint("Lucky winners can get a chance to visit ARIES Nainital."),
               ),
             ),
+
+           Padding(
+             padding: const EdgeInsets.all(12.0),
+             child: ElevatedButton(
+                  onPressed: _launchSRForm,
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.black87,
+                    padding: const EdgeInsets.all(8),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(
+                          8), // You can adjust the border radius
+                    ),
+                  ),
+                  child: const Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Flexible(
+                        // This will ensure the text wraps properly
+                        child: Text(
+                          'Fill this form for School Representative',
+                          style: TextStyle(
+                            fontFamily: textFont,
+                              fontSize: 18,
+                              color: Colors.white), // Adjust text style
+                          textAlign: TextAlign.center, // Center align the text
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+           )
           ],
         ),
       ),
@@ -196,6 +228,17 @@ class _SchoolRepresentativeState extends State<SchoolRepresentative> {
         ),
       ],
     );
+  }
+}
+_launchSRForm() async {
+  const url =
+      'https://docs.google.com/forms/d/e/1FAIpQLSe-J_tIJ_yjlNB8AjJMrMQx0ZibCixCHpgTwaIV5llJ57KLlg/viewform?usp=sf_link';
+  debugPrint("Launching Google Form");
+  final uri = Uri.parse(url);
+  if (await canLaunchUrl(uri)) {
+    await launchUrl(uri);
+  } else {
+    throw 'Could not launch $url';
   }
 }
 

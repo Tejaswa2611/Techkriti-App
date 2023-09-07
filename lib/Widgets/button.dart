@@ -27,7 +27,7 @@ class Button extends StatelessWidget {
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(30.0),
         ),
-        elevation: 5.0,
+        elevation: 2.0,
         shadowColor: Colors.grey.withOpacity(0.5),
       ),
       child: Center(
