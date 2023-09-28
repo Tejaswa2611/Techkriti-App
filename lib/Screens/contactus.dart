@@ -39,12 +39,14 @@ class _ContactUsState extends State<ContactUs> {
                 const CardTest(
                   name: 'Overall Coordinator, TOSC',
                   phoneNumber: '+91-95190 10160',
-                  imagePath: 'assets/images/anurag2.jpg',
+                  imagePath: 'assets/images/anurag2.jpg', 
+                  personName: 'Anurag Mandal',
                 ),
                 SizedBox(
                   height: screenHeight * 0.05,
                 ),
                 const CardTest(
+                  personName: 'Garvit Digarwal',
                   name: 'Overall Coordinator, TOSC',
                   phoneNumber: '+91-63865 22048',
                   imagePath: 'assets/images/garvit2.jpg',
@@ -53,6 +55,7 @@ class _ContactUsState extends State<ContactUs> {
                   height: screenHeight * 0.05,
                 ),
                 const CardTest(
+                  personName: 'Tejaswa  Mathur',
                   name: 'Head,Web and App',
                   phoneNumber: '+91 97615 80119',
                   imagePath: 'assets/images/tejaswa2.jpg',
@@ -61,6 +64,7 @@ class _ContactUsState extends State<ContactUs> {
                   height: screenHeight * 0.05,
                 ),
                 const CardTest(
+                  personName: 'Chitwan Goel',
                   name: 'Head,Web and App',
                   phoneNumber: '+91 73108 26277',
                   imagePath: 'assets/images/chitwan.jpeg',

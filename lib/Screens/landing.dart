@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:techkriti/Screens/register_page.dart';
 import 'package:techkriti/hiddendrawers/hidden_dr_homescreen.dart';
 import 'package:url_launcher/url_launcher.dart';
 import '../Services/notification_services.dart';
 import '../Widgets/button.dart';
 import '../widgets/hex_to_color.dart';
 import '../widgets/vertical_write.dart';
+import 'login_page.dart';
 
 class LandingPage extends StatefulWidget {
   static const String routename = 'landing-page';
@@ -95,20 +97,23 @@ class _LandingPageState extends State<LandingPage> {
                 padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.08),
                 child: Center(
                   child: Button(
-                      text: 'SIGN UP', onTap: () => _launchRegistrationForm()),
+                      text: 'SIGN UP', 
+                      onTap: () =>
+                        Navigator.pushNamed(context, RegistrationPage.routeName),
+                      ),
                 ),
               ),
-              // const SizedBox(height: 10),
-              // Padding(
-              //   padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.08),
-              //   child: Center(
-              //     child: Button(
-              //       text: 'SIGN IN',
-              //       onTap: () =>
-              //           Navigator.pushNamed(context, LoginPage.routeName),
-              //     ),
-              //   ),
-              // ),
+              const SizedBox(height: 10),
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.08),
+                child: Center(
+                  child: Button(
+                    text: 'SIGN IN',
+                    onTap: () =>
+                        Navigator.pushNamed(context, LoginPage.routeName),
+                  ),
+                ),
+              ),
               const SizedBox(height: 10),
             ],
           ),

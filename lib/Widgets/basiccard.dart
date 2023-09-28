@@ -1,22 +1,23 @@
 import 'package:flutter/material.dart';
-// import 'package:techkriti/constants/colors_and_fonts.dart';
 
 class CardTest extends StatelessWidget {
   final String name;
   final String phoneNumber;
   final String imagePath;
+  final String personName; // New required field for person's name
 
   const CardTest({
     Key? key,
     required this.name,
     required this.phoneNumber,
     required this.imagePath,
+    required this.personName, // Add the new required parameter
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 280,
+      height: 320,
       child: Card(
         elevation: 100.0,
         shape: RoundedRectangleBorder(
@@ -50,10 +51,20 @@ class CardTest extends StatelessWidget {
                 children: [
                   Center(
                     child: Text(
-                      name,
+                      personName, // Use the new parameter for person's name
                       style: const TextStyle(
                         fontSize: 24.0,
                         fontWeight: FontWeight.bold,
+                        color: Colors.white,
+                      ),
+                    ),
+                  ),
+                  const SizedBox(height: 8.0),
+                  Center(
+                    child: Text(
+                      name,
+                      style: const TextStyle(
+                        fontSize: 16.0,
                         color: Colors.white,
                       ),
                     ),
@@ -65,9 +76,9 @@ class CardTest extends StatelessWidget {
                       const Icon(
                         Icons.phone,
                         color: Colors.white,
-                        size: 16.0, // Adjust the size as needed
+                        size: 16.0,
                       ),
-                      const SizedBox(width: 4.0), // Add some spacing
+                      const SizedBox(width: 4.0),
                       Text(
                         'Phone- $phoneNumber',
                         style: const TextStyle(
