@@ -5,7 +5,7 @@ class GPage extends StatefulWidget {
   const GPage({Key? key}) : super(key: key);
 
   @override
-  _GState createState() => GPageState();
+  _GPageState createState() => _GPageState();
 }
 
 class _GPageState extends State<GPage> {
