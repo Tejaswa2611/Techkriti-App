@@ -1,15 +1,17 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
-import 'package:techkriti/Screens/landing.dart';
-// import 'package:techkriti/Screens/notification_screen.dart';
-import 'package:techkriti/Services/auth_services.dart';
-import 'package:techkriti/providers/user_provider.dart';
-import 'package:techkriti/router.dart';
+// import 'package:provider/provider.dart';
+// import 'package:techkriti/T24/screens/gallery.dart';
+import 'package:techkriti/T24/screens/landing.dart';
+// import 'package:techkriti/TOSC/Services/auth_services.dart';
+// import 'package:techkriti/TOSC/providers/user_provider.dart';
+// import 'package:techkriti/TOSC/router.dart';
 import 'package:upgrader/upgrader.dart';
-import 'Services/notification_services.dart';
-import 'details/details_page.dart';
+import 'T24/router_tech.dart';
+import 'T24/screens/competitions/competition_page.dart';
+// import 'TOSC/Services/notification_services.dart';
+
 
 @pragma('vm:entry-point')
 Future<void> _firebaseMessagingBackgroundHandler(RemoteMessage message) async {
@@ -17,18 +19,19 @@ Future<void> _firebaseMessagingBackgroundHandler(RemoteMessage message) async {
 }
 
 void main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp();
-  FirebaseMessaging.onBackgroundMessage(_firebaseMessagingBackgroundHandler);
+  // WidgetsFlutterBinding.ensureInitialized();
+  // await Firebase.initializeApp();
+  // FirebaseMessaging.onBackgroundMessage(_firebaseMessagingBackgroundHandler);
   runApp(
-    MultiProvider(providers: [
-      ChangeNotifierProvider(
-        create: (context) => UserProvider(),
-      ),
-      ChangeNotifierProvider(
-        create: (context) => MessageProvider(),
-      ),
-    ], child: const MyApp()),
+    // MultiProvider(providers: [
+    //   ChangeNotifierProvider(
+    //     create: (context) => UserProvider(),
+    //   ),
+    //   ChangeNotifierProvider(
+    //     create: (context) => MessageProvider(),
+    //   ),
+    // ], child: const MyApp()),
+    const MyApp()
   );
 }
 
@@ -40,12 +43,12 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  final AuthService authService = AuthService();
+  // final AuthService authService = AuthService();
 
   @override
   void initState() {
     super.initState();
-    authService.getUserData(context: context);
+    // authService.getUserData(context: context);
   }
 
   @override
@@ -85,10 +88,11 @@ class _MyAppState extends State<MyApp> {
           showIgnore: false,
           showLater: false,
         ),
-        // child: const MessagesPage(),
-        child: Provider.of<UserProvider>(context).user.token.isNotEmpty
-            ? const UserDetailsPage()
-            : const LandingPage(),
+        // child: const MessagesPage(),`
+        // child: Provider.of<UserProvider>(context).user.token.isNotEmpty
+        //     ? const UserDetailsPage()
+        //     : const LandingPage(),
+        child: const LandingPage(),
       ),
     );
   }
