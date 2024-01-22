@@ -12,7 +12,6 @@ import 'T24/router_tech.dart';
 import 'T24/screens/competitions/competition_page.dart';
 // import 'TOSC/Services/notification_services.dart';
 
-
 @pragma('vm:entry-point')
 Future<void> _firebaseMessagingBackgroundHandler(RemoteMessage message) async {
   await Firebase.initializeApp();
@@ -23,16 +22,15 @@ void main() async {
   // await Firebase.initializeApp();
   // FirebaseMessaging.onBackgroundMessage(_firebaseMessagingBackgroundHandler);
   runApp(
-    // MultiProvider(providers: [
-    //   ChangeNotifierProvider(
-    //     create: (context) => UserProvider(),
-    //   ),
-    //   ChangeNotifierProvider(
-    //     create: (context) => MessageProvider(),
-    //   ),
-    // ], child: const MyApp()),
-    const MyApp()
-  );
+      // MultiProvider(providers: [
+      //   ChangeNotifierProvider(
+      //     create: (context) => UserProvider(),
+      //   ),
+      //   ChangeNotifierProvider(
+      //     create: (context) => MessageProvider(),
+      //   ),
+      // ], child: const MyApp()),
+      const MyApp());
 }
 
 class MyApp extends StatefulWidget {
@@ -60,16 +58,16 @@ class _MyAppState extends State<MyApp> {
         appBarTheme: const AppBarTheme(
           // color: hexToColor('#4169E1'),
           // color: Colors.blue.shade900,
-          titleTextStyle:  TextStyle(color: Colors.white),
+          titleTextStyle: TextStyle(color: Colors.white),
           // color: hexToColor('#F9CB12'),// tosc yello
           // color: hexToColor('#00FFFF'), // Cyan
           // color: Colors.blue.shade900, // DarkBlue
           // color: hexToColor('#87CEEB'), // LightBlue
           // color: hexToColor('#0B1D21'), // DarkGreen
           // color: hexToColor('#56A5EC'), // Light Blue
-          color:  Colors.black87,//hexToColor('#404040'), //Testing
+          color: Colors.black87, //hexToColor('#404040'), //Testing
           // color: hexToColor('#D9D9D9'), grey
-          iconTheme:  IconThemeData(color: Colors.white),
+          iconTheme: IconThemeData(color: Colors.white),
         ),
         pageTransitionsTheme: const PageTransitionsTheme(
           builders: {

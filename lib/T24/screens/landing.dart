@@ -100,10 +100,18 @@
 //   }
 // }
 import 'package:flutter/material.dart';
+import 'package:techkriti/T24/screens/4container/brochure.dart';
+import 'package:techkriti/T24/screens/4container/contacts.dart';
+import 'package:techkriti/T24/screens/4container/container.dart';
+// import 'package:techkriti/T24/screens/4container/container.dart';
+import 'package:techkriti/T24/screens/4container/faqs.dart';
+import 'package:techkriti/T24/screens/4container/website.dart';
+import 'package:techkriti/T24/screens/carousel/gallery.dart';
 import 'package:techkriti/T24/screens/competitions/competition_page.dart';
-import 'package:techkriti/T24/screens/gallery.dart';
+import 'package:techkriti/T24/screens/competitions/layout.dart';
+//import 'package:techkriti/T24/screens/gallery.dart';
 import 'package:techkriti/T24/screens/workshops/workshop_page.dart';
-import 'package:techkriti/T24/widgets/landing_card.dart';
+//import 'package:techkriti/T24/widgets/landing_card.dart';
 
 class LandingPage extends StatefulWidget {
   const LandingPage({Key? key}) : super(key: key);
@@ -115,30 +123,114 @@ class LandingPage extends StatefulWidget {
 class _LandingPageState extends State<LandingPage> {
   @override
   Widget build(BuildContext context) {
-    final screenHeight = MediaQuery.of(context).size.height;
-    final screenWidth = MediaQuery.of(context).size.width;
+    //final screenHeight = MediaQuery.of(context).size.height;
+    //final screenWidth = MediaQuery.of(context).size.width;
     return Scaffold(
-      body: Column(
-        // mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          const SizedBox(height: 30),
-          InkWell(
-            onTap: () => Navigator.pushNamed(context, WorkshopPage.routeName),
-            child: const LandingCard(text: 'Workshops', color: Colors.blue),
-          ),
-          const SizedBox(height: 30),
-          InkWell(
-            onTap: () => Navigator.pushNamed(context, CompetitionPage.routeName),
-            child: const LandingCard(text: 'Competitions', color: Colors.green),
-          ),
-          const SizedBox(height: 30),
-          InkWell(
-            onTap: () => Navigator.pushNamed(context, GPage.routeName),
-            child: const LandingCard(text: 'Gallery', color: Colors.orange),
-          ),
-          const SizedBox(height: 30),
-        ],
+      body: SingleChildScrollView(
+        child: Column(
+          // mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            const Padding(
+              padding: EdgeInsets.all(8.0),
+              child: Gallery(),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: InkWell(
+                onTap: () =>
+                    Navigator.pushNamed(context, CompetitionPage.routeName),
+                child: const Card1(
+                    color: Colors.blue,
+                    fontColor: Colors.white,
+                    title: "Competitions",
+                    Image: NetworkImage(
+                        "https://media.defense.gov/2020/Jan/09/2002232153/-1/-1/0/200109-D-BD104-019.JPG"),
+                    quote: "Like it or not,Life is a Competition"),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: InkWell(
+                onTap: () =>
+                    Navigator.pushNamed(context, WorkshopPage.routeName),
+                child: const Card1(
+                    color: Colors.black,
+                    fontColor: Colors.black,
+                    title: "Workshops",
+                    Image: NetworkImage(
+                        "https://tse2.mm.bing.net/th?id=OIP.eULh_sPmb08501utaJYVfQHaFc&pid=Api&P=0&h=180"),
+                    quote:
+                        "Learn from the best and make your own mark in this workshop"),
+              ),
+            ),
+            const Padding(
+              padding: EdgeInsets.all(8.0),
+              child: Gallery(),
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(top: 8.0, left: 20),
+                  child: InkWell(
+                    onTap: () =>
+                        Navigator.pushNamed(context, Website.routeName),
+                    child: const Container1(
+                      title: "Website",
+                      fontColor: Color.fromARGB(255, 25, 188, 104),
+                      Image: NetworkImage(
+                          "https://tse2.mm.bing.net/th?id=OIP.XARN-j3dXvgJ8cjkc9m_NQHaF9&pid=Api&P=0&h=180"),
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(top: 8.0, left: 20),
+                  child: InkWell(
+                    onTap: () =>
+                        Navigator.pushNamed(context, Contacts.routeName),
+                    child: const Container1(
+                      title: "Contacts",
+                      fontColor: Colors.purple,
+                      Image: NetworkImage(
+                          "https://tse2.mm.bing.net/th?id=OIP.XARN-j3dXvgJ8cjkc9m_NQHaF9&pid=Api&P=0&h=180"),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(top: 8.0, left: 20),
+                  child: InkWell(
+                    onTap: () => Navigator.pushNamed(context, FAQ.routeName),
+                    child: const Container1(
+                      title: "FAQs",
+                      fontColor: Colors.pink,
+                      Image: NetworkImage(
+                          "https://tse2.mm.bing.net/th?id=OIP.XARN-j3dXvgJ8cjkc9m_NQHaF9&pid=Api&P=0&h=180"),
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(top: 8.0, left: 20),
+                  child: InkWell(
+                    onTap: () =>
+                        Navigator.pushNamed(context, Brochure.routeName),
+                    child: const Container1(
+                      title: "Brochure",
+                      fontColor: Colors.blue,
+                      Image: NetworkImage(
+                          "https://tse2.mm.bing.net/th?id=OIP.XARN-j3dXvgJ8cjkc9m_NQHaF9&pid=Api&P=0&h=180"),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }
