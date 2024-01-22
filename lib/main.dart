@@ -55,6 +55,7 @@ class _MyAppState extends State<MyApp> {
       debugShowCheckedModeBanner: false,
       title: 'TOSC',
       theme: ThemeData(
+        scaffoldBackgroundColor: const Color.fromARGB(255, 4, 46, 102),
         appBarTheme: const AppBarTheme(
           // color: hexToColor('#4169E1'),
           // color: Colors.blue.shade900,

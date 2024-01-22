@@ -19,13 +19,13 @@ class Card1 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 500,
+      height: 300,
       width: double.infinity,
       child: Padding(
         padding: const EdgeInsets.all(5.0),
         child: Container(
           width: double.infinity,
-          height: 300,
+          height: 200,
           decoration: BoxDecoration(
             image: DecorationImage(
               image: Image,
@@ -40,12 +40,12 @@ class Card1 extends StatelessWidget {
                 padding: const EdgeInsets.only(top: 8.0, left: 8),
                 child: Text(
                   title,
-                  style: TextStyle(fontSize: 40, color: fontColor),
+                  style: TextStyle(fontSize: 20, color: fontColor),
                 ),
               ),
               Padding(
                 padding: const EdgeInsets.only(
-                    top: 270.0, right: 500, left: 10, bottom: 10),
+                    top: 120.0, right: 200, left: 10, bottom: 10),
                 child: Opacity(
                   opacity: 0.7,
                   child: Container(
@@ -57,7 +57,7 @@ class Card1 extends StatelessWidget {
                       child: Text(
                         quote,
                         style:
-                            const TextStyle(color: Colors.white, fontSize: 20),
+                            const TextStyle(color: Colors.white, fontSize: 15),
                         textAlign: TextAlign.center,
                       ),
                     ),

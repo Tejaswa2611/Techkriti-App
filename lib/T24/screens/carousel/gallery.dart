@@ -1,5 +1,6 @@
 //import 'package:carousel_slider/carousel_controller.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 import 'package:flutter/material.dart';
 
@@ -20,6 +21,7 @@ class _GalleryState extends State<Gallery> {
     {"id": 6, "path": 'assets/images/106.jpg'},
     {"id": 7, "path": 'assets/images/107.jpg'},
   ];
+
   final CarouselController cc1 = CarouselController();
   int currentIndex = 0;
   @override
@@ -30,20 +32,25 @@ class _GalleryState extends State<Gallery> {
           children: [
             CarouselSlider(
               items: images
-                  .map(
-                    (item) => Image.asset(
-                      item['path'],
-                      fit: BoxFit.cover,
-                      width: double.infinity,
-                    ),
-                  )
+                  .map((item) => ClipRRect(
+                        borderRadius: BorderRadius.circular(40),
+                        child: Image.asset(
+                          item['path'],
+
+                          // fit: BoxFit.cover,
+                          width: double.infinity,
+                        ),
+                      ))
                   .toList(),
               carouselController: cc1,
               options: CarouselOptions(
+                clipBehavior: Clip.antiAlias,
                 scrollPhysics: const BouncingScrollPhysics(),
                 autoPlay: true,
+                autoPlayInterval: const Duration(seconds: 3),
                 aspectRatio: 2,
-                viewportFraction: 1,
+                autoPlayCurve: Curves.fastOutSlowIn,
+                viewportFraction: 0.8,
                 onPageChanged: (index, reason) {
                   setState(() {
                     currentIndex = index;

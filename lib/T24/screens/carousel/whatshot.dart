@@ -29,20 +29,21 @@ class _WhatsHotState extends State<WhatsHot> {
           children: [
             CarouselSlider(
               items: images
-                  .map(
-                    (item) => Image.asset(
-                      item['path'],
-                      fit: BoxFit.cover,
-                      width: double.infinity,
-                    ),
-                  )
+                  .map((item) => ClipRRect(
+                        borderRadius: BorderRadius.circular(40),
+                        child: Image.asset(
+                          item['path'],
+                          // fit: BoxFit.fill,
+                          width: double.infinity,
+                        ),
+                      ))
                   .toList(),
               carouselController: cc1,
               options: CarouselOptions(
                 scrollPhysics: const BouncingScrollPhysics(),
                 autoPlay: true,
                 aspectRatio: 2,
-                viewportFraction: 1,
+                viewportFraction: 0.8,
                 onPageChanged: (index, reason) {
                   setState(() {
                     currentIndex = index;

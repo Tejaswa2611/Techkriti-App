@@ -126,6 +126,17 @@ class _LandingPageState extends State<LandingPage> {
     //final screenHeight = MediaQuery.of(context).size.height;
     //final screenWidth = MediaQuery.of(context).size.width;
     return Scaffold(
+      appBar: AppBar(
+          title: Row(
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: [
+          Image.network(
+              "https://techkriti.org/static/media/Typeface.c408070331d0cabb981f.png",
+              fit: BoxFit.contain,
+              height: 200,
+              width: 170)
+        ],
+      )),
       body: SingleChildScrollView(
         child: Column(
           // mainAxisAlignment: MainAxisAlignment.center,
@@ -172,7 +183,7 @@ class _LandingPageState extends State<LandingPage> {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 Padding(
-                  padding: const EdgeInsets.only(top: 8.0, left: 20),
+                  padding: const EdgeInsets.only(top: 8.0, left: 10),
                   child: InkWell(
                     onTap: () =>
                         Navigator.pushNamed(context, Website.routeName),
@@ -185,7 +196,7 @@ class _LandingPageState extends State<LandingPage> {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(top: 8.0, left: 20),
+                  padding: const EdgeInsets.only(top: 8.0, left: 10),
                   child: InkWell(
                     onTap: () =>
                         Navigator.pushNamed(context, Contacts.routeName),
@@ -203,7 +214,7 @@ class _LandingPageState extends State<LandingPage> {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 Padding(
-                  padding: const EdgeInsets.only(top: 8.0, left: 20),
+                  padding: const EdgeInsets.only(top: 8.0, left: 10),
                   child: InkWell(
                     onTap: () => Navigator.pushNamed(context, FAQ.routeName),
                     child: const Container1(
@@ -215,7 +226,7 @@ class _LandingPageState extends State<LandingPage> {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(top: 8.0, left: 20),
+                  padding: const EdgeInsets.only(top: 8.0, left: 10),
                   child: InkWell(
                     onTap: () =>
                         Navigator.pushNamed(context, Brochure.routeName),
