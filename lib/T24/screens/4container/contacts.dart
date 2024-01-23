@@ -55,6 +55,16 @@ class _ContactsState extends State<Contacts> {
                 department: "Head, Events and Competition",
                 mobile: "+917357617960",
               ),
+              const contactCard(
+                name: "Raghav Modani",
+                department: "Head, Events and Competition",
+                mobile: "+917357617960",
+              ),
+              const contactCard(
+                name: "Raghav Modani",
+                department: "Head, Events and Competition",
+                mobile: "+917357617960",
+              ),
             ],
           )),
         ));

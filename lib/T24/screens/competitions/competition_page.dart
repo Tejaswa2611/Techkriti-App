@@ -29,13 +29,22 @@ class _CompetitionPageState extends State<CompetitionPage> {
             ),
           )),
       body: ListView(
-        scrollDirection: Axis.horizontal,
+        scrollDirection: Axis.vertical,
         children: [
-          buildCard("COMPETITIONS 1", "assets/image1.jpg", "Learn Flutter",
+          buildCard(
+              "Learn Flutter",
+              "https://tse3.mm.bing.net/th?id=OIP.1-eJw7i8sreIDdO0sdPt1gHaEK&pid=Api&P=0&h=180",
+              "Learn Flutter",
               "Explore Flutter development."),
-          buildCard("COMPETITIONS 2", "assets/image2.jpg",
-              "Dart Language Basics", "Understand Dart programming language."),
-          buildCard("COMPETITIONS 3", "assets/image3.jpg", "UI/UX Design",
+          buildCard(
+              "Dart Language Basics",
+              "https://tse4.mm.bing.net/th?id=OIP.kRmFKej4bUeDswVkCzxOfgHaD4&pid=Api&P=0&h=180",
+              "Dart Language Basics",
+              "Understand Dart programming language."),
+          buildCard(
+              "UI/UX Design",
+              "https://tse4.mm.bing.net/th?id=OIP.fnMNG_MyKAiKyIhcqhKK2gHaEQ&pid=Api&P=0&h=180",
+              "UI/UX Design",
               "Master the principles of UI/UX design."),
         ],
       ),
@@ -45,8 +54,16 @@ class _CompetitionPageState extends State<CompetitionPage> {
   Widget buildCard(
       String title, String imagePath, String hoverText, String bottomText) {
     return Container(
-      width: 200.0, // Fixed width for demonstration, adjust as needed
-      margin: const EdgeInsets.all(8.0),
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(10),
+        image: DecorationImage(
+          image: NetworkImage(imagePath),
+          fit: BoxFit.fill,
+        ),
+      ),
+      width: 200.0,
+      height: 250, // Fixed width for demonstration, adjust as needed
+      margin: const EdgeInsets.all(12.0),
       child: InkWell(
         onTap: () {
           // Navigate to another page on card click
@@ -57,44 +74,39 @@ class _CompetitionPageState extends State<CompetitionPage> {
             ),
           );
         },
-        child: Card(
-          elevation: 8.0,
-          child: Column(
-            children: [
-              // Background image
-              Container(
-                height: 100.0, // Adjust the height as needed
-                decoration: BoxDecoration(
-                  image: DecorationImage(
-                    image: AssetImage(imagePath),
-                    fit: BoxFit.cover,
-                  ),
-                ),
-                child: Center(
-                  child: MouseRegion(
-                    cursor: SystemMouseCursors.click,
-                    child: Container(
-                      padding: const EdgeInsets.all(8.0),
-                      color: Colors.black.withOpacity(0.5),
-                      child: Text(
-                        hoverText,
-                        style: const TextStyle(color: Colors.white),
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-              // Small heading at the bottom
-              Container(
-                padding: const EdgeInsets.all(8.0),
-                child: Text(
-                  bottomText,
-                  style: const TextStyle(fontSize: 12.0),
-                ),
-              ),
-            ],
-          ),
-        ),
+        // child: Card(
+        //   elevation: 8.0,
+        //   child: Column(
+        //     children: [
+        //       // Background image
+        //       Container(
+        //         height: 100.0, // Adjust the height as needed
+
+        //         child: Center(
+        //           child: MouseRegion(
+        //             cursor: SystemMouseCursors.click,
+        //             child: Container(
+        //               padding: const EdgeInsets.all(8.0),
+        //               color: Colors.black.withOpacity(0.5),
+        //               child: Text(
+        //                 hoverText,
+        //                 style: const TextStyle(color: Colors.white),
+        //               ),
+        //             ),
+        //           ),
+        //         ),
+        //       ),
+        //       // Small heading at the bottom
+        //       Container(
+        //         padding: const EdgeInsets.all(8.0),
+        //         child: Text(
+        //           bottomText,
+        //           style: const TextStyle(fontSize: 12.0),
+        //         ),
+        //       ),
+        //     ],
+        //   ),
+        // ),
       ),
     );
   }
@@ -109,7 +121,10 @@ class OtherPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(pageTitle),
+        title: Text(
+          pageTitle,
+          style: const TextStyle(fontSize: 20),
+        ),
       ),
       body: Center(
         child: Text('Content of $pageTitle'),
