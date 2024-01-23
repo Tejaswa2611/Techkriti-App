@@ -109,6 +109,12 @@ flutter:
       fonts:
         # - asset: assets/Fonts/Schyler-Regular.ttf
         - asset: assets/Fonts/Jost/Jost-VariableFont_wght.ttf
+
+    - family: Equinox
+      fonts:
+
+         - asset: assets/Fonts/Contacts/FontsFree-Net-EquinoxRegular.ttf
+
   #       - asset: fonts/Schyler-Italic.ttf
   #         style: italic
     - family: Normal
@@ -119,6 +125,9 @@ flutter:
     - family: heading
       fonts:
         - asset: assets/Fonts/heading/VarelaRound-Regular.ttf
+    - family: Montserrat
+      fonts:
+        - asset: assets/Fonts/Contacts/Montserrat-Light.ttf
     - family: sans
       fonts:
         - asset: assets/Fonts/Open_Sans/OpenSans-VariableFont_wdth,wght.ttf

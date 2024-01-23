@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:techkriti/T24/screens/4container/contact_card.dart';
 
 class Contacts extends StatefulWidget {
   static const String routeName = '/contacts';
@@ -12,6 +13,50 @@ class Contacts extends StatefulWidget {
 class _ContactsState extends State<Contacts> {
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold(
+        appBar: AppBar(
+            title: const Text(
+              'Contacts',
+              style: TextStyle(
+                  fontSize: 20, color: Color.fromARGB(255, 255, 255, 255)),
+            ),
+            backgroundColor: const Color.fromARGB(255, 0, 0, 0),
+            leading: IconButton(
+              onPressed: (() {
+                Navigator.of(context).pop();
+              }),
+              icon: const Icon(
+                Icons.arrow_back,
+                color: Color.fromARGB(255, 255, 255, 255),
+              ),
+            )),
+        body: SingleChildScrollView(
+          child: Center(
+              child: Column(
+            children: [
+              Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: RichText(
+                    text: const TextSpan(
+                      children: [
+                        TextSpan(
+                            text: "TEAM ",
+                            style: TextStyle(color: Colors.white)),
+                        TextSpan(
+                            text: "TECHKRITI'24",
+                            style: TextStyle(
+                                color: Color.fromARGB(255, 55, 255, 245))),
+                      ],
+                      style: TextStyle(fontSize: 35, fontFamily: 'Equinox'),
+                    ),
+                  )),
+              const contactCard(
+                name: "Raghav Modani",
+                department: "Head, Events and Competition",
+                mobile: "+917357617960",
+              ),
+            ],
+          )),
+        ));
   }
 }

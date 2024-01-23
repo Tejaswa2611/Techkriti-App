@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-
 class CompetitionPage extends StatefulWidget {
   static const String routeName = '/competetions';
   const CompetitionPage({super.key});
@@ -12,24 +11,39 @@ class CompetitionPage extends StatefulWidget {
 class _CompetitionPageState extends State<CompetitionPage> {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text('COMPETITIONS'),
-        ),
-        body: ListView(
-          scrollDirection: Axis.horizontal,
-          children: [
-            buildCard("COMPETITIONS 1", "assets/image1.jpg", "Learn Flutter", "Explore Flutter development."),
-            buildCard("COMPETITIONS 2", "assets/image2.jpg", "Dart Language Basics", "Understand Dart programming language."),
-            buildCard("COMPETITIONS 3", "assets/image3.jpg", "UI/UX Design", "Master the principles of UI/UX design."),
-          ],
-        ),
+    return Scaffold(
+      appBar: AppBar(
+          title: const Text(
+            'Competitions',
+            style: TextStyle(
+                fontSize: 20, color: Color.fromARGB(255, 255, 255, 255)),
+          ),
+          backgroundColor: Color.fromARGB(255, 0, 0, 0),
+          leading: IconButton(
+            onPressed: (() {
+              Navigator.of(context).pop();
+            }),
+            icon: const Icon(
+              Icons.arrow_back,
+              color: Color.fromARGB(255, 255, 255, 255),
+            ),
+          )),
+      body: ListView(
+        scrollDirection: Axis.horizontal,
+        children: [
+          buildCard("COMPETITIONS 1", "assets/image1.jpg", "Learn Flutter",
+              "Explore Flutter development."),
+          buildCard("COMPETITIONS 2", "assets/image2.jpg",
+              "Dart Language Basics", "Understand Dart programming language."),
+          buildCard("COMPETITIONS 3", "assets/image3.jpg", "UI/UX Design",
+              "Master the principles of UI/UX design."),
+        ],
       ),
     );
   }
 
-  Widget buildCard(String title, String imagePath, String hoverText, String bottomText) {
+  Widget buildCard(
+      String title, String imagePath, String hoverText, String bottomText) {
     return Container(
       width: 200.0, // Fixed width for demonstration, adjust as needed
       margin: const EdgeInsets.all(8.0),

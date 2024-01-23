@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:techkriti/T24/constants/colors_and_fonts.dart';
 import 'package:techkriti/T24/screens/4container/brochure.dart';
 import 'package:techkriti/T24/screens/4container/contacts.dart';
-import 'package:techkriti/T24/screens/4container/container.dart';
 import 'package:techkriti/T24/screens/4container/faqs.dart';
 import 'package:techkriti/T24/screens/4container/website.dart';
 import 'package:techkriti/T24/screens/competitions/competition_page.dart';
