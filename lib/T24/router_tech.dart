@@ -1,15 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:techkriti/T24/constants/colors_and_fonts.dart';
+import 'package:techkriti/T24/navigation/map.dart';
 import 'package:techkriti/T24/screens/4container/brochure.dart';
 import 'package:techkriti/T24/screens/4container/contacts.dart';
 import 'package:techkriti/T24/screens/4container/faqs.dart';
 import 'package:techkriti/T24/screens/4container/website.dart';
 import 'package:techkriti/T24/screens/competitions/competition_page.dart';
 import 'package:techkriti/T24/screens/gallery.dart';
+import 'package:techkriti/T24/screens/landing.dart';
 import 'package:techkriti/T24/screens/workshops/workshop_page.dart';
 
 Route<dynamic> generateRoute(RouteSettings routeSettings) {
   switch (routeSettings.name) {
+    case LandingPage.routeName:
+      return MaterialPageRoute(
+        settings: routeSettings,
+        builder: (_) => const LandingPage(),
+      );
     case CompetitionPage.routeName:
       return MaterialPageRoute(
         settings: routeSettings,
@@ -44,6 +51,11 @@ Route<dynamic> generateRoute(RouteSettings routeSettings) {
       return MaterialPageRoute(
         settings: routeSettings,
         builder: (_) => const FAQ(),
+      );
+    case Maps.routeName:
+      return MaterialPageRoute(
+        settings: routeSettings,
+        builder: (_) => const Maps(),
       );
 
     default:

@@ -100,8 +100,11 @@
 //   }
 // }
 import 'package:flutter/material.dart';
+import 'package:techkriti/T24/navigation/map.dart';
 import 'package:techkriti/T24/screens/4container/brochure.dart';
 import 'package:techkriti/T24/screens/4container/contacts.dart';
+import 'package:google_nav_bar/google_nav_bar.dart';
+
 import 'package:techkriti/T24/screens/4container/container.dart';
 // import 'package:techkriti/T24/screens/4container/container.dart';
 import 'package:techkriti/T24/screens/4container/faqs.dart';
@@ -114,6 +117,8 @@ import 'package:techkriti/T24/screens/workshops/workshop_page.dart';
 //import 'package:techkriti/T24/widgets/landing_card.dart';
 
 class LandingPage extends StatefulWidget {
+  static const String routeName = '/landingpage';
+
   const LandingPage({Key? key}) : super(key: key);
 
   @override

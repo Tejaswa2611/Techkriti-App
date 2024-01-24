@@ -1,15 +1,31 @@
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class contactCard extends StatelessWidget {
   final String name;
   final String department;
   final String mobile;
+  final String facebook;
+  final String insta;
+  final String linkedIn;
+  final String mail;
 
   const contactCard(
       {super.key,
       required this.name,
       required this.department,
-      required this.mobile});
+      required this.mobile,
+      required this.facebook,
+      required this.insta,
+      required this.linkedIn,
+      required this.mail});
+
+  Future<void> goToWebPage(String urlString) async {
+    final Uri url = Uri.parse(urlString);
+    if (!await launchUrl(url)) {
+      throw 'Could not launch $url';
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +41,7 @@ class contactCard extends StatelessWidget {
                     color: Color.fromARGB(255, 55, 255, 245), width: 7),
                 right: BorderSide(color: Colors.black, width: 3),
                 top: BorderSide(color: Colors.black, width: 3))),
-        height: 360,
+        height: 400,
         width: 250,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -62,6 +78,51 @@ class contactCard extends StatelessWidget {
                   fontSize: 18,
                   color: Color.fromARGB(255, 55, 255, 245)),
             ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                IconButton(
+                    onPressed: () async {
+                      await goToWebPage(facebook);
+                    },
+                    icon: Image.asset(
+                      'assets/images/facebook.png',
+                      height: 25,
+                      width: 25,
+                      color: Colors.white,
+                    )),
+                IconButton(
+                    onPressed: () async {
+                      await goToWebPage(insta);
+                    },
+                    icon: Image.asset(
+                      'assets/images/instagram.png',
+                      height: 25,
+                      width: 25,
+                      color: Colors.white,
+                    )),
+                IconButton(
+                    onPressed: () async {
+                      await goToWebPage(linkedIn);
+                    },
+                    icon: Image.asset(
+                      'assets/images/linkedin.png',
+                      height: 25,
+                      width: 25,
+                      color: Colors.white,
+                    )),
+                IconButton(
+                    onPressed: () async {
+                      await goToWebPage(mail);
+                    },
+                    icon: Image.asset(
+                      'assets/images/mail.png',
+                      height: 25,
+                      width: 25,
+                      color: Colors.white,
+                    )),
+              ],
+            )
           ],
         ),
       ),
