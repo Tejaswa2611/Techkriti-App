@@ -14,6 +14,8 @@ import 'T24/router_tech.dart';
 // import 'T24/screens/competitions/competition_page.dart';
 // import 'TOSC/Services/notification_services.dart';
 
+// Rushabh testing git
+
 @pragma('vm:entry-point')
 Future<void> _firebaseMessagingBackgroundHandler(RemoteMessage message) async {
   await Firebase.initializeApp();
