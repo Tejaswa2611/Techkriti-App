@@ -2,16 +2,16 @@ import 'package:firebase_core/firebase_core.dart';
 
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
-import 'package:techkriti/T24/navigation/navBar.dart';
+import 'package:techkriti/T24/navigation/navbar.dart';
 // import 'package:provider/provider.dart';
 // import 'package:techkriti/T24/screens/gallery.dart';
-import 'package:techkriti/T24/screens/landing.dart';
+// import 'package:techkriti/T24/screens/landing.dart';
 // import 'package:techkriti/TOSC/Services/auth_services.dart';
 // import 'package:techkriti/TOSC/providers/user_provider.dart';
 // import 'package:techkriti/TOSC/router.dart';
 import 'package:upgrader/upgrader.dart';
 import 'T24/router_tech.dart';
-import 'T24/screens/competitions/competition_page.dart';
+// import 'T24/screens/competitions/competition_page.dart';
 // import 'TOSC/Services/notification_services.dart';
 
 @pragma('vm:entry-point')

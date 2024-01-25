@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
+// ignore: camel_case_types
 class contactCard extends StatelessWidget {
   final String name;
   final String department;

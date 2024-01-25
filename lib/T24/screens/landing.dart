@@ -100,10 +100,10 @@
 //   }
 // }
 import 'package:flutter/material.dart';
-import 'package:techkriti/T24/navigation/map.dart';
+// import 'package:techkriti/T24/navigation/map.dart';
 import 'package:techkriti/T24/screens/4container/brochure.dart';
 import 'package:techkriti/T24/screens/4container/contacts.dart';
-import 'package:google_nav_bar/google_nav_bar.dart';
+// import 'package:google_nav_bar/google_nav_bar.dart';
 
 import 'package:techkriti/T24/screens/4container/container.dart';
 // import 'package:techkriti/T24/screens/4container/container.dart';
