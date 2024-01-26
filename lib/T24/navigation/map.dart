@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 class Maps extends StatefulWidget {
   static const String routeName = '/maps';
@@ -10,12 +11,12 @@ class Maps extends StatefulWidget {
 }
 
 class _MapsState extends State<Maps> {
+  static const LatLng Loc = LatLng(37.4223, -122.0848);
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Column(
-        children: [Text("HII")],
-      ),
+    return Scaffold(
+      body: GoogleMap(
+          initialCameraPosition: CameraPosition(target: Loc, zoom: 12)),
     );
   }
 }

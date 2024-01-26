@@ -3,6 +3,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:techkriti/T24/navigation/navbar.dart';
+import 'package:techkriti/T24/splash_screen.dart';
 // import 'package:provider/provider.dart';
 // import 'package:techkriti/T24/screens/gallery.dart';
 // import 'package:techkriti/T24/screens/landing.dart';
@@ -97,7 +98,7 @@ class _MyAppState extends State<MyApp> {
         // child: Provider.of<UserProvider>(context).user.token.isNotEmpty
         //     ? const UserDetailsPage()
         //     : const LandingPage(),
-        child: const Navbar(),
+        child: const splashScreen(),
       ),
     );
   }
