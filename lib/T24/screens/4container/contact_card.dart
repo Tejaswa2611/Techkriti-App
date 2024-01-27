@@ -10,6 +10,7 @@ class contactCard extends StatelessWidget {
   final String insta;
   final String linkedIn;
   final String mail;
+  final String image;
 
   const contactCard(
       {super.key,
@@ -19,7 +20,8 @@ class contactCard extends StatelessWidget {
       required this.facebook,
       required this.insta,
       required this.linkedIn,
-      required this.mail});
+      required this.mail,
+      required this.image});
 
   Future<void> goToWebPage(String urlString) async {
     final Uri url = Uri.parse(urlString);

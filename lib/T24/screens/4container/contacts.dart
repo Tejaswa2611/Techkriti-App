@@ -51,17 +51,17 @@ class _ContactsState extends State<Contacts> {
                     ),
                   )),
               const contactCard(
-                name: "Raghav Modani",
-                department: "Head, Events and Competition",
-                mobile: "+917357617960",
-                facebook:
-                    "https://www.facebook.com/raghav.modani.35?mibextid=9R9pXO",
-                insta:
-                    "https://www.instagram.com/raghavm_910/?igsh=YTQwZjQ0NmI0OA%3D%3D",
-                linkedIn:
-                    "https://www.linkedin.com/in/raghav-modani-633811214/",
-                mail: "mailto:raghavm@techkriti.org",
-              ),
+                  name: "Raghav Modani",
+                  department: "Head, Events and Competition",
+                  mobile: "+917357617960",
+                  facebook:
+                      "https://www.facebook.com/raghav.modani.35?mibextid=9R9pXO",
+                  insta:
+                      "https://www.instagram.com/raghavm_910/?igsh=YTQwZjQ0NmI0OA%3D%3D",
+                  linkedIn:
+                      "https://www.linkedin.com/in/raghav-modani-633811214/",
+                  mail: "mailto:raghavm@techkriti.org",
+                  image: "https://i.postimg.cc/mkVwt5g5/Raghav.jpg"),
             ],
           )),
         ));
