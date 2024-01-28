@@ -7,6 +7,7 @@ class exploreCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final Width = MediaQuery.of(context).size.width;
     return Padding(
       padding: const EdgeInsets.all(10.0),
       child: Container(
@@ -16,7 +17,7 @@ class exploreCard extends StatelessWidget {
             border: Border.all(
                 color: const Color.fromARGB(255, 55, 255, 245), width: 1)),
         height: 400,
-        width: 250,
+        width: Width / 1.5,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -33,10 +34,15 @@ class exploreCard extends StatelessWidget {
                         fit: BoxFit.cover, image: NetworkImage(image))),
               ),
             ),
-            Text(
-              name,
-              style: const TextStyle(
-                  fontFamily: 'Montserrat', fontSize: 20, color: Colors.black),
+            Padding(
+              padding: const EdgeInsets.only(top: 8.0),
+              child: Text(
+                name,
+                style: const TextStyle(
+                    fontFamily: 'Montserrat',
+                    fontSize: 17,
+                    color: Colors.black),
+              ),
             ),
             Padding(
               padding: const EdgeInsets.all(12.0),
