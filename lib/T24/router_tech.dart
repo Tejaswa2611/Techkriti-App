@@ -6,6 +6,8 @@ import 'package:techkriti/T24/screens/4container/contacts.dart';
 import 'package:techkriti/T24/screens/4container/faqs.dart';
 import 'package:techkriti/T24/screens/4container/website.dart';
 import 'package:techkriti/T24/screens/carousel/entrepre_carousel.dart';
+import 'package:techkriti/T24/screens/carousel/misc_carousel.dart';
+import 'package:techkriti/T24/screens/carousel/technical_carousel.dart';
 import 'package:techkriti/T24/screens/competitions/competition_page.dart';
 import 'package:techkriti/T24/screens/competitions/miscellaneous.dart';
 import 'package:techkriti/T24/screens/competitions/technical.dart';
@@ -60,10 +62,10 @@ Route<dynamic> generateRoute(RouteSettings routeSettings) {
         settings: routeSettings,
         builder: (_) => const Maps(),
       );
-    case technical.routeName:
+    case technical_carousel.routeName:
       return MaterialPageRoute(
         settings: routeSettings,
-        builder: (_) => const technical(),
+        builder: (_) => technical_carousel(),
       );
     case entre_carousel.routeName:
       return MaterialPageRoute(
@@ -73,7 +75,7 @@ Route<dynamic> generateRoute(RouteSettings routeSettings) {
     case miscellaneous.routeName:
       return MaterialPageRoute(
         settings: routeSettings,
-        builder: (_) => const miscellaneous(),
+        builder: (_) => misc_carousel(),
       );
 
     default:

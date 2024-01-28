@@ -1,21 +1,21 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:techkriti/T24/screens/competitions/Entrepreneurial/businessevents.dart';
-import 'package:techkriti/T24/screens/competitions/Entrepreneurial/entrepreneurial.dart';
-import 'package:techkriti/T24/screens/competitions/Entrepreneurial/fintech.dart';
+import 'package:techkriti/T24/screens/competitions/miscellaneous/CubingEvents.dart';
+import 'package:techkriti/T24/screens/competitions/miscellaneous/DesignEvents.dart';
+import 'package:techkriti/T24/screens/competitions/miscellaneous/MUN.dart';
 
-class entre_carousel extends StatelessWidget {
-  static const String routeName = '/entrecarousel';
+class misc_carousel extends StatelessWidget {
+  static const String routeName = '/misccarousel';
 
-  entre_carousel({super.key});
+  misc_carousel({super.key});
 
-  List Items = [fintech(), businessevents(), entrepreneurial()];
+  List Items = [DesignEvents(), MUN(), CubingEvents()];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
           title: const Text(
-            "ENTREPRENEURIAL",
+            "MISCELLANEOUS",
             style: TextStyle(fontSize: 20),
           ),
         ),

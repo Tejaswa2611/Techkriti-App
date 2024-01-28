@@ -1,21 +1,33 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:techkriti/T24/screens/competitions/Entrepreneurial/businessevents.dart';
-import 'package:techkriti/T24/screens/competitions/Entrepreneurial/entrepreneurial.dart';
-import 'package:techkriti/T24/screens/competitions/Entrepreneurial/fintech.dart';
+import 'package:techkriti/T24/screens/competitions/Technical/ECDC.dart';
+import 'package:techkriti/T24/screens/competitions/Technical/GameDev.dart';
+import 'package:techkriti/T24/screens/competitions/Technical/Mandakini.dart';
+import 'package:techkriti/T24/screens/competitions/Technical/RoboGames.dart';
+import 'package:techkriti/T24/screens/competitions/Technical/SoftwareCorner.dart';
+import 'package:techkriti/T24/screens/competitions/Technical/TakeOff.dart';
+import 'package:techkriti/T24/screens/competitions/Technical/Technovation.dart';
 
-class entre_carousel extends StatelessWidget {
-  static const String routeName = '/entrecarousel';
+class technical_carousel extends StatelessWidget {
+  static const String routeName = '/techcarousel';
 
-  entre_carousel({super.key});
+  technical_carousel({super.key});
 
-  List Items = [fintech(), businessevents(), entrepreneurial()];
+  List Items = [
+    ECDC(),
+    GameDev(),
+    Mandakini(),
+    RoboGames(),
+    SoftwareCorner(),
+    TakeOff(),
+    Technovation()
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
           title: const Text(
-            "ENTREPRENEURIAL",
+            "TECHNICAL",
             style: TextStyle(fontSize: 20),
           ),
         ),
