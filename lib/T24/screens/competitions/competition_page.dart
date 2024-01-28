@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:techkriti/T24/screens/carousel/entrepre_carousel.dart';
+import 'package:techkriti/T24/screens/carousel/misc_carousel.dart';
+import 'package:techkriti/T24/screens/carousel/technical_carousel.dart';
 import 'package:techkriti/T24/screens/competitions/competition_card.dart';
-import 'package:techkriti/T24/screens/competitions/miscellaneous.dart';
-import 'package:techkriti/T24/screens/competitions/technical.dart';
 
 class CompetitionPage extends StatefulWidget {
   static const String routeName = '/competetions';
@@ -31,7 +31,7 @@ class _CompetitionPageState extends State<CompetitionPage> {
             children: [
               InkWell(
                 onTap: () {
-                  Navigator.pushNamed(context, technical.routeName);
+                  Navigator.pushNamed(context, technical_carousel.routeName);
                 },
                 child: const CompetitionCards(
                   title: "Technical",
@@ -51,7 +51,7 @@ class _CompetitionPageState extends State<CompetitionPage> {
               ),
               InkWell(
                 onTap: () {
-                  Navigator.pushNamed(context, miscellaneous.routeName);
+                  Navigator.pushNamed(context, misc_carousel.routeName);
                 },
                 child: const CompetitionCards(
                   title: "Miscellaneous",
