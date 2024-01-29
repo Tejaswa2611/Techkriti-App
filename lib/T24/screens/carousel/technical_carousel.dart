@@ -14,13 +14,13 @@ class technical_carousel extends StatelessWidget {
   technical_carousel({super.key});
 
   List Items = [
-    ECDC(),
-    GameDev(),
-    Mandakini(),
     RoboGames(),
-    SoftwareCorner(),
+    ECDC(),
     TakeOff(),
-    Technovation()
+    Technovation(),
+    Mandakini(),
+    GameDev(),
+    SoftwareCorner(),
   ];
   @override
   Widget build(BuildContext context) {

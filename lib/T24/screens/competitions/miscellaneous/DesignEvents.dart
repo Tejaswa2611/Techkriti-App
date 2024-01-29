@@ -18,13 +18,13 @@ class DesignEvents extends StatelessWidget {
             )),
             exploreCard(
                 name: "Bridge Design Challenge",
-                image: "https://i.postimg.cc/2jH8WLK8/Copy-of-Manoeuvre.jpg"),
+                image: "assets/images/Bridge Design Challenge.jpg"),
             exploreCard(
                 name: "Innovate Adorn Challenge",
-                image: "https://i.postimg.cc/2jH8WLK8/Copy-of-Manoeuvre.jpg"),
+                image: "assets/images/InnovationAdornChallenge.jpg"),
             exploreCard(
                 name: "AutoDesk Design Challenge",
-                image: "https://i.postimg.cc/2jH8WLK8/Copy-of-Manoeuvre.jpg"),
+                image: "assets/images/AUTOCAD Design Challenge.jpg"),
           ],
         ),
       ),

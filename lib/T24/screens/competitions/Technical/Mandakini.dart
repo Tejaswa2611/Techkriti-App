@@ -17,11 +17,10 @@ class Mandakini extends StatelessWidget {
               style: TextStyle(fontSize: 30),
             )),
             exploreCard(
-                name: "Astro Quiz",
-                image: "https://i.postimg.cc/2jH8WLK8/Copy-of-Manoeuvre.jpg"),
+                name: "Astro Quiz", image: "assets/images/Astro Quiz.jpg"),
             exploreCard(
                 name: "Observe Analyse & Solve",
-                image: "https://i.postimg.cc/2jH8WLK8/Copy-of-Manoeuvre.jpg"),
+                image: "assets/images/OAS.jpeg"),
           ],
         ),
       ),

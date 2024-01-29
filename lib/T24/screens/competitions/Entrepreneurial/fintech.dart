@@ -23,7 +23,7 @@ class _fintechState extends State<fintech> {
             )),
             exploreCard(
                 name: "Beat the Market",
-                image: "https://i.postimg.cc/2jH8WLK8/Copy-of-Manoeuvre.jpg"),
+                image: "assets/images/BeatTheMarket.png"),
           ],
         ),
       ),

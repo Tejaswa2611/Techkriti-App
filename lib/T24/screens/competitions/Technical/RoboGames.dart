@@ -16,15 +16,10 @@ class RoboGames extends StatelessWidget {
               "RoboGames",
               style: TextStyle(fontSize: 30),
             )),
+            exploreCard(name: "Robowars", image: "assets/images/Robowars.jpg"),
             exploreCard(
-                name: "Robowars",
-                image: "https://i.postimg.cc/2jH8WLK8/Copy-of-Manoeuvre.jpg"),
-            exploreCard(
-                name: "Manoeuvre",
-                image: "https://i.postimg.cc/2jH8WLK8/Copy-of-Manoeuvre.jpg"),
-            exploreCard(
-                name: "IARC",
-                image: "https://i.postimg.cc/2jH8WLK8/Copy-of-Manoeuvre.jpg"),
+                name: "Manoeuvre", image: "assets/images/Manoeuvre.jpg"),
+            exploreCard(name: "IARC", image: "assets/images/IARC.jpg"),
           ],
         ),
       ),

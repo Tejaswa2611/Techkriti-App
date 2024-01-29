@@ -18,10 +18,10 @@ class Technovation extends StatelessWidget {
             )),
             exploreCard(
                 name: "Techkriti Innovation Challange",
-                image: "https://i.postimg.cc/2jH8WLK8/Copy-of-Manoeuvre.jpg"),
+                image: "assets/images/Techkriti Innovation Challenge.jpg"),
             exploreCard(
                 name: "Industry Institute Interaction",
-                image: "https://i.postimg.cc/2jH8WLK8/Copy-of-Manoeuvre.jpg"),
+                image: "assets/images/Industry Institute Interaction.jpg"),
           ],
         ),
       ),

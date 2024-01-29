@@ -21,8 +21,7 @@ class _entrepreneurialState extends State<entrepreneurial> {
             style: TextStyle(fontSize: 30),
           )),
           exploreCard(
-              name: "Pitch Premier",
-              image: "https://i.postimg.cc/2jH8WLK8/Copy-of-Manoeuvre.jpg"),
+              name: "Pitch Premier", image: "assets/images/Pitch-Premiere.jpg"),
         ],
       ),
     );

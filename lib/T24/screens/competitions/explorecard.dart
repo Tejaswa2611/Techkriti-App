@@ -25,13 +25,13 @@ class exploreCard extends StatelessWidget {
               padding: const EdgeInsets.all(3.0),
               child: Container(
                 height: 250,
-                width: 180,
+                width: Width / 2,
                 decoration: BoxDecoration(
                     border: Border.all(
                         color: const Color.fromARGB(255, 55, 255, 245),
                         width: 1),
                     image: DecorationImage(
-                        fit: BoxFit.cover, image: NetworkImage(image))),
+                        fit: BoxFit.cover, image: AssetImage(image))),
               ),
             ),
             Padding(

@@ -22,16 +22,16 @@ class _businesseventsState extends State<businessevents> {
           )),
           exploreCard(
               name: "Strategy Sprint",
-              image: "https://i.postimg.cc/2jH8WLK8/Copy-of-Manoeuvre.jpg"),
+              image: "assets/images/StrategySprint.jpg"),
           exploreCard(
               name: "Marketing Mavericks",
-              image: "https://i.postimg.cc/2jH8WLK8/Copy-of-Manoeuvre.jpg"),
+              image: "assets/images/Marketing-Mavericks.jpg"),
           exploreCard(
               name: "Product Showdown",
               image: "https://i.postimg.cc/2jH8WLK8/Copy-of-Manoeuvre.jpg"),
           exploreCard(
               name: "Analytics Attax",
-              image: "https://i.postimg.cc/2jH8WLK8/Copy-of-Manoeuvre.jpg"),
+              image: "assets/images/BeatTheMarket.png"),
         ],
       ),
     );

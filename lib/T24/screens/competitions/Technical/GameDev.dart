@@ -18,10 +18,10 @@ class GameDev extends StatelessWidget {
             )),
             exploreCard(
                 name: "BugBetterTest",
-                image: "https://i.postimg.cc/2jH8WLK8/Copy-of-Manoeuvre.jpg"),
+                image: "assets/images/Bug-Better-Test.jpg"),
             exploreCard(
                 name: "OneShotLeveller",
-                image: "https://i.postimg.cc/2jH8WLK8/Copy-of-Manoeuvre.jpg"),
+                image: "assets/images/OneShotLeveller.jpg"),
           ],
         ),
       ),

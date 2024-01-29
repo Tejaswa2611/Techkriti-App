@@ -16,9 +16,7 @@ class SoftwareCorner extends StatelessWidget {
               "SoftWareCorner",
               style: TextStyle(fontSize: 30),
             )),
-            exploreCard(
-                name: "Re Dev",
-                image: "https://i.postimg.cc/2jH8WLK8/Copy-of-Manoeuvre.jpg"),
+            exploreCard(name: "Re Dev", image: "assets/images/web.jpg"),
           ],
         ),
       ),
