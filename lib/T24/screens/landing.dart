@@ -109,7 +109,8 @@ import 'package:techkriti/T24/screens/4container/container.dart';
 // import 'package:techkriti/T24/screens/4container/container.dart';
 import 'package:techkriti/T24/screens/4container/faqs.dart';
 import 'package:techkriti/T24/screens/4container/website.dart';
-import 'package:techkriti/T24/screens/carousel/gallery.dart';
+import 'package:techkriti/T24/screens/carousel/gallery_carousal.dart';
+import 'package:techkriti/T24/screens/carousel/whatshot.dart';
 import 'package:techkriti/T24/screens/competitions/competition_page.dart';
 import 'package:techkriti/T24/screens/competitions/layout.dart';
 //import 'package:techkriti/T24/screens/gallery.dart';
@@ -126,6 +127,11 @@ class LandingPage extends StatefulWidget {
 }
 
 class _LandingPageState extends State<LandingPage> {
+  final TextStyle headingstyle = const TextStyle(
+      fontFamily: 'heading',
+      fontSize: 25,
+      fontWeight: FontWeight.normal,
+      color: Colors.white);
   @override
   Widget build(BuildContext context) {
     //final screenHeight = MediaQuery.of(context).size.height;
@@ -147,9 +153,17 @@ class _LandingPageState extends State<LandingPage> {
           // mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 8.0),
+              child: Text(
+                "Whats hot",
+                textAlign: TextAlign.left,
+                style: headingstyle,
+              ),
+            ),
             const Padding(
               padding: EdgeInsets.all(8.0),
-              child: Gallery(),
+              child: WhatsHot(),
             ),
             Padding(
               padding: const EdgeInsets.all(8.0),
@@ -157,12 +171,13 @@ class _LandingPageState extends State<LandingPage> {
                 onTap: () =>
                     Navigator.pushNamed(context, CompetitionPage.routeName),
                 child: const Card1(
-                    color: Colors.blue,
-                    fontColor: Colors.white,
-                    title: "Competitions",
-                    Image: NetworkImage(
-                        "https://media.defense.gov/2020/Jan/09/2002232153/-1/-1/0/200109-D-BD104-019.JPG"),
-                    quote: "Like it or not,Life is a Competition"),
+                  color: Colors.blue,
+                  fontColor: Colors.white,
+                  title: "Competitions",
+                  Image: NetworkImage(
+                      "https://i.postimg.cc/J4Zr2Yht/Copy-of-Robowars.png"),
+                  // quote: "Like it or not,Life is a Competition"
+                ),
               ),
             ),
             Padding(
@@ -171,13 +186,22 @@ class _LandingPageState extends State<LandingPage> {
                 onTap: () =>
                     Navigator.pushNamed(context, WorkshopPage.routeName),
                 child: const Card1(
-                    color: Colors.black,
-                    fontColor: Colors.black,
-                    title: "Workshops",
-                    Image: NetworkImage(
-                        "https://tse2.mm.bing.net/th?id=OIP.eULh_sPmb08501utaJYVfQHaFc&pid=Api&P=0&h=180"),
-                    quote:
-                        "Learn from the best and make your own mark in this workshop"),
+                  color: Colors.black,
+                  fontColor: Colors.black,
+                  title: "Workshops",
+                  Image: NetworkImage(
+                      "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"),
+                  // quote:
+                  //     "Learn from the best and make your own mark in this workshop"
+                ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 8.0),
+              child: Text(
+                "Gallery",
+                textAlign: TextAlign.left,
+                style: headingstyle,
               ),
             ),
             const Padding(
@@ -195,8 +219,7 @@ class _LandingPageState extends State<LandingPage> {
                     child: const Container1(
                       title: "Website",
                       fontColor: Color.fromARGB(255, 25, 188, 104),
-                      Image: NetworkImage(
-                          "https://tse2.mm.bing.net/th?id=OIP.XARN-j3dXvgJ8cjkc9m_NQHaF9&pid=Api&P=0&h=180"),
+                      Image: AssetImage('assets/images/website_card.png'),
                     ),
                   ),
                 ),

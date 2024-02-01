@@ -5,7 +5,7 @@ class Card1 extends StatelessWidget {
   final String title;
   // ignore: prefer_typing_uninitialized_variables, non_constant_identifier_names
   final Image;
-  final String quote;
+  // final String quote;
   final Color fontColor;
   const Card1(
       {super.key,
@@ -13,13 +13,18 @@ class Card1 extends StatelessWidget {
       required this.title,
       // ignore: non_constant_identifier_names
       this.Image,
-      required this.quote,
+      // required this.quote,
       required this.fontColor});
 
   @override
   Widget build(BuildContext context) {
+     final TextStyle headingstyle = const TextStyle(
+      fontFamily: 'heading',
+      fontSize: 23,
+      fontWeight: FontWeight.normal,
+      color: Colors.white);
     return SizedBox(
-      height: 300,
+      height: 250,
       width: double.infinity,
       child: Padding(
         padding: const EdgeInsets.all(5.0),
@@ -40,30 +45,30 @@ class Card1 extends StatelessWidget {
                 padding: const EdgeInsets.only(top: 8.0, left: 8),
                 child: Text(
                   title,
-                  style: TextStyle(fontSize: 20, color: fontColor),
+                  style: headingstyle//TextStyle(fontSize: 20, color: fontColor),
                 ),
               ),
-              Padding(
-                padding: const EdgeInsets.only(
-                    top: 120.0, right: 200, left: 10, bottom: 10),
-                child: Opacity(
-                  opacity: 0.7,
-                  child: Container(
-                    color: color,
-                    height: 120,
-                    width: 350,
-                    child: Padding(
-                      padding: const EdgeInsets.only(top: 10.0),
-                      child: Text(
-                        quote,
-                        style:
-                            const TextStyle(color: Colors.white, fontSize: 15),
-                        textAlign: TextAlign.center,
-                      ),
-                    ),
-                  ),
-                ),
-              )
+              // Padding(
+              //   padding: const EdgeInsets.only(
+              //       top: 120.0, right: 200, left: 10, bottom: 10),
+              //   child: Opacity(
+              //     opacity: 0.7,
+              //     child: Container(
+              //       color: color,
+              //       height: 120,
+              //       width: 350,
+                    // child: Padding(
+                    //   padding: const EdgeInsets.only(top: 10.0),
+                      // child: Text(
+                      //   quote,
+                      //   style:
+                      //       const TextStyle(color: Colors.white, fontSize: 15),
+                      //   textAlign: TextAlign.center,
+                      // ),
+                    // ),
+                  // ),
+                // ),
+              // ),
             ],
           ),
         ),

@@ -15,7 +15,7 @@ class _GalleryState extends State<Gallery> {
   List images = [
     {"id": 1, "path": 'assets/images/101.jpg'},
     {"id": 2, "path": 'assets/images/102.jpg'},
-    {"id": 3, "path": 'assets/images/103.jpg'},
+    // {"id": 3, "path": 'assets/images/103.jpg'},
     {"id": 4, "path": 'assets/images/104.jpg'},
     {"id": 5, "path": 'assets/images/105.jpg'},
     {"id": 6, "path": 'assets/images/106.jpg'},
