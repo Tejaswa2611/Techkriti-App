@@ -1,22 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:techkriti/T24/screens/4container/contact_card.dart';
 
-class Contacts extends StatefulWidget {
+class ContactUs extends StatefulWidget {
   static const String routeName = '/contacts';
 
-  const Contacts({super.key});
+  const ContactUs({super.key});
 
   @override
-  State<Contacts> createState() => _ContactsState();
+  State<ContactUs> createState() => _ContactsState();
 }
 
-class _ContactsState extends State<Contacts> {
+class _ContactsState extends State<ContactUs> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
             title: const Text(
-              'Contacts',
+              'Contact Us',
               style: TextStyle(
                   fontSize: 20, color: Color.fromARGB(255, 255, 255, 255)),
             ),
