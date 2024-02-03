@@ -132,144 +132,156 @@ class LandingPage extends StatefulWidget {
 class _LandingPageState extends State<LandingPage> {
   @override
   Widget build(BuildContext context) {
-    //final screenHeight = MediaQuery\.of(context).size.height;
+    final screenHeight = MediaQuery.of(context).size.height;
     //final screenWidth = MediaQuery.of(context).size.width;
-    return Scaffold(
-      appBar: const LandingAppBar(),
-      body: SingleChildScrollView(
-        child: Column(
-          // mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 8.0),
-              child: Text(
-                "Whats hot",
-                textAlign: TextAlign.left,
-                style: headingstyle,
-              ),
-            ),
-            const Padding(
-              padding: EdgeInsets.all(8.0),
-              child: WhatsHot(),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: InkWell(
-                onTap: () =>
-                    Navigator.pushNamed(context, CompetitionPage.routeName),
-                child: const Card1(
-                  color: Colors.blue,
-                  fontColor: Colors.white,
-                  title: "Competitions",
-                  Image: NetworkImage(
-                      "https://i.postimg.cc/J4Zr2Yht/Copy-of-Robowars.png"),
-                  // quote: "Like it or not,Life is a Competition"
+    return Container(
+      // color:Colors.red,
+      decoration: const BoxDecoration(
+        image: DecorationImage(
+          image: AssetImage('assets/images/landing_background.jpg'),
+          fit: BoxFit.cover,
+          ),
+      ),
+      child: Scaffold(
+        backgroundColor: Colors.transparent,
+        appBar: const LandingAppBar(),
+        body: SingleChildScrollView(
+          child: Column(
+            // mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              SizedBox(height: screenHeight,),
+              const Padding(
+                padding: EdgeInsets.symmetric(horizontal: 8.0),
+                child: Text(
+                  "Whats hot",
+                  textAlign: TextAlign.left,
+                  style: headingstyle,
                 ),
               ),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: InkWell(
-                onTap: () =>
-                    Navigator.pushNamed(context, WorkshopPage.routeName),
-                child: const Card1(
-                  color: Colors.black,
-                  fontColor: Colors.black,
-                  title: "Workshops",
-                  Image: NetworkImage(
-                      "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"),
-                  // quote:
-                  //     "Learn from the best and make your own mark in this workshop"
-                ),
+              const Padding(
+                padding: EdgeInsets.all(8.0),
+                child: WhatsHot(),
               ),
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                const Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 8.0),
-                  child: Text(
-                    "Gallery",
-                    // textAlign: TextAlign.left,
-                    style: headingstyle,
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: InkWell(
+                  onTap: () =>
+                      Navigator.pushNamed(context, CompetitionPage.routeName),
+                  child: const Card1(
+                    color: Colors.blue,
+                    fontColor: Colors.white,
+                    title: "Competitions",
+                    Image: NetworkImage(
+                        "https://i.postimg.cc/J4Zr2Yht/Copy-of-Robowars.png"),
+                    // quote: "Like it or not,Life is a Competition"
                   ),
                 ),
-                InkWell(
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: InkWell(
                   onTap: () =>
-                      Navigator.pushNamed(context, GPage.routeName),
-                  child: const Padding(
+                      Navigator.pushNamed(context, WorkshopPage.routeName),
+                  child: const Card1(
+                    color: Colors.black,
+                    fontColor: Colors.black,
+                    title: "Workshops",
+                    Image: NetworkImage(
+                        "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"),
+                    // quote:
+                    //     "Learn from the best and make your own mark in this workshop"
+                  ),
+                ),
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  const Padding(
                     padding: EdgeInsets.symmetric(horizontal: 8.0),
                     child: Text(
-                      "See more",
+                      "Gallery",
                       // textAlign: TextAlign.left,
-                      style: TextStyle(
-                          fontFamily: 'heading',
-                          fontSize: 17,
-                          fontWeight: FontWeight.normal,
-                          color: Colors.white),
+                      style: headingstyle,
                     ),
                   ),
-                ),
-              ],
-            ),
-            const Padding(
-              padding: EdgeInsets.all(8.0),
-              child: Gallery(),
-            ),
-            const SizedBox(
-              height: 20,
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                InkWell(
-                  onTap: () => Navigator.pushNamed(context, Website.routeName),
-                  child: const Container1(
-                    // title: "Website",
-                    fontColor: Color.fromARGB(255, 25, 188, 104),
-                    Image: AssetImage('assets/images/website_card2.png'),
+                  InkWell(
+                    onTap: () => Navigator.pushNamed(context, GPage.routeName),
+                    child: const Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 8.0),
+                      child: Text(
+                        "See more",
+                        // textAlign: TextAlign.left,
+                        style: TextStyle(
+                            fontFamily: 'heading',
+                            fontSize: 17,
+                            fontWeight: FontWeight.normal,
+                            color: Colors.white),
+                      ),
+                    ),
                   ),
-                ),
-                InkWell(
-                  onTap: () =>
-                      Navigator.pushNamed(context, ContactUs.routeName),
-                  child: const Container1(
-                    // title: "Contact Us",
-                    fontColor: Colors.purple,
-                    Image: AssetImage('assets/images/contactus_card.png'),
+                ],
+              ),
+              const Padding(
+                padding: EdgeInsets.all(8.0),
+                child: Gallery(),
+              ),
+              const SizedBox(
+                height: 20,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  InkWell(
+                    onTap: () =>
+                        Navigator.pushNamed(context, Website.routeName),
+                    child: const Container1(
+                      // title: "Website",
+                      fontColor: Color.fromARGB(255, 25, 188, 104),
+                      Image: AssetImage('assets/images/website_card2.png'),
+                    ),
                   ),
-                ),
-              ],
-            ),
-            const SizedBox(
-              height: 20,
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                InkWell(
-                  onTap: () => Navigator.pushNamed(context, FAQ.routeName),
-                  child: const Container1(
-                    // title: "FAQs",
-                    fontColor: Colors.pink,
-                    Image: AssetImage("assets/images/FAQs_card.png"),
+                  InkWell(
+                    onTap: () =>
+                        Navigator.pushNamed(context, ContactUs.routeName),
+                    child: const Container1(
+                      // title: "Contact Us",
+                      fontColor: Colors.purple,
+                      Image: AssetImage('assets/images/contactus_card.png'),
+                    ),
                   ),
-                ),
-                InkWell(
-                  onTap: () => Navigator.pushNamed(context, Brochure.routeName),
-                  child: const Container1(
-                    // title: "Brochure",
-                    fontColor: Colors.blue,
-                    Image: AssetImage("assets/images/Bronchure_card.png"),
+                ],
+              ),
+              const SizedBox(
+                height: 20,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  InkWell(
+                    onTap: () => Navigator.pushNamed(context, FAQ.routeName),
+                    child: const Container1(
+                      // title: "FAQs",
+                      fontColor: Colors.pink,
+                      Image: AssetImage("assets/images/FAQs_card.png"),
+                    ),
                   ),
-                ),
-              ],
-            ),
-            const SizedBox(
-              height: 20,
-            ),
-          ],
+                  InkWell(
+                    onTap: () =>
+                        Navigator.pushNamed(context, Brochure.routeName),
+                    child: const Container1(
+                      // title: "Brochure",
+                      fontColor: Colors.blue,
+                      Image: AssetImage("assets/images/Bronchure_card.png"),
+                    ),
+                  ),
+                ],
+              ),
+              const SizedBox(
+                height: 20,
+              ),
+            ],
+          ),
         ),
       ),
     );

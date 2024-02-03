@@ -63,17 +63,8 @@ class _MyAppState extends State<MyApp> {
       theme: ThemeData(
         scaffoldBackgroundColor: const Color.fromARGB(255, 4, 46, 102),
         appBarTheme: const AppBarTheme(
-          // color: hexToColor('#4169E1'),
-          // color: Colors.blue.shade900,
-          titleTextStyle: TextStyle(color: Colors.white),
-          // color: hexToColor('#F9CB12'),// tosc yello
-          // color: hexToColor('#00FFFF'), // Cyan
-          // color: Colors.blue.shade900, // DarkBlue
-          // color: hexToColor('#87CEEB'), // LightBlue
-          // color: hexToColor('#0B1D21'), // DarkGreen
-          // color: hexToColor('#56A5EC'), // Light Blue
-          color: Colors.black87, //hexToColor('#404040'), //Testing
-          // color: hexToColor('#D9D9D9'), grey
+          titleTextStyle: TextStyle(color: Colors.white),       
+          color: Colors.black87,
           iconTheme: IconThemeData(color: Colors.white),
         ),
         pageTransitionsTheme: const PageTransitionsTheme(
