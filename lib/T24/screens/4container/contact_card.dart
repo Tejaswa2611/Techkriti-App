@@ -55,11 +55,9 @@ class contactCard extends StatelessWidget {
                 // color: Colors.green,
                 height: 210,
                 width: 180,
-                decoration: const BoxDecoration(
+                decoration: BoxDecoration(
                     image: DecorationImage(
-                        fit: BoxFit.cover,
-                        image: NetworkImage(
-                            "https://i.postimg.cc/mkVwt5g5/Raghav.jpg"))),
+                        fit: BoxFit.cover, image: AssetImage(image))),
               ),
             ),
             Text(

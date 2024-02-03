@@ -21,17 +21,27 @@ class _businesseventsState extends State<businessevents> {
             style: TextStyle(fontSize: 30),
           )),
           exploreCard(
-              name: "Strategy Sprint",
-              image: "assets/images/StrategySprint.jpg"),
+            name: "Strategy Sprint",
+            image: "assets/images/StrategySprint.jpg",
+            url: 'https://techkriti.org/competitions/details/Strategy%20Sprint',
+          ),
           exploreCard(
-              name: "Marketing Mavericks",
-              image: "assets/images/Marketing-Mavericks.jpg"),
+            name: "Marketing Mavericks",
+            image: "assets/images/Marketing-Mavericks.jpg",
+            url:
+                'https://techkriti.org/competitions/details/Marketing%20Mavericks',
+          ),
           exploreCard(
-              name: "Product Showdown",
-              image: "https://i.postimg.cc/2jH8WLK8/Copy-of-Manoeuvre.jpg"),
+            name: "Product Showdown",
+            image: "https://i.postimg.cc/2jH8WLK8/Copy-of-Manoeuvre.jpg",
+            url:
+                'https://techkriti.org/competitions/details/Product%20Showdown',
+          ),
           exploreCard(
-              name: "Analytics Attax",
-              image: "assets/images/BeatTheMarket.png"),
+            name: "Analytics Attax",
+            image: "assets/images/BeatTheMarket.png",
+            url: 'https://techkriti.org/competitions/details/Analytics%20Attax',
+          ),
         ],
       ),
     );

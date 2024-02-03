@@ -21,7 +21,10 @@ class _entrepreneurialState extends State<entrepreneurial> {
             style: TextStyle(fontSize: 30),
           )),
           exploreCard(
-              name: "Pitch Premier", image: "assets/images/Pitch-Premiere.jpg"),
+            name: "Pitch Premier",
+            image: "assets/images/Pitch-Premiere.jpg",
+            url: 'https://techkriti.org/competitions/details/Pitch%20premier',
+          ),
         ],
       ),
     );

@@ -17,11 +17,17 @@ class Technovation extends StatelessWidget {
               style: TextStyle(fontSize: 30),
             )),
             exploreCard(
-                name: "Techkriti Innovation Challange",
-                image: "assets/images/Techkriti Innovation Challenge.jpg"),
+              name: "Techkriti Innovation Challange",
+              image: "assets/images/Techkriti Innovation Challenge.jpg",
+              url:
+                  'https://techkriti.org/competitions/details/Techkriti%20Innovation%20Challange',
+            ),
             exploreCard(
-                name: "Industry Institute Interaction",
-                image: "assets/images/Industry Institute Interaction.jpg"),
+              name: "Industry Institute Interaction",
+              image: "assets/images/Industry Institute Interaction.jpg",
+              url:
+                  'https://techkriti.org/competitions/details/Industry%20Institute%20Interaction',
+            ),
           ],
         ),
       ),

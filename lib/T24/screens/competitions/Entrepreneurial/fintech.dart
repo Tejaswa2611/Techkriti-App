@@ -22,8 +22,11 @@ class _fintechState extends State<fintech> {
               style: TextStyle(fontSize: 30),
             )),
             exploreCard(
-                name: "Beat the Market",
-                image: "assets/images/BeatTheMarket.png"),
+              name: "Beat the Market",
+              image: "assets/images/BeatTheMarket.png",
+              url:
+                  'https://techkriti.org/competitions/details/Beat%20the%20Market',
+            ),
           ],
         ),
       ),

@@ -16,7 +16,11 @@ class SoftwareCorner extends StatelessWidget {
               "SoftWareCorner",
               style: TextStyle(fontSize: 30),
             )),
-            exploreCard(name: "Re Dev", image: "assets/images/web.jpg"),
+            exploreCard(
+              name: "Re Dev",
+              image: "assets/images/web.jpg",
+              url: 'https://techkriti.org/competitions/details/Re%20Dev',
+            ),
           ],
         ),
       ),

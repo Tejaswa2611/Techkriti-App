@@ -17,8 +17,30 @@ class MUN extends StatelessWidget {
               style: TextStyle(fontSize: 30),
             )),
             exploreCard(
-                name: "MUN (pending)",
-                image: "https://i.postimg.cc/2jH8WLK8/Copy-of-Manoeuvre.jpg"),
+              name: "AD-Hoc",
+              image: "",
+              url: 'https://techkriti.org/competitions/details/Ad-Hoc',
+            ),
+            exploreCard(
+              name: "Lok Sabha",
+              image: "",
+              url: 'https://techkriti.org/competitions/details/Lok%20Sabha',
+            ),
+            exploreCard(
+              name: "UNHRC",
+              image: "",
+              url: 'https://techkriti.org/competitions/details/UNHRC',
+            ),
+            exploreCard(
+              name: "UNSC",
+              image: "",
+              url: 'https://techkriti.org/competitions/details/UNSC',
+            ),
+            exploreCard(
+              name: "BCCI",
+              image: "",
+              url: 'https://techkriti.org/competitions/details/BCCI',
+            ),
           ],
         ),
       ),

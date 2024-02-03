@@ -17,8 +17,16 @@ class CubingEvents extends StatelessWidget {
               style: TextStyle(fontSize: 30),
             )),
             exploreCard(
-                name: "Cubing Events(pending)",
-                image: "https://i.postimg.cc/2jH8WLK8/Copy-of-Manoeuvre.jpg"),
+              name: "Cubing Extravaganza",
+              image: "",
+              url:
+                  'https://techkriti.org/competitions/details/Cubing%20Extravaganza',
+            ),
+            exploreCard(
+              name: "IORC",
+              image: "",
+              url: 'https://techkriti.org/competitions/details/IORC',
+            ),
           ],
         ),
       ),

@@ -17,11 +17,20 @@ class TakeOff extends StatelessWidget {
               style: TextStyle(fontSize: 30),
             )),
             exploreCard(
-                name: "Skysparks", image: "assets/images/Skysparks.jpg"),
+              name: "Skysparks",
+              image: "assets/images/Skysparks.jpg",
+              url: 'https://techkriti.org/competitions/details/Skysparks',
+            ),
             exploreCard(
-                name: "Multirotor", image: "assets/images/Multirotor.jpg"),
+              name: "Multirotor",
+              image: "assets/images/Multirotor.jpg",
+              url: 'https://techkriti.org/competitions/details/Multirotor',
+            ),
             exploreCard(
-                name: "Hovermania", image: "assets/images/Hovermania.jpg"),
+              name: "Hovermania",
+              image: "assets/images/Hovermania.jpg",
+              url: 'https://techkriti.org/competitions/details/Hovermania',
+            ),
           ],
         ),
       ),

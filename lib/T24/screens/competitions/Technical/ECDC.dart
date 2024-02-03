@@ -17,10 +17,16 @@ class ECDC extends StatelessWidget {
               style: TextStyle(fontSize: 30),
             )),
             exploreCard(
-                name: "Secure Comms", image: "assets/images/Embedded.jpg"),
+              name: "Secure Comms",
+              image: "assets/images/Embedded.jpg",
+              url: 'https://techkriti.org/competitions/details/Secure%20Comms',
+            ),
             exploreCard(
-                name: "Galactic Dodger",
-                image: "assets/images/Electromania.jpg"),
+              name: "Galactic Dodger",
+              image: "assets/images/Electromania.jpg",
+              url:
+                  'https://techkriti.org/competitions/details/Galactic%20Dodger',
+            ),
           ],
         ),
       ),

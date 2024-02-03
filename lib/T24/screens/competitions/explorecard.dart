@@ -1,9 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class exploreCard extends StatelessWidget {
   final String name;
   final String image;
-  const exploreCard({super.key, required this.name, required this.image});
+  final String url;
+  const exploreCard(
+      {super.key, required this.name, required this.image, required this.url});
+
+  Future<void> goToWebPage(String urlString) async {
+    final Uri url = Uri.parse(urlString);
+    if (!await launchUrl(url)) {
+      throw 'Could not launch $url';
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -47,7 +57,9 @@ class exploreCard extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.all(12.0),
               child: ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () async {
+                    await goToWebPage(url);
+                  },
                   style: ButtonStyle(
                     backgroundColor: MaterialStateProperty.all(
                         Color.fromARGB(255, 55, 255, 245).withOpacity(0.6)),
