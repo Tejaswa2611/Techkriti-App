@@ -15,7 +15,7 @@ class Container1 extends StatelessWidget {
           padding: const EdgeInsets.all(8.0),
           child: Container(
             width: MediaQuery.of(context).size.width / 2.5,
-            height: 200,
+            height: 175,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(8.0),
               image: DecorationImage(
