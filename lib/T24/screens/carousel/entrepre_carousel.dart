@@ -1,5 +1,6 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:techkriti/T24/appbars/normal_appbar.dart';
 import 'package:techkriti/T24/screens/competitions/Entrepreneurial/businessevents.dart';
 import 'package:techkriti/T24/screens/competitions/Entrepreneurial/entrepreneurial.dart';
 import 'package:techkriti/T24/screens/competitions/Entrepreneurial/fintech.dart';
@@ -13,11 +14,8 @@ class entre_carousel extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: const Text(
-            "ENTREPRENEURIAL",
-            style: TextStyle(fontSize: 20),
-          ),
+        appBar: const NormalAppBar(
+          title: "Entrepreneurial",
         ),
         body: CarouselSlider(
           items: Items.map((item) => ClipRRect(

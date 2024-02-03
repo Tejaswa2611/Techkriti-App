@@ -3,6 +3,7 @@ import 'package:techkriti/T24/screens/carousel/entrepre_carousel.dart';
 import 'package:techkriti/T24/screens/carousel/misc_carousel.dart';
 import 'package:techkriti/T24/screens/carousel/technical_carousel.dart';
 import 'package:techkriti/T24/screens/competitions/competition_card.dart';
+import 'package:techkriti/T24/appbars/normal_appbar.dart';
 
 class CompetitionPage extends StatefulWidget {
   static const String routeName = '/competetions';
@@ -17,14 +18,7 @@ class _CompetitionPageState extends State<CompetitionPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text(
-          'Competitions',
-          style: TextStyle(
-              fontSize: 20, color: Color.fromARGB(255, 255, 255, 255)),
-        ),
-        backgroundColor: const Color.fromARGB(255, 0, 0, 0),
-      ),
+      appBar: const NormalAppBar(title: 'Competetions'),
       body: ListView(
         scrollDirection: Axis.vertical,
         children: [
