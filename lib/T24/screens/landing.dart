@@ -208,65 +208,60 @@ class _LandingPageState extends State<LandingPage> {
               padding: EdgeInsets.all(8.0),
               child: Gallery(),
             ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                Padding(
-                  padding: const EdgeInsets.only(top: 8.0, left: 10),
-                  child: InkWell(
-                    onTap: () =>
-                        Navigator.pushNamed(context, Website.routeName),
-                    child: const Container1(
-                      title: "Website",
-                      fontColor: Color.fromARGB(255, 25, 188, 104),
-                      Image: AssetImage('assets/images/website_card.png'),
-                    ),
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(top: 8.0, left: 10),
-                  child: InkWell(
-                    onTap: () =>
-                        Navigator.pushNamed(context, ContactUs.routeName),
-                    child: const Container1(
-                      title: "Contact Us",
-                      fontColor: Colors.purple,
-                      Image: NetworkImage(
-                          "https://tse2.mm.bing.net/th?id=OIP.XARN-j3dXvgJ8cjkc9m_NQHaF9&pid=Api&P=0&h=180"),
-                    ),
-                  ),
-                ),
-              ],
+            const SizedBox(
+              height: 20,
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                Padding(
-                  padding: const EdgeInsets.only(top: 8.0, left: 10),
-                  child: InkWell(
-                    onTap: () => Navigator.pushNamed(context, FAQ.routeName),
-                    child: const Container1(
-                      title: "FAQs",
-                      fontColor: Colors.pink,
-                      Image: NetworkImage(
-                          "https://tse2.mm.bing.net/th?id=OIP.XARN-j3dXvgJ8cjkc9m_NQHaF9&pid=Api&P=0&h=180"),
-                    ),
+                InkWell(
+                  onTap: () => Navigator.pushNamed(context, Website.routeName),
+                  child: const Container1(
+                    // title: "Website",
+                    fontColor: Color.fromARGB(255, 25, 188, 104),
+                    Image: AssetImage('assets/images/website_card2.png'),
                   ),
                 ),
-                Padding(
-                  padding: const EdgeInsets.only(top: 8.0, left: 10),
-                  child: InkWell(
-                    onTap: () =>
-                        Navigator.pushNamed(context, Brochure.routeName),
-                    child: const Container1(
-                      title: "Brochure",
-                      fontColor: Colors.blue,
-                      Image: NetworkImage(
-                          "https://tse2.mm.bing.net/th?id=OIP.XARN-j3dXvgJ8cjkc9m_NQHaF9&pid=Api&P=0&h=180"),
-                    ),
+                InkWell(
+                  onTap: () =>
+                      Navigator.pushNamed(context, ContactUs.routeName),
+                  child: const Container1(
+                    // title: "Contact Us",
+                    fontColor: Colors.purple,
+                    Image: AssetImage(
+                        'assets/images/contactus_card.png'),
                   ),
                 ),
               ],
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                InkWell(
+                  onTap: () => Navigator.pushNamed(context, FAQ.routeName),
+                  child: const Container1(
+                    // title: "FAQs",
+                    fontColor: Colors.pink,
+                    Image: AssetImage(
+                        "assets/images/FAQs_card.png"),
+                  ),
+                ),
+                InkWell(
+                  onTap: () => Navigator.pushNamed(context, Brochure.routeName),
+                  child: const Container1(
+                    // title: "Brochure",
+                    fontColor: Colors.blue,
+                    Image: AssetImage(
+                        "assets/images/Bronchure_card.png"),
+                  ),
+                ),
+              ],
+            ),
+            const SizedBox(
+              height: 20,
             ),
           ],
         ),
