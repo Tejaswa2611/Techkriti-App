@@ -9,6 +9,7 @@ class LandingAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
+      elevation: 20,
       title: Row(
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
