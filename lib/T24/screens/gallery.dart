@@ -1,5 +1,7 @@
+
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
+import 'package:techkriti/T24/appbars/normal_appbar.dart';
 
 class GPage extends StatefulWidget {
   static const String routeName = '/gallery';
@@ -52,7 +54,8 @@ class _GPageState extends State<GPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
+      appBar: const NormalAppBar(title: 'Gallery'),
+      backgroundColor: Colors.white,
       body: FadeInRight(
         child: Padding(
           padding: const EdgeInsets.all(3.0),
@@ -63,27 +66,23 @@ class _GPageState extends State<GPage> {
                   crossAxisCount: 2,
                 ),
                 itemCount: 16,
-                itemBuilder: (context, index) => Padding(
+                itemBuilder: (context, index) => GestureDetector(
+                  onTap: () {
+                    _openPhotoPopup(index);
+                  },
+                  child: Padding(
                     padding: const EdgeInsets.all(4.0),
                     child: Container(
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(12.0), 
-                            boxShadow: [
-                                BoxShadow(
-                                    color: Colors.white.withOpacity(0.5),
-                                    spreadRadius: 1.5,
-                                    blurRadius: 3.5,
-                                    offset: const Offset(0, 3), 
-                                ),
-                            ],
-                        ),
-                        child: ClipRRect(
-                            borderRadius: BorderRadius.circular(12.0), 
-                            child: Image.asset('assets/images/${index + 102}.jpg'),
-                        ),
+                      color: Colors.grey[300],
+                      padding: const EdgeInsets.all(6),
+                      child: Image.asset(
+                        'assets/images/${index + 101}.jpg',
+                        fit: BoxFit.cover,
+                      ),
                     ),
+                  ),
                 ),
-            ),
+              ),
               if (selectedPhotoIndex != null)
                 GestureDetector(
                   onTap: _closePhotoPopup,
@@ -93,7 +92,7 @@ class _GPageState extends State<GPage> {
                       children: [
                         PageView.builder(
                           controller: _pageController,
-                          itemCount: 14,
+                          itemCount: 16,
                           itemBuilder: (context, index) {
                             return GestureDetector(
                               onScaleUpdate: (details) {
@@ -124,7 +123,7 @@ class _GPageState extends State<GPage> {
                           alignment: Alignment.centerLeft,
                           child: IconButton(
                             iconSize: 40,
-                            color: Colors.black,
+                            color: Colors.white,
                             onPressed: () {
                               _navigatePage(-1); // Navigate to previous image
                             },
@@ -135,7 +134,7 @@ class _GPageState extends State<GPage> {
                           alignment: Alignment.centerRight,
                           child: IconButton(
                             iconSize: 40,
-                            color: Colors.black,
+                            color: Colors.white,
                             onPressed: () {
                               _navigatePage(1); // Navigate to next image
                             },

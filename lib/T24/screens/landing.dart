@@ -100,6 +100,7 @@
 //   }
 // }
 import 'package:flutter/material.dart';
+import 'package:techkriti/T24/constants/colors_and_fonts.dart';
 // import 'package:techkriti/T24/navigation/map.dart';
 import 'package:techkriti/T24/screens/4container/brochure.dart';
 import 'package:techkriti/T24/screens/4container/contactUs.dart';
@@ -113,8 +114,10 @@ import 'package:techkriti/T24/screens/carousel/gallery_carousal.dart';
 import 'package:techkriti/T24/screens/carousel/whatshot.dart';
 import 'package:techkriti/T24/screens/competitions/competition_page.dart';
 import 'package:techkriti/T24/screens/competitions/layout.dart';
+import 'package:techkriti/T24/screens/gallery.dart';
 //import 'package:techkriti/T24/screens/gallery.dart';
 import 'package:techkriti/T24/screens/workshops/workshop_page.dart';
+import 'package:techkriti/T24/appbars/landing_appbar.dart';
 //import 'package:techkriti/T24/widgets/landing_card.dart';
 
 class LandingPage extends StatefulWidget {
@@ -127,34 +130,19 @@ class LandingPage extends StatefulWidget {
 }
 
 class _LandingPageState extends State<LandingPage> {
-  final TextStyle headingstyle = const TextStyle(
-      fontFamily: 'heading',
-      fontSize: 25,
-      fontWeight: FontWeight.normal,
-      color: Colors.white);
   @override
   Widget build(BuildContext context) {
-    //final screenHeight = MediaQuery.of(context).size.height;
+    //final screenHeight = MediaQuery\.of(context).size.height;
     //final screenWidth = MediaQuery.of(context).size.width;
     return Scaffold(
-      appBar: AppBar(
-          title: Row(
-        mainAxisAlignment: MainAxisAlignment.start,
-        children: [
-          Image.network(
-              "https://techkriti.org/static/media/Typeface.c408070331d0cabb981f.png",
-              fit: BoxFit.contain,
-              height: 200,
-              width: 170)
-        ],
-      )),
+      appBar: const LandingAppBar(),
       body: SingleChildScrollView(
         child: Column(
           // mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 8.0),
+            const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 8.0),
               child: Text(
                 "Whats hot",
                 textAlign: TextAlign.left,
@@ -196,13 +184,34 @@ class _LandingPageState extends State<LandingPage> {
                 ),
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 8.0),
-              child: Text(
-                "Gallery",
-                textAlign: TextAlign.left,
-                style: headingstyle,
-              ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                const Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 8.0),
+                  child: Text(
+                    "Gallery",
+                    // textAlign: TextAlign.left,
+                    style: headingstyle,
+                  ),
+                ),
+                InkWell(
+                  onTap: () =>
+                      Navigator.pushNamed(context, GPage.routeName),
+                  child: const Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 8.0),
+                    child: Text(
+                      "See more",
+                      // textAlign: TextAlign.left,
+                      style: TextStyle(
+                          fontFamily: 'heading',
+                          fontSize: 17,
+                          fontWeight: FontWeight.normal,
+                          color: Colors.white),
+                    ),
+                  ),
+                ),
+              ],
             ),
             const Padding(
               padding: EdgeInsets.all(8.0),
@@ -228,8 +237,7 @@ class _LandingPageState extends State<LandingPage> {
                   child: const Container1(
                     // title: "Contact Us",
                     fontColor: Colors.purple,
-                    Image: AssetImage(
-                        'assets/images/contactus_card.png'),
+                    Image: AssetImage('assets/images/contactus_card.png'),
                   ),
                 ),
               ],
@@ -245,8 +253,7 @@ class _LandingPageState extends State<LandingPage> {
                   child: const Container1(
                     // title: "FAQs",
                     fontColor: Colors.pink,
-                    Image: AssetImage(
-                        "assets/images/FAQs_card.png"),
+                    Image: AssetImage("assets/images/FAQs_card.png"),
                   ),
                 ),
                 InkWell(
@@ -254,8 +261,7 @@ class _LandingPageState extends State<LandingPage> {
                   child: const Container1(
                     // title: "Brochure",
                     fontColor: Colors.blue,
-                    Image: AssetImage(
-                        "assets/images/Bronchure_card.png"),
+                    Image: AssetImage("assets/images/Bronchure_card.png"),
                   ),
                 ),
               ],

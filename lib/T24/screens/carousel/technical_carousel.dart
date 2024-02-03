@@ -1,5 +1,6 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:techkriti/T24/appbars/normal_appbar.dart';
 import 'package:techkriti/T24/screens/competitions/Technical/ECDC.dart';
 import 'package:techkriti/T24/screens/competitions/Technical/GameDev.dart';
 import 'package:techkriti/T24/screens/competitions/Technical/Mandakini.dart';
@@ -14,22 +15,19 @@ class technical_carousel extends StatelessWidget {
   technical_carousel({super.key});
 
   List Items = [
-    RoboGames(),
-    ECDC(),
-    TakeOff(),
-    Technovation(),
-    Mandakini(),
-    GameDev(),
-    SoftwareCorner(),
+    const RoboGames(),
+    const ECDC(),
+    const TakeOff(),
+    const Technovation(),
+    const Mandakini(),
+    const GameDev(),
+    const SoftwareCorner(),
   ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: const Text(
-            "TECHNICAL",
-            style: TextStyle(fontSize: 20),
-          ),
+        appBar: const NormalAppBar(
+          title: 'Technical',
         ),
         body: CarouselSlider(
           items: Items.map((item) => ClipRRect(

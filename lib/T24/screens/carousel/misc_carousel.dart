@@ -1,5 +1,6 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:techkriti/T24/appbars/normal_appbar.dart';
 import 'package:techkriti/T24/screens/competitions/miscellaneous/CubingEvents.dart';
 import 'package:techkriti/T24/screens/competitions/miscellaneous/DesignEvents.dart';
 import 'package:techkriti/T24/screens/competitions/miscellaneous/MUN.dart';
@@ -13,12 +14,7 @@ class misc_carousel extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: const Text(
-            "MISCELLANEOUS",
-            style: TextStyle(fontSize: 20),
-          ),
-        ),
+        appBar: const NormalAppBar(title: "Miscellaneous"),
         body: CarouselSlider(
           items: Items.map((item) => ClipRRect(
                 borderRadius: BorderRadius.circular(38),
