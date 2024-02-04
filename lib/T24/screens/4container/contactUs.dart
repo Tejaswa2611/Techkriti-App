@@ -15,7 +15,7 @@ class _ContactsState extends State<ContactUs> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: const NormalAppBar(title: "FAQs"),
+        appBar: const NormalAppBar(title: "Contact Us"),
         body: SingleChildScrollView(
           child: Center(
               child: Column(

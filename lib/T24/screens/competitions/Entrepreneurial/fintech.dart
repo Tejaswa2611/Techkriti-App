@@ -19,7 +19,7 @@ class _fintechState extends State<fintech> {
             SafeArea(
                 child: Text(
               "Fintech",
-              style: TextStyle(fontSize: 30),
+              style: TextStyle(fontSize: 30, fontFamily: "Equinox"),
             )),
             exploreCard(
               name: "Beat the Market",

@@ -14,7 +14,7 @@ class MUN extends StatelessWidget {
             SafeArea(
                 child: Text(
               "Model United Nations",
-              style: TextStyle(fontSize: 30),
+              style: TextStyle(fontSize: 30, fontFamily: "Equinox"),
             )),
             exploreCard(
               name: "AD-Hoc",

@@ -14,7 +14,7 @@ class CubingEvents extends StatelessWidget {
             SafeArea(
                 child: Text(
               "Cubing Events",
-              style: TextStyle(fontSize: 30),
+              style: TextStyle(fontSize: 30, fontFamily: "Equinox"),
             )),
             exploreCard(
               name: "Cubing Extravaganza",

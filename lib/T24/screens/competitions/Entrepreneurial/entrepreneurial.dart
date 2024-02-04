@@ -18,7 +18,7 @@ class _entrepreneurialState extends State<entrepreneurial> {
           SafeArea(
               child: Text(
             "Entrepreneurial",
-            style: TextStyle(fontSize: 30),
+            style: TextStyle(fontSize: 30, fontFamily: "Equinox"),
           )),
           exploreCard(
             name: "Pitch Premier",

@@ -11,7 +11,12 @@ class _ScheduleState extends State<Schedule> {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      body: Center(child: Text('Schedule Page')),
+      backgroundColor: Color(0xFF121212),
+      body: Center(
+          child: Text(
+        'Schedule Page',
+        style: TextStyle(color: Colors.white),
+      )),
     );
   }
 }

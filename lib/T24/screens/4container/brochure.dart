@@ -14,7 +14,7 @@ class _BrochureState extends State<Brochure> {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      appBar: NormalAppBar(title: "FAQs"),
+      appBar: NormalAppBar(title: "Brochure"),
     );
   }
 }

@@ -15,6 +15,7 @@ class _WorkshopPageState extends State<WorkshopPage> {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
+        backgroundColor: Color(0xFF121212),
         appBar: NormalAppBar(
           title: "Workshops",
         ),
@@ -27,7 +28,8 @@ class _WorkshopPageState extends State<WorkshopPage> {
               child: Column(children: [
                 Text(
                   "WORKSHOPS",
-                  style: TextStyle(fontSize: 50, color: Colors.white),
+                  style: TextStyle(
+                      fontSize: 50, color: Colors.white, fontFamily: "Equinox"),
                 ),
                 WorkshopCard(
                   name: "MACHINE LEARNING",

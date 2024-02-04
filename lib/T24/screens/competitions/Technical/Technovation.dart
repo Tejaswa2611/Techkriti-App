@@ -14,7 +14,7 @@ class Technovation extends StatelessWidget {
             SafeArea(
                 child: Text(
               "Technovation",
-              style: TextStyle(fontSize: 30),
+              style: TextStyle(fontSize: 30, fontFamily: "Equinox"),
             )),
             exploreCard(
               name: "Techkriti Innovation Challange",

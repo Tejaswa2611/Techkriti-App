@@ -14,7 +14,7 @@ class SoftwareCorner extends StatelessWidget {
             SafeArea(
                 child: Text(
               "SoftWareCorner",
-              style: TextStyle(fontSize: 30),
+              style: TextStyle(fontSize: 30, fontFamily: "Equinox"),
             )),
             exploreCard(
               name: "Re Dev",

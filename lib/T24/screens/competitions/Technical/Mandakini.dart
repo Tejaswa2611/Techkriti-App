@@ -14,7 +14,7 @@ class Mandakini extends StatelessWidget {
             SafeArea(
                 child: Text(
               "Mandakini",
-              style: TextStyle(fontSize: 30),
+              style: TextStyle(fontSize: 30, fontFamily: "Equinox"),
             )),
             exploreCard(
               name: "Astro Quiz",
