@@ -12,11 +12,15 @@ class CompetitionCards extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: 300,
-      width: double.infinity,
+    return Material(
+      color: Colors.transparent,
+      elevation: 10,
       child: Container(
         decoration: BoxDecoration(
+          border: Border.all(
+            color: Colors.grey.shade800, // Set your custom color here
+            width: 3, // Set the border width
+          ),
           borderRadius: BorderRadius.circular(10),
           image: DecorationImage(
             image: NetworkImage(image),
@@ -25,7 +29,7 @@ class CompetitionCards extends StatelessWidget {
         ),
         width: double.infinity,
         height: 250, // Fixed width for demonstration, adjust as needed
-        margin: const EdgeInsets.all(12.0),
+        margin: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 8),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [

@@ -17,45 +17,43 @@ class _CompetitionPageState extends State<CompetitionPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const NormalAppBar(title: 'Competitions'),
-      body: ListView(
-        scrollDirection: Axis.vertical,
-        children: [
-          Column(
-            children: [
-              InkWell(
-                onTap: () {
-                  Navigator.pushNamed(context, technical_carousel.routeName);
-                },
-                child: const CompetitionCards(
-                  title: "Technical",
-                  image: "https://i.postimg.cc/J4Zr2Yht/Copy-of-Robowars.png",
-                  color: Colors.white,
-                ),
+      backgroundColor: const Color(0xFF121212),
+      appBar: const NormalAppBar(title: 'Competetions'),
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            InkWell(
+              onTap: () {
+                Navigator.pushNamed(context, technical_carousel.routeName);
+              },
+              child: const CompetitionCards(
+                title: "Technical",
+                image: "https://i.postimg.cc/J4Zr2Yht/Copy-of-Robowars.png",
+                color: Colors.white,
               ),
-              InkWell(
-                onTap: () {
-                  Navigator.pushNamed(context, entre_carousel.routeName);
-                },
-                child: const CompetitionCards(
-                  title: "Entrepreneurial",
-                  image: "https://i.postimg.cc/J4Zr2Yht/Copy-of-Robowars.png",
-                  color: Colors.white,
-                ),
+            ),
+            InkWell(
+              onTap: () {
+                Navigator.pushNamed(context, entre_carousel.routeName);
+              },
+              child: const CompetitionCards(
+                title: "Entrepreneurial",
+                image: "https://i.postimg.cc/J4Zr2Yht/Copy-of-Robowars.png",
+                color: Colors.white,
               ),
-              InkWell(
-                onTap: () {
-                  Navigator.pushNamed(context, misc_carousel.routeName);
-                },
-                child: const CompetitionCards(
-                  title: "Miscellaneous",
-                  image: "https://i.postimg.cc/J4Zr2Yht/Copy-of-Robowars.png",
-                  color: Colors.white,
-                ),
+            ),
+            InkWell(
+              onTap: () {
+                Navigator.pushNamed(context, misc_carousel.routeName);
+              },
+              child: const CompetitionCards(
+                title: "Miscellaneous",
+                image: "https://i.postimg.cc/J4Zr2Yht/Copy-of-Robowars.png",
+                color: Colors.white,
               ),
-            ],
-          )
-        ],
+            ),
+          ],
+        ),
       ),
     );
   }
