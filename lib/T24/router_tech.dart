@@ -35,11 +35,11 @@ Route<dynamic> generateRoute(RouteSettings routeSettings) {
         settings: routeSettings,
         builder: (_) => const GPage(),
       );
-    case Website.routeName:
-      return MaterialPageRoute(
-        settings: routeSettings,
-        builder: (_) => const Website(),
-      );
+    // case Website.routeName:
+    //   return MaterialPageRoute(
+    //     settings: routeSettings,
+    //     builder: (_) => const Website(),
+    //   );
     case Brochure.routeName:
       return MaterialPageRoute(
         settings: routeSettings,

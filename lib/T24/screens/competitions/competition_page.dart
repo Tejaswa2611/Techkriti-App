@@ -14,11 +14,10 @@ class CompetitionPage extends StatefulWidget {
 }
 
 class _CompetitionPageState extends State<CompetitionPage> {
-  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const NormalAppBar(title: 'Competetions'),
+      appBar: const NormalAppBar(title: 'Competitions'),
       body: ListView(
         scrollDirection: Axis.vertical,
         children: [

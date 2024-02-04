@@ -99,6 +99,8 @@
 //     );
 //   }
 // }
+//import 'dart:js_interop';
+
 import 'package:flutter/material.dart';
 import 'package:techkriti/T24/constants/colors_and_fonts.dart';
 // import 'package:techkriti/T24/navigation/map.dart';
@@ -109,7 +111,7 @@ import 'package:techkriti/T24/screens/4container/contactUs.dart';
 import 'package:techkriti/T24/screens/4container/container.dart';
 // import 'package:techkriti/T24/screens/4container/container.dart';
 import 'package:techkriti/T24/screens/4container/faqs.dart';
-import 'package:techkriti/T24/screens/4container/website.dart';
+//import 'package:techkriti/T24/screens/4container/website.dart';
 import 'package:techkriti/T24/screens/carousel/gallery_carousal.dart';
 import 'package:techkriti/T24/screens/carousel/whatshot.dart';
 import 'package:techkriti/T24/screens/competitions/competition_page.dart';
@@ -118,6 +120,7 @@ import 'package:techkriti/T24/screens/gallery.dart';
 //import 'package:techkriti/T24/screens/gallery.dart';
 import 'package:techkriti/T24/screens/workshops/workshop_page.dart';
 import 'package:techkriti/T24/appbars/landing_appbar.dart';
+import 'package:url_launcher/url_launcher.dart';
 //import 'package:techkriti/T24/widgets/landing_card.dart';
 
 class LandingPage extends StatefulWidget {
@@ -130,6 +133,13 @@ class LandingPage extends StatefulWidget {
 }
 
 class _LandingPageState extends State<LandingPage> {
+  Future<void> goToWebPage(String url1) async {
+    final Uri url = Uri.parse(url1);
+    if (!await launchUrl(url)) {
+      throw 'Could not launch $url';
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     final screenHeight = MediaQuery.of(context).size.height;
@@ -140,7 +150,7 @@ class _LandingPageState extends State<LandingPage> {
         image: DecorationImage(
           image: AssetImage('assets/images/landing_background.jpg'),
           fit: BoxFit.cover,
-          ),
+        ),
       ),
       child: Scaffold(
         backgroundColor: Colors.transparent,
@@ -150,7 +160,30 @@ class _LandingPageState extends State<LandingPage> {
             // mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              SizedBox(height: screenHeight,),
+              SizedBox(
+                height: screenHeight / 1.15,
+                child: Column(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.only(left: 12.0, top: 15),
+                      child: Container(
+                        height: 620,
+                        width: 350,
+                        decoration: const BoxDecoration(
+                            image: DecorationImage(
+                                image: AssetImage(
+                          "assets/images/Techkriti_logo_transparent.webp",
+                        ))),
+                      ),
+                    ),
+                    const Icon(
+                      Icons.arrow_downward,
+                      size: 30,
+                      color: Colors.white,
+                    ),
+                  ],
+                ),
+              ),
               const Padding(
                 padding: EdgeInsets.symmetric(horizontal: 8.0),
                 child: Text(
@@ -233,8 +266,8 @@ class _LandingPageState extends State<LandingPage> {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   InkWell(
-                    onTap: () =>
-                        Navigator.pushNamed(context, Website.routeName),
+                    onTap: () async =>
+                        await goToWebPage("https://techkriti.org/"),
                     child: const Container1(
                       // title: "Website",
                       fontColor: Color.fromARGB(255, 25, 188, 104),

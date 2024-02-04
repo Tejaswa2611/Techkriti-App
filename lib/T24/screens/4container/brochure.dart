@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:techkriti/T24/appbars/normal_appbar.dart';
 
 class Brochure extends StatefulWidget {
   static const String routeName = '/brochure';
@@ -12,23 +13,8 @@ class Brochure extends StatefulWidget {
 class _BrochureState extends State<Brochure> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-          title: const Text(
-            'Brochure',
-            style: TextStyle(
-                fontSize: 20, color: Color.fromARGB(255, 255, 255, 255)),
-          ),
-          backgroundColor: const Color.fromARGB(255, 0, 0, 0),
-          leading: IconButton(
-            onPressed: (() {
-              Navigator.of(context).pop();
-            }),
-            icon: const Icon(
-              Icons.arrow_back,
-              color: Color.fromARGB(255, 255, 255, 255),
-            ),
-          )),
+    return const Scaffold(
+      appBar: NormalAppBar(title: "FAQs"),
     );
   }
 }

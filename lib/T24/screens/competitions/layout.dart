@@ -18,11 +18,11 @@ class Card1 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-     final TextStyle headingstyle = const TextStyle(
-      fontFamily: 'heading',
-      fontSize: 23,
-      fontWeight: FontWeight.normal,
-      color: Colors.white);
+    const TextStyle headingstyle = TextStyle(
+        fontFamily: 'heading',
+        fontSize: 23,
+        fontWeight: FontWeight.normal,
+        color: Colors.white);
     return SizedBox(
       height: 250,
       width: double.infinity,
@@ -43,10 +43,10 @@ class Card1 extends StatelessWidget {
             children: [
               Padding(
                 padding: const EdgeInsets.only(top: 8.0, left: 8),
-                child: Text(
-                  title,
-                  style: headingstyle//TextStyle(fontSize: 20, color: fontColor),
-                ),
+                child: Text(title,
+                    style:
+                        headingstyle //TextStyle(fontSize: 20, color: fontColor),
+                    ),
               ),
               // Padding(
               //   padding: const EdgeInsets.only(
@@ -57,17 +57,17 @@ class Card1 extends StatelessWidget {
               //       color: color,
               //       height: 120,
               //       width: 350,
-                    // child: Padding(
-                    //   padding: const EdgeInsets.only(top: 10.0),
-                      // child: Text(
-                      //   quote,
-                      //   style:
-                      //       const TextStyle(color: Colors.white, fontSize: 15),
-                      //   textAlign: TextAlign.center,
-                      // ),
-                    // ),
-                  // ),
-                // ),
+              // child: Padding(
+              //   padding: const EdgeInsets.only(top: 10.0),
+              // child: Text(
+              //   quote,
+              //   style:
+              //       const TextStyle(color: Colors.white, fontSize: 15),
+              //   textAlign: TextAlign.center,
+              // ),
+              // ),
+              // ),
+              // ),
               // ),
             ],
           ),

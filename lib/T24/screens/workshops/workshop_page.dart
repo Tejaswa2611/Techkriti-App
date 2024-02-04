@@ -14,9 +14,11 @@ class WorkshopPage extends StatefulWidget {
 class _WorkshopPageState extends State<WorkshopPage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        appBar: const NormalAppBar(title: "Workshops",),
-        body: const Scrollbar(
+    return const Scaffold(
+        appBar: NormalAppBar(
+          title: "Workshops",
+        ),
+        body: Scrollbar(
           interactive: true,
           thumbVisibility: true,
           trackVisibility: false,
