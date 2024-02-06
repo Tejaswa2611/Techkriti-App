@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:techkriti/T24/appbars/normal_appbar.dart';
 import 'package:techkriti/T24/screens/4container/contact_card.dart';
 
 class ContactUs extends StatefulWidget {
@@ -14,22 +15,7 @@ class _ContactsState extends State<ContactUs> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-            title: const Text(
-              'Contact Us',
-              style: TextStyle(
-                  fontSize: 20, color: Color.fromARGB(255, 255, 255, 255)),
-            ),
-            backgroundColor: const Color.fromARGB(255, 0, 0, 0),
-            leading: IconButton(
-              onPressed: (() {
-                Navigator.of(context).pop();
-              }),
-              icon: const Icon(
-                Icons.arrow_back,
-                color: Color.fromARGB(255, 255, 255, 255),
-              ),
-            )),
+        appBar: const NormalAppBar(title: "Contact Us"),
         body: SingleChildScrollView(
           child: Center(
               child: Column(

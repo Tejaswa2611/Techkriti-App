@@ -14,6 +14,7 @@ class entre_carousel extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        backgroundColor: const Color(0xFF121212),
         appBar: const NormalAppBar(
           title: "Entrepreneurial",
         ),

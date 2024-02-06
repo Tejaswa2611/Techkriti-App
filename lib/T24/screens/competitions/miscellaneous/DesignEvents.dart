@@ -14,7 +14,7 @@ class DesignEvents extends StatelessWidget {
             SafeArea(
                 child: Text(
               "Design Events",
-              style: TextStyle(fontSize: 30),
+              style: TextStyle(fontSize: 30, fontFamily: "Equinox"),
             )),
             exploreCard(
               name: "Bridge Design Challenge",

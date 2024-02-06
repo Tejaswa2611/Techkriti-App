@@ -18,7 +18,7 @@ class _businesseventsState extends State<businessevents> {
           SafeArea(
               child: Text(
             "Business Events",
-            style: TextStyle(fontSize: 30),
+            style: TextStyle(fontSize: 30, fontFamily: "Equinox"),
           )),
           exploreCard(
             name: "Strategy Sprint",

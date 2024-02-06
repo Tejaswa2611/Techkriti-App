@@ -14,7 +14,7 @@ class ECDC extends StatelessWidget {
             SafeArea(
                 child: Text(
               "ECDC",
-              style: TextStyle(fontSize: 30),
+              style: TextStyle(fontSize: 30, fontFamily: "Equinox"),
             )),
             exploreCard(
               name: "Secure Comms",

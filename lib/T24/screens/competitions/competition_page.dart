@@ -14,7 +14,6 @@ class CompetitionPage extends StatefulWidget {
 }
 
 class _CompetitionPageState extends State<CompetitionPage> {
-  
   @override
   Widget build(BuildContext context) {
     return Scaffold(

@@ -14,9 +14,12 @@ class WorkshopPage extends StatefulWidget {
 class _WorkshopPageState extends State<WorkshopPage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        appBar: const NormalAppBar(title: "Workshops",),
-        body: const Scrollbar(
+    return const Scaffold(
+        backgroundColor: Color(0xFF121212),
+        appBar: NormalAppBar(
+          title: "Workshops",
+        ),
+        body: Scrollbar(
           interactive: true,
           thumbVisibility: true,
           trackVisibility: false,
@@ -25,7 +28,8 @@ class _WorkshopPageState extends State<WorkshopPage> {
               child: Column(children: [
                 Text(
                   "WORKSHOPS",
-                  style: TextStyle(fontSize: 50, color: Colors.white),
+                  style: TextStyle(
+                      fontSize: 50, color: Colors.white, fontFamily: "Equinox"),
                 ),
                 WorkshopCard(
                   name: "MACHINE LEARNING",

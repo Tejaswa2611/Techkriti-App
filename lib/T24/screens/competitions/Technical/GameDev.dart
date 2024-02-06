@@ -14,7 +14,7 @@ class GameDev extends StatelessWidget {
             SafeArea(
                 child: Text(
               "GameDev",
-              style: TextStyle(fontSize: 30),
+              style: TextStyle(fontSize: 30, fontFamily: "Equinox"),
             )),
             exploreCard(
               name: "BugBetterTest",

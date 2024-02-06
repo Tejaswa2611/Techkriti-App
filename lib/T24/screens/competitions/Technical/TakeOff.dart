@@ -14,7 +14,7 @@ class TakeOff extends StatelessWidget {
             SafeArea(
                 child: Text(
               "TakeOff",
-              style: TextStyle(fontSize: 30),
+              style: TextStyle(fontSize: 30, fontFamily: "Equinox"),
             )),
             exploreCard(
               name: "Skysparks",
