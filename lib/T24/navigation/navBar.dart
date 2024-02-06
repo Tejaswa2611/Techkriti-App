@@ -16,7 +16,7 @@ class _NavbarState extends State<Navbar> {
   int index1 = 0;
 
   List<Widget> pages = [
-    const LandingPage(),
+    const VideoBackground(),
     const Maps(),
     const Schedule(),
     const Sponsor(),

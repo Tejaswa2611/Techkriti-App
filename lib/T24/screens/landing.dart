@@ -129,6 +129,60 @@ import 'package:techkriti/T24/appbars/landing_appbar.dart';
 import 'package:url_launcher/url_launcher.dart';
 //import 'package:techkriti/T24/widgets/landing_card.dart';
 
+import 'package:video_player/video_player.dart';
+
+class VideoBackground extends StatefulWidget {
+  const VideoBackground({super.key});
+
+  @override
+  State<VideoBackground> createState() => _VideoBackgroundState();
+}
+
+class _VideoBackgroundState extends State<VideoBackground> {
+  late VideoPlayerController _controller;
+
+  @override
+  void initState() {
+    super.initState();
+    _controller = VideoPlayerController.asset('assets/Cubes.mp4')
+      ..initialize().then((_) {
+        _controller.play();
+        _controller.setLooping(true);
+        // Ensure the first frame is shown after the video is initialized
+        setState(() {});
+      });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        body: Stack(
+          children: <Widget>[
+            SizedBox.expand(
+              child: FittedBox(
+                fit: BoxFit.cover,
+                child: SizedBox(
+                  width: _controller.value.size?.width ?? 0,
+                  height: _controller.value.size?.height ?? 0,
+                  child: VideoPlayer(_controller),
+                ),
+              ),
+            ),
+            const LandingPage()
+          ],
+        ),
+      ),
+    );
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    _controller.dispose();
+  }
+}
+
 class LandingPage extends StatefulWidget {
   static const String routeName = '/landingpage';
 
@@ -168,12 +222,12 @@ class _LandingPageState extends State<LandingPage> {
     //final screenWidth = MediaQuery.of(context).size.width;
     return Container(
       // color:Colors.red,
-      decoration: const BoxDecoration(
-        image: DecorationImage(
-          image: AssetImage('assets/images/landing_background2.jpg'),
-          fit: BoxFit.cover,
-        ),
-      ),
+      // decoration: const BoxDecoration(
+      //   image: DecorationImage(
+      //     image: AssetImage('assets/images/landing_background2.jpg'),
+      //     fit: BoxFit.cover,
+      //   ),
+      // ),
       child: Scaffold(
         backgroundColor: Colors.transparent,
         appBar: const LandingAppBar(),

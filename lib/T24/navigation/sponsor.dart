@@ -11,12 +11,12 @@ class _SponsorState extends State<Sponsor> {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      backgroundColor: Color(0xFF121212),
-      body: Center(
-          child: Text(
-        'Sponsor Page',
-        style: TextStyle(color: Colors.white),
-      )),
+      backgroundColor: Colors.transparent,
+      body: Column(
+        children: [
+          Text("Sponsor Page"),
+        ],
+      ),
     );
   }
 }

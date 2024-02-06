@@ -1,15 +1,19 @@
-import 'package:flutter/material.dart';
+// import 'package:flutter/material.dart';
 
-class SponsorsPage extends StatefulWidget {
-  const SponsorsPage({super.key});
+// class SponsorsPage extends StatefulWidget {
+//   const SponsorsPage({super.key});
 
-  @override
-  State<SponsorsPage> createState() => _SponsorsPageState();
-}
+//   @override
+//   State<SponsorsPage> createState() => _SponsorsPageState();
+// }
 
-class _SponsorsPageState extends State<SponsorsPage> {
-  @override
-  Widget build(BuildContext context) {
-    return const Scaffold(body: Center(child: Text("Sponsors Page")));
-  }
-}
+// class _SponsorsPageState extends State<SponsorsPage> {
+//   @override
+//   Widget build(BuildContext context) {
+//     return Column(
+//       children: [
+//         Text("Sponsor Page"),
+//       ],
+//     );
+//   }
+// }
