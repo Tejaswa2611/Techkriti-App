@@ -101,13 +101,18 @@
 // }
 //import 'dart:js_interop';
 
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:techkriti/T24/constants/colors_and_fonts.dart';
 import 'package:techkriti/T24/notifications.dart';
+import 'package:techkriti/T24/screens/4container/BrochurePDF.dart/PDFViewerPage.dart';
+import 'package:techkriti/T24/screens/4container/BrochurePDF.dart/brochure.dart';
 // import 'package:techkriti/T24/navigation/map.dart';
-import 'package:techkriti/T24/screens/4container/brochure.dart';
 import 'package:techkriti/T24/screens/4container/contactUs.dart';
 // import 'package:google_nav_bar/google_nav_bar.dart';
+// ignore: unnecessary_import
+import 'package:flutter/services.dart';
 
 import 'package:techkriti/T24/screens/4container/container.dart';
 // import 'package:techkriti/T24/screens/4container/container.dart';
@@ -148,6 +153,13 @@ class _LandingPageState extends State<LandingPage> {
         debugPrint('oll  $value');
       },
     );
+  }
+
+  Future<void> goToWebPage(String urlString) async {
+    final Uri url = Uri.parse(urlString);
+    if (!await launchUrl(url)) {
+      throw 'Could not launch $url';
+    }
   }
 
   @override
@@ -255,8 +267,7 @@ class _LandingPageState extends State<LandingPage> {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   InkWell(
-                    onTap: () async =>
-                        await goToWebPage("https://techkriti.org/"),
+                    onTap: () {},
                     child: const Container1(
                       // title: "Website",
                       fontColor: Color.fromARGB(255, 25, 188, 104),
@@ -289,8 +300,12 @@ class _LandingPageState extends State<LandingPage> {
                     ),
                   ),
                   InkWell(
-                    onTap: () =>
-                        Navigator.pushNamed(context, Brochure.routeName),
+                    onTap: () async {
+                      const path = 'assets/PDF/Brochure Techkriti\'24.pdf';
+                      final file = await Brochure.loadAsset(path);
+                      // ignore: use_build_context_synchronously
+                      openPDF(context, file);
+                    },
                     child: const Container1(
                       // title: "Brochure",
                       fontColor: Colors.blue,
@@ -302,10 +317,88 @@ class _LandingPageState extends State<LandingPage> {
               const SizedBox(
                 height: 20,
               ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: IconButton(
+                        onPressed: () async {
+                          await goToWebPage(
+                              "https://www.facebook.com/techkriti.iitk");
+                        },
+                        icon: Image.asset(
+                          'assets/images/facebook.png',
+                          height: 25,
+                          width: 25,
+                          color: Colors.white,
+                        )),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: IconButton(
+                        onPressed: () async {
+                          await goToWebPage(
+                              "https://www.instagram.com/techkriti.iitk/");
+                        },
+                        icon: Image.asset(
+                          'assets/images/instagram.png',
+                          height: 25,
+                          width: 25,
+                          color: Colors.white,
+                        )),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: IconButton(
+                        onPressed: () async {
+                          await goToWebPage(
+                              "https://www.linkedin.com/school/techkriti-iitk/mycompany/");
+                        },
+                        icon: Image.asset(
+                          'assets/images/linkedin.png',
+                          height: 25,
+                          width: 25,
+                          color: Colors.white,
+                        )),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: IconButton(
+                        onPressed: () async {
+                          await goToWebPage(
+                              "https://www.youtube.com/@TechkritiIITKanpur");
+                        },
+                        icon: Image.asset(
+                          'assets/images/youtube.png',
+                          height: 25,
+                          width: 25,
+                          color: Colors.white,
+                        )),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: IconButton(
+                        onPressed: () async {
+                          await goToWebPage(
+                              "https://twitter.com/i/flow/login?redirect_after_login=%2Ftechkriti_iitk");
+                        },
+                        icon: Image.asset(
+                          'assets/images/twitter.png',
+                          height: 25,
+                          width: 25,
+                          color: Colors.white,
+                        )),
+                  ),
+                ],
+              )
             ],
           ),
         ),
       ),
     );
   }
+
+  void openPDF(BuildContext context, File file) => Navigator.of(context)
+      .push(MaterialPageRoute(builder: (context) => PDFViewerPage(file: file)));
 }
