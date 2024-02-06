@@ -170,7 +170,7 @@ class _LandingPageState extends State<LandingPage> {
       // color:Colors.red,
       decoration: const BoxDecoration(
         image: DecorationImage(
-          image: AssetImage('assets/images/landing_background.gif'),
+          image: AssetImage('assets/images/landing_background2.jpg'),
           fit: BoxFit.cover,
         ),
       ),
@@ -271,7 +271,7 @@ class _LandingPageState extends State<LandingPage> {
                     child: const Container1(
                       // title: "Website",
                       fontColor: Color.fromARGB(255, 25, 188, 104),
-                      Image: AssetImage('assets/images/website_card2.png'),
+                      Image: AssetImage('assets/images/website_card6.png'),
                     ),
                   ),
                   InkWell(
@@ -280,7 +280,7 @@ class _LandingPageState extends State<LandingPage> {
                     child: const Container1(
                       // title: "Contact Us",
                       fontColor: Colors.purple,
-                      Image: AssetImage('assets/images/contactus_card.png'),
+                      Image: AssetImage('assets/images/contactus_card2.png'),
                     ),
                   ),
                 ],
@@ -296,7 +296,7 @@ class _LandingPageState extends State<LandingPage> {
                     child: const Container1(
                       // title: "FAQs",
                       fontColor: Colors.pink,
-                      Image: AssetImage("assets/images/FAQs_card.png"),
+                      Image: AssetImage("assets/images/merch_card.png"),
                     ),
                   ),
                   InkWell(
@@ -309,7 +309,7 @@ class _LandingPageState extends State<LandingPage> {
                     child: const Container1(
                       // title: "Brochure",
                       fontColor: Colors.blue,
-                      Image: AssetImage("assets/images/Bronchure_card.png"),
+                      Image: AssetImage("assets/images/Bronchure_card2.png"),
                     ),
                   ),
                 ],
