@@ -101,6 +101,7 @@
 // }
 import 'package:flutter/material.dart';
 import 'package:techkriti/T24/constants/colors_and_fonts.dart';
+import 'package:techkriti/T24/notifications.dart';
 // import 'package:techkriti/T24/navigation/map.dart';
 import 'package:techkriti/T24/screens/4container/brochure.dart';
 import 'package:techkriti/T24/screens/4container/contactUs.dart';
@@ -130,6 +131,22 @@ class LandingPage extends StatefulWidget {
 }
 
 class _LandingPageState extends State<LandingPage> {
+  NotificationServices notificationServices = NotificationServices();
+  @override
+  void initState() {
+    super.initState();
+    notificationServices.requestNotificationPermission();
+    notificationServices.firebaseInit(context);
+    notificationServices.isTokenRefresh();
+    notificationServices.setupInteractMessage(context);
+    notificationServices.getDeviceToken().then(
+      (value) {
+        debugPrint('device token');
+        debugPrint('oll  $value');
+      },
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     final screenHeight = MediaQuery.of(context).size.height;
@@ -140,7 +157,7 @@ class _LandingPageState extends State<LandingPage> {
         image: DecorationImage(
           image: AssetImage('assets/images/landing_background.jpg'),
           fit: BoxFit.cover,
-          ),
+        ),
       ),
       child: Scaffold(
         backgroundColor: Colors.transparent,
@@ -150,7 +167,9 @@ class _LandingPageState extends State<LandingPage> {
             // mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              SizedBox(height: screenHeight,),
+              SizedBox(
+                height: screenHeight,
+              ),
               const Padding(
                 padding: EdgeInsets.symmetric(horizontal: 8.0),
                 child: Text(
