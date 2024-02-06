@@ -103,6 +103,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:techkriti/T24/constants/colors_and_fonts.dart';
+import 'package:techkriti/T24/notifications.dart';
 // import 'package:techkriti/T24/navigation/map.dart';
 import 'package:techkriti/T24/screens/4container/brochure.dart';
 import 'package:techkriti/T24/screens/4container/contactUs.dart';
@@ -133,11 +134,20 @@ class LandingPage extends StatefulWidget {
 }
 
 class _LandingPageState extends State<LandingPage> {
-  Future<void> goToWebPage(String url1) async {
-    final Uri url = Uri.parse(url1);
-    if (!await launchUrl(url)) {
-      throw 'Could not launch $url';
-    }
+  NotificationServices notificationServices = NotificationServices();
+  @override
+  void initState() {
+    super.initState();
+    notificationServices.requestNotificationPermission();
+    notificationServices.firebaseInit(context);
+    notificationServices.isTokenRefresh();
+    notificationServices.setupInteractMessage(context);
+    notificationServices.getDeviceToken().then(
+      (value) {
+        debugPrint('device token');
+        debugPrint('oll  $value');
+      },
+    );
   }
 
   @override
@@ -161,28 +171,7 @@ class _LandingPageState extends State<LandingPage> {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               SizedBox(
-                height: screenHeight / 1.15,
-                child: Column(
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.only(left: 12.0, top: 15),
-                      child: Container(
-                        height: 620,
-                        width: 350,
-                        decoration: const BoxDecoration(
-                            image: DecorationImage(
-                                image: AssetImage(
-                          "assets/images/Techkriti_logo_transparent.webp",
-                        ))),
-                      ),
-                    ),
-                    const Icon(
-                      Icons.arrow_downward,
-                      size: 30,
-                      color: Colors.white,
-                    ),
-                  ],
-                ),
+                height: screenHeight,
               ),
               const Padding(
                 padding: EdgeInsets.symmetric(horizontal: 8.0),
