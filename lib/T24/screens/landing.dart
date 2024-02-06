@@ -170,7 +170,7 @@ class _LandingPageState extends State<LandingPage> {
       // color:Colors.red,
       decoration: const BoxDecoration(
         image: DecorationImage(
-          image: AssetImage('assets/images/landing_background.jpg'),
+          image: AssetImage('assets/images/landing_background.gif'),
           fit: BoxFit.cover,
         ),
       ),
