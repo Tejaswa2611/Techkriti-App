@@ -6,8 +6,9 @@ class RoboGames extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const SingleChildScrollView(
-      child: Center(
+    return Container(
+      color: Colors.amber,
+      child: const Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [

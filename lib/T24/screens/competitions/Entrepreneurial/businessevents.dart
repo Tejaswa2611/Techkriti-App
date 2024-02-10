@@ -11,8 +11,10 @@ class businessevents extends StatefulWidget {
 class _businesseventsState extends State<businessevents> {
   @override
   Widget build(BuildContext context) {
-    return const SingleChildScrollView(
-      child: Column(
+    return Container(
+      width: double.infinity,
+      color: Colors.amber,
+      child: const Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           SafeArea(
@@ -33,7 +35,7 @@ class _businesseventsState extends State<businessevents> {
           ),
           exploreCard(
             name: "Product Showdown",
-            image: "https://i.postimg.cc/2jH8WLK8/Copy-of-Manoeuvre.jpg",
+            image: "assets/images/ProductShowdown.jpg",
             url:
                 'https://techkriti.org/competitions/details/Product%20Showdown',
           ),

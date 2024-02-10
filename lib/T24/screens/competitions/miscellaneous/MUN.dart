@@ -6,39 +6,40 @@ class MUN extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const SingleChildScrollView(
-      child: Center(
+    return Container(
+      color: Colors.amberAccent,
+      child: const Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             SafeArea(
                 child: Text(
-              "Model United Nations",
+              "   Model United   \n         Nations",
               style: TextStyle(fontSize: 30, fontFamily: "Equinox"),
             )),
             exploreCard(
               name: "AD-Hoc",
-              image: "",
+              image: "assets/images/AdHoc.jpg",
               url: 'https://techkriti.org/competitions/details/Ad-Hoc',
             ),
             exploreCard(
               name: "Lok Sabha",
-              image: "",
+              image: "assets/images/lok-sabha.jpg",
               url: 'https://techkriti.org/competitions/details/Lok%20Sabha',
             ),
             exploreCard(
               name: "UNHRC",
-              image: "",
+              image: "assets/images/UNHRC.jpg",
               url: 'https://techkriti.org/competitions/details/UNHRC',
             ),
             exploreCard(
               name: "UNSC",
-              image: "",
+              image: "assets/images/UNSC.jpg",
               url: 'https://techkriti.org/competitions/details/UNSC',
             ),
             exploreCard(
               name: "BCCI",
-              image: "",
+              image: "assets/images/BCCI.jpg",
               url: 'https://techkriti.org/competitions/details/BCCI',
             ),
           ],

@@ -18,9 +18,10 @@ class _CompetitionPageState extends State<CompetitionPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color(0xFF121212),
-      appBar: const NormalAppBar(title: 'Competetions'),
+      appBar: const NormalAppBar(title: 'Competitions'),
       body: SingleChildScrollView(
-        child: Column(
+        scrollDirection: Axis.horizontal,
+        child: Row(
           children: [
             InkWell(
               onTap: () {
@@ -28,7 +29,7 @@ class _CompetitionPageState extends State<CompetitionPage> {
               },
               child: const CompetitionCards(
                 title: "Technical",
-                image: "https://i.postimg.cc/J4Zr2Yht/Copy-of-Robowars.png",
+                image: "assets/images/technical.png",
                 color: Colors.white,
               ),
             ),
@@ -38,7 +39,7 @@ class _CompetitionPageState extends State<CompetitionPage> {
               },
               child: const CompetitionCards(
                 title: "Entrepreneurial",
-                image: "https://i.postimg.cc/J4Zr2Yht/Copy-of-Robowars.png",
+                image: "assets/images/entrepreneurial.png",
                 color: Colors.white,
               ),
             ),
@@ -48,7 +49,7 @@ class _CompetitionPageState extends State<CompetitionPage> {
               },
               child: const CompetitionCards(
                 title: "Miscellaneous",
-                image: "https://i.postimg.cc/J4Zr2Yht/Copy-of-Robowars.png",
+                image: "assets/images/miscellaneous.png",
                 color: Colors.white,
               ),
             ),

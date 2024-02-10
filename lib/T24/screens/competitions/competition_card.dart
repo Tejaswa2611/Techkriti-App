@@ -23,12 +23,13 @@ class CompetitionCards extends StatelessWidget {
           ),
           borderRadius: BorderRadius.circular(10),
           image: DecorationImage(
-            image: NetworkImage(image),
+            image: AssetImage(image),
             fit: BoxFit.fill,
           ),
         ),
-        width: double.infinity,
-        height: 250, // Fixed width for demonstration, adjust as needed
+        width: 300,
+        height:
+            double.infinity, // Fixed width for demonstration, adjust as needed
         margin: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 8),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,

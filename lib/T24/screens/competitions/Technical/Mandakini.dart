@@ -6,8 +6,9 @@ class Mandakini extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const SingleChildScrollView(
-      child: Center(
+    return Container(
+      color: Colors.blue,
+      child: const Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [

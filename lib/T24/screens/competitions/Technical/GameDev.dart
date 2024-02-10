@@ -6,28 +6,28 @@ class GameDev extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const SingleChildScrollView(
-      child: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            SafeArea(
-                child: Text(
-              "GameDev",
-              style: TextStyle(fontSize: 30, fontFamily: "Equinox"),
-            )),
-            exploreCard(
-              name: "BugBetterTest",
-              image: "assets/images/Bug-Better-Test.jpg",
-              url: 'https://techkriti.org/competitions/details/BugBetterTest',
-            ),
-            exploreCard(
-              name: "OneShotLeveller",
-              image: "assets/images/OneShotLeveller.jpg",
-              url: 'https://techkriti.org/competitions/details/OneShotLeveller',
-            ),
-          ],
-        ),
+    return Container(
+      width: double.infinity,
+      color: Colors.red,
+      child: const Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          SafeArea(
+              child: Text(
+            "GameDev",
+            style: TextStyle(fontSize: 30, fontFamily: "Equinox"),
+          )),
+          exploreCard(
+            name: "BugBetterTest",
+            image: "assets/images/Bug-Better-Test.jpg",
+            url: 'https://techkriti.org/competitions/details/BugBetterTest',
+          ),
+          exploreCard(
+            name: "OneShotLeveller",
+            image: "assets/images/OneShotLeveller.jpg",
+            url: 'https://techkriti.org/competitions/details/OneShotLeveller',
+          ),
+        ],
       ),
     );
   }

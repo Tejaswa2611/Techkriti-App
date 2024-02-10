@@ -254,8 +254,8 @@ class _LandingPageState extends State<LandingPage> {
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: InkWell(
-                  onTap: () =>
-                      Navigator.pushNamed(context, CompetitionPage.routeName),
+                  onTap: () => Navigator.of(context, rootNavigator: true)
+                      .pushNamed("/competetions"),
                   child: const Card1(
                     color: Colors.blue,
                     fontColor: Colors.white,
@@ -269,8 +269,8 @@ class _LandingPageState extends State<LandingPage> {
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: InkWell(
-                  onTap: () =>
-                      Navigator.pushNamed(context, WorkshopPage.routeName),
+                  onTap: () => Navigator.of(context, rootNavigator: true)
+                      .pushNamed("/workshops"),
                   child: const Card1(
                     color: Colors.black,
                     fontColor: Colors.black,
@@ -294,7 +294,8 @@ class _LandingPageState extends State<LandingPage> {
                     ),
                   ),
                   InkWell(
-                    onTap: () => Navigator.pushNamed(context, GPage.routeName),
+                    onTap: () => Navigator.of(context, rootNavigator: true)
+                        .pushNamed("/gallery"),
                     child: const Padding(
                       padding: EdgeInsets.symmetric(horizontal: 8.0),
                       child: Text(
@@ -321,7 +322,10 @@ class _LandingPageState extends State<LandingPage> {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   InkWell(
-                    onTap: () {},
+                    onTap: () async {
+                      await goToWebPage(
+                          "https://techkriti.org/competitions/technical/");
+                    },
                     child: const Container1(
                       // title: "Website",
                       fontColor: Color.fromARGB(255, 25, 188, 104),
@@ -329,8 +333,8 @@ class _LandingPageState extends State<LandingPage> {
                     ),
                   ),
                   InkWell(
-                    onTap: () =>
-                        Navigator.pushNamed(context, ContactUs.routeName),
+                    onTap: () => Navigator.of(context, rootNavigator: true)
+                        .pushNamed("/contact us"),
                     child: const Container1(
                       // title: "Contact Us",
                       fontColor: Colors.purple,
@@ -346,7 +350,8 @@ class _LandingPageState extends State<LandingPage> {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   InkWell(
-                    onTap: () => Navigator.pushNamed(context, FAQ.routeName),
+                    onTap: () => Navigator.of(context, rootNavigator: true)
+                        .pushNamed("/faqs"),
                     child: const Container1(
                       // title: "FAQs",
                       fontColor: Colors.pink,
@@ -356,7 +361,7 @@ class _LandingPageState extends State<LandingPage> {
                   InkWell(
                     onTap: () async {
                       const path = 'assets/PDF/Brochure Techkriti\'24.pdf';
-                      final file = await Brochure.loadAsset(path);
+                      final file = await PDFViewerPage.loadAsset(path);
                       // ignore: use_build_context_synchronously
                       openPDF(context, file);
                     },

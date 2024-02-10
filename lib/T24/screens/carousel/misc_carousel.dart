@@ -29,12 +29,7 @@ class misc_carousel extends StatelessWidget {
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          Padding(
-                            padding: const EdgeInsets.all(8),
-                            child: item,
-                          )
-                        ],
+                        children: [item],
                       ),
                     ),
                   ),

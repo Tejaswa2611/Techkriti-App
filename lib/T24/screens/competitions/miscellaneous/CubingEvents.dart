@@ -6,8 +6,9 @@ class CubingEvents extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const SingleChildScrollView(
-      child: Center(
+    return Container(
+      color: Colors.amber,
+      child: const Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -18,13 +19,13 @@ class CubingEvents extends StatelessWidget {
             )),
             exploreCard(
               name: "Cubing Extravaganza",
-              image: "",
+              image: "assets/images/Cube-Extravganza.jpg",
               url:
                   'https://techkriti.org/competitions/details/Cubing%20Extravaganza',
             ),
             exploreCard(
               name: "IORC",
-              image: "",
+              image: "assets/images/IOPC.jpg",
               url: 'https://techkriti.org/competitions/details/IORC',
             ),
           ],

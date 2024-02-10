@@ -11,10 +11,14 @@ class fintech extends StatefulWidget {
 class _fintechState extends State<fintech> {
   @override
   Widget build(BuildContext context) {
-    return const SingleChildScrollView(
-      child: Center(
+    final height1 = MediaQuery.of(context).size.height;
+    return Container(
+      width: double.infinity,
+      height: height1,
+      color: Colors.amber,
+      child: const Center(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.start,
           children: [
             SafeArea(
                 child: Text(

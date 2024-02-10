@@ -11,9 +11,13 @@ class entrepreneurial extends StatefulWidget {
 class _entrepreneurialState extends State<entrepreneurial> {
   @override
   Widget build(BuildContext context) {
-    return const SingleChildScrollView(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
+    final height1 = MediaQuery.of(context).size.height;
+    return Container(
+      height: height1,
+      width: double.infinity,
+      color: Colors.amber,
+      child: const Column(
+        mainAxisAlignment: MainAxisAlignment.start,
         children: [
           SafeArea(
               child: Text(

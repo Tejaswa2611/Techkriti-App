@@ -6,8 +6,9 @@ class SoftwareCorner extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const SingleChildScrollView(
-      child: Center(
+    return Container(
+      color: Colors.brown,
+      child: const Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -20,6 +21,11 @@ class SoftwareCorner extends StatelessWidget {
               name: "Re Dev",
               image: "assets/images/web.jpg",
               url: 'https://techkriti.org/competitions/details/Re%20Dev',
+            ),
+            exploreCard(
+              name: "CTF",
+              image: "assets/images/web.jpg",
+              url: 'https://techkriti.org/competitions/details/CTF',
             ),
           ],
         ),

@@ -3,7 +3,7 @@ import 'package:techkriti/T24/appbars/normal_appbar.dart';
 import 'package:techkriti/T24/screens/4container/contact_card.dart';
 
 class ContactUs extends StatefulWidget {
-  static const String routeName = '/contacts';
+  static const String routeName = '/contact us';
 
   const ContactUs({super.key});
 
