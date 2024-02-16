@@ -14,7 +14,7 @@ class _ScheduleState extends State<Schedule> {
       backgroundColor: Color(0xFF121212),
       body: Center(
           child: Text(
-        'Schedule Page',
+        'Coming Soon',
         style: TextStyle(color: Colors.white),
       )),
     );

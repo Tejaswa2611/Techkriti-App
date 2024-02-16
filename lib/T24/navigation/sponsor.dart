@@ -10,13 +10,13 @@ class Sponsor extends StatefulWidget {
 class _SponsorState extends State<Sponsor> {
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      backgroundColor: Colors.transparent,
-      body: Column(
-        children: [
-          Text("Sponsor Page"),
-        ],
-      ),
+     return const Scaffold(
+      backgroundColor: Color(0xFF121212),
+      body: Center(
+          child: Text(
+        'Coming Soon',
+        style: TextStyle(color: Colors.white),
+      )),
     );
   }
 }

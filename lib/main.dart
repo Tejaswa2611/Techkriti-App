@@ -25,6 +25,7 @@ Future<void> _firebaseMessagingBackgroundHandler(RemoteMessage message) async {
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  // await Upgrader.clearSavedSettings();
   await Firebase.initializeApp();
   FirebaseMessaging.onBackgroundMessage(_firebaseMessagingBackgroundHandler);
   runApp(
@@ -59,7 +60,7 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'TOSC',
+      title: 'Techkriti',
       theme: ThemeData(
         scaffoldBackgroundColor: const Color.fromARGB(255, 4, 46, 102),
         appBarTheme: const AppBarTheme(
@@ -75,15 +76,14 @@ class _MyAppState extends State<MyApp> {
         ),
       ),
       onGenerateRoute: (settings) => generateRoute(settings),
-      home: UpgradeAlert(
-        upgrader: Upgrader(
-          durationUntilAlertAgain: const Duration(hours: 2),
+      home: UpgradeAlert(      
+          // durationUntilAlertAgain: const Duration(hours: 2),
           dialogStyle: UpgradeDialogStyle.cupertino,
-          canDismissDialog: false,
-          shouldPopScope: () => false,
+          shouldPopScope: () => true,
+          // canDismissDialog: false,
+          // shouldPopScope: () => false,
           showIgnore: false,
           showLater: false,
-        ),
         // child: const MessagesPage(),`
         // child: Provider.of<UserProvider>(context).user.token.isNotEmpty
         //     ? const UserDetailsPage()

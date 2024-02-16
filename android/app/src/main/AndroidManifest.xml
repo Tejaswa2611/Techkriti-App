@@ -2,7 +2,7 @@
     package="com.Techkriti.app">
     <uses-permission android:name="android.permission.WAKE_LOCK"/>
    <application
-        android:label="TOSC"
+        android:label="Techkriti'24"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity
