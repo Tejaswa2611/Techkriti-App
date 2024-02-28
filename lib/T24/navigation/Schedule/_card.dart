@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:techkriti/T24/navigation/Schedule/datamodel.dart';
 
-class Card3 extends StatelessWidget {
-  const Card3({super.key});
+class CardWidget extends StatelessWidget {
+  final CardData cardData;
+
+  const CardWidget({Key? key, required this.cardData}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(8.0),
-      child: Container(
-        height: 50,
-        width: double.infinity,
-        child: Text("hiii"),
-        decoration: BoxDecoration(border: Border.all(color: Colors.grey)),
+    return Card(
+      child: ListTile(
+        title: Text(cardData.title),
+        subtitle: Text(cardData.content),
       ),
     );
   }
