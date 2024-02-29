@@ -130,7 +130,7 @@ class _ContactsState extends State<ContactUs> {
                       "https://www.instagram.com/_anshjat_?igshid=NzZlODBkYWE4Ng%3D%3D",
                   linkedIn: "https://www.linkedin.com/in/ansh-jat-18b227236/",
                   mail: "mailto:ansh@techkriti.org",
-                  image: "assets/images/ansh.jpg"),
+                  image: "assets/images/Ansh-Jat.avif"),
               const contactCard(
                   name: "Ankur Maurya",
                   department: "Head, Security",
@@ -154,6 +154,27 @@ class _ContactsState extends State<ContactUs> {
                   linkedIn: "",
                   mail: "mailto:shrey@techkriti.org",
                   image: "assets/images/Shrey.jpg"),
+              const contactCard(
+                  name: "Sakshi Patil",
+                  department: "Head, Design",
+                  mobile: "+91 7898849252",
+                  facebook:
+                      "https://www.facebook.com/profile.php?id=100075252161006&mibextid=ZbWKwL",
+                  insta:
+                      "https://www.instagram.com/sakshi_paatil?igshid=NzZlODBkYWE4Ng%3D%3D",
+                  linkedIn: "",
+                  mail: "mailto:sakshi@techkriti.org",
+                  image: "assets/images/Sakshi.jpg"),
+              const contactCard(
+                  name: "Harshit Saini",
+                  department: "Head, Show Management",
+                  mobile: "+91 9294570649",
+                  facebook: "https://www.facebook.com/harshit9617370507",
+                  insta: "https://www.instagram.com/_harshittt_._/",
+                  linkedIn:
+                      "https://www.linkedin.com/in/harshit-saini-30b9b7223/",
+                  mail: "mailto:sharshit21@iitk.ac.in",
+                  image: "assets/images/Harshit.avif"),
               const contactCard(
                   name: "Anurag Mandal",
                   department: "Head, Show Management",

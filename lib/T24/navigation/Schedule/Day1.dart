@@ -12,9 +12,14 @@ class _Day1State extends State<Day1> {
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
-      child: Column(
+      child: const Column(
         children: [
-          Card3(),
+          Card3(
+            title: 'Title',
+            url: 'https://techkriti.org/',
+            time: '6 p.m.',
+            venue: 'OAT',
+          ),
         ],
       ),
     );
