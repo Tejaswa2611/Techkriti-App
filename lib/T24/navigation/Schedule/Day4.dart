@@ -52,7 +52,13 @@ class _Day4State extends State<Day4> {
           final cards = snapshot.data!;
           return ListView.builder(
             itemCount: cards.length,
-            itemBuilder: (context, index) => CardWidget(cardData: cards[index]),
+            itemBuilder: (context, index) => CardWidget(
+              cardData: cards[index],
+              title: '',
+              url: '',
+              time: '',
+              venue: '',
+            ),
           );
         },
       ),

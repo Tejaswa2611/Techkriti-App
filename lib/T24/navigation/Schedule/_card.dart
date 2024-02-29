@@ -1,18 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:techkriti/T24/navigation/Schedule/datamodel.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-class Card3 extends StatelessWidget {
+class CardWidget extends StatelessWidget {
   final String title;
 
   final String venue;
   final String url;
   final String time;
-  const Card3(
+  const CardWidget(
       {super.key,
       required this.title,
       required this.url,
       required this.time,
-      required this.venue});
+      required this.venue,
+      required CardData cardData});
 
   Future<void> _launchURL(String link) async {
     final Uri url = Uri.parse(link);
