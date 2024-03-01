@@ -1,5 +1,6 @@
 import 'package:carousel_slider/carousel_options.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 
 class WhatsHot extends StatefulWidget {
@@ -10,15 +11,49 @@ class WhatsHot extends StatefulWidget {
 }
 
 class _WhatsHotState extends State<WhatsHot> {
-  List images = [
-    {"id": 1, "path": 'assets/images/101.jpg'},
-    {"id": 2, "path": 'assets/images/102.jpg'},
-    // {"id": 3, "path": 'assets/images/103.jpg'},
-    {"id": 4, "path": 'assets/images/104.jpg'},
-    {"id": 5, "path": 'assets/images/105.jpg'},
-    {"id": 6, "path": 'assets/images/106.jpg'},
-    {"id": 7, "path": 'assets/images/107.jpg'},
-  ];
+  late String imageUrl1;
+  late String imageUrl2;
+  late String imageUrl3;
+  late String imageUrl4;
+  late String imageUrl5;
+  final storage = FirebaseStorage.instance;
+  @override
+  void initState() {
+    super.initState();
+    imageUrl1 = '';
+    imageUrl2 = '';
+    imageUrl3 = '';
+    imageUrl4 = '';
+    imageUrl5 = '';
+    fetchData();
+  }
+
+  Future<void> fetchData() async {
+    await getImageUrl();
+  }
+
+  Future<void> getImageUrl() async {
+    final ref1 = storage.ref().child('timeline1.jpg');
+    final ref2 = storage.ref().child('timeline2.jpg');
+    final ref3 = storage.ref().child('timeline3.jpg');
+    final ref4 = storage.ref().child('timeline4.jpg');
+    final ref5 = storage.ref().child('timeline5.jpg');
+    final url1 = await ref1.getDownloadURL();
+    final url2 = await ref2.getDownloadURL();
+    final url3 = await ref3.getDownloadURL();
+    final url4 = await ref4.getDownloadURL();
+    final url5 = await ref5.getDownloadURL();
+    setState(
+      () {
+        imageUrl1 = url1;
+        imageUrl2 = url2;
+        imageUrl3 = url3;
+        imageUrl4 = url4;
+        imageUrl5 = url5;
+      },
+    );
+  }
+
   final CarouselController cc1 = CarouselController();
   int currentIndex = 0;
   @override
@@ -28,16 +63,13 @@ class _WhatsHotState extends State<WhatsHot> {
         Stack(
           children: [
             CarouselSlider(
-              items: images
-                  .map((item) => ClipRRect(
-                        borderRadius: BorderRadius.circular(40),
-                        child: Image.asset(
-                          item['path'],
-                          // fit: BoxFit.fill,
-                          width: double.infinity,
-                        ),
-                      ))
-                  .toList(),
+              items: [
+                Image.network(imageUrl1),
+                Image.network(imageUrl2),
+                Image.network(imageUrl3),
+                Image.network(imageUrl4),
+                Image.network(imageUrl5),
+              ],
               carouselController: cc1,
               options: CarouselOptions(
                 scrollPhysics: const BouncingScrollPhysics(),
