@@ -54,10 +54,6 @@ class _Day1State extends State<Day1> {
             itemCount: cards.length,
             itemBuilder: (context, index) => CardWidget(
               cardData: cards[index],
-              title: '',
-              url: '',
-              time: '',
-              venue: '',
             ),
           );
         },

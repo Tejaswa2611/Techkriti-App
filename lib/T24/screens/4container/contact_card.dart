@@ -42,8 +42,8 @@ class contactCard extends StatelessWidget {
                     color: Color.fromARGB(255, 55, 255, 245), width: 7),
                 left: BorderSide(
                     color: Color.fromARGB(255, 55, 255, 245), width: 7),
-                right: BorderSide(color: Colors.black, width: 3),
-                top: BorderSide(color: Colors.black, width: 3))),
+                right: BorderSide(color: Colors.white, width: 3),
+                top: BorderSide(color: Colors.white, width: 3))),
         height: 400,
         width: 250,
         child: Column(

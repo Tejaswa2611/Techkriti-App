@@ -12,6 +12,7 @@ class CompetitionCards extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final Height = MediaQuery.of(context).size.height;
     return Material(
       color: Colors.transparent,
       elevation: 10,
@@ -28,8 +29,7 @@ class CompetitionCards extends StatelessWidget {
           ),
         ),
         width: 300,
-        height:
-            double.infinity, // Fixed width for demonstration, adjust as needed
+        height: Height / 1.6, // Fixed width for demonstration, adjust as needed
         margin: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 8),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,

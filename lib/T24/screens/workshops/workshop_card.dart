@@ -24,7 +24,7 @@ class WorkshopCard extends StatelessWidget {
         margin: const EdgeInsets.all(8.0),
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(20),
-            color: Colors.blueGrey,
+            color: Colors.transparent,
             border: Border.all(
                 color: const Color.fromARGB(255, 55, 255, 245), width: 1)),
         height: 400,
