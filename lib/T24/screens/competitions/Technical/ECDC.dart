@@ -7,7 +7,7 @@ class ECDC extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.pinkAccent,
+      color: Colors.transparent,
       child: const Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -15,7 +15,8 @@ class ECDC extends StatelessWidget {
             SafeArea(
                 child: Text(
               "ECDC",
-              style: TextStyle(fontSize: 30, fontFamily: "Equinox"),
+              style: TextStyle(
+                  fontSize: 30, fontFamily: "Equinox", color: Colors.white),
             )),
             exploreCard(
               name: "Secure Comms",

@@ -13,14 +13,15 @@ class _businesseventsState extends State<businessevents> {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      color: Colors.amber,
+      color: Colors.transparent,
       child: const Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           SafeArea(
               child: Text(
             "Business Events",
-            style: TextStyle(fontSize: 30, fontFamily: "Equinox"),
+            style: TextStyle(
+                fontSize: 30, fontFamily: "Equinox", color: Colors.white),
           )),
           exploreCard(
             name: "Strategy Sprint",

@@ -7,7 +7,7 @@ class CubingEvents extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.amber,
+      color: Colors.transparent,
       child: const Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -15,7 +15,8 @@ class CubingEvents extends StatelessWidget {
             SafeArea(
                 child: Text(
               "Cubing Events",
-              style: TextStyle(fontSize: 30, fontFamily: "Equinox"),
+              style: TextStyle(
+                  fontSize: 30, fontFamily: "Equinox", color: Colors.white),
             )),
             exploreCard(
               name: "Cubing Extravaganza",

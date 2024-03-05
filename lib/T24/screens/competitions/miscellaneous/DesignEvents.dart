@@ -7,7 +7,7 @@ class DesignEvents extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.amberAccent,
+      color: Colors.transparent,
       child: const Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -15,7 +15,8 @@ class DesignEvents extends StatelessWidget {
             SafeArea(
                 child: Text(
               "Design Events",
-              style: TextStyle(fontSize: 30, fontFamily: "Equinox"),
+              style: TextStyle(
+                  fontSize: 30, fontFamily: "Equinox", color: Colors.white),
             )),
             exploreCard(
               name: "Bridge Design Challenge",
@@ -34,6 +35,12 @@ class DesignEvents extends StatelessWidget {
               image: "assets/images/AUTOCAD Design Challenge.jpg",
               url:
                   'https://techkriti.org/competitions/details/AutoDesk%20Design%20Challenge',
+            ),
+            exploreCard(
+              name: "  Human-Centric Design \n              Challenge",
+              image: "assets/images/Human-Centric Design Challenge.jpeg",
+              url:
+                  'https://techkriti.org/competitions/details/Human-Centric%20Design%20Challenge',
             ),
           ],
         ),

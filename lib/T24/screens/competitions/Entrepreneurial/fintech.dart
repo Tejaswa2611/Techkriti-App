@@ -15,7 +15,7 @@ class _fintechState extends State<fintech> {
     return Container(
       width: double.infinity,
       height: height1,
-      color: Colors.amber,
+      color: Colors.transparent,
       child: const Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
@@ -23,7 +23,8 @@ class _fintechState extends State<fintech> {
             SafeArea(
                 child: Text(
               "Fintech",
-              style: TextStyle(fontSize: 30, fontFamily: "Equinox"),
+              style: TextStyle(
+                  fontSize: 30, fontFamily: "Equinox", color: Colors.white),
             )),
             exploreCard(
               name: "Beat the Market",

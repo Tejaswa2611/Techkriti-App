@@ -8,14 +8,15 @@ class GameDev extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      color: Colors.red,
+      color: Colors.transparent,
       child: const Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           SafeArea(
               child: Text(
             "GameDev",
-            style: TextStyle(fontSize: 30, fontFamily: "Equinox"),
+            style: TextStyle(
+                fontSize: 30, fontFamily: "Equinox", color: Colors.white),
           )),
           exploreCard(
             name: "BugBetterTest",

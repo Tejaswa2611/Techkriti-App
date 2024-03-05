@@ -23,7 +23,7 @@ class exploreCard extends StatelessWidget {
       child: Container(
         margin: const EdgeInsets.all(8.0),
         decoration: BoxDecoration(
-            color: Color.fromARGB(255, 130, 81, 214),
+            color: Colors.grey,
             border: Border.all(
                 color: const Color.fromARGB(255, 55, 255, 245), width: 1)),
         height: 400,

@@ -15,14 +15,15 @@ class _entrepreneurialState extends State<entrepreneurial> {
     return Container(
       height: height1,
       width: double.infinity,
-      color: Colors.amber,
+      color: Colors.transparent,
       child: const Column(
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
           SafeArea(
               child: Text(
             "Entrepreneurial",
-            style: TextStyle(fontSize: 30, fontFamily: "Equinox"),
+            style: TextStyle(
+                fontSize: 30, fontFamily: "Equinox", color: Colors.white),
           )),
           exploreCard(
             name: "Pitch Premier",

@@ -7,7 +7,7 @@ class RoboGames extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.amber,
+      color: Colors.transparent,
       child: const Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -15,7 +15,8 @@ class RoboGames extends StatelessWidget {
             SafeArea(
                 child: Text(
               "RoboGames",
-              style: TextStyle(fontSize: 30, fontFamily: "Equinox"),
+              style: TextStyle(
+                  fontSize: 30, fontFamily: "Equinox", color: Colors.white),
             )),
             exploreCard(
               name: "Robowars",
