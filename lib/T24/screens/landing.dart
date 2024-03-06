@@ -144,7 +144,7 @@ class _VideoBackgroundState extends State<VideoBackground> {
   @override
   void initState() {
     super.initState();
-    _controller = VideoPlayerController.asset('assets/Cubes.mp4')
+    _controller = VideoPlayerController.asset('assets/final_landing.mov')
       ..initialize().then((_) {
         _controller.play();
         _controller.setLooping(true);

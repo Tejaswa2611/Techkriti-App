@@ -38,23 +38,33 @@ class _Day4State extends State<Day4> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: StreamBuilder<List<CardData>>(
-        stream: _cardStream,
-        builder: (context, snapshot) {
-          if (snapshot.hasError) {
-            return Text('Error: ${snapshot.error}');
-          }
-
-          if (!snapshot.hasData) {
-            return const CircularProgressIndicator();
-          }
-
-          final cards = snapshot.data!;
-          return ListView.builder(
-            itemCount: cards.length,
-            itemBuilder: (context, index) => CardWidget(cardData: cards[index]),
-          );
-        },
+      body: Container(
+         decoration: const BoxDecoration(
+          image: DecorationImage(
+            fit: BoxFit.cover,
+            image: AssetImage(
+              "assets/images/TechnicalB.png",
+            ),
+          ),
+        ),
+        child: StreamBuilder<List<CardData>>(
+          stream: _cardStream,
+          builder: (context, snapshot) {
+            if (snapshot.hasError) {
+              return Text('Error: ${snapshot.error}');
+            }
+        
+            if (!snapshot.hasData) {
+              return const CircularProgressIndicator();
+            }
+        
+            final cards = snapshot.data!;
+            return ListView.builder(
+              itemCount: cards.length,
+              itemBuilder: (context, index) => CardWidget(cardData: cards[index]),
+            );
+          },
+        ),
       ),
     );
   }

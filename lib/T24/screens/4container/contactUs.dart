@@ -15,7 +15,7 @@ class _ContactsState extends State<ContactUs> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
           image: DecorationImage(
               image: AssetImage("assets/images/Our Team.png"),
               fit: BoxFit.cover)),
@@ -42,8 +42,8 @@ class _ContactsState extends State<ContactUs> {
                         style: TextStyle(fontSize: 35, fontFamily: 'Equinox'),
                       ),
                     )),
-                Padding(
-                  padding: const EdgeInsets.only(top: 15.0, bottom: 8),
+                const Padding(
+                  padding: EdgeInsets.only(top: 15.0, bottom: 8),
                   child: Center(
                     child: Text(
                       "Events and Competition",
@@ -88,7 +88,7 @@ class _ContactsState extends State<ContactUs> {
                     linkedIn: "",
                     mail: "mailto:abhiyanshu@techkriti.org",
                     image: "assets/images/Abhiyanshu.JPG"),
-                Center(
+                const Center(
                   child: Text(
                     "Marketing",
                     style: TextStyle(
@@ -118,7 +118,7 @@ class _ContactsState extends State<ContactUs> {
                         "https://www.linkedin.com/in/amol-garg-375b42244/",
                     mail: "mailto:amol@techkriti.org",
                     image: "assets/images/Amol.JPG"),
-                Center(
+                const Center(
                   child: Text(
                     "Public Relations",
                     style: TextStyle(
@@ -137,7 +137,7 @@ class _ContactsState extends State<ContactUs> {
                         "https://www.linkedin.com/in/jyotirmay-singh-63686a223/",
                     mail: "mailto:jyotirmay@techkriti.org",
                     image: "assets/images/jyotirmay.jpeg"),
-                Center(
+                const Center(
                   child: Text(
                     "Web and App",
                     style: TextStyle(
@@ -168,7 +168,7 @@ class _ContactsState extends State<ContactUs> {
                         "https://www.linkedin.com/in/tejaswa-mathur-778a65282/?trk=contact-info",
                     mail: "mailto:tejaswa@techkriti.org",
                     image: "assets/images/tejaswa2.jpg"),
-                Center(
+                const Center(
                   child: Text(
                     "Finance",
                     style: TextStyle(
@@ -187,7 +187,7 @@ class _ContactsState extends State<ContactUs> {
                     linkedIn: "https://www.linkedin.com/in/ansh-jat-18b227236/",
                     mail: "mailto:ansh@techkriti.org",
                     image: "assets/images/Ansh-Jat.avif"),
-                Center(
+                const Center(
                   child: Text(
                     "Security",
                     style: TextStyle(
@@ -208,7 +208,7 @@ class _ContactsState extends State<ContactUs> {
                         "https://www.linkedin.com/in/ankur-maurya-0061a726a/?originalSubdomain=in",
                     mail: "mailto:ankurmaurya@techkriti.org",
                     image: "assets/images/Ankur Maurya.jpg"),
-                Center(
+                const Center(
                   child: Text(
                     "Media and Publicity",
                     style: TextStyle(
@@ -228,7 +228,7 @@ class _ContactsState extends State<ContactUs> {
                     linkedIn: "",
                     mail: "mailto:shrey@techkriti.org",
                     image: "assets/images/Shrey.jpg"),
-                Center(
+                const Center(
                   child: Text(
                     "Design",
                     style: TextStyle(
@@ -248,7 +248,7 @@ class _ContactsState extends State<ContactUs> {
                     linkedIn: "",
                     mail: "mailto:sakshi@techkriti.org",
                     image: "assets/images/Sakshi.jpg"),
-                Center(
+                const Center(
                   child: Text(
                     "Show Management",
                     style: TextStyle(
@@ -277,7 +277,7 @@ class _ContactsState extends State<ContactUs> {
                         "https://www.linkedin.com/in/anurag-mandal-a319ba244/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
                     mail: "mailto:anurag@techkriti.org",
                     image: "assets/images/AnuragM.jpg"),
-                Center(
+                const Center(
                   child: Text(
                     "General Secretary, SnT Council",
                     style: TextStyle(
@@ -298,7 +298,7 @@ class _ContactsState extends State<ContactUs> {
                         "https://www.linkedin.com/in/arnavp7/?originalSubdomain=in",
                     mail: "mailto:arnavp20@iitk.ac.in",
                     image: "assets/images/arnavpandey.jpg"),
-                Center(
+                const Center(
                   child: Text(
                     "Festival Co-ordinators",
                     style: TextStyle(

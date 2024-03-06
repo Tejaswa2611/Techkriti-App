@@ -17,7 +17,7 @@ class _CompetitionPageState extends State<CompetitionPage> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
           image: DecorationImage(
               fit: BoxFit.cover,
               image: AssetImage(
