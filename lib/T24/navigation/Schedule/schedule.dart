@@ -15,6 +15,7 @@ class _ScheduleState extends State<Schedule>
     with SingleTickerProviderStateMixin {
   TabController? _tabController;
 
+  @override
   void initState() {
     super.initState();
 
@@ -33,18 +34,21 @@ class _ScheduleState extends State<Schedule>
     super.dispose();
   }
 
+//
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
           title: const PreferredSize(
             preferredSize: Size(double.infinity, 70),
-            child: Text("Schedule Page",
-                style: TextStyle(
-                    fontFamily: 'heading',
-                    fontSize: 22,
-                    fontWeight: FontWeight.normal,
-                    color: Colors.white)),
+            child: Text(
+              "Schedule Page",
+              style: TextStyle(
+                  fontFamily: 'heading',
+                  fontSize: 22,
+                  fontWeight: FontWeight.normal,
+                  color: Colors.white),
+            ),
           ),
           bottom:
               TabBar(dividerHeight: 0, controller: _tabController, tabs: const [
@@ -75,11 +79,11 @@ class _ScheduleState extends State<Schedule>
           ]),
         ),
         backgroundColor: const Color(0xFF121212),
-        body: TabBarView(controller: _tabController, children: [
-          const Day1(),
-          const Day2(),
-          const Day3(),
-          const Day4(),
+        body: TabBarView(controller: _tabController, children: const [
+          Day1(),
+          Day2(),
+          Day3(),
+          Day4(),
         ]));
   }
 }
