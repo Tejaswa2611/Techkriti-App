@@ -66,6 +66,99 @@ class _MapsState extends State<Maps> {
         },
       ),
     );
+    _marker.add(
+      Marker(
+        markerId: MarkerId("4"),
+        position: LatLng(26.5038788, 80.2280269),
+        onTap: () {
+          c1.addInfoWindow!(
+              mapCard(
+                  title: "Hovermania, Symphony, and others",
+                  venue: "Events ground",
+                  time: "8 p.m."),
+              LatLng(26.5038788, 80.2280269));
+        },
+      ),
+    );
+    _marker.add(
+      Marker(
+        markerId: MarkerId("5"),
+        position: LatLng(26.5050475, 80.2274397),
+        onTap: () {
+          c1.addInfoWindow!(
+              mapCard(
+                  title: "BeatBoxer, Fire Show and others",
+                  venue: "OAT",
+                  time: "8 p.m."),
+              LatLng(26.5050475, 80.2274397));
+        },
+      ),
+    );
+    _marker.add(
+      Marker(
+        markerId: MarkerId("6"),
+        position: LatLng(26.5051553, 80.2285989),
+        onTap: () {
+          c1.addInfoWindow!(
+              mapCard(
+                  title: "Silent Disco",
+                  venue: "Swimming Pool",
+                  time: "8 p.m."),
+              LatLng(26.5051553, 80.2285989));
+        },
+      ),
+    );
+    _marker.add(
+      Marker(
+        markerId: MarkerId("7"),
+        position: LatLng(26.5144878, 80.2322493),
+        onTap: () {
+          c1.addInfoWindow!(
+              mapCard(
+                  title: "Marketing Mavericks,etc",
+                  venue: "IME",
+                  time: "8 p.m."),
+              LatLng(26.5144878, 80.2322493));
+        },
+      ),
+    );
+    _marker.add(
+      Marker(
+        markerId: MarkerId("8"),
+        position: LatLng(26.5110244, 80.2327752),
+        onTap: () {
+          c1.addInfoWindow!(
+              mapCard(title: "Embedded", venue: "L17", time: "8 p.m."),
+              LatLng(26.5110244, 80.2327752));
+        },
+      ),
+    );
+    _marker.add(
+      Marker(
+        markerId: MarkerId("9"),
+        position: LatLng(26.511416, 80.228503),
+        onTap: () {
+          c1.addInfoWindow!(
+              mapCard(
+                  title: "Sky Sparks", venue: "Hockey Ground", time: "8 p.m."),
+              LatLng(26.511416, 80.228503));
+        },
+      ),
+    );
+    _marker.add(
+      Marker(
+        markerId: MarkerId("10"),
+        position: LatLng(26.5037719, 80.2269068),
+        onTap: () {
+          c1.addInfoWindow!(
+              mapCard(
+                  title: "Bollywood Night",
+                  venue: "Pronite Ground",
+                  time: "8 p.m."),
+              LatLng(26.5037719, 80.2269068));
+        },
+      ),
+    );
     setState(() {});
   }
 

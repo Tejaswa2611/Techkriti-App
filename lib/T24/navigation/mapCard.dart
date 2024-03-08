@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class mapCard extends StatefulWidget {
+class mapCard extends StatelessWidget {
   final String title;
   final String venue;
 
@@ -13,11 +13,6 @@ class mapCard extends StatefulWidget {
       required this.time});
 
   @override
-  State<mapCard> createState() => _mapCardState();
-}
-
-class _mapCardState extends State<mapCard> {
-  @override
   Widget build(BuildContext context) {
     return Container(
       height: 50,
@@ -28,12 +23,12 @@ class _mapCardState extends State<mapCard> {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Text("Event: Rang Barse"),
+          Text("Event: $title"),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
-              Text("Venue: L20"),
-              Text("Time: 6 p.m."),
+              Text("Venue: $venue"),
+              Text("Time: $time"),
             ],
           )
         ],
