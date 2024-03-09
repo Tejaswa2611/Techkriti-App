@@ -1,42 +1,50 @@
 {
   "Day1": {
     "card1": {
-      "title": "Card 1",
-      "content": "This is the content of Card 1."
+      "event": "Event",
+      "venue": "Venue",
+      "time": "12:00"
     },
     "card2": {
-      "title": "Card 2",
-      "content": "This is the content of Card 12."
+      "event": "Event",
+      "venue": "Venue",
+      "time": "12:00"
     }
   },
   "Day2": {
     "card1": {
-      "title": "Card 1",
-      "content": "This is the content of Card 1."
+      "event": "Event",
+      "venue": "Venue",
+      "time": "12:00"
     },
     "card2": {
-      "title": "Card 2",
-      "content": "This is the content of Card 12."
+      "event": "Event",
+      "venue": "Venue",
+      "time": "12:00"
     }
   },
   "Day3": {
     "card1": {
-      "title": "Card 1",
-      "content": "This is the content of Card 1."
+      "event": "Event",
+      "venue": "Venue",
+      "time": "12:00"
     },
     "card2": {
-      "title": "Card 2",
-      "content": "This is the content of Card 12."
+      "event": "Event",
+      "venue": "Venue",
+      "time": "12:00"
     }
   },
   "Day4": {
     "card1": {
-      "title": "Card 1",
-      "content": "This is the content of Card 1."
+      "event": "Event",
+      "venue": "Venue",
+      "time": "12:00"
     },
     "card2": {
-      "title": "Card 2",
-      "content": "This is the content of Card 12."
+      "event": "Event",
+      "venue": "Venue",
+      "time": "12:00"
     }
   }
 }
