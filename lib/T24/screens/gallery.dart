@@ -1,4 +1,3 @@
-
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:techkriti/T24/appbars/normal_appbar.dart';
@@ -65,7 +64,7 @@ class _GPageState extends State<GPage> {
                 gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 2,
                 ),
-                itemCount: 16,
+                itemCount: 13,
                 itemBuilder: (context, index) => GestureDetector(
                   onTap: () {
                     _openPhotoPopup(index);
@@ -76,7 +75,7 @@ class _GPageState extends State<GPage> {
                       color: Colors.grey[300],
                       padding: const EdgeInsets.all(6),
                       child: Image.asset(
-                        'assets/images/${index + 101}.jpg',
+                        'assets/images/${index + 1}.jpg',
                         fit: BoxFit.cover,
                       ),
                     ),
@@ -92,7 +91,7 @@ class _GPageState extends State<GPage> {
                       children: [
                         PageView.builder(
                           controller: _pageController,
-                          itemCount: 16,
+                          itemCount: 13,
                           itemBuilder: (context, index) {
                             return GestureDetector(
                               onScaleUpdate: (details) {
@@ -105,7 +104,7 @@ class _GPageState extends State<GPage> {
                                 child: Transform.scale(
                                   scale: photoScale,
                                   child: Image.asset(
-                                    'assets/images/${index + 101}.jpg',
+                                    'assets/images/${index + 1}.jpg',
                                     fit: BoxFit.contain,
                                   ),
                                 ),
@@ -115,7 +114,8 @@ class _GPageState extends State<GPage> {
                           onPageChanged: (index) {
                             setState(() {
                               selectedPhotoIndex = index;
-                              photoScale = 1.0; // Reset scale when changing image
+                              photoScale =
+                                  1.0; // Reset scale when changing image
                             });
                           },
                         ),

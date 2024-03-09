@@ -65,20 +65,36 @@ class _WhatsHotState extends State<WhatsHot> {
             CarouselSlider(
               items: [
                 ClipRRect(
-                    borderRadius: BorderRadius.circular(40),
-                    child: Image.network(imageUrl1)),
+                  borderRadius: BorderRadius.circular(40),
+                  child: Image.network(
+                    imageUrl1,
+                    fit: BoxFit.cover,
+                  ),
+                ),
                 ClipRRect(
                     borderRadius: BorderRadius.circular(40),
-                    child: Image.network(imageUrl2)),
+                    child: Image.network(
+                      imageUrl2,
+                      fit: BoxFit.cover,
+                    )),
                 ClipRRect(
                     borderRadius: BorderRadius.circular(40),
-                    child: Image.network(imageUrl3)),
+                    child: Image.network(
+                      imageUrl3,
+                      fit: BoxFit.cover,
+                    )),
                 ClipRRect(
                     borderRadius: BorderRadius.circular(40),
-                    child: Image.network(imageUrl4)),
+                    child: Image.network(
+                      imageUrl4,
+                      fit: BoxFit.cover,
+                    )),
                 ClipRRect(
                     borderRadius: BorderRadius.circular(40),
-                    child: Image.network(imageUrl5)),
+                    child: Image.network(
+                      imageUrl5,
+                      fit: BoxFit.cover,
+                    )),
               ],
               carouselController: cc1,
               options: CarouselOptions(

@@ -13,19 +13,21 @@ class Gallery extends StatefulWidget {
 
 class _GalleryState extends State<Gallery> {
   List images = [
-    {"id": 1, "path": 'assets/images/101.jpg'},
-    {"id": 2, "path": 'assets/images/102.jpg'},
-    // {"id": 3, "path": 'assets/images/103.jpg'},
-    {"id": 4, "path": 'assets/images/104.jpg'},
-    {"id": 5, "path": 'assets/images/105.jpg'},
-    {"id": 6, "path": 'assets/images/106.jpg'},
-    {"id": 7, "path": 'assets/images/107.jpg'},
+    {"id": 1, "path": 'assets/images/1.jpg'},
+    {"id": 2, "path": 'assets/images/2.jpg'},
+    {"id": 3, "path": 'assets/images/3.jpg'},
+    {"id": 4, "path": 'assets/images/4.jpg'},
+    {"id": 5, "path": 'assets/images/5.jpg'},
+    {"id": 6, "path": 'assets/images/6.jpg'},
+    {"id": 7, "path": 'assets/images/7.jpg'},
   ];
 
   final CarouselController cc1 = CarouselController();
   int currentIndex = 0;
   @override
   Widget build(BuildContext context) {
+    double Width = MediaQuery.of(context).size.width;
+
     return Column(
       children: [
         Stack(
@@ -36,9 +38,8 @@ class _GalleryState extends State<Gallery> {
                         borderRadius: BorderRadius.circular(40),
                         child: Image.asset(
                           item['path'],
-
-                          // fit: BoxFit.cover,
-                          width: double.infinity,
+                          fit: BoxFit.cover,
+                          width: Width / 1.4,
                         ),
                       ))
                   .toList(),

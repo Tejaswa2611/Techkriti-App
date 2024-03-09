@@ -23,7 +23,7 @@ class mapCard extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Text("Event: $title"),
+          Text("Event:"),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
