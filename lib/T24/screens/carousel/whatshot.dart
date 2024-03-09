@@ -33,10 +33,10 @@ class _WhatsHotState extends State<WhatsHot> {
   }
 
   Future<void> getImageUrl() async {
-    final ref1 = storage.ref().child('timeline1.jpg');
-    final ref2 = storage.ref().child('timeline2.jpg');
-    final ref3 = storage.ref().child('timeline3.jpg');
-    final ref4 = storage.ref().child('timeline4.jpg');
+    final ref1 = storage.ref().child('TechTalk.jpg');
+    final ref2 = storage.ref().child('AutoShow.jpg');
+    final ref3 = storage.ref().child('CycleShow.jpg');
+    final ref4 = storage.ref().child('DriftShow.jpg');
     final ref5 = storage.ref().child('timeline5.jpg');
     final url1 = await ref1.getDownloadURL();
     final url2 = await ref2.getDownloadURL();
@@ -58,6 +58,7 @@ class _WhatsHotState extends State<WhatsHot> {
   int currentIndex = 0;
   @override
   Widget build(BuildContext context) {
+    final Width = MediaQuery.of(context).size.width;
     return Column(
       children: [
         Stack(
@@ -68,32 +69,37 @@ class _WhatsHotState extends State<WhatsHot> {
                   borderRadius: BorderRadius.circular(40),
                   child: Image.network(
                     imageUrl1,
-                    fit: BoxFit.cover,
+                    fit: BoxFit.fill,
+                    width: Width / 1.4,
                   ),
                 ),
                 ClipRRect(
                     borderRadius: BorderRadius.circular(40),
                     child: Image.network(
                       imageUrl2,
-                      fit: BoxFit.cover,
+                      fit: BoxFit.fill,
+                      width: Width / 1.4,
                     )),
                 ClipRRect(
                     borderRadius: BorderRadius.circular(40),
                     child: Image.network(
                       imageUrl3,
-                      fit: BoxFit.cover,
+                      fit: BoxFit.fill,
+                      width: Width / 1.4,
                     )),
                 ClipRRect(
                     borderRadius: BorderRadius.circular(40),
                     child: Image.network(
                       imageUrl4,
-                      fit: BoxFit.cover,
+                      fit: BoxFit.fill,
+                      width: Width / 1.4,
                     )),
                 ClipRRect(
                     borderRadius: BorderRadius.circular(40),
                     child: Image.network(
                       imageUrl5,
-                      fit: BoxFit.cover,
+                      fit: BoxFit.fill,
+                      width: Width / 1.4,
                     )),
               ],
               carouselController: cc1,
