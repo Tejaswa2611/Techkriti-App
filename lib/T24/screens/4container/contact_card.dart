@@ -38,12 +38,12 @@ class contactCard extends StatelessWidget {
         margin: const EdgeInsets.all(8.0),
         decoration: const BoxDecoration(
             border: Border(
-                bottom: BorderSide(
-                    color: Color.fromARGB(255, 55, 255, 245), width: 7),
-                left: BorderSide(
-                    color: Color.fromARGB(255, 55, 255, 245), width: 7),
-                right: BorderSide(color: Colors.white, width: 3),
-                top: BorderSide(color: Colors.white, width: 3))),
+                right: BorderSide(
+                    color: Color.fromARGB(255, 55, 255, 245), width: 5.5),
+                top: BorderSide(
+                    color: Color.fromARGB(255, 55, 255, 245), width: 5.5),
+                bottom: BorderSide(color: Colors.white, width: 3),
+                left: BorderSide(color: Colors.white, width: 3))),
         height: 400,
         width: 250,
         child: Column(
