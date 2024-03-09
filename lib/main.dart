@@ -2,6 +2,7 @@ import 'package:firebase_core/firebase_core.dart';
 
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
+import 'package:techkriti/T24/navigation/mapCard.dart';
 import 'package:techkriti/T24/splash_screen.dart';
 // import 'package:provider/provider.dart';
 // import 'package:techkriti/T24/screens/gallery.dart';
@@ -64,7 +65,7 @@ class _MyAppState extends State<MyApp> {
       theme: ThemeData(
         scaffoldBackgroundColor: const Color.fromARGB(255, 4, 46, 102),
         appBarTheme: const AppBarTheme(
-          titleTextStyle: TextStyle(color: Colors.white),       
+          titleTextStyle: TextStyle(color: Colors.white),
           color: Colors.black87,
           iconTheme: IconThemeData(color: Colors.white),
         ),
@@ -76,7 +77,7 @@ class _MyAppState extends State<MyApp> {
         ),
       ),
       onGenerateRoute: (settings) => generateRoute(settings),
-      home: UpgradeAlert(      
+      home: UpgradeAlert(
           // durationUntilAlertAgain: const Duration(hours: 2),
           dialogStyle: UpgradeDialogStyle.cupertino,
           shouldPopScope: () => true,
@@ -84,12 +85,11 @@ class _MyAppState extends State<MyApp> {
           // shouldPopScope: () => false,
           showIgnore: false,
           showLater: false,
-        // child: const MessagesPage(),`
-        // child: Provider.of<UserProvider>(context).user.token.isNotEmpty
-        //     ? const UserDetailsPage()
-        //     : const LandingPage(),
-        child: const splashScreen(),
-      ),
+          // child: const MessagesPage(),`
+          // child: Provider.of<UserProvider>(context).user.token.isNotEmpty
+          //     ? const UserDetailsPage()
+          //     : const LandingPage(),
+          child: splashScreen()),
     );
   }
 }
