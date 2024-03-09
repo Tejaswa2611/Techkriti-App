@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:techkriti/T24/constants/colors_and_fonts.dart';
 import 'package:techkriti/T24/navigation/map.dart';
 import 'package:techkriti/T24/screens/4container/contactUs.dart';
-import 'package:techkriti/T24/screens/4container/faqs.dart';
+import 'package:techkriti/T24/screens/4container/merchandise.dart';
 import 'package:techkriti/T24/screens/carousel/entrepre_carousel.dart';
 import 'package:techkriti/T24/screens/carousel/misc_carousel.dart';
 import 'package:techkriti/T24/screens/carousel/technical_carousel.dart';
@@ -48,10 +48,10 @@ Route<dynamic> generateRoute(RouteSettings routeSettings) {
         settings: routeSettings,
         builder: (_) => const ContactUs(),
       );
-    case FAQ.routeName:
+    case Merchandise.routeName:
       return MaterialPageRoute(
         settings: routeSettings,
-        builder: (_) => const FAQ(),
+        builder: (_) => const Merchandise(),
       );
     case Maps.routeName:
       return MaterialPageRoute(

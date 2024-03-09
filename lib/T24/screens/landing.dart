@@ -1,133 +1,22 @@
-// import 'package:flutter/material.dart';
-
-// class LandingPage extends StatefulWidget {
-//   static const String routeName = '/landing';
-//   const LandingPage({super.key});
-
-//   @override
-//   State<LandingPage> createState() => _LandingPageState();
-// }
-
-// class _LandingPageState extends State<LandingPage> {
-//   @override
-//   Widget build(BuildContext context) {
-//     return MaterialApp(
-//       home: Scaffold(
-//         body: SafeArea(
-//           child: Column(
-//             children: [
-//               buildSection("Section 1", "assets/image1.jpg"),
-//               buildSection("Section 2", "assets/image2.jpg"),
-//               buildSection("Section 3", "assets/image3.jpg"),
-//               buildSection("Section 4", "assets/image4.jpg"),
-//               buildSection("Section 5", "assets/image5.jpg"),
-//             ],
-//           ),
-//         ),
-//       ),
-//     );
-//   }
-
-//   Widget buildSection(String title, String imagePath) {
-//     return Container(
-//       height: MediaQuery.of(context).size.height * 4 / 7,
-//       child: Stack(
-//         children: [
-//           // Background image
-//           Positioned.fill(
-//             child: Image.asset(
-//               imagePath,
-//               fit: BoxFit.cover,
-//             ),
-//           ),
-//           // Inner content
-//           Positioned.fill(
-//             child: Container(
-//               decoration: BoxDecoration(
-//                 color: Colors.black.withOpacity(0.5), // Adjust opacity as needed
-//               ),
-//               child: Column(
-//                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-//                 children: [
-//                   // Heading at the top
-//                   Padding(
-//                     padding: const EdgeInsets.all(8.0),
-//                     child: Text(
-//                       title,
-//                       style: const TextStyle(
-//                         fontSize: 17.0,
-//                         fontWeight: FontWeight.bold,
-//                         color: Colors.white,
-//                       ),
-//                     ),
-//                   ),
-//                   // Container at the bottom with text and round button
-//                   Container(
-//                     height: MediaQuery.of(context).size.height * 2 / 7,
-//                     width: double.infinity,
-//                     padding: const EdgeInsets.all(16.0),
-//                     child: Column(
-//                       crossAxisAlignment: CrossAxisAlignment.start,
-//                       children: [
-//                         const Text(
-//                           "Your inner text content goes here...",
-//                           style: TextStyle(fontSize: 16.0, color: Colors.white),
-//                         ),
-//                         const SizedBox(height: 8.0),
-//                         Align(
-//                           alignment: Alignment.bottomRight,
-//                           child: ElevatedButton(
-//                             onPressed: () {
-//                               // Button action
-//                             },
-//                             style: ElevatedButton.styleFrom(
-//                               shape: const CircleBorder(), backgroundColor: Colors.blue,
-//                               padding: const EdgeInsets.all(12.0),
-//                             ),
-//                             child: const Icon(Icons.circle),
-//                           ),
-//                         ),
-//                       ],
-//                     ),
-//                   ),
-//                 ],
-//               ),
-//             ),
-//           ),
-//         ],
-//       ),
-//     );
-//   }
-// }
-//import 'dart:js_interop';
-
 import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:techkriti/T24/constants/colors_and_fonts.dart';
 import 'package:techkriti/T24/notifications.dart';
 import 'package:techkriti/T24/screens/4container/BrochurePDF.dart/PDFViewerPage.dart';
-import 'package:techkriti/T24/screens/4container/BrochurePDF.dart/brochure.dart';
-// import 'package:techkriti/T24/navigation/map.dart';
-import 'package:techkriti/T24/screens/4container/contactUs.dart';
-// import 'package:google_nav_bar/google_nav_bar.dart';
-// ignore: unnecessary_import
+
 import 'package:flutter/services.dart';
 
 import 'package:techkriti/T24/screens/4container/container.dart';
-// import 'package:techkriti/T24/screens/4container/container.dart';
-import 'package:techkriti/T24/screens/4container/faqs.dart';
-//import 'package:techkriti/T24/screens/4container/website.dart';
+import 'package:techkriti/T24/screens/4container/merchandise.dart';
 import 'package:techkriti/T24/screens/carousel/gallery_carousal.dart';
 import 'package:techkriti/T24/screens/carousel/whatshot.dart';
 import 'package:techkriti/T24/screens/competitions/competition_page.dart';
 import 'package:techkriti/T24/screens/competitions/layout.dart';
 import 'package:techkriti/T24/screens/gallery.dart';
-//import 'package:techkriti/T24/screens/gallery.dart';
 import 'package:techkriti/T24/screens/workshops/workshop_page.dart';
 import 'package:techkriti/T24/appbars/landing_appbar.dart';
 import 'package:url_launcher/url_launcher.dart';
-//import 'package:techkriti/T24/widgets/landing_card.dart';
 
 import 'package:video_player/video_player.dart';
 
@@ -351,7 +240,7 @@ class _LandingPageState extends State<LandingPage> {
                 children: [
                   InkWell(
                     onTap: () => Navigator.of(context, rootNavigator: true)
-                        .pushNamed("/faqs"),
+                        .pushNamed("/merchandise"),
                     child: const Container1(
                       // title: "FAQs",
                       fontColor: Colors.pink,

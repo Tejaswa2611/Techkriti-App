@@ -19,16 +19,26 @@ class mapCard extends StatelessWidget {
       width: 300,
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10),
-          color: Color.fromARGB(255, 19, 249, 73)),
+          border: Border.all(color: Colors.grey),
+          color: Color.fromARGB(255, 55, 255, 245).withOpacity(0.7)),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Text("Event:"),
+          Text(
+            "Event:",
+            style: TextStyle(fontFamily: 'Equinox'),
+          ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
-              Text("Venue: $venue"),
-              Text("Time: $time"),
+              Text(
+                "Venue: $venue",
+                style: TextStyle(fontFamily: 'Equinox'),
+              ),
+              Text(
+                "Time: $time",
+                style: TextStyle(fontFamily: 'Equinox'),
+              ),
             ],
           )
         ],
