@@ -26,41 +26,43 @@ class _CompetitionPageState extends State<CompetitionPage> {
       child: Scaffold(
         backgroundColor: Colors.transparent,
         appBar: const NormalAppBar(title: 'Competitions'),
-        body: SingleChildScrollView(
-          scrollDirection: Axis.horizontal,
-          child: Row(
-            children: [
-              InkWell(
-                onTap: () {
-                  Navigator.pushNamed(context, technical_carousel.routeName);
-                },
-                child: const CompetitionCards(
-                  title: "Technical",
-                  image: "assets/images/technical.png",
-                  color: Colors.white,
+        body: Center(
+          child: SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            child: Row(
+              children: [
+                InkWell(
+                  onTap: () {
+                    Navigator.pushNamed(context, technical_carousel.routeName);
+                  },
+                  child: const CompetitionCards(
+                    title: "Technical",
+                    image: "assets/images/technical.png",
+                    color: Colors.white,
+                  ),
                 ),
-              ),
-              InkWell(
-                onTap: () {
-                  Navigator.pushNamed(context, entre_carousel.routeName);
-                },
-                child: const CompetitionCards(
-                  title: "Entrepreneurial",
-                  image: "assets/images/entrepreneurial.png",
-                  color: Colors.white,
+                InkWell(
+                  onTap: () {
+                    Navigator.pushNamed(context, entre_carousel.routeName);
+                  },
+                  child: const CompetitionCards(
+                    title: "Entrepreneurial",
+                    image: "assets/images/entrepreneurial.png",
+                    color: Colors.white,
+                  ),
                 ),
-              ),
-              InkWell(
-                onTap: () {
-                  Navigator.pushNamed(context, misc_carousel.routeName);
-                },
-                child: const CompetitionCards(
-                  title: "Miscellaneous",
-                  image: "assets/images/miscellaneous.png",
-                  color: Colors.white,
+                InkWell(
+                  onTap: () {
+                    Navigator.pushNamed(context, misc_carousel.routeName);
+                  },
+                  child: const CompetitionCards(
+                    title: "Miscellaneous",
+                    image: "assets/images/miscellaneous.png",
+                    color: Colors.white,
+                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),

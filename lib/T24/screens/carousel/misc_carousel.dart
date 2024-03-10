@@ -11,11 +11,11 @@ class misc_carousel extends StatelessWidget {
 
   misc_carousel({super.key});
 
-  List Items = [DesignEvents(), MUN(), CubingEvents(), Sustainability()];
+  List Items = [const DesignEvents(), const MUN(), const CubingEvents(), const Sustainability()];
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
           image: DecorationImage(
               fit: BoxFit.cover,
               image: AssetImage("assets/images/TechnicalB.png"))),

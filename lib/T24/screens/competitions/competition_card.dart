@@ -25,11 +25,11 @@ class CompetitionCards extends StatelessWidget {
           borderRadius: BorderRadius.circular(10),
           image: DecorationImage(
             image: AssetImage(image),
-            fit: BoxFit.fill,
+            fit: BoxFit.contain,
           ),
         ),
         width: 300,
-        height: Height / 1.6, // Fixed width for demonstration, adjust as needed
+        height: Height / 2, // Fixed width for demonstration, adjust as needed
         margin: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 8),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -39,7 +39,11 @@ class CompetitionCards extends StatelessWidget {
               child: Text(
                 title,
                 style: TextStyle(
-                    color: color, fontSize: 20, fontFamily: 'Montserrat'),
+                  color: color,
+                  fontSize: 25,
+                  fontFamily: 'Montserrat',
+                  fontWeight: FontWeight.bold,
+                ),
               ),
             ),
           ],

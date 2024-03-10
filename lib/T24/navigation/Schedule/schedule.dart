@@ -38,52 +38,56 @@ class _ScheduleState extends State<Schedule>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: const PreferredSize(
-            preferredSize: Size(double.infinity, 70),
+      appBar: AppBar(
+        title: const PreferredSize(
+          preferredSize: Size(double.infinity, 70),
+          child: Text(
+            "Schedule Page",
+            style: TextStyle(
+                fontFamily: 'heading',
+                fontSize: 22,
+                fontWeight: FontWeight.normal,
+                color: Colors.white),
+          ),
+        ),
+        bottom:
+            TabBar(dividerHeight: 0, controller: _tabController, tabs: const [
+          Tab(
             child: Text(
-              "Schedule Page",
-              style: TextStyle(
-                  fontFamily: 'heading',
-                  fontSize: 22,
-                  fontWeight: FontWeight.normal,
-                  color: Colors.white),
+              "Day 1",
+              style: TextStyle(color: Colors.white, fontSize: 17),
             ),
           ),
-          bottom:
-              TabBar(dividerHeight: 0, controller: _tabController, tabs: const [
-            Tab(
-              child: Text(
-                "Day 1",
-                style: TextStyle(color: Colors.white, fontSize: 17),
-              ),
+          Tab(
+            child: Text(
+              "Day 2",
+              style: TextStyle(color: Colors.white, fontSize: 17),
             ),
-            Tab(
-              child: Text(
-                "Day 2",
-                style: TextStyle(color: Colors.white, fontSize: 17),
-              ),
+          ),
+          Tab(
+            child: Text(
+              "Day 3",
+              style: TextStyle(color: Colors.white, fontSize: 17),
             ),
-            Tab(
-              child: Text(
-                "Day 3",
-                style: TextStyle(color: Colors.white, fontSize: 17),
-              ),
+          ),
+          Tab(
+            child: Text(
+              "Day 4",
+              style: TextStyle(color: Colors.white, fontSize: 17),
             ),
-            Tab(
-              child: Text(
-                "Day 4",
-                style: TextStyle(color: Colors.white, fontSize: 17),
-              ),
-            )
-          ]),
-        ),
-        backgroundColor: const Color(0xFF121212),
-        body: TabBarView(controller: _tabController, children: const [
+          )
+        ]),
+      ),
+      backgroundColor: const Color(0xFF121212),
+      body: TabBarView(
+        controller: _tabController,
+        children: const [
           Day1(),
           Day2(),
           Day3(),
           Day4(),
-        ]));
+        ],
+      ),
+    );
   }
 }

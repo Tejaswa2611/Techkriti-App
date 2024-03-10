@@ -13,6 +13,10 @@ class Merchandise extends StatefulWidget {
 class _MerchandiseState extends State<Merchandise> {
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(appBar: NormalAppBar(title: "Merchandise"));
+    return const Scaffold(
+      backgroundColor: Colors.black87,
+      appBar: NormalAppBar(title: "Past Talks"),
+    );
   }
 }
+// 

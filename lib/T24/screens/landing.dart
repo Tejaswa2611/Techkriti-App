@@ -4,17 +4,11 @@ import 'package:flutter/material.dart';
 import 'package:techkriti/T24/constants/colors_and_fonts.dart';
 import 'package:techkriti/T24/notifications.dart';
 import 'package:techkriti/T24/screens/4container/BrochurePDF.dart/PDFViewerPage.dart';
-
-import 'package:flutter/services.dart';
-
 import 'package:techkriti/T24/screens/4container/container.dart';
-import 'package:techkriti/T24/screens/4container/merchandise.dart';
 import 'package:techkriti/T24/screens/carousel/gallery_carousal.dart';
 import 'package:techkriti/T24/screens/carousel/whatshot.dart';
 import 'package:techkriti/T24/screens/competitions/competition_page.dart';
 import 'package:techkriti/T24/screens/competitions/layout.dart';
-import 'package:techkriti/T24/screens/gallery.dart';
-import 'package:techkriti/T24/screens/workshops/workshop_page.dart';
 import 'package:techkriti/T24/appbars/landing_appbar.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -144,7 +138,7 @@ class _LandingPageState extends State<LandingPage> {
                 padding: const EdgeInsets.all(8.0),
                 child: InkWell(
                   onTap: () => Navigator.of(context, rootNavigator: true)
-                      .pushNamed("/competetions"),
+                      .pushNamed(CompetitionPage.routeName),
                   child: const Card1(
                     color: Colors.blue,
                     fontColor: Colors.white,
@@ -216,18 +210,16 @@ class _LandingPageState extends State<LandingPage> {
                           "https://techkriti.org/competitions/technical/");
                     },
                     child: const Container1(
-                      // title: "Website",
-                      fontColor: Color.fromARGB(255, 25, 188, 104),
-                      Image: AssetImage('assets/images/website_card6.png'),
+                      title: "Website",
+                      fontColor: Colors.white,
                     ),
                   ),
                   InkWell(
                     onTap: () => Navigator.of(context, rootNavigator: true)
                         .pushNamed("/contact us"),
                     child: const Container1(
-                      // title: "Contact Us",
-                      fontColor: Colors.purple,
-                      Image: AssetImage('assets/images/contactus_card2.png'),
+                      title: "Contact Us",
+                      fontColor: Colors.white,
                     ),
                   ),
                 ],
@@ -242,9 +234,8 @@ class _LandingPageState extends State<LandingPage> {
                     onTap: () => Navigator.of(context, rootNavigator: true)
                         .pushNamed("/merchandise"),
                     child: const Container1(
-                      // title: "FAQs",
-                      fontColor: Colors.pink,
-                      Image: AssetImage("assets/images/merch_card.png"),
+                      title: "Past Talks",
+                      fontColor: Colors.white,
                     ),
                   ),
                   InkWell(
@@ -255,9 +246,8 @@ class _LandingPageState extends State<LandingPage> {
                       openPDF(context, file);
                     },
                     child: const Container1(
-                      // title: "Brochure",
-                      fontColor: Colors.blue,
-                      Image: AssetImage("assets/images/Bronchure_card2.png"),
+                      title: "Brochure",
+                      fontColor: Colors.white,
                     ),
                   ),
                 ],

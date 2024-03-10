@@ -55,7 +55,7 @@ class _Day2State extends State<Day2> {
             }
         
             if (!snapshot.hasData) {
-              return const CircularProgressIndicator();
+              return const Center(child: CircularProgressIndicator());
             }
         
             final cards = snapshot.data!;

@@ -54,7 +54,7 @@ class _GPageState extends State<GPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const NormalAppBar(title: 'Gallery'),
-      backgroundColor: Colors.white,
+      backgroundColor: Colors.black87,
       body: FadeInRight(
         child: Padding(
           padding: const EdgeInsets.all(3.0),

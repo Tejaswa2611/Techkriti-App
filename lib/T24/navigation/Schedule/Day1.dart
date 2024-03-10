@@ -38,6 +38,7 @@ class _Day1State extends State<Day1> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.black87,
       body: Container(
         decoration: const BoxDecoration(
           image: DecorationImage(
@@ -55,7 +56,10 @@ class _Day1State extends State<Day1> {
             }
 
             if (!snapshot.hasData) {
-              return const CircularProgressIndicator();
+              return Container(
+                alignment: Alignment.center,
+                child: const CircularProgressIndicator(),
+              );
             }
 
             final cards = snapshot.data!;
