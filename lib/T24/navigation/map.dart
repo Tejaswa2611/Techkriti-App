@@ -43,9 +43,9 @@ class _MapsState extends State<Maps> {
     getUserCurrentLocation().then((value) async {
       _marker.add(
         Marker(
-          markerId: MarkerId("1"),
+          markerId: const MarkerId("1"),
           position: LatLng(value.latitude, value.longitude),
-          infoWindow: InfoWindow(title: "My Current location"),
+          infoWindow: const InfoWindow(title: "My Current location"),
         ),
       );
 
@@ -57,105 +57,105 @@ class _MapsState extends State<Maps> {
     });
     _marker.add(
       Marker(
-        markerId: MarkerId("3"),
-        position: LatLng(26.5110683, 80.2325217),
+        markerId: const MarkerId("3"),
+        position: const LatLng(26.5110683, 80.2325217),
         onTap: () {
           c1.addInfoWindow!(
-              mapCard(title: "Rang Barse", venue: "L20", time: "6 p.m."),
-              LatLng(26.5110683, 80.2325217));
+              const mapCard(title: "Rang Barse", venue: "L20", time: "6 p.m."),
+              const LatLng(26.5110683, 80.2325217));
         },
       ),
     );
     _marker.add(
       Marker(
-        markerId: MarkerId("4"),
-        position: LatLng(26.5038788, 80.2280269),
+        markerId: const MarkerId("4"),
+        position: const LatLng(26.5038788, 80.2280269),
         onTap: () {
           c1.addInfoWindow!(
-              mapCard(
+              const mapCard(
                   title: "Hovermania, Symphony, and others",
                   venue: "Events ground",
                   time: "8 p.m."),
-              LatLng(26.5038788, 80.2280269));
+              const LatLng(26.5038788, 80.2280269));
         },
       ),
     );
     _marker.add(
       Marker(
-        markerId: MarkerId("5"),
-        position: LatLng(26.5050475, 80.2274397),
+        markerId: const MarkerId("5"),
+        position: const LatLng(26.5050475, 80.2274397),
         onTap: () {
           c1.addInfoWindow!(
-              mapCard(
+              const mapCard(
                   title: "BeatBoxer, Fire Show and others",
                   venue: "OAT",
                   time: "8 p.m."),
-              LatLng(26.5050475, 80.2274397));
+              const LatLng(26.5050475, 80.2274397));
         },
       ),
     );
     _marker.add(
       Marker(
-        markerId: MarkerId("6"),
-        position: LatLng(26.5051553, 80.2285989),
+        markerId: const MarkerId("6"),
+        position: const LatLng(26.5051553, 80.2285989),
         onTap: () {
           c1.addInfoWindow!(
-              mapCard(
+              const mapCard(
                   title: "Silent Disco",
                   venue: "Swimming Pool",
                   time: "8 p.m."),
-              LatLng(26.5051553, 80.2285989));
+              const LatLng(26.5051553, 80.2285989));
         },
       ),
     );
     _marker.add(
       Marker(
-        markerId: MarkerId("7"),
-        position: LatLng(26.5144878, 80.2322493),
+        markerId: const MarkerId("7"),
+        position: const LatLng(26.5144878, 80.2322493),
         onTap: () {
           c1.addInfoWindow!(
-              mapCard(
+              const mapCard(
                   title: "Marketing Mavericks,etc",
                   venue: "IME",
                   time: "8 p.m."),
-              LatLng(26.5144878, 80.2322493));
+              const LatLng(26.5144878, 80.2322493));
         },
       ),
     );
     _marker.add(
       Marker(
-        markerId: MarkerId("8"),
-        position: LatLng(26.5110244, 80.2327752),
+        markerId: const MarkerId("8"),
+        position: const LatLng(26.5110244, 80.2327752),
         onTap: () {
           c1.addInfoWindow!(
-              mapCard(title: "Embedded", venue: "L17", time: "8 p.m."),
-              LatLng(26.5110244, 80.2327752));
+              const mapCard(title: "Embedded", venue: "L17", time: "8 p.m."),
+              const LatLng(26.5110244, 80.2327752));
         },
       ),
     );
     _marker.add(
       Marker(
-        markerId: MarkerId("9"),
-        position: LatLng(26.511416, 80.228503),
+        markerId: const MarkerId("9"),
+        position: const LatLng(26.511416, 80.228503),
         onTap: () {
           c1.addInfoWindow!(
-              mapCard(
+              const mapCard(
                   title: "Sky Sparks", venue: "Hockey Ground", time: "8 p.m."),
-              LatLng(26.511416, 80.228503));
+              const LatLng(26.511416, 80.228503));
         },
       ),
     );
     _marker.add(
       Marker(
-        markerId: MarkerId("10"),
-        position: LatLng(26.5037719, 80.2269068),
+        markerId: const MarkerId("10"),
+        position: const LatLng(26.5037719, 80.2269068),
         onTap: () {
           c1.addInfoWindow!(
-              mapCard(
+              const mapCard(
                   title: "Bollywood Night",
                   venue: "Pronite Ground",
                   time: "8 p.m."),
-              LatLng(26.5037719, 80.2269068));
+              const LatLng(26.5037719, 80.2269068));
         },
       ),
     );
@@ -197,9 +197,9 @@ class _MapsState extends State<Maps> {
             print("${value.latitude} ${value.longitude}");
             _marker.add(
               Marker(
-                  markerId: MarkerId("1"),
+                  markerId: const MarkerId("1"),
                   position: LatLng(value.latitude, value.longitude),
-                  infoWindow: InfoWindow(title: "My Current location")),
+                  infoWindow: const InfoWindow(title: "My Current location")),
             );
             CameraPosition cameraPosition = CameraPosition(
                 zoom: 14, target: LatLng(value.latitude, value.longitude));
@@ -210,7 +210,7 @@ class _MapsState extends State<Maps> {
           });
           setState(() {});
         },
-        child: Icon(Icons.location_on_outlined),
+        child: const Icon(Icons.location_on_outlined),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.startFloat,
     );
