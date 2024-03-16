@@ -25,15 +25,205 @@
   },
   "Day3": {
     "card1": {
-      "event": "Event",
-      "venue": "Venue",
-      "time": "12:00"
+      "event": "Krafton session",
+      "venue": "L19",
+      "time": "11:00-12:00"
     },
     "card2": {
-      "event": "Event",
-      "venue": "Venue",
-      "time": "12:00"
-    }
+      "event": "Networking Lunch",
+      "venue": "Community Center 2",
+      "time": "12:00-13:00"
+    },
+    "card3": {
+      "event": "G.Satheesh Reddy",
+      "venue": "L19",
+      "time": "13:00-14:00"
+    },
+    "card4": {
+      "event": "Shark Tank",
+      "venue": "Audi Ground (Battle of Ideas)",
+      "time": "14:00-16:00"
+    },
+    "card5": {
+      "event": "Sustainability Panel",
+      "venue": "L19",
+      "time": "14:00-15:00"
+    },
+    "card6": {
+      "event": "Tech Planet",
+      "venue": "L20 Ground",
+      "time": "10:00-17:00"
+    },
+    "card7": {
+      "event": "Laser tag with Gel Blaster",
+      "venue": "MPR(OAT)",
+      "time": "16:00-2:00"
+    },
+    "card8": {
+      "event": "PS5 Car Consoles",
+      "venue": "Events Ground",
+      "time": "16:00-2:00"
+    },
+    "card9": {
+      "event": "Body Zorbing",
+      "venue": "Events Ground",
+      "time": "16:00-2:00"
+    },
+    "card10": {
+      "event": "VR Gaming",
+      "venue": "Events Ground",
+      "time": "16:00-2:00"
+    },
+    "card11": {
+      "event": "Target Shooting",
+      "venue": "Events Ground",
+      "time": "16:00-2:00"
+    },
+    "card12": {
+      "event": "Boiler Room",
+      "venue": "Yoga Hall",
+      "time": "00:00-4:00"
+    },
+    "card13": {
+      "event": "Cars and Bikes Rally",
+      "venue": "Campus",
+      "time": "15:00-16:00"
+    },
+    "card14": {
+      "event": "Drift Show",
+      "venue": "H1 Basketball Court",
+      "time": "16:00-17:00"
+    },
+    "card15": {
+      "event": "Pronite",
+      "venue": "Pronite Ground",
+      "time": "19:00-22:00"
+    },
+    "card16": {
+      "event": "Jatin Sangri",
+      "venue": "Events Ground",
+      "time": "23:00-00:00"
+    },
+    "card17": {
+      "event": "Kunal Grover",
+      "venue": "Events Ground",
+      "time": "00:00-01:00"
+    },
+    
+      "card 18": {
+        "event": "Skysparks",
+        "venue": "Hockey Ground",
+        "time": "07:00-17:00"
+      },
+      "card 19": {
+        "event": "Manoeuvre",
+        "venue": "Events Ground",
+        "time": "09:00-17:00"
+      },
+      "card 20": {
+        "event": "IARC",
+        "venue": "LitSoc",
+        "time": "09:00-17:00"
+      },
+      "card 21": {
+        "event": "Multirotor",
+        "venue": "Events Ground",
+        "time": "09:00-17:00"
+      },
+      "card 22": {
+        "event": "Hovermania",
+        "venue": "Events Ground",
+        "time": "09:00-17:00"
+      },
+      "card 23": {
+        "event": "Galactic Dodger",
+        "venue": "L4",
+        "time": "09:00-18:00"
+      },
+      "card 24": {
+        "event": "Secure Comms",
+        "venue": "L3",
+        "time": "09:00-18:00"
+      },
+      "card 25": {
+        "event": "TIC",
+        "venue": "L6",
+        "time": "09:00-18:00"
+      },
+      "card 26": {
+        "event": "III",
+        "venue": "Lecture Hall",
+        "time": "09:00-18:00"
+      },
+      "card 27": {
+        "event": "ADC",
+        "venue": "L5",
+        "time": "09:00-18:00"
+      },
+      "card 28": {
+        "event": "BDC",
+        "venue": "Structure Lab",
+        "time": "09:00-18:00"
+      },
+      "card 29": {
+        "event": "Innovate Adorn Challenge",
+        "venue": "Lecture Hall",
+        "time": "09:00-18:00"
+      },
+      "card 30": {
+        "event": "Marketing Mavericks",
+        "venue": "KD101",
+        "time": "09:00-13:00"
+      },
+      "card 31": {
+        "event": "Strategy Sprint",
+        "venue": "KD102",
+        "time": "09:00-18:00"
+      },
+      "card 32": {
+        "event": "Analytics",
+        "venue": "KD103",
+        "time": "09:00-13:00"
+      },
+      "card 33": {
+        "event": "Product Showdown",
+        "venue": "KD",
+        "time": "09:00-13:00"
+      },
+      "card 34": {
+        "event": "Pitch Premier",
+        "venue": "RM",
+        "time": "09:00-18:00"
+      },
+      "card 35": {
+        "event": "Beat the market",
+        "venue": "KD104",
+        "time": "09:00-18:00"
+      },
+      "card 36": {
+        "event": "OAS",
+        "venue": "Lecture Hall",
+        "time": "09:00-18:00"
+      },
+      "card 37": {
+        "event": "Astro Quiz",
+        "venue": "Lecture Hall",
+        "time": "09:00-18:00"
+      },
+      "card 38": {
+        "event": "Lok Sabha",
+        "venue": "Senate Hall",
+        "time": "09:00-18:00"
+      },
+      "card 39":{"event": "UNHRC", "venue": "Senate Hall", "time": "09:00-18:00"},
+      "card 40":{"event": "UNSC", "venue": "Senate Hall", "time": "09:00-18:00"},
+      "card 41":{"event": "REdev", "venue": "Lecture Hall", "time": "09:00-18:00"},
+      "card 42":{"event": "CTF", "venue": "Lecture Hall", "time": "09:00-18:00"},
+
+      "card 43":{"event": "Report Automation Challenge", "venue": "Lecture Hall", "time": "09:00-18:00"},
+
+      "card 44":{"event": "Robowars", "venue": "Events Ground", "time": "15:00-01:00"}
+
   },
   "Day4": {
     "card1": {
